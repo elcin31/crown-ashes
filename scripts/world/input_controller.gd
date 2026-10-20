@@ -1,6 +1,8 @@
 class_name InputController
 extends Node
 var map
+var ui_blocks_world:Callable
+var enabled:bool=false
 var edges=[]
 var touches={}
 var touch_origin={}
@@ -12,7 +14,12 @@ var pinch_distance=0.0
 var moved=false
 func _ready():edges=GameState.read_json("res://data/world.json").edges
 func _unhandled_input(event):
-	if map.s==null or not map.visible:return
+	if map.s==null or not map.visible or not enabled:return
+	# Godot synthesizes mouse events for native touch so Controls work. The map
+	# owns native touch gestures; ignore its synthetic mouse copy exactly once.
+	if (event is InputEventMouseButton or event is InputEventMouseMotion) and event.device==-1:return
+	if event is InputEventScreenTouch and event.pressed:
+		if ui_blocks_world.is_valid() and ui_blocks_world.call(event.position):return
 	if event is InputEventMouseButton:
 		if event.button_index==MOUSE_BUTTON_WHEEL_UP and event.pressed:zoom_at(event.position,1.13)
 		elif event.button_index==MOUSE_BUTTON_WHEEL_DOWN and event.pressed:zoom_at(event.position,1.0/1.13)
@@ -56,3 +63,6 @@ func touch_distance()->float:
 func touch_midpoint()->Vector2:
 	var points=touches.values()
 	return (points[0]+points[1])/2 if points.size()>=2 else Vector2.ZERO
+
+func reset_gestures():
+	touches.clear();touch_origin.clear();dragging=false;multi=false;moved=false;pinch_distance=0.0

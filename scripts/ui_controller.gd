@@ -38,7 +38,9 @@ func style(fill:String,border:String,width:int=1,padding:int=10)->StyleBoxFlat:
 	var s=StyleBoxFlat.new();s.bg_color=Color(fill);s.border_color=Color(border);s.set_border_width_all(width);s.set_content_margin_all(padding);s.set_corner_radius_all(3);return s
 func clear_root():
 	modal=null;hud=null
-	for child in root.get_children():child.queue_free()
+	for child in root.get_children():
+		if child is Control:child.hide()
+		child.queue_free()
 func box(parent,vertical:bool=true):
 	var b=VBoxContainer.new() if vertical else HBoxContainer.new();b.size_flags_horizontal=Control.SIZE_EXPAND_FILL;parent.add_child(b);return b
 func label(parent,text:String,font_size:int=17,color:Color=Color("#d9dfcc"),wrap:bool=true)->Label:
@@ -53,7 +55,7 @@ func button(parent,text:String,callback:Callable,icon:String="",disabled:bool=fa
 	if text=="×":b.size_flags_horizontal=Control.SIZE_SHRINK_END
 	b.pressed.connect(callback);parent.add_child(b);return b
 func image_rect(parent,id:String,dimensions:Vector2)->TextureRect:
-	var t=TextureRect.new();t.texture=app.map.textures.get(id);t.custom_minimum_size=dimensions;t.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;t.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;parent.add_child(t);return t
+	var t=TextureRect.new();t.texture=app.map.textures.get(id);t.custom_minimum_size=dimensions;t.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;t.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;t.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(t);return t
 func separator(parent):parent.add_child(HSeparator.new())
 func kv(parent,key:String,value:String,color:Color=Color("#d9dfcc")):
 	var row=box(parent,false);var k=label(row,key,16,MUTED,false);k.size_flags_horizontal=Control.SIZE_EXPAND_FILL;label(row,value,17,color,false)
@@ -65,7 +67,7 @@ func cost_text(cost:Dictionary)->String:
 func centered_panel(width:float,height:float)->PanelContainer:
 	var panel=PanelContainer.new();panel.anchor_left=0.5;panel.anchor_right=0.5;panel.anchor_top=0.5;panel.anchor_bottom=0.5;panel.offset_left=-width/2;panel.offset_right=width/2;panel.offset_top=-height/2;panel.offset_bottom=height/2;root.add_child(panel);return panel
 func shade(parent,alpha:float=0.65):
-	var shade_node=ColorRect.new();shade_node.color=Color(0.025,0.055,0.07,alpha);shade_node.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);parent.add_child(shade_node);return shade_node
+	var shade_node=ColorRect.new();shade_node.color=Color(0.025,0.055,0.07,alpha);shade_node.mouse_filter=Control.MOUSE_FILTER_IGNORE;shade_node.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);parent.add_child(shade_node);return shade_node
 func show_main_menu():
 	clear_root();shade(root,0.66)
 	var panel=centered_panel(880,570);var row=box(panel,false);var left=box(row);left.size_flags_horizontal=Control.SIZE_EXPAND_FILL;left.custom_minimum_size.x=465
@@ -208,9 +210,10 @@ func act(command:String,args:Dictionary={},refresh:Callable=Callable()):
 	return result
 func open_window(title:String,width:float=900,height:float=580):
 	if modal!=null and is_instance_valid(modal):
-		root.remove_child(modal);modal.queue_free()
+		modal.hide();modal.queue_free()
 	else:modal_previous_speed=app.clock.speed
 	app.clock.speed=0
+	app.map.input_controller.enabled=false;app.map.input_controller.reset_gestures()
 	modal=Control.new();modal.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);modal.mouse_filter=Control.MOUSE_FILTER_STOP;root.add_child(modal);shade(modal,0.74)
 	var panel=PanelContainer.new();panel.anchor_left=0.5;panel.anchor_right=0.5;panel.anchor_top=0.5;panel.anchor_bottom=0.5;panel.offset_left=-width/2;panel.offset_right=width/2;panel.offset_top=-height/2;panel.offset_bottom=height/2;modal.add_child(panel)
 	var outer=box(panel);var row=box(outer,false);heading(row,title,25).size_flags_horizontal=Control.SIZE_EXPAND_FILL;button(row,"×",close_window).custom_minimum_size=Vector2(46,44)
@@ -218,7 +221,7 @@ func open_window(title:String,width:float=900,height:float=580):
 	refresh_hud()
 func close_window():
 	if modal!=null and is_instance_valid(modal):modal.queue_free();modal=null
-	app.clock.speed=modal_previous_speed if app.running else 0;refresh_hud();refresh_side()
+	app.clock.speed=modal_previous_speed if app.running else 0;app.map.input_controller.enabled=app.running;refresh_hud();refresh_side()
 func open_buildings(pid:int):
 	open_window("Строительство · "+app.state.data.provinces[pid].name)
 	var s=app.state;var p=s.data.provinces[pid]
@@ -488,3 +491,10 @@ func open_land_grant(pid:int):
 	for c in app.state.data.characters:
 		if c.alive and int(c.realm)==int(app.state.data.player) and c.age>=16:
 			button(modal_body,"%s · верность %d · управление %d"%[c.name,c.loyalty,c.administration],func():act("grant",{"province":pid,"character":int(c.id)});close_window(),c.portrait)
+
+func blocks_world_at(point:Vector2)->bool:
+	if not app.running or (modal!=null and is_instance_valid(modal)):return true
+	if hud==null or not is_instance_valid(hud):return true
+	for child in hud.get_children():
+		if child is Control and child.is_visible_in_tree() and child.mouse_filter!=Control.MOUSE_FILTER_IGNORE and child.get_global_rect().has_point(point):return true
+	return false

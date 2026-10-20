@@ -16,18 +16,21 @@ func _ready():
 	ui=UIController.new();ui.app=self;add_child(ui)
 	map.province_selected.connect(func(id):if running:ui.select_province(id))
 	map.army_selected.connect(func(id):if running:ui.select_army(id))
+	map.input_controller.ui_blocks_world=ui.blocks_world_at
 	load_settings();ui.show_main_menu()
-	if "--visual-check" in OS.get_cmdline_user_args():
+	if "--input-smoke" in OS.get_cmdline_user_args():
+		var runner=load("res://tests/input_smoke.gd").new();runner.app=self;add_child(runner)
+	elif "--visual-check" in OS.get_cmdline_user_args():
 		var runner=load("res://tests/visual_check.gd").new();runner.app=self;add_child(runner)
 func start_campaign(realm:int,difficulty:int):
 	state.new_campaign(realm,difficulty);commands=GameCommands.new(state);clock=GameClock.new();clock.speed=0;running=true;outcome_shown=false
-	map.set_state(state);ui.show_game()
+	map.set_state(state);map.input_controller.reset_gestures();map.input_controller.enabled=true;ui.show_game()
 func load_campaign(slot:int):
 	var result=SaveSystem.load_game(state,slot)
 	if not result.ok:ui.toast(result.message);return
-	commands=GameCommands.new(state);clock=GameClock.new();running=true;outcome_shown=false;map.set_state(state);ui.show_game();ui.toast("Кампания загружена: "+state.date_text())
+	commands=GameCommands.new(state);clock=GameClock.new();running=true;outcome_shown=false;map.set_state(state);map.input_controller.reset_gestures();map.input_controller.enabled=true;ui.show_game();ui.toast("Кампания загружена: "+state.date_text())
 func return_to_menu():
-	running=false;clock.speed=0;outcome_shown=false;ui.show_main_menu()
+	running=false;clock.speed=0;outcome_shown=false;map.input_controller.enabled=false;map.input_controller.reset_gestures();ui.show_main_menu()
 func set_speed(speed:int):
 	if ui.modal!=null and is_instance_valid(ui.modal):return
 	clock.speed=speed;ui.refresh_hud()
