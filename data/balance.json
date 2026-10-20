@@ -1,0 +1,14 @@
+{
+  "day_seconds": 1.0,
+  "month_days": 30,
+  "starting_grace_days": 180,
+  "trade_spread": 0.18,
+  "empire_provinces": 35,
+  "empire_hold_days": 180,
+  "army_food_per_100_daily": 0.28,
+  "event_interval_days": 24,
+  "autosave_days": 30,
+  "max_construction_slots": 1,
+  "max_building_level": 3,
+  "max_event_queue": 5
+}

@@ -1,0 +1,21 @@
+{
+  "bytes": 28887077,
+  "sha256": "b6d8b238a01c2251848665063be3b40be23610c1568f1e78d47d694413b13732",
+  "engine": "Godot 4.6.3 stable",
+  "build_type": "signed debug",
+  "architecture": "arm64-v8a",
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "permissions": [],
+  "primary_check": "passed after targeted art/layout fixes",
+  "mechanics_checks": 33,
+  "mechanics_failures": 0,
+  "android_device_test": "not run; no attached device or emulator",
+  "original_png": 136,
+  "sprite_sheets": 16,
+  "animation_frames": 448,
+  "provinces": 60,
+  "sovereign_states": 12,
+  "playable_vassals": 1,
+  "events": 33
+}

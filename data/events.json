@@ -1,0 +1,809 @@
+[
+  {
+    "id": "harvest",
+    "title": "Богатый урожай",
+    "description": "Крестьяне собрали полные житницы. Как распорядиться излишком?",
+    "illustration": "rich_harvest",
+    "condition": "always",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Пополнить житницы",
+        "effects": {
+          "food": 110
+        }
+      },
+      {
+        "label": "Продать урожай",
+        "effects": {
+          "gold": 45,
+          "food": 25
+        }
+      }
+    ]
+  },
+  {
+    "id": "bad_harvest",
+    "title": "Неурожай",
+    "description": "Непогода погубила посевы. Деревни просят помощи.",
+    "illustration": "rich_harvest",
+    "condition": "always",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Закупить зерно",
+        "effects": {
+          "gold": -35,
+          "food": 65,
+          "unrest": -3
+        }
+      },
+      {
+        "label": "Уменьшить паёк",
+        "effects": {
+          "food": -40,
+          "unrest": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "illness",
+    "title": "Болезнь правителя",
+    "description": "Лекарь опасается, что болезнь надолго ослабит государя.",
+    "illustration": "ruler_death",
+    "condition": "ruler_alive",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Позвать лекаря",
+        "effects": {
+          "gold": -40,
+          "health": 12
+        }
+      },
+      {
+        "label": "Довериться покою",
+        "effects": {
+          "health": -8,
+          "stability": -3
+        }
+      }
+    ]
+  },
+  {
+    "id": "birth",
+    "title": "Рождение наследника",
+    "description": "Во дворце появился ребёнок. Семья нуждается в вашей поддержке.",
+    "illustration": "royal_wedding",
+    "condition": "fertile",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Устроить праздник",
+        "effects": {
+          "gold": -25,
+          "legitimacy": 5,
+          "birth": 1
+        }
+      },
+      {
+        "label": "Тихая церемония",
+        "effects": {
+          "legitimacy": 2,
+          "birth": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "council_loss",
+    "title": "Смерть советника",
+    "description": "Старший советник скончался. Его место в совете свободно.",
+    "illustration": "ruler_death",
+    "condition": "old_advisor",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Почтить память",
+        "effects": {
+          "gold": -20,
+          "loyalty": 5,
+          "advisor_death": 1
+        }
+      },
+      {
+        "label": "Назначить преемника позже",
+        "effects": {
+          "stability": -3,
+          "advisor_death": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "peasants",
+    "title": "Крестьянский мятеж",
+    "description": "Налоги довели деревни до отчаяния. Вооружённая толпа собирается у ворот.",
+    "illustration": "peasant_revolt",
+    "condition": "unrest_high",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Раздать продовольствие",
+        "effects": {
+          "food": -65,
+          "unrest": -18
+        }
+      },
+      {
+        "label": "Подавить силой",
+        "effects": {
+          "manpower": -45,
+          "unrest": -8,
+          "stability": -5
+        }
+      }
+    ]
+  },
+  {
+    "id": "bandits",
+    "title": "Разбойники на тракте",
+    "description": "Купцы отказываются ехать через опасные леса.",
+    "illustration": "betrayal",
+    "condition": "always",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Выслать дозор",
+        "effects": {
+          "gold": -22,
+          "manpower": -12,
+          "stability": 3
+        }
+      },
+      {
+        "label": "Откупиться",
+        "effects": {
+          "gold": -35,
+          "unrest": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "insult",
+    "title": "Дипломатический конфликт",
+    "description": "Соседний посол публично оскорбил вашу династию.",
+    "illustration": "diplomatic_feast",
+    "condition": "neighbor",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Потребовать извинений",
+        "effects": {
+          "relation": -12,
+          "legitimacy": 4
+        }
+      },
+      {
+        "label": "Сохранить спокойствие",
+        "effects": {
+          "relation": 6,
+          "legitimacy": -2
+        }
+      }
+    ]
+  },
+  {
+    "id": "succession_dispute",
+    "title": "Спор о наследовании",
+    "description": "Часть дворян оспаривает право наследника на престол.",
+    "illustration": "coronation",
+    "condition": "low_legitimacy",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Подкупить сторонников",
+        "effects": {
+          "gold": -55,
+          "legitimacy": 10
+        }
+      },
+      {
+        "label": "Опубликовать родословную",
+        "effects": {
+          "stability": -5,
+          "legitimacy": 4
+        }
+      }
+    ]
+  },
+  {
+    "id": "vassal_betrayal",
+    "title": "Непокорный вассал",
+    "description": "Влиятельный дворянин угрожает прекратить уплату дани.",
+    "illustration": "betrayal",
+    "condition": "low_loyalty",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Выслушать требования",
+        "effects": {
+          "gold": -35,
+          "loyalty": 15
+        }
+      },
+      {
+        "label": "Пригрозить лишением титула",
+        "effects": {
+          "loyalty": -10,
+          "legitimacy": 5
+        }
+      }
+    ]
+  },
+  {
+    "id": "trade",
+    "title": "Торговый подъём",
+    "description": "Караваны привозят редкие товары на ваши рынки.",
+    "illustration": "diplomatic_feast",
+    "condition": "market",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Снизить пошлины",
+        "effects": {
+          "gold": 45,
+          "development": 2
+        }
+      },
+      {
+        "label": "Получить пошлины",
+        "effects": {
+          "gold": 85,
+          "unrest": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "fire",
+    "title": "Городской пожар",
+    "description": "Огонь уничтожил несколько жилых кварталов.",
+    "illustration": "castle_siege",
+    "condition": "always",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Восстановить дома",
+        "effects": {
+          "gold": -35,
+          "wood": -20,
+          "unrest": -4
+        }
+      },
+      {
+        "label": "Пусть жители справляются",
+        "effects": {
+          "population": -160,
+          "unrest": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "plague",
+    "title": "Эпидемия",
+    "description": "Караван принёс в провинцию заразную лихорадку.",
+    "illustration": "epidemic",
+    "condition": "populous",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Закрыть ворота",
+        "effects": {
+          "gold": -30,
+          "epidemic": 20,
+          "population": -40
+        }
+      },
+      {
+        "label": "Сохранить торговлю",
+        "effects": {
+          "gold": 15,
+          "epidemic": 60,
+          "population": -180
+        }
+      }
+    ]
+  },
+  {
+    "id": "plot",
+    "title": "Политический заговор",
+    "description": "Тайный советник нашёл следы заговора при дворе.",
+    "illustration": "betrayal",
+    "condition": "always",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Начать расследование",
+        "effects": {
+          "gold": -25,
+          "loyalty": 4,
+          "legitimacy": 3
+        }
+      },
+      {
+        "label": "Усилить охрану",
+        "effects": {
+          "gold": -15,
+          "stability": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "victory",
+    "title": "Триумф оружия",
+    "description": "Вести о недавней победе воодушевили ваших подданных.",
+    "illustration": "military_victory",
+    "condition": "recent_victory",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Наградить воинов",
+        "effects": {
+          "gold": -25,
+          "morale": 12,
+          "legitimacy": 5
+        }
+      },
+      {
+        "label": "Возвести памятник",
+        "effects": {
+          "stone": -20,
+          "legitimacy": 8
+        }
+      }
+    ]
+  },
+  {
+    "id": "deserter",
+    "title": "Бегство воинов",
+    "description": "Измученные походом солдаты хотят вернуться домой.",
+    "illustration": "castle_siege",
+    "condition": "low_morale",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Выдать жалованье",
+        "effects": {
+          "gold": -35,
+          "morale": 18
+        }
+      },
+      {
+        "label": "Разрешить отпуск",
+        "effects": {
+          "army_losses": 20,
+          "morale": 8
+        }
+      }
+    ]
+  },
+  {
+    "id": "marriage_offer",
+    "title": "Предложение брака",
+    "description": "Знатная семья предлагает укрепить мир родственными узами.",
+    "illustration": "royal_wedding",
+    "condition": "unmarried",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Принять сватов",
+        "effects": {
+          "gold": -20,
+          "relation": 15,
+          "marriage": 1
+        }
+      },
+      {
+        "label": "Вежливо отказать",
+        "effects": {
+          "relation": -4
+        }
+      }
+    ]
+  },
+  {
+    "id": "commander",
+    "title": "Талантливый командир",
+    "description": "Молодой рыцарь прославился на пограничном турнире.",
+    "illustration": "military_victory",
+    "condition": "always",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Принять на службу",
+        "effects": {
+          "gold": -40,
+          "commander": 1
+        }
+      },
+      {
+        "label": "Наградить за отвагу",
+        "effects": {
+          "gold": -15,
+          "legitimacy": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "faith",
+    "title": "Религиозный конфликт",
+    "description": "Священнослужители спорят о правах местного храма.",
+    "illustration": "coronation",
+    "condition": "temple",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Поддержать храм",
+        "effects": {
+          "gold": -25,
+          "unrest": -5,
+          "legitimacy": 3
+        }
+      },
+      {
+        "label": "Поддержать дворян",
+        "effects": {
+          "loyalty": 6,
+          "unrest": 4
+        }
+      }
+    ]
+  },
+  {
+    "id": "claim",
+    "title": "Претензия на престол",
+    "description": "Архивариус нашёл древнюю грамоту с правами вашей семьи.",
+    "illustration": "coronation",
+    "condition": "always",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Опубликовать грамоту",
+        "effects": {
+          "gold": -30,
+          "claim": 1,
+          "legitimacy": 4
+        }
+      },
+      {
+        "label": "Сохранить тайну",
+        "effects": {
+          "legitimacy": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "drought",
+    "title": "Засуха",
+    "description": "Реки обмелели, а амбары быстро пустеют.",
+    "illustration": "rich_harvest",
+    "condition": "summer",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Купить воду и зерно",
+        "effects": {
+          "gold": -35,
+          "food": 45
+        }
+      },
+      {
+        "label": "Перераспределить запасы",
+        "effects": {
+          "food": -30,
+          "unrest": 4
+        }
+      }
+    ]
+  },
+  {
+    "id": "tournament",
+    "title": "Рыцарский турнир",
+    "description": "Дворяне предлагают устроить состязание в вашей столице.",
+    "illustration": "diplomatic_feast",
+    "condition": "rich",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Провести турнир",
+        "effects": {
+          "gold": -60,
+          "loyalty": 12,
+          "legitimacy": 6
+        }
+      },
+      {
+        "label": "Вложить средства в дороги",
+        "effects": {
+          "gold": -30,
+          "development": 2
+        }
+      }
+    ]
+  },
+  {
+    "id": "mine_find",
+    "title": "Новая рудная жила",
+    "description": "Рудокопы нашли богатую жилу под старой шахтой.",
+    "illustration": "rich_harvest",
+    "condition": "mine",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Расширить выработку",
+        "effects": {
+          "gold": -25,
+          "iron": 55,
+          "stone": 20
+        }
+      },
+      {
+        "label": "Продать право добычи",
+        "effects": {
+          "gold": 50,
+          "loyalty": -3
+        }
+      }
+    ]
+  },
+  {
+    "id": "winter",
+    "title": "Суровая зима",
+    "description": "Холод затрудняет снабжение гарнизонов и деревень.",
+    "illustration": "epidemic",
+    "condition": "winter",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Раздать дрова",
+        "effects": {
+          "wood": -35,
+          "unrest": -4
+        }
+      },
+      {
+        "label": "Ужесточить экономию",
+        "effects": {
+          "food": -40,
+          "morale": -6
+        }
+      }
+    ]
+  },
+  {
+    "id": "refugees",
+    "title": "Беженцы",
+    "description": "Семьи из разорённых земель просят защиты.",
+    "illustration": "peasant_revolt",
+    "condition": "war",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Предоставить землю",
+        "effects": {
+          "food": -50,
+          "population": 240,
+          "manpower": 30
+        }
+      },
+      {
+        "label": "Закрыть границу",
+        "effects": {
+          "stability": 2,
+          "legitimacy": -3
+        }
+      }
+    ]
+  },
+  {
+    "id": "corruption",
+    "title": "Казнокрадство",
+    "description": "Чиновник присвоил часть налоговых сборов.",
+    "illustration": "betrayal",
+    "condition": "always",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Вернуть украденное",
+        "effects": {
+          "gold": 35,
+          "loyalty": -5
+        }
+      },
+      {
+        "label": "Простить за службу",
+        "effects": {
+          "gold": -15,
+          "loyalty": 8
+        }
+      }
+    ]
+  },
+  {
+    "id": "guild",
+    "title": "Просьба гильдии",
+    "description": "Ремесленники хотят открыть новую мастерскую.",
+    "illustration": "diplomatic_feast",
+    "condition": "market",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Выдать хартию",
+        "effects": {
+          "gold": -35,
+          "development": 3
+        }
+      },
+      {
+        "label": "Обложить сбором",
+        "effects": {
+          "gold": 35,
+          "unrest": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "pilgrims",
+    "title": "Паломники",
+    "description": "Толпы паломников проходят через ваши земли.",
+    "illustration": "coronation",
+    "condition": "temple",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Предоставить приют",
+        "effects": {
+          "food": -30,
+          "legitimacy": 5,
+          "relation": 3
+        }
+      },
+      {
+        "label": "Собирать пошлину",
+        "effects": {
+          "gold": 25,
+          "legitimacy": -2
+        }
+      }
+    ]
+  },
+  {
+    "id": "flood",
+    "title": "Наводнение",
+    "description": "Весенний паводок затопил поля и смыл часть дороги.",
+    "illustration": "rich_harvest",
+    "condition": "spring",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Восстановить дамбу",
+        "effects": {
+          "gold": -25,
+          "stone": -15,
+          "unrest": -3
+        }
+      },
+      {
+        "label": "Потерпеть до лета",
+        "effects": {
+          "food": -45,
+          "population": -60
+        }
+      }
+    ]
+  },
+  {
+    "id": "spy",
+    "title": "Чужой лазутчик",
+    "description": "Стража задержала человека с шифрованными письмами.",
+    "illustration": "betrayal",
+    "condition": "neighbor",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Обменять на сведения",
+        "effects": {
+          "gold": 15,
+          "relation": -6,
+          "legitimacy": 2
+        }
+      },
+      {
+        "label": "Отпустить с предупреждением",
+        "effects": {
+          "relation": 8
+        }
+      }
+    ]
+  },
+  {
+    "id": "fair",
+    "title": "Большая ярмарка",
+    "description": "Купцы предлагают провести ежегодную ярмарку.",
+    "illustration": "diplomatic_feast",
+    "condition": "peace",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Покровительствовать ярмарке",
+        "effects": {
+          "gold": 40,
+          "development": 1
+        }
+      },
+      {
+        "label": "Освободить крестьян от сборов",
+        "effects": {
+          "gold": 10,
+          "unrest": -6
+        }
+      }
+    ]
+  },
+  {
+    "id": "border",
+    "title": "Пограничный спор",
+    "description": "Две деревни спорят о пастбищах у границы.",
+    "illustration": "betrayal",
+    "condition": "neighbor",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Разделить угодья",
+        "effects": {
+          "relation": 7,
+          "loyalty": -2
+        }
+      },
+      {
+        "label": "Отстоять притязание",
+        "effects": {
+          "relation": -9,
+          "claim": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "oath",
+    "title": "Клятва верности",
+    "description": "Дворяне готовы вновь принести присягу вашей династии.",
+    "illustration": "coronation",
+    "condition": "stable",
+    "weight": 1,
+    "choices": [
+      {
+        "label": "Принять присягу",
+        "effects": {
+          "loyalty": 6,
+          "legitimacy": 3
+        }
+      },
+      {
+        "label": "Снизить повинности",
+        "effects": {
+          "gold": -20,
+          "loyalty": 12
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,182 @@
+{
+  "farm": {
+    "name": "Ферма",
+    "asset": "farm",
+    "cost": {
+      "gold": 55,
+      "wood": 20,
+      "stone": 10,
+      "iron": 0
+    },
+    "days": 22,
+    "upkeep": 0.4,
+    "effect": {
+      "food": 34
+    },
+    "max_level": 3
+  },
+  "sawmill": {
+    "name": "Лесопилка",
+    "asset": "sawmill",
+    "cost": {
+      "gold": 65,
+      "wood": 12,
+      "stone": 15,
+      "iron": 0
+    },
+    "days": 26,
+    "upkeep": 0.6,
+    "effect": {
+      "wood": 26
+    },
+    "max_level": 3
+  },
+  "mine": {
+    "name": "Железная шахта",
+    "asset": "iron_mine",
+    "cost": {
+      "gold": 85,
+      "wood": 28,
+      "stone": 25,
+      "iron": 0
+    },
+    "days": 32,
+    "upkeep": 0.8,
+    "effect": {
+      "iron": 16
+    },
+    "max_level": 3
+  },
+  "quarry": {
+    "name": "Каменоломня",
+    "asset": "quarry",
+    "cost": {
+      "gold": 65,
+      "wood": 25,
+      "stone": 10,
+      "iron": 0
+    },
+    "days": 26,
+    "upkeep": 0.5,
+    "effect": {
+      "stone": 22
+    },
+    "max_level": 3
+  },
+  "market": {
+    "name": "Рынок",
+    "asset": "market",
+    "cost": {
+      "gold": 90,
+      "wood": 35,
+      "stone": 25,
+      "iron": 0
+    },
+    "days": 30,
+    "upkeep": 0.7,
+    "effect": {
+      "gold": 13
+    },
+    "max_level": 3
+  },
+  "barracks": {
+    "name": "Казармы",
+    "asset": "barracks",
+    "cost": {
+      "gold": 85,
+      "wood": 30,
+      "stone": 22,
+      "iron": 8
+    },
+    "days": 28,
+    "upkeep": 1.0,
+    "effect": {
+      "manpower": 65
+    },
+    "max_level": 3
+  },
+  "fort": {
+    "name": "Укрепления",
+    "asset": "small_castle",
+    "cost": {
+      "gold": 95,
+      "wood": 25,
+      "stone": 45,
+      "iron": 10
+    },
+    "days": 38,
+    "upkeep": 0.9,
+    "effect": {
+      "fort": 1
+    },
+    "max_level": 3
+  },
+  "temple": {
+    "name": "Храм",
+    "asset": "temple",
+    "cost": {
+      "gold": 80,
+      "wood": 20,
+      "stone": 35,
+      "iron": 0
+    },
+    "days": 32,
+    "upkeep": 0.5,
+    "effect": {
+      "unrest": -3,
+      "legitimacy": 1
+    },
+    "max_level": 3
+  },
+  "port": {
+    "name": "Порт",
+    "asset": "port",
+    "cost": {
+      "gold": 100,
+      "wood": 45,
+      "stone": 20,
+      "iron": 5
+    },
+    "days": 38,
+    "upkeep": 1.0,
+    "effect": {
+      "gold": 19,
+      "food": 8
+    },
+    "max_level": 3
+  },
+  "granary": {
+    "name": "Амбар",
+    "asset": "granary",
+    "cost": {
+      "gold": 55,
+      "wood": 30,
+      "stone": 12,
+      "iron": 0
+    },
+    "days": 24,
+    "upkeep": 0.3,
+    "effect": {
+      "food": 15,
+      "storage": 200
+    },
+    "max_level": 3
+  },
+  "road": {
+    "name": "Мощёная дорога",
+    "asset": "stone_road",
+    "cost": {
+      "gold": 55,
+      "wood": 10,
+      "stone": 30,
+      "iron": 0
+    },
+    "days": 20,
+    "upkeep": 0.3,
+    "effect": {
+      "gold": 5,
+      "speed": 0.15
+    },
+    "max_level": 3
+  }
+}

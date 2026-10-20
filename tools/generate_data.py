@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import json
+P=Path(__file__).resolve().parents[1]/'data'
+def put(n,v):(P/(n+'.json')).write_text(json.dumps(v,ensure_ascii=False,indent=2))
+# Balance values are independent of system implementation.
+put('balance',{'day_seconds':1.0,'month_days':30,'starting_grace_days':180,'trade_spread':0.18,'empire_provinces':35,'empire_hold_days':180,'army_food_per_100_daily':0.28,'event_interval_days':24,'autosave_days':30,'max_construction_slots':1,'max_building_level':3,'max_event_queue':5})
+builds=[('farm','Ферма','farm',55,20,10,0,22,0.4,{'food':34}),('sawmill','Лесопилка','sawmill',65,12,15,0,26,0.6,{'wood':26}),('mine','Железная шахта','iron_mine',85,28,25,0,32,0.8,{'iron':16}),('quarry','Каменоломня','quarry',65,25,10,0,26,0.5,{'stone':22}),('market','Рынок','market',90,35,25,0,30,0.7,{'gold':13}),('barracks','Казармы','barracks',85,30,22,8,28,1.0,{'manpower':65}),('fort','Укрепления','small_castle',95,25,45,10,38,0.9,{'fort':1}),('temple','Храм','temple',80,20,35,0,32,0.5,{'unrest':-3,'legitimacy':1}),('port','Порт','port',100,45,20,5,38,1.0,{'gold':19,'food':8}),('granary','Амбар','granary',55,30,12,0,24,0.3,{'food':15,'storage':200}),('road','Мощёная дорога','stone_road',55,10,30,0,20,0.3,{'gold':5,'speed':0.15})]
+put('buildings',{i:{'name':n,'asset':a,'cost':{'gold':g,'wood':w,'stone':s,'iron':iron},'days':days,'upkeep':up,'effect':eff,'max_level':3} for i,n,a,g,w,s,iron,days,up,eff in builds})
+units=[('militia','Ополчение','militia',24,0,0,1.1,0.7,1.0,0.8,{}),('infantry','Пехота','infantry',48,5,7,1.8,1.8,1.0,1.0,{'militia':1.15}),('spearman','Копейщики','spearman',42,10,4,1.5,1.9,1.0,1.0,{'cavalry':1.5}),('archer','Лучники','archer',44,14,1,1.9,0.9,1.15,0.9,{'spearman':1.2}),('crossbowman','Арбалетчики','crossbowman',65,12,10,2.4,1.1,0.9,1.0,{'infantry':1.3}),('cavalry','Кавалерия','cavalry',90,5,14,3.0,2.1,1.55,1.2,{'archer':1.4}),('siege','Осадные отряды','siege_engine',85,35,15,0.6,1.0,0.65,0.9,{})]
+put('units',{i:{'name':n,'asset':a,'batch':40,'cost':{'gold':g,'wood':w,'iron':ir,'food':12,'manpower':40},'upkeep':g/22,'attack':at,'defense':de,'mobility':mo,'morale':ma,'counters':c,'days':8} for i,n,a,g,w,ir,at,de,mo,ma,c in units})
+# Each event has contextual conditions and two materially different decisions.
+ev=[
+('harvest','Богатый урожай','Крестьяне собрали полные житницы. Как распорядиться излишком?','rich_harvest','always',('Пополнить житницы',{'food':110}),('Продать урожай',{'gold':45,'food':25})),
+('bad_harvest','Неурожай','Непогода погубила посевы. Деревни просят помощи.','rich_harvest','always',('Закупить зерно',{'gold':-35,'food':65,'unrest':-3}),('Уменьшить паёк',{'food':-40,'unrest':6})),
+('illness','Болезнь правителя','Лекарь опасается, что болезнь надолго ослабит государя.','ruler_death','ruler_alive',('Позвать лекаря',{'gold':-40,'health':12}),('Довериться покою',{'health':-8,'stability':-3})),
+('birth','Рождение наследника','Во дворце появился ребёнок. Семья нуждается в вашей поддержке.','royal_wedding','fertile',('Устроить праздник',{'gold':-25,'legitimacy':5,'birth':1}),('Тихая церемония',{'legitimacy':2,'birth':1})),
+('council_loss','Смерть советника','Старший советник скончался. Его место в совете свободно.','ruler_death','old_advisor',('Почтить память',{'gold':-20,'loyalty':5,'advisor_death':1}),('Назначить преемника позже',{'stability':-3,'advisor_death':1})),
+('peasants','Крестьянский мятеж','Налоги довели деревни до отчаяния. Вооружённая толпа собирается у ворот.','peasant_revolt','unrest_high',('Раздать продовольствие',{'food':-65,'unrest':-18}),('Подавить силой',{'manpower':-45,'unrest':-8,'stability':-5})),
+('bandits','Разбойники на тракте','Купцы отказываются ехать через опасные леса.','betrayal','always',('Выслать дозор',{'gold':-22,'manpower':-12,'stability':3}),('Откупиться',{'gold':-35,'unrest':3})),
+('insult','Дипломатический конфликт','Соседний посол публично оскорбил вашу династию.','diplomatic_feast','neighbor',('Потребовать извинений',{'relation':-12,'legitimacy':4}),('Сохранить спокойствие',{'relation':6,'legitimacy':-2})),
+('succession_dispute','Спор о наследовании','Часть дворян оспаривает право наследника на престол.','coronation','low_legitimacy',('Подкупить сторонников',{'gold':-55,'legitimacy':10}),('Опубликовать родословную',{'stability':-5,'legitimacy':4})),
+('vassal_betrayal','Непокорный вассал','Влиятельный дворянин угрожает прекратить уплату дани.','betrayal','low_loyalty',('Выслушать требования',{'gold':-35,'loyalty':15}),('Пригрозить лишением титула',{'loyalty':-10,'legitimacy':5})),
+('trade','Торговый подъём','Караваны привозят редкие товары на ваши рынки.','diplomatic_feast','market',('Снизить пошлины',{'gold':45,'development':2}),('Получить пошлины',{'gold':85,'unrest':2})),
+('fire','Городской пожар','Огонь уничтожил несколько жилых кварталов.','castle_siege','always',('Восстановить дома',{'gold':-35,'wood':-20,'unrest':-4}),('Пусть жители справляются',{'population':-160,'unrest':6})),
+('plague','Эпидемия','Караван принёс в провинцию заразную лихорадку.','epidemic','populous',('Закрыть ворота',{'gold':-30,'epidemic':20,'population':-40}),('Сохранить торговлю',{'gold':15,'epidemic':60,'population':-180})),
+('plot','Политический заговор','Тайный советник нашёл следы заговора при дворе.','betrayal','always',('Начать расследование',{'gold':-25,'loyalty':4,'legitimacy':3}),('Усилить охрану',{'gold':-15,'stability':2})),
+('victory','Триумф оружия','Вести о недавней победе воодушевили ваших подданных.','military_victory','recent_victory',('Наградить воинов',{'gold':-25,'morale':12,'legitimacy':5}),('Возвести памятник',{'stone':-20,'legitimacy':8})),
+('deserter','Бегство воинов','Измученные походом солдаты хотят вернуться домой.','castle_siege','low_morale',('Выдать жалованье',{'gold':-35,'morale':18}),('Разрешить отпуск',{'army_losses':20,'morale':8})),
+('marriage_offer','Предложение брака','Знатная семья предлагает укрепить мир родственными узами.','royal_wedding','unmarried',('Принять сватов',{'gold':-20,'relation':15,'marriage':1}),('Вежливо отказать',{'relation':-4})),
+('commander','Талантливый командир','Молодой рыцарь прославился на пограничном турнире.','military_victory','always',('Принять на службу',{'gold':-40,'commander':1}),('Наградить за отвагу',{'gold':-15,'legitimacy':3})),
+('faith','Религиозный конфликт','Священнослужители спорят о правах местного храма.','coronation','temple',('Поддержать храм',{'gold':-25,'unrest':-5,'legitimacy':3}),('Поддержать дворян',{'loyalty':6,'unrest':4})),
+('claim','Претензия на престол','Архивариус нашёл древнюю грамоту с правами вашей семьи.','coronation','always',('Опубликовать грамоту',{'gold':-30,'claim':1,'legitimacy':4}),('Сохранить тайну',{'legitimacy':2})),
+('drought','Засуха','Реки обмелели, а амбары быстро пустеют.','rich_harvest','summer',('Купить воду и зерно',{'gold':-35,'food':45}),('Перераспределить запасы',{'food':-30,'unrest':4})),
+('tournament','Рыцарский турнир','Дворяне предлагают устроить состязание в вашей столице.','diplomatic_feast','rich',('Провести турнир',{'gold':-60,'loyalty':12,'legitimacy':6}),('Вложить средства в дороги',{'gold':-30,'development':2})),
+('mine_find','Новая рудная жила','Рудокопы нашли богатую жилу под старой шахтой.','rich_harvest','mine',('Расширить выработку',{'gold':-25,'iron':55,'stone':20}),('Продать право добычи',{'gold':50,'loyalty':-3})),
+('winter','Суровая зима','Холод затрудняет снабжение гарнизонов и деревень.','epidemic','winter',('Раздать дрова',{'wood':-35,'unrest':-4}),('Ужесточить экономию',{'food':-40,'morale':-6})),
+('refugees','Беженцы','Семьи из разорённых земель просят защиты.','peasant_revolt','war',('Предоставить землю',{'food':-50,'population':240,'manpower':30}),('Закрыть границу',{'stability':2,'legitimacy':-3})),
+('corruption','Казнокрадство','Чиновник присвоил часть налоговых сборов.','betrayal','always',('Вернуть украденное',{'gold':35,'loyalty':-5}),('Простить за службу',{'gold':-15,'loyalty':8})),
+('guild','Просьба гильдии','Ремесленники хотят открыть новую мастерскую.','diplomatic_feast','market',('Выдать хартию',{'gold':-35,'development':3}),('Обложить сбором',{'gold':35,'unrest':3})),
+('pilgrims','Паломники','Толпы паломников проходят через ваши земли.','coronation','temple',('Предоставить приют',{'food':-30,'legitimacy':5,'relation':3}),('Собирать пошлину',{'gold':25,'legitimacy':-2})),
+('flood','Наводнение','Весенний паводок затопил поля и смыл часть дороги.','rich_harvest','spring',('Восстановить дамбу',{'gold':-25,'stone':-15,'unrest':-3}),('Потерпеть до лета',{'food':-45,'population':-60})),
+('spy','Чужой лазутчик','Стража задержала человека с шифрованными письмами.','betrayal','neighbor',('Обменять на сведения',{'gold':15,'relation':-6,'legitimacy':2}),('Отпустить с предупреждением',{'relation':8})),
+('fair','Большая ярмарка','Купцы предлагают провести ежегодную ярмарку.','diplomatic_feast','peace',('Покровительствовать ярмарке',{'gold':40,'development':1}),('Освободить крестьян от сборов',{'gold':10,'unrest':-6})),
+('border','Пограничный спор','Две деревни спорят о пастбищах у границы.','betrayal','neighbor',('Разделить угодья',{'relation':7,'loyalty':-2}),('Отстоять притязание',{'relation':-9,'claim':1})),
+('oath','Клятва верности','Дворяне готовы вновь принести присягу вашей династии.','coronation','stable',('Принять присягу',{'loyalty':6,'legitimacy':3}),('Снизить повинности',{'gold':-20,'loyalty':12}))]
+put('events',[{'id':i,'title':t,'description':d,'illustration':a,'condition':c,'weight':1,'choices':[{'label':x[0],'effects':x[1]},{'label':y[0],'effects':y[1]}]} for i,t,d,a,c,x,y in ev])
+print('Wrote balance, 11 buildings, 7 units and',len(ev),'contextual events.')

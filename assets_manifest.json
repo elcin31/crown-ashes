@@ -1,0 +1,1807 @@
+{
+  "version": 1,
+  "license": "Original project artwork; CC0-1.0",
+  "seed": 1183,
+  "resources": [
+    {
+      "id": "grass_plain",
+      "path": "assets/terrain/grass_plain.png",
+      "purpose": "grass plain",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "grass_lush",
+      "path": "assets/terrain/grass_lush.png",
+      "purpose": "grass lush",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "dry_grass",
+      "path": "assets/terrain/dry_grass.png",
+      "purpose": "dry grass",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "soil",
+      "path": "assets/terrain/soil.png",
+      "purpose": "soil",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "farmland",
+      "path": "assets/terrain/farmland.png",
+      "purpose": "farmland",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "forest_floor",
+      "path": "assets/terrain/forest_floor.png",
+      "purpose": "forest floor",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "pine_forest_floor",
+      "path": "assets/terrain/pine_forest_floor.png",
+      "purpose": "pine forest floor",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "deciduous_forest_floor",
+      "path": "assets/terrain/deciduous_forest_floor.png",
+      "purpose": "deciduous forest floor",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "grassy_hills",
+      "path": "assets/terrain/grassy_hills.png",
+      "purpose": "grassy hills",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "rocky_hills",
+      "path": "assets/terrain/rocky_hills.png",
+      "purpose": "rocky hills",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "mountain_base",
+      "path": "assets/terrain/mountain_base.png",
+      "purpose": "mountain base",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "snow_mountains",
+      "path": "assets/terrain/snow_mountains.png",
+      "purpose": "snow mountains",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "river_straight",
+      "path": "assets/terrain/river_straight.png",
+      "purpose": "river straight",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "river_bend",
+      "path": "assets/terrain/river_bend.png",
+      "purpose": "river bend",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "river_junction",
+      "path": "assets/terrain/river_junction.png",
+      "purpose": "river junction",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "coastline_straight",
+      "path": "assets/terrain/coastline_straight.png",
+      "purpose": "coastline straight",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "coastline_corner",
+      "path": "assets/terrain/coastline_corner.png",
+      "purpose": "coastline corner",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "shallow_water",
+      "path": "assets/terrain/shallow_water.png",
+      "purpose": "shallow water",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "deep_water",
+      "path": "assets/terrain/deep_water.png",
+      "purpose": "deep water",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "marsh",
+      "path": "assets/terrain/marsh.png",
+      "purpose": "marsh",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "dirt_road",
+      "path": "assets/terrain/dirt_road.png",
+      "purpose": "dirt road",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "stone_road",
+      "path": "assets/terrain/stone_road.png",
+      "purpose": "stone road",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain"
+    },
+    {
+      "id": "wooden_fort",
+      "path": "assets/buildings/wooden_fort.png",
+      "purpose": "wooden fort",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "stone_keep",
+      "path": "assets/buildings/stone_keep.png",
+      "purpose": "stone keep",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "small_castle",
+      "path": "assets/buildings/small_castle.png",
+      "purpose": "small castle",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "grand_castle",
+      "path": "assets/buildings/grand_castle.png",
+      "purpose": "grand castle",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "citadel",
+      "path": "assets/buildings/citadel.png",
+      "purpose": "citadel",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "watchtower",
+      "path": "assets/buildings/watchtower.png",
+      "purpose": "watchtower",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "palisade",
+      "path": "assets/buildings/palisade.png",
+      "purpose": "palisade",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "peasant_hut",
+      "path": "assets/buildings/peasant_hut.png",
+      "purpose": "peasant hut",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "house",
+      "path": "assets/buildings/house.png",
+      "purpose": "house",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "townhouse",
+      "path": "assets/buildings/townhouse.png",
+      "purpose": "townhouse",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "manor",
+      "path": "assets/buildings/manor.png",
+      "purpose": "manor",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "royal_palace",
+      "path": "assets/buildings/royal_palace.png",
+      "purpose": "royal palace",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "farm",
+      "path": "assets/buildings/farm.png",
+      "purpose": "farm",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "windmill",
+      "path": "assets/buildings/windmill.png",
+      "purpose": "windmill",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "granary",
+      "path": "assets/buildings/granary.png",
+      "purpose": "granary",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "sawmill",
+      "path": "assets/buildings/sawmill.png",
+      "purpose": "sawmill",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "quarry",
+      "path": "assets/buildings/quarry.png",
+      "purpose": "quarry",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "iron_mine",
+      "path": "assets/buildings/iron_mine.png",
+      "purpose": "iron mine",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "smithy",
+      "path": "assets/buildings/smithy.png",
+      "purpose": "smithy",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "market",
+      "path": "assets/buildings/market.png",
+      "purpose": "market",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "tavern",
+      "path": "assets/buildings/tavern.png",
+      "purpose": "tavern",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "barracks",
+      "path": "assets/buildings/barracks.png",
+      "purpose": "barracks",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "temple",
+      "path": "assets/buildings/temple.png",
+      "purpose": "temple",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "port",
+      "path": "assets/buildings/port.png",
+      "purpose": "port",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings"
+    },
+    {
+      "id": "oak",
+      "path": "assets/decorations/oak.png",
+      "purpose": "oak",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "pine",
+      "path": "assets/decorations/pine.png",
+      "purpose": "pine",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "dead_tree",
+      "path": "assets/decorations/dead_tree.png",
+      "purpose": "dead tree",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "bush",
+      "path": "assets/decorations/bush.png",
+      "purpose": "bush",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "small_boulder",
+      "path": "assets/decorations/small_boulder.png",
+      "purpose": "small boulder",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "large_rock",
+      "path": "assets/decorations/large_rock.png",
+      "purpose": "large rock",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "wheat_field",
+      "path": "assets/decorations/wheat_field.png",
+      "purpose": "wheat field",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "haystack",
+      "path": "assets/decorations/haystack.png",
+      "purpose": "haystack",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "fence",
+      "path": "assets/decorations/fence.png",
+      "purpose": "fence",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "stone_wall",
+      "path": "assets/decorations/stone_wall.png",
+      "purpose": "stone wall",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "wood_bridge",
+      "path": "assets/decorations/wood_bridge.png",
+      "purpose": "wood bridge",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "stone_bridge",
+      "path": "assets/decorations/stone_bridge.png",
+      "purpose": "stone bridge",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "well",
+      "path": "assets/decorations/well.png",
+      "purpose": "well",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "cart",
+      "path": "assets/decorations/cart.png",
+      "purpose": "cart",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "campfire",
+      "path": "assets/decorations/campfire.png",
+      "purpose": "campfire",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "signpost",
+      "path": "assets/decorations/signpost.png",
+      "purpose": "signpost",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "ruins",
+      "path": "assets/decorations/ruins.png",
+      "purpose": "ruins",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "torch",
+      "path": "assets/decorations/torch.png",
+      "purpose": "torch",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations"
+    },
+    {
+      "id": "king_young",
+      "path": "assets/portraits/king_young.png",
+      "purpose": "king young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "king_mature",
+      "path": "assets/portraits/king_mature.png",
+      "purpose": "king mature",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "king_old",
+      "path": "assets/portraits/king_old.png",
+      "purpose": "king old",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "queen_young",
+      "path": "assets/portraits/queen_young.png",
+      "purpose": "queen young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "queen_mature",
+      "path": "assets/portraits/queen_mature.png",
+      "purpose": "queen mature",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "queen_old",
+      "path": "assets/portraits/queen_old.png",
+      "purpose": "queen old",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "noble_young",
+      "path": "assets/portraits/noble_young.png",
+      "purpose": "noble young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "noble_mature",
+      "path": "assets/portraits/noble_mature.png",
+      "purpose": "noble mature",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "noble_old",
+      "path": "assets/portraits/noble_old.png",
+      "purpose": "noble old",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "noblewoman_young",
+      "path": "assets/portraits/noblewoman_young.png",
+      "purpose": "noblewoman young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "noblewoman_mature",
+      "path": "assets/portraits/noblewoman_mature.png",
+      "purpose": "noblewoman mature",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "noblewoman_old",
+      "path": "assets/portraits/noblewoman_old.png",
+      "purpose": "noblewoman old",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "priest_male",
+      "path": "assets/portraits/priest_male.png",
+      "purpose": "priest male",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "priest_female",
+      "path": "assets/portraits/priest_female.png",
+      "purpose": "priest female",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "commander_young",
+      "path": "assets/portraits/commander_young.png",
+      "purpose": "commander young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "commander_veteran",
+      "path": "assets/portraits/commander_veteran.png",
+      "purpose": "commander veteran",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "steward",
+      "path": "assets/portraits/steward.png",
+      "purpose": "steward",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "spymaster",
+      "path": "assets/portraits/spymaster.png",
+      "purpose": "spymaster",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits"
+    },
+    {
+      "id": "peasant_male",
+      "path": "assets/characters/peasant_male.png",
+      "purpose": "peasant male",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "peasant_female",
+      "path": "assets/characters/peasant_female.png",
+      "purpose": "peasant female",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "noble_male",
+      "path": "assets/characters/noble_male.png",
+      "purpose": "noble male",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "noble_female",
+      "path": "assets/characters/noble_female.png",
+      "purpose": "noble female",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "courier",
+      "path": "assets/characters/courier.png",
+      "purpose": "courier",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "merchant",
+      "path": "assets/characters/merchant.png",
+      "purpose": "merchant",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "priest",
+      "path": "assets/characters/priest.png",
+      "purpose": "priest",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "scout",
+      "path": "assets/characters/scout.png",
+      "purpose": "scout",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "militia",
+      "path": "assets/characters/militia.png",
+      "purpose": "militia",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "infantry",
+      "path": "assets/characters/infantry.png",
+      "purpose": "infantry",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "spearman",
+      "path": "assets/characters/spearman.png",
+      "purpose": "spearman",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "archer",
+      "path": "assets/characters/archer.png",
+      "purpose": "archer",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "cavalry",
+      "path": "assets/characters/cavalry.png",
+      "purpose": "cavalry",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "crossbowman",
+      "path": "assets/characters/crossbowman.png",
+      "purpose": "crossbowman",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "siege_engine",
+      "path": "assets/characters/siege_engine.png",
+      "purpose": "siege engine",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "bandit",
+      "path": "assets/characters/bandit.png",
+      "purpose": "bandit",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      }
+    },
+    {
+      "id": "aurelian",
+      "path": "assets/heraldry/aurelian.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "veyrmark",
+      "path": "assets/heraldry/veyrmark.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "thornsreach",
+      "path": "assets/heraldry/thornsreach.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "greyshore",
+      "path": "assets/heraldry/greyshore.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "harrowfen",
+      "path": "assets/heraldry/harrowfen.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "duncrest",
+      "path": "assets/heraldry/duncrest.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "ashlands",
+      "path": "assets/heraldry/ashlands.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "sunmarch",
+      "path": "assets/heraldry/sunmarch.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "velden",
+      "path": "assets/heraldry/velden.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "blackridge",
+      "path": "assets/heraldry/blackridge.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "frostholm",
+      "path": "assets/heraldry/frostholm.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "marrow_coast",
+      "path": "assets/heraldry/marrow_coast.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "ui_economy",
+      "path": "assets/heraldry/ui_economy.png",
+      "purpose": "Навигация: economy",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "ui_diplomacy",
+      "path": "assets/heraldry/ui_diplomacy.png",
+      "purpose": "Навигация: diplomacy",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "ui_military",
+      "path": "assets/heraldry/ui_military.png",
+      "purpose": "Навигация: military",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "ui_dynasty",
+      "path": "assets/heraldry/ui_dynasty.png",
+      "purpose": "Навигация: dynasty",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "ui_intrigue",
+      "path": "assets/heraldry/ui_intrigue.png",
+      "purpose": "Навигация: intrigue",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "ui_laws",
+      "path": "assets/heraldry/ui_laws.png",
+      "purpose": "Навигация: laws",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry"
+    },
+    {
+      "id": "trade_wagon",
+      "path": "assets/effects/trade_wagon.png",
+      "purpose": "trade wagon",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects"
+    },
+    {
+      "id": "trade_ship",
+      "path": "assets/effects/trade_ship.png",
+      "purpose": "trade ship",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects"
+    },
+    {
+      "id": "warship",
+      "path": "assets/effects/warship.png",
+      "purpose": "warship",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects"
+    },
+    {
+      "id": "siege_tower",
+      "path": "assets/effects/siege_tower.png",
+      "purpose": "siege tower",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects"
+    },
+    {
+      "id": "battering_ram",
+      "path": "assets/effects/battering_ram.png",
+      "purpose": "battering ram",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects"
+    },
+    {
+      "id": "arrow",
+      "path": "assets/effects/arrow.png",
+      "purpose": "arrow",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects"
+    },
+    {
+      "id": "stone_projectile",
+      "path": "assets/effects/stone_projectile.png",
+      "purpose": "stone projectile",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects"
+    },
+    {
+      "id": "sword_impact",
+      "path": "assets/effects/sword_impact.png",
+      "purpose": "sword impact",
+      "size": [
+        256,
+        64
+      ],
+      "type": "effects",
+      "animation": {
+        "frame_width": 64,
+        "frame_height": 64,
+        "columns": 4,
+        "rows": 1,
+        "fps": 8,
+        "frames": 4
+      }
+    },
+    {
+      "id": "fire",
+      "path": "assets/effects/fire.png",
+      "purpose": "fire",
+      "size": [
+        256,
+        64
+      ],
+      "type": "effects",
+      "animation": {
+        "frame_width": 64,
+        "frame_height": 64,
+        "columns": 4,
+        "rows": 1,
+        "fps": 8,
+        "frames": 4
+      }
+    },
+    {
+      "id": "dust_smoke",
+      "path": "assets/effects/dust_smoke.png",
+      "purpose": "dust smoke",
+      "size": [
+        256,
+        64
+      ],
+      "type": "effects",
+      "animation": {
+        "frame_width": 64,
+        "frame_height": 64,
+        "columns": 4,
+        "rows": 1,
+        "fps": 8,
+        "frames": 4
+      }
+    },
+    {
+      "id": "coronation",
+      "path": "assets/events/coronation.png",
+      "purpose": "coronation",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    },
+    {
+      "id": "royal_wedding",
+      "path": "assets/events/royal_wedding.png",
+      "purpose": "royal wedding",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    },
+    {
+      "id": "ruler_death",
+      "path": "assets/events/ruler_death.png",
+      "purpose": "ruler death",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    },
+    {
+      "id": "rich_harvest",
+      "path": "assets/events/rich_harvest.png",
+      "purpose": "rich harvest",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    },
+    {
+      "id": "epidemic",
+      "path": "assets/events/epidemic.png",
+      "purpose": "epidemic",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    },
+    {
+      "id": "peasant_revolt",
+      "path": "assets/events/peasant_revolt.png",
+      "purpose": "peasant revolt",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    },
+    {
+      "id": "castle_siege",
+      "path": "assets/events/castle_siege.png",
+      "purpose": "castle siege",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    },
+    {
+      "id": "diplomatic_feast",
+      "path": "assets/events/diplomatic_feast.png",
+      "purpose": "diplomatic feast",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    },
+    {
+      "id": "betrayal",
+      "path": "assets/events/betrayal.png",
+      "purpose": "betrayal",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    },
+    {
+      "id": "military_victory",
+      "path": "assets/events/military_victory.png",
+      "purpose": "military victory",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events"
+    }
+  ]
+}

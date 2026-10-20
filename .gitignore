@@ -1,0 +1,8 @@
+.godot/
+*.tmp
+*.log
+*.keystore
+*.jks
+exports/*
+!exports/.gitkeep
+__pycache__/
