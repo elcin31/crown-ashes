@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "roads": 73,
+  "bridges": 11,
+  "scenery_count": 2266,
+  "cache_size": [
+    3072,
+    1792
+  ],
+  "topology_changed": false
+}

@@ -11,6 +11,14 @@ var selected_province:int=-1
 var selected_army:int=-1
 var destination_mode:bool=false
 var textures={}
+var texture_paths={}
+var texture_metadata={}
+var movement_fraction:float=0.0
+var simulation_running:bool=false
+var army_time:float=0.0
+var animation_delta:float=0.0
+var last_cull_center=Vector2.ZERO
+var last_cull_zoom:float=0.0
 var polygons:Array=[]
 var bounds:Array=[]
 var font:Font
@@ -24,7 +32,11 @@ func _ready():
 	texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	font=load("res://assets/fonts/DejaVuSans.ttf")
 	var manifest=GameState.read_json("res://assets_manifest.json")
-	for resource in manifest.resources:textures[resource.id]=load("res://"+resource.path)
+	for resource in manifest.resources:
+		texture_paths[resource.id]="res://"+resource.path
+		texture_metadata[resource.id]=resource
+		# Big event paintings and portraits are loaded when their panel is opened.
+		if resource.type in ["buildings","decorations","characters","heraldry","military","ui"]:texture_for(resource.id)
 	static_sprite=Sprite2D.new();static_sprite.texture=load("res://data/terrain_cache.png");static_sprite.centered=false;static_sprite.z_index=-1;add_child(static_sprite)
 	camera=Camera2D.new();camera.position=target_position;camera.zoom=Vector2.ONE*target_zoom;camera.position_smoothing_enabled=false;add_child(camera)
 	actors=Node2D.new();actors.set_script(load("res://scripts/world/map_actors.gd"));actors.map=self;add_child(actors)
@@ -45,8 +57,9 @@ func focus_capital():
 	var center=s.data.provinces[int(s.data.realms[int(s.data.player)].capital)].center
 	target_position=Vector2(center[0],center[1]);target_zoom=0.9
 func _process(delta):
-	if s==null:return
+	if s==null or not visible:return
 	visual_time+=delta
+	if simulation_running:army_time+=delta
 	var fraction=1.0-exp(-delta*14)
 	camera.position=camera.position.lerp(target_position,fraction);camera.zoom=camera.zoom.lerp(Vector2.ONE*target_zoom,fraction)
 	var margin=get_viewport_rect().size/(target_zoom*2)
@@ -54,7 +67,11 @@ func _process(delta):
 	target_position.y=clampf(target_position.y,margin.y-120,1792-margin.y+120)
 	var next_lod=1 if target_zoom<0.65 else 0
 	if lod!=next_lod:lod=next_lod;queue_redraw()
-	actors.queue_redraw()
+	if camera.position.distance_to(last_cull_center)>80 or absf(camera.zoom.x-last_cull_zoom)>.07:
+		last_cull_center=camera.position;last_cull_zoom=camera.zoom.x;queue_redraw()
+	animation_delta+=delta
+	if animation_delta>=1.0/30:
+		animation_delta=0;actors.queue_redraw()
 func pick(screen:Vector2):
 	if s==null:return
 	var world=screen_to_world(screen)
@@ -69,17 +86,17 @@ func pick(screen:Vector2):
 			selected_province=id;province_selected.emit(id);queue_redraw();return
 func screen_to_world(point:Vector2)->Vector2:return get_canvas_transform().affine_inverse()*point
 func army_position(a:Dictionary)->Vector2:
-	var p=s.data.provinces[int(a.province)].center;var pos=Vector2(p[0],p[1])+Vector2(30,-5)
+	var p=s.data.provinces[int(a.province)].center;var pos=Vector2(p[0],p[1])+Vector2(72,-18)
 	if not a.route.is_empty() and int(a.travel_total)>0:
-		var dest=s.data.provinces[int(a.route[0])].center;var t=1.0-float(a.travel_left)/float(a.travel_total)
-		pos=pos.lerp(Vector2(dest[0],dest[1])+Vector2(30,-5),t)
+		var dest=s.data.provinces[int(a.route[0])].center;var t=clampf(1.0-(float(a.travel_left)-movement_fraction)/float(a.travel_total),0,1)
+		pos=pos.lerp(Vector2(dest[0],dest[1])+Vector2(72,-18),t)
 	return pos
 func realm_color(id:int,alpha:float=1.0)->Color:
 	var c=Color("#"+s.data.realms[id].color);c.a=alpha;return c
 func overlay_color(p:Dictionary)->Color:
 	var id=int(p.owner)
 	match mode:
-		1:return realm_color(id,0.45)
+		1:return realm_color(id,0.34)
 		2:
 			if id==int(s.data.player):return Color(0.85,0.7,0.32,0.5)
 			if s.at_war(int(s.data.player),id):return Color(0.72,0.15,0.15,0.55)
@@ -92,38 +109,60 @@ func overlay_color(p:Dictionary)->Color:
 	return Color(0,0,0,0)
 func _draw():
 	if s==null or polygons.is_empty():return
+	var view=visible_world_rect().grow(180)
 	for id in range(polygons.size()):
+		if not bounds[id].intersects(view):continue
 		var p=s.data.provinces[id];var points=polygons[id];var overlay=overlay_color(p)
 		if overlay.a>0:draw_colored_polygon(points,overlay)
-		var loop=points.duplicate();loop.append(points[0]);draw_polyline(loop,Color(0.19,0.23,0.17,0.55),1.6,false)
+		var loop=points.duplicate();loop.append(points[0]);draw_polyline(loop,Color(0.16,0.22,0.2,0.30),0.9,false)
 		if int(p.occupation)>=0:
 			draw_colored_polygon(points,realm_color(int(p.occupation),0.22))
 		if id==selected_province:
-			draw_colored_polygon(points,Color(0.95,0.81,0.4,0.13));draw_polyline(loop,Color("#efd283"),4.0,false)
+			draw_colored_polygon(points,Color(0.95,0.81,0.4,0.10));draw_polyline(loop,Color("#dec58a"),2.2,false)
 	# Sovereign and feudal borders are computed once in world data.
 	# Shared edges cached by the controller, avoiding file reads during rendering.
 	for e in input_controller.edges:
 		var a=s.data.provinces[int(e.a)];var b=s.data.provinces[int(e.b)]
 		if int(a.owner)!=int(b.owner):
-			var p=e.points;draw_line(Vector2(p[0][0],p[0][1]),Vector2(p[1][0],p[1][1]),Color(0.2,0.19,0.17,0.9),4.0,false);draw_line(Vector2(p[0][0],p[0][1]),Vector2(p[1][0],p[1][1]),realm_color(int(a.owner),0.85),1.5,false)
+			var p=e.points;draw_line(Vector2(p[0][0],p[0][1]),Vector2(p[1][0],p[1][1]),Color(0.12,0.18,0.17,0.55),2.4,false);draw_line(Vector2(p[0][0],p[0][1]),Vector2(p[1][0],p[1][1]),realm_color(int(a.owner),0.65),1.1,false)
 	for p in s.data.provinces:
-		var c=Vector2(p.center[0],p.center[1]);var r=s.data.realms[int(p.owner)]
-		var capital=int(p.id)==int(r.capital);var key="grand_castle" if capital and int(r.title)>=2 else "small_castle" if int(p.fort)>0 else "townhouse"
-		if int(p.buildings.get("fort",0))>=2:key="citadel"
-		var size=Vector2(78,78) if capital else Vector2(62,62)
-		draw_texture_rect(textures[key],Rect2(c-size*Vector2(0.5,0.8),size),false)
+		var c=Vector2(p.center[0],p.center[1])
+		if not view.has_point(c):continue
+		var realm=s.data.realms[int(p.owner)]
+		var capital=int(p.id)==int(realm.capital);var key=VisualLibrary.settlement(p,realm)
+		var extent=136.0 if capital and int(realm.title)>=2 else 112.0 if capital else 90.0 if int(p.population)>=7600 else 76.0
+		var dimensions=Vector2.ONE*extent
+		draw_texture_rect(texture_for(key),Rect2(c-dimensions*Vector2(0.5,0.88),dimensions),false)
+		# Existing economic upgrades get richer visual variants without new rules.
+		if lod==0:
+			var shown=0
+			for kind in ["barracks","market","temple","port","farm"]:
+				var level=int(p.buildings.get(kind,0))
+				if level<2:continue
+				var visual=VisualLibrary.building(kind,level,p)
+				draw_texture_rect(texture_for(visual),Rect2(c+Vector2(-65+shown*48,8),Vector2(52,52)),false)
+				shown+=1
+				if shown>=2:break
 		if capital or lod==0:
-			var shield=textures[r.heraldry];draw_texture_rect(shield,Rect2(c+Vector2(-10,-size.y-2),Vector2(24,28)),false)
+			draw_texture_rect(texture_for(realm.heraldry),Rect2(c+Vector2(-12,-extent-12),Vector2(26,31)),false)
 		if lod==0 or capital:
-			var text=p.name;var fs=16 if capital else 14;var w=font.get_string_size(text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs).x
-			var at=c+Vector2(-w/2,30)
-			draw_string_outline(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs,4,Color("#17282b"));draw_string(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs,Color("#f0e2b7") if capital else Color("#d8d2b2"))
-		if not p.construction.is_empty():draw_rect(Rect2(c+Vector2(-22,36),Vector2(44,5)),Color("#253639"));draw_rect(Rect2(c+Vector2(-22,36),Vector2(44*(1.0-float(p.construction.remaining)/float(p.construction.total)),5)),Color("#dab668"))
-		if not p.siege.is_empty():draw_arc(c,42,0,TAU*float(p.siege.progress)/100,28,Color("#d99c67"),4,false)
+			var text=p.name;var fs=18 if capital else 15;var width=font.get_string_size(text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs).x
+			var at=c+Vector2(-width/2,43)
+			draw_string_outline(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs,3,Color("#15272b"));draw_string(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs,Color("#efdfb3") if capital else Color("#d1cfb0"))
+		if not p.construction.is_empty():
+			draw_rect(Rect2(c+Vector2(-23,48),Vector2(46,4)),Color("#17252c"));draw_rect(Rect2(c+Vector2(-23,48),Vector2(46*(1.0-float(p.construction.remaining)/float(p.construction.total)),4)),Color("#c5a363"))
+		if not p.siege.is_empty():draw_arc(c,54,0,TAU*float(p.siege.progress)/100,32,Color("#c58b78"),2.5,false)
 	if selected_army>=0:
 		var a=s.army_by_id(selected_army)
 		if not a.is_empty():
-			var pos=army_position(a);draw_arc(pos,24,0,TAU,24,Color("#e4cf8c"),2,false)
+			var pos=army_position(a)
 			var previous=pos
 			for pid in a.route:
-				var center=s.data.provinces[int(pid)].center;var next=Vector2(center[0],center[1])+Vector2(30,-5);draw_dashed_line(previous,next,Color("#e9ce86"),2,8);previous=next
+				var center=s.data.provinces[int(pid)].center;var next=Vector2(center[0],center[1])+Vector2(72,-18);draw_dashed_line(previous,next,Color("#e9ce86"),2,8);previous=next
+
+func texture_for(id:String)->Texture2D:
+	if not textures.has(id) and texture_paths.has(id):textures[id]=load(texture_paths[id])
+	return textures.get(id,null)
+func visible_world_rect()->Rect2:
+	var extent=get_viewport_rect().size/maxf(.1,camera.zoom.x)
+	return Rect2(camera.position-extent/2,extent)

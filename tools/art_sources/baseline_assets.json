@@ -1,0 +1,1943 @@
+{
+  "version": 1,
+  "license": "Original project artwork; CC0-1.0",
+  "seed": 1183,
+  "resources": [
+    {
+      "id": "grass_plain",
+      "path": "assets/terrain/grass_plain.png",
+      "purpose": "grass plain",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "0d2e6f0190d177fe2f2794c64cc71574d20d7d4848b3d0302c925c0a54fb5b6d"
+    },
+    {
+      "id": "grass_lush",
+      "path": "assets/terrain/grass_lush.png",
+      "purpose": "grass lush",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "867c871227808b43ea72b79452bb89d1c9c7ef1ebc55a3cb71a58380e943f0ee"
+    },
+    {
+      "id": "dry_grass",
+      "path": "assets/terrain/dry_grass.png",
+      "purpose": "dry grass",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "8557fac48b3b832467ca24661a950e89996515fc98040060da0df144ff427d65"
+    },
+    {
+      "id": "soil",
+      "path": "assets/terrain/soil.png",
+      "purpose": "soil",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "b6c227c0795871c88b32b862a77f9d977b7f87bc4304d2d6e3a59c553497651b"
+    },
+    {
+      "id": "farmland",
+      "path": "assets/terrain/farmland.png",
+      "purpose": "farmland",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "bedd212ae6a47e73ead18f184552e4b6f0bca2c743a4f3df67fb43b4bb9ce5c9"
+    },
+    {
+      "id": "forest_floor",
+      "path": "assets/terrain/forest_floor.png",
+      "purpose": "forest floor",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "9d6eda782b703d705aed8557ffd8925f7d793b25c8504689c24001cb7702bc3f"
+    },
+    {
+      "id": "pine_forest_floor",
+      "path": "assets/terrain/pine_forest_floor.png",
+      "purpose": "pine forest floor",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "75f50d3e1992a557fff52a6fcae26c6e3bbc1b29e7a1847d393d7f2fadee4a8e"
+    },
+    {
+      "id": "deciduous_forest_floor",
+      "path": "assets/terrain/deciduous_forest_floor.png",
+      "purpose": "deciduous forest floor",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "46a2b6cbf42c6d179b46c9b2412ee76e3c6242fe000e6dca61555eb9c23aedb1"
+    },
+    {
+      "id": "grassy_hills",
+      "path": "assets/terrain/grassy_hills.png",
+      "purpose": "grassy hills",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "929742260599beab2040fb451a3bc2365f57ae2162eb45d775eb4c291d96e293"
+    },
+    {
+      "id": "rocky_hills",
+      "path": "assets/terrain/rocky_hills.png",
+      "purpose": "rocky hills",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "648758593b87bd5d6c99f98eaf5a42a0617fd7e90cfe17dc0a2bb8828c66cf26"
+    },
+    {
+      "id": "mountain_base",
+      "path": "assets/terrain/mountain_base.png",
+      "purpose": "mountain base",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "93c6824dd03083e20a4878e59ffef5148575468e8f5efa8020f19c5e6b81ab06"
+    },
+    {
+      "id": "snow_mountains",
+      "path": "assets/terrain/snow_mountains.png",
+      "purpose": "snow mountains",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "2207dcb2221628c5bcd690c687b4e75a3d3dd02b18162a5d286f0d7a9c59a772"
+    },
+    {
+      "id": "river_straight",
+      "path": "assets/terrain/river_straight.png",
+      "purpose": "river straight",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "06fdba60ca3d9ff56655c73cd63da0d1681c71de56fe43162ffb7088bc0b3cd1"
+    },
+    {
+      "id": "river_bend",
+      "path": "assets/terrain/river_bend.png",
+      "purpose": "river bend",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "4c70a4dae1d9b9ab9022e0b48d4d9b17f533c47989d182330d8785681b1a8f13"
+    },
+    {
+      "id": "river_junction",
+      "path": "assets/terrain/river_junction.png",
+      "purpose": "river junction",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "a8be0b772a2384b70fd73a1b7c9bbb0df845efe45a164776c1b4bc1380dc9d29"
+    },
+    {
+      "id": "coastline_straight",
+      "path": "assets/terrain/coastline_straight.png",
+      "purpose": "coastline straight",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "0c3d8b6415a7283747101fb3f1815982d8729933372788d834a329e665289741"
+    },
+    {
+      "id": "coastline_corner",
+      "path": "assets/terrain/coastline_corner.png",
+      "purpose": "coastline corner",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "34b15c062448433b5627cd8f29143d03e2941bc2701819cc5da3f1ae953d1e1f"
+    },
+    {
+      "id": "shallow_water",
+      "path": "assets/terrain/shallow_water.png",
+      "purpose": "shallow water",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "11c264553c5cee7d43da703e10889a19dbf62a09c455815e3b02d75dd548e0eb"
+    },
+    {
+      "id": "deep_water",
+      "path": "assets/terrain/deep_water.png",
+      "purpose": "deep water",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "b7a3612cd0698aedee0879292d55c4acfee44891d5d9080ad570f1c497041241"
+    },
+    {
+      "id": "marsh",
+      "path": "assets/terrain/marsh.png",
+      "purpose": "marsh",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "e76a806be5f50e3704af5bad2b9a117f0e36ca0910a335581eaa275219ef0584"
+    },
+    {
+      "id": "dirt_road",
+      "path": "assets/terrain/dirt_road.png",
+      "purpose": "dirt road",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "ee6ccfdec580e444d183058594a26bb9d17f65c641f07c1346174a2b64f436d4"
+    },
+    {
+      "id": "stone_road",
+      "path": "assets/terrain/stone_road.png",
+      "purpose": "stone road",
+      "size": [
+        64,
+        64
+      ],
+      "type": "terrain",
+      "before_sha256": "965e42a48a25cbd79a11c3d57bf4333000d21ac5e4c36ffefab90de40f76c718"
+    },
+    {
+      "id": "wooden_fort",
+      "path": "assets/buildings/wooden_fort.png",
+      "purpose": "wooden fort",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "071d9533b2840719f44991d3a8864476af952492456ddcddb72293ba30e2f7fb"
+    },
+    {
+      "id": "stone_keep",
+      "path": "assets/buildings/stone_keep.png",
+      "purpose": "stone keep",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "b6e07d95c102ac8553185039a31cc8c45cf34966f3cc79fbb401b8ba0a1ffb14"
+    },
+    {
+      "id": "small_castle",
+      "path": "assets/buildings/small_castle.png",
+      "purpose": "small castle",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "34eaf0b2f218b4a6bf7151f56e2e176fd30a85d0f109e0cd457729232ae36642"
+    },
+    {
+      "id": "grand_castle",
+      "path": "assets/buildings/grand_castle.png",
+      "purpose": "grand castle",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "9facf5a838700a111978012a1721a40ec01f22c4459ff1e3e85f10320a7fada8"
+    },
+    {
+      "id": "citadel",
+      "path": "assets/buildings/citadel.png",
+      "purpose": "citadel",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "e24779067679f76ec3341fe19eaf171518e1eb7c921358b37ce347736431b3b8"
+    },
+    {
+      "id": "watchtower",
+      "path": "assets/buildings/watchtower.png",
+      "purpose": "watchtower",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "b6efa396d314d4f6f3dbc40ba7707b3a7d0b59443ec53f29998540871c3c7d18"
+    },
+    {
+      "id": "palisade",
+      "path": "assets/buildings/palisade.png",
+      "purpose": "palisade",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "08f6f8523a150d5d4da18d2913f2bff332f406655766d568b9b063bdac5294af"
+    },
+    {
+      "id": "peasant_hut",
+      "path": "assets/buildings/peasant_hut.png",
+      "purpose": "peasant hut",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "c79e81aab7dba3b45276a5465f2015b72ab9c6b773e0b52928be40fcf8bc0352"
+    },
+    {
+      "id": "house",
+      "path": "assets/buildings/house.png",
+      "purpose": "house",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "3d485f69f358da7a0937cd86285cf3597d21327f6a64783a22a1e3e838ea1f17"
+    },
+    {
+      "id": "townhouse",
+      "path": "assets/buildings/townhouse.png",
+      "purpose": "townhouse",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "8a93bb2e7481ee6f6070a978e4b03a9c4a610358ce21c52aafe80af6c8bda2a4"
+    },
+    {
+      "id": "manor",
+      "path": "assets/buildings/manor.png",
+      "purpose": "manor",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "a0ebd16d5c47e230f372d0859d7d1a83e71557770e7e8421e708697baaf13521"
+    },
+    {
+      "id": "royal_palace",
+      "path": "assets/buildings/royal_palace.png",
+      "purpose": "royal palace",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "632c38d6c7db0ff210545c1d8c609ee75849e6747e1bd6074d4b710a40cde12d"
+    },
+    {
+      "id": "farm",
+      "path": "assets/buildings/farm.png",
+      "purpose": "farm",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "589292d538bdc8487b4a46832c0e16da8a013389a9b7f0bdea568f9879f14154"
+    },
+    {
+      "id": "windmill",
+      "path": "assets/buildings/windmill.png",
+      "purpose": "windmill",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "8e758c8144e3bc3f88d0d6928a959988a96fc3c26b1249c7d3042fd04a78257c"
+    },
+    {
+      "id": "granary",
+      "path": "assets/buildings/granary.png",
+      "purpose": "granary",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "07cd19509b0a4ff2d6aadf04b6021db909253a0637730ef9ed1c5aa8ce2c2a64"
+    },
+    {
+      "id": "sawmill",
+      "path": "assets/buildings/sawmill.png",
+      "purpose": "sawmill",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "39a22c1a5c27d5c2742911b177888fdba7863456cf49f62fd32a9790290aff3e"
+    },
+    {
+      "id": "quarry",
+      "path": "assets/buildings/quarry.png",
+      "purpose": "quarry",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "b3cc340d1662147470078cad8f5468b070539dd4de03b9cd6f802945b7a1d71f"
+    },
+    {
+      "id": "iron_mine",
+      "path": "assets/buildings/iron_mine.png",
+      "purpose": "iron mine",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "519c3e4035615ae969e6b5fe14b7dcf95b638be4a8fa31b36eb039244a58f4a8"
+    },
+    {
+      "id": "smithy",
+      "path": "assets/buildings/smithy.png",
+      "purpose": "smithy",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "1de66c9cac790655840a408dcd01762b0dff6b1d3376a9e60ebececac8de507c"
+    },
+    {
+      "id": "market",
+      "path": "assets/buildings/market.png",
+      "purpose": "market",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "c1875f630b1378595899a4889a5cbba3fa0d1bf17c100770f68b42a6649e9b47"
+    },
+    {
+      "id": "tavern",
+      "path": "assets/buildings/tavern.png",
+      "purpose": "tavern",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "251b289f18f17be3ff0a6f00a92ed31952ddc7f0bd96a806034f771bf5dce0c1"
+    },
+    {
+      "id": "barracks",
+      "path": "assets/buildings/barracks.png",
+      "purpose": "barracks",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "a97779462bad2c5990763c73d5add3ef89aacfecb07e10ee9d6d40203b77ef2b"
+    },
+    {
+      "id": "temple",
+      "path": "assets/buildings/temple.png",
+      "purpose": "temple",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "2bafe7df1068355a00baba028a7c6ee5736a67174e288961f55191b8b049b706"
+    },
+    {
+      "id": "port",
+      "path": "assets/buildings/port.png",
+      "purpose": "port",
+      "size": [
+        96,
+        96
+      ],
+      "type": "buildings",
+      "before_sha256": "d0a3b95c804d6b1561c891968baff10731dfb23801a8e8b2f1782acb48191c6d"
+    },
+    {
+      "id": "oak",
+      "path": "assets/decorations/oak.png",
+      "purpose": "oak",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "1512bfc7af812ba830b39e6c9775230b4a9b8aa76cc8c5865bf9a8be02425d70"
+    },
+    {
+      "id": "pine",
+      "path": "assets/decorations/pine.png",
+      "purpose": "pine",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "7e4e05de4e53c76858c270cbc8e3557e3d83fa8cdf7a1d314476457c45298237"
+    },
+    {
+      "id": "dead_tree",
+      "path": "assets/decorations/dead_tree.png",
+      "purpose": "dead tree",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "f67d0df16dde57691d56d632882a903ae59450ace5b8f8354502bb70db549cfd"
+    },
+    {
+      "id": "bush",
+      "path": "assets/decorations/bush.png",
+      "purpose": "bush",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "050c40194d58cc0c8cc049c693a3a81275e790dda0ed44b2945ddb583ff2b9dd"
+    },
+    {
+      "id": "small_boulder",
+      "path": "assets/decorations/small_boulder.png",
+      "purpose": "small boulder",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "cf8e9dc57f6e9a8a0bffdbf2e2137e9fd5df8309b406c5e455327b6c3f44628a"
+    },
+    {
+      "id": "large_rock",
+      "path": "assets/decorations/large_rock.png",
+      "purpose": "large rock",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "bfd214423b58c5e05eadc06962c576931fecd5ec45831072acae84fc9725ad9d"
+    },
+    {
+      "id": "wheat_field",
+      "path": "assets/decorations/wheat_field.png",
+      "purpose": "wheat field",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "e02dfaf1f503f58928381e4fc5cf0b0c7a157c4367d7b8960ce257b6a5f163c1"
+    },
+    {
+      "id": "haystack",
+      "path": "assets/decorations/haystack.png",
+      "purpose": "haystack",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "3bfce3c1480d2ecb58d5b389fba0f3568b0e57fa46033011d143ff06c747ccfd"
+    },
+    {
+      "id": "fence",
+      "path": "assets/decorations/fence.png",
+      "purpose": "fence",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "568fd7f8ec6309b67323e961cc365d195291c4822482b1ebdc350e467633d7b5"
+    },
+    {
+      "id": "stone_wall",
+      "path": "assets/decorations/stone_wall.png",
+      "purpose": "stone wall",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "e92ee2b6fd1280c8bc4f8d2c761565175d07d912ba51e9e671c06127d6ac5529"
+    },
+    {
+      "id": "wood_bridge",
+      "path": "assets/decorations/wood_bridge.png",
+      "purpose": "wood bridge",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "932f8033a56b664838dd7591f98ae5e8966f657839b5af66db446791dc24308f"
+    },
+    {
+      "id": "stone_bridge",
+      "path": "assets/decorations/stone_bridge.png",
+      "purpose": "stone bridge",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "107e18a169abf2a59e8a0625c2236db0e7acad086bedc1e24baf2306670ea21b"
+    },
+    {
+      "id": "well",
+      "path": "assets/decorations/well.png",
+      "purpose": "well",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "1bf68c3555dace4fca7f4318097d988ecee2c89178e257c81264f4f6ead58704"
+    },
+    {
+      "id": "cart",
+      "path": "assets/decorations/cart.png",
+      "purpose": "cart",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "498f6d44c4514cecb07b2c8af351847998e7efd178c84189ba1bc4f0b2189483"
+    },
+    {
+      "id": "campfire",
+      "path": "assets/decorations/campfire.png",
+      "purpose": "campfire",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "d76ed40d90da373d2395d051f0fdcf20384c026755fad1a19efb706b2b41e4b0"
+    },
+    {
+      "id": "signpost",
+      "path": "assets/decorations/signpost.png",
+      "purpose": "signpost",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "54199ad61596fc59a7c0e787988ec46f12ef3d52d33d0a12f1216717b92da636"
+    },
+    {
+      "id": "ruins",
+      "path": "assets/decorations/ruins.png",
+      "purpose": "ruins",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "d6e8181974489a98acefbe6e4394ed67a9a48a97cb833ae436071a82323fc875"
+    },
+    {
+      "id": "torch",
+      "path": "assets/decorations/torch.png",
+      "purpose": "torch",
+      "size": [
+        64,
+        80
+      ],
+      "type": "decorations",
+      "before_sha256": "9a03557daf316109393fd5c2612ae321e94e69624b07173af567e6a367a02d9f"
+    },
+    {
+      "id": "king_young",
+      "path": "assets/portraits/king_young.png",
+      "purpose": "king young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "01491f9dfd0894ff7640a0393c66e549e3c3b38da34bbfb68de8a621062337d9"
+    },
+    {
+      "id": "king_mature",
+      "path": "assets/portraits/king_mature.png",
+      "purpose": "king mature",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "e8bee206bc5fb0d095854098a3febaa3c6949ea478dc5696c72a799c90a1ead6"
+    },
+    {
+      "id": "king_old",
+      "path": "assets/portraits/king_old.png",
+      "purpose": "king old",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "738f7d556efea69162e7f90754f7f33fa20a43e34212e8cf0b7c961bcc7d7f47"
+    },
+    {
+      "id": "queen_young",
+      "path": "assets/portraits/queen_young.png",
+      "purpose": "queen young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "7cc84b27556490f7272c8fd4ce50695275b2da4f3802fb0797f55e391967ed30"
+    },
+    {
+      "id": "queen_mature",
+      "path": "assets/portraits/queen_mature.png",
+      "purpose": "queen mature",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "40c7ebdbdd6409c716b6caa4a0ca9caa98c802c3b1ab4792c56542f0abfffe91"
+    },
+    {
+      "id": "queen_old",
+      "path": "assets/portraits/queen_old.png",
+      "purpose": "queen old",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "f20db1e8c9bad749b1388b925fe3d9f2813d986c7188f8a9cbeade0b55dd5fb2"
+    },
+    {
+      "id": "noble_young",
+      "path": "assets/portraits/noble_young.png",
+      "purpose": "noble young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "75128c4ac3c53e667f83b80f2e54fa32a596873aee19b819d859297a03d8a094"
+    },
+    {
+      "id": "noble_mature",
+      "path": "assets/portraits/noble_mature.png",
+      "purpose": "noble mature",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "378542f51f0d431cd476edf9cba9a8e482b74aae893e46ead1bdf4540e4eb683"
+    },
+    {
+      "id": "noble_old",
+      "path": "assets/portraits/noble_old.png",
+      "purpose": "noble old",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "5b994af8697a620373f10fcf55df801c354ff6ef07287e09df0e5e0edfe28537"
+    },
+    {
+      "id": "noblewoman_young",
+      "path": "assets/portraits/noblewoman_young.png",
+      "purpose": "noblewoman young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "cef11df13b91358c1ec6f6ee5649749f7412656e872e6c88506fb3697544f939"
+    },
+    {
+      "id": "noblewoman_mature",
+      "path": "assets/portraits/noblewoman_mature.png",
+      "purpose": "noblewoman mature",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "a284835e1c031627f4197c56057cfa1d327f8916cef686973e4c195e3bc0bec4"
+    },
+    {
+      "id": "noblewoman_old",
+      "path": "assets/portraits/noblewoman_old.png",
+      "purpose": "noblewoman old",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "17d5ffbc5d3d72d23782d731c5e24a92e17f9bd4e0584058130d471faf7c208d"
+    },
+    {
+      "id": "priest_male",
+      "path": "assets/portraits/priest_male.png",
+      "purpose": "priest male",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "d2d323e51dee6c3983c4736117be44dc8d1dacb95d8998ed1abbb62a3c4dffb2"
+    },
+    {
+      "id": "priest_female",
+      "path": "assets/portraits/priest_female.png",
+      "purpose": "priest female",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "ba8ecc99cacd3ddf0c4c6942e0a9e78f5fde969185221aa0f7b3763709a2a17d"
+    },
+    {
+      "id": "commander_young",
+      "path": "assets/portraits/commander_young.png",
+      "purpose": "commander young",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "a136627c076fcb91cd501a47a53379e8b60ce643fba31948c2f51d7c1f572044"
+    },
+    {
+      "id": "commander_veteran",
+      "path": "assets/portraits/commander_veteran.png",
+      "purpose": "commander veteran",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "50ccd75f63f960c021a34ad128701b2b104249cbecb9409bc3f75d357fbeeb62"
+    },
+    {
+      "id": "steward",
+      "path": "assets/portraits/steward.png",
+      "purpose": "steward",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "16c20f9d618ecfd8b34a0c1ae4350564180604163b4bf52ad28e54e4a320c473"
+    },
+    {
+      "id": "spymaster",
+      "path": "assets/portraits/spymaster.png",
+      "purpose": "spymaster",
+      "size": [
+        96,
+        96
+      ],
+      "type": "portraits",
+      "before_sha256": "bb47b60810f23cd35fa13fc0401c06c38732b6c2b44bb2b88a09329a0a70e8fc"
+    },
+    {
+      "id": "peasant_male",
+      "path": "assets/characters/peasant_male.png",
+      "purpose": "peasant male",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "20cb42dc618ecbd4b191fa122c600c3f6b57aea5c2e6aa1800d38fbc3cee7f4e"
+    },
+    {
+      "id": "peasant_female",
+      "path": "assets/characters/peasant_female.png",
+      "purpose": "peasant female",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "58822473e5a679c2ca72f40d55018ed57fc6ece20b67b2fc0654ef503d4357ac"
+    },
+    {
+      "id": "noble_male",
+      "path": "assets/characters/noble_male.png",
+      "purpose": "noble male",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "9fdff8472d0e3e97f9afd520cb202e305217081b5397c34123841d0ba8cc16b8"
+    },
+    {
+      "id": "noble_female",
+      "path": "assets/characters/noble_female.png",
+      "purpose": "noble female",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "b68873a21d0c004eabe20d2ee7814e18380bccad6ab40b9a171acb6f126bbcc4"
+    },
+    {
+      "id": "courier",
+      "path": "assets/characters/courier.png",
+      "purpose": "courier",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "b3316b3ae98fc913336ab9f7dd432552e0b058852b054d3565cd137f1d5f5159"
+    },
+    {
+      "id": "merchant",
+      "path": "assets/characters/merchant.png",
+      "purpose": "merchant",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "41d391e03e4cbb15e887b16cd6864cb92501a10668eafba49b73672bac71c77e"
+    },
+    {
+      "id": "priest",
+      "path": "assets/characters/priest.png",
+      "purpose": "priest",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "78a9ab8502a1b6d3659a172f580e11b75cf3ebf982010dd79aeb5415629d5ad4"
+    },
+    {
+      "id": "scout",
+      "path": "assets/characters/scout.png",
+      "purpose": "scout",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "089818b41c725d568782f34ff1bd367634e6ea1d9bf2d71a41b92fe02e52422c"
+    },
+    {
+      "id": "militia",
+      "path": "assets/characters/militia.png",
+      "purpose": "militia",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "e4e8665ddc8e325377d55f9ce7695671bd690b76f788d6b41568116ea2659027"
+    },
+    {
+      "id": "infantry",
+      "path": "assets/characters/infantry.png",
+      "purpose": "infantry",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "0f219e2490159751f07511270a45c7505c39d1531ecd842dc20ea5fb4a61d300"
+    },
+    {
+      "id": "spearman",
+      "path": "assets/characters/spearman.png",
+      "purpose": "spearman",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "b00bc3dad02e1014e4e6419dc9c7da3041a2db1f4daf69c7659266707435cec7"
+    },
+    {
+      "id": "archer",
+      "path": "assets/characters/archer.png",
+      "purpose": "archer",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "84d28f4a79f11bc169c591068edb0d5891c212c4d1e406a4743c680891063e17"
+    },
+    {
+      "id": "cavalry",
+      "path": "assets/characters/cavalry.png",
+      "purpose": "cavalry",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "f044afe0c6a77e5f1c198872d3a2f8104825a2bd67a097000ce37886fc7792dd"
+    },
+    {
+      "id": "crossbowman",
+      "path": "assets/characters/crossbowman.png",
+      "purpose": "crossbowman",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "8fc688d3275ec6cb1e3bf6544eabf6b7117fff3009421616b6124c660bb39ad2"
+    },
+    {
+      "id": "siege_engine",
+      "path": "assets/characters/siege_engine.png",
+      "purpose": "siege engine",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "047791c5d3b14ad23a3eb05738e8ffb7a38eca888967df205c5ea30a4237a193"
+    },
+    {
+      "id": "bandit",
+      "path": "assets/characters/bandit.png",
+      "purpose": "bandit",
+      "size": [
+        224,
+        160
+      ],
+      "type": "characters",
+      "animation": {
+        "frame_width": 32,
+        "frame_height": 40,
+        "columns": 7,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6
+        ],
+        "fps": 7
+      },
+      "before_sha256": "dc0982f4baeca02bc07cf0de2a8fb46096b1feb90e30cebfe785c67d6d40e7ec"
+    },
+    {
+      "id": "aurelian",
+      "path": "assets/heraldry/aurelian.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "e635807bb3f94361eb58d3080a87a4c58fa1b722e16f747888851c1e5435359c"
+    },
+    {
+      "id": "veyrmark",
+      "path": "assets/heraldry/veyrmark.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "4e236c3da4ccda55c704f6e170492acbb68158a89b60241a1cb74ac7bc6d1159"
+    },
+    {
+      "id": "thornsreach",
+      "path": "assets/heraldry/thornsreach.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "d7cc249e26925758d21c87bfa6e65b329181215b3091c0c39730451a02a22876"
+    },
+    {
+      "id": "greyshore",
+      "path": "assets/heraldry/greyshore.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "06fb3eaa4e3214c7c351d1708e525b17bda50a4cc9e3291028a7f34543dc9a47"
+    },
+    {
+      "id": "harrowfen",
+      "path": "assets/heraldry/harrowfen.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "c8167a58d24316f79ebf251a71634b56b9eafe932c2d85bcc21ddc8c111067b1"
+    },
+    {
+      "id": "duncrest",
+      "path": "assets/heraldry/duncrest.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "a70ac665b1cd9288d4867399543c82dfd84a71f2c1309a3647db28d6652c7e11"
+    },
+    {
+      "id": "ashlands",
+      "path": "assets/heraldry/ashlands.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "8fb1908bf05e76b4f09995d056241a1e95ce05a8c3bc0e17e2d3e1236f524707"
+    },
+    {
+      "id": "sunmarch",
+      "path": "assets/heraldry/sunmarch.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "0156c975f5648eb4657eb68d8bd98a13afdeab7a281c0cf784dc0d7f556cce63"
+    },
+    {
+      "id": "velden",
+      "path": "assets/heraldry/velden.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "fba7b4834a695012f757a07c7d0042051beae3faf9b629f14066369f4a5f74e2"
+    },
+    {
+      "id": "blackridge",
+      "path": "assets/heraldry/blackridge.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "0197898a2cbf568ebc4c0ff75b9ec95ebf8ffc9c8a888c28b82416867cc1b05f"
+    },
+    {
+      "id": "frostholm",
+      "path": "assets/heraldry/frostholm.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "72fa69ce7741961159a3985b9d5b35eaef514ca6c31d10553c21081b0ac1edd4"
+    },
+    {
+      "id": "marrow_coast",
+      "path": "assets/heraldry/marrow_coast.png",
+      "purpose": "Герб государства",
+      "size": [
+        96,
+        112
+      ],
+      "type": "heraldry",
+      "before_sha256": "39f0ca004917cb4eb64fff8576e80c03a91b551dd91b380680999a9db29095d2"
+    },
+    {
+      "id": "ui_economy",
+      "path": "assets/heraldry/ui_economy.png",
+      "purpose": "Навигация: economy",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry",
+      "before_sha256": "38fd5de0a172b3e89fabffff03f4d94cbbd19ef8689351c4725407f4a7a07855"
+    },
+    {
+      "id": "ui_diplomacy",
+      "path": "assets/heraldry/ui_diplomacy.png",
+      "purpose": "Навигация: diplomacy",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry",
+      "before_sha256": "80d289c45be0064e57d3ecd0ad1f28e02819cd96311c379994bc7912baabe027"
+    },
+    {
+      "id": "ui_military",
+      "path": "assets/heraldry/ui_military.png",
+      "purpose": "Навигация: military",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry",
+      "before_sha256": "aebe130ac5615933d47cc733aca5e4a2d8d68f16bfc523cb73c403c3acee944d"
+    },
+    {
+      "id": "ui_dynasty",
+      "path": "assets/heraldry/ui_dynasty.png",
+      "purpose": "Навигация: dynasty",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry",
+      "before_sha256": "0fe91ea3bd87c8e0b277de602e6d25783a020ecad8edcb66d2820d1d12e477c1"
+    },
+    {
+      "id": "ui_intrigue",
+      "path": "assets/heraldry/ui_intrigue.png",
+      "purpose": "Навигация: intrigue",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry",
+      "before_sha256": "a1fb45b44c043dcfc6a20b8112b69c984273c21718099a635c308d63a6e1b70f"
+    },
+    {
+      "id": "ui_laws",
+      "path": "assets/heraldry/ui_laws.png",
+      "purpose": "Навигация: laws",
+      "size": [
+        64,
+        64
+      ],
+      "type": "heraldry",
+      "before_sha256": "6cf0c9315996519bd06b9141aecfd0cc7ab0c67ac199882e9acddaa6ab75d3ed"
+    },
+    {
+      "id": "trade_wagon",
+      "path": "assets/effects/trade_wagon.png",
+      "purpose": "trade wagon",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects",
+      "before_sha256": "8a6b578e16ac032c5a6ac3ca4dceedd896c4688d08e1c409ebd3fe0a2c4b5875"
+    },
+    {
+      "id": "trade_ship",
+      "path": "assets/effects/trade_ship.png",
+      "purpose": "trade ship",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects",
+      "before_sha256": "719cfdc074e50b057ed4235a51b5db845645d0ce1422ee209e8b8e85d4d42a3d"
+    },
+    {
+      "id": "warship",
+      "path": "assets/effects/warship.png",
+      "purpose": "warship",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects",
+      "before_sha256": "97f592c49118109eec6caad60a74034d3ae4e9859321478e39fed69aa783feb7"
+    },
+    {
+      "id": "siege_tower",
+      "path": "assets/effects/siege_tower.png",
+      "purpose": "siege tower",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects",
+      "before_sha256": "9e073cea44ad9a23ff6ac355643a139230826c7de2e814b86af688b37f33ad25"
+    },
+    {
+      "id": "battering_ram",
+      "path": "assets/effects/battering_ram.png",
+      "purpose": "battering ram",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects",
+      "before_sha256": "a1904a79d262b90a6ed58fd116d49ef5c566521077aa85d91b1b113e44f28acc"
+    },
+    {
+      "id": "arrow",
+      "path": "assets/effects/arrow.png",
+      "purpose": "arrow",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects",
+      "before_sha256": "1bff2197f44274a7e1530a7c0b1c028977d360f612745166b2f3465f2cc8538b"
+    },
+    {
+      "id": "stone_projectile",
+      "path": "assets/effects/stone_projectile.png",
+      "purpose": "stone projectile",
+      "size": [
+        64,
+        64
+      ],
+      "type": "effects",
+      "before_sha256": "f214e4232ba56c7923e36238a4616666c9f20f6e09fbba88f39249128560d563"
+    },
+    {
+      "id": "sword_impact",
+      "path": "assets/effects/sword_impact.png",
+      "purpose": "sword impact",
+      "size": [
+        256,
+        64
+      ],
+      "type": "effects",
+      "animation": {
+        "frame_width": 64,
+        "frame_height": 64,
+        "columns": 4,
+        "rows": 1,
+        "fps": 8,
+        "frames": 4
+      },
+      "before_sha256": "dd44c57720ff9ace2eb50bf3d8d6bee059653eadef155e827bf35b211eaad1df"
+    },
+    {
+      "id": "fire",
+      "path": "assets/effects/fire.png",
+      "purpose": "fire",
+      "size": [
+        256,
+        64
+      ],
+      "type": "effects",
+      "animation": {
+        "frame_width": 64,
+        "frame_height": 64,
+        "columns": 4,
+        "rows": 1,
+        "fps": 8,
+        "frames": 4
+      },
+      "before_sha256": "8941b931b115958f577a5ed68095b6b60d74157a885f6ab648a9aae1c1c13b6f"
+    },
+    {
+      "id": "dust_smoke",
+      "path": "assets/effects/dust_smoke.png",
+      "purpose": "dust smoke",
+      "size": [
+        256,
+        64
+      ],
+      "type": "effects",
+      "animation": {
+        "frame_width": 64,
+        "frame_height": 64,
+        "columns": 4,
+        "rows": 1,
+        "fps": 8,
+        "frames": 4
+      },
+      "before_sha256": "2dc0163178822a19ac1f5c7ec854df5eb916e5836d03eaf672973bd4d161f5fe"
+    },
+    {
+      "id": "coronation",
+      "path": "assets/events/coronation.png",
+      "purpose": "coronation",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "fceeab1ebd473a1f3ac7945e43bbc7aac4b5271f12796e2023501284b20dbffc"
+    },
+    {
+      "id": "royal_wedding",
+      "path": "assets/events/royal_wedding.png",
+      "purpose": "royal wedding",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "4d54d45f63fc583b4a112c183e70f40faf6094023155b057020aacb74d0b9a4c"
+    },
+    {
+      "id": "ruler_death",
+      "path": "assets/events/ruler_death.png",
+      "purpose": "ruler death",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "d7912c359c70fe7bbc4a8c81e9a006aae60696efaf8c62e70715cc7092d4b142"
+    },
+    {
+      "id": "rich_harvest",
+      "path": "assets/events/rich_harvest.png",
+      "purpose": "rich harvest",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "ff13a578585b12e6b3e59144f5db8eaae5cee0b39a8c1e87c2eb66f8b4604232"
+    },
+    {
+      "id": "epidemic",
+      "path": "assets/events/epidemic.png",
+      "purpose": "epidemic",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "471f49cea2abf48929c6211794ac010d9eb2e70efead0a2a029cb704c462e053"
+    },
+    {
+      "id": "peasant_revolt",
+      "path": "assets/events/peasant_revolt.png",
+      "purpose": "peasant revolt",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "83ae23f4c7e4dc2e1c769b82977eea2caad8953b3ee33619c36527cd8205557f"
+    },
+    {
+      "id": "castle_siege",
+      "path": "assets/events/castle_siege.png",
+      "purpose": "castle siege",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "be01b58c398d35efe9ad389059d83d69d84aca847cf9db3110fc1a645a19b416"
+    },
+    {
+      "id": "diplomatic_feast",
+      "path": "assets/events/diplomatic_feast.png",
+      "purpose": "diplomatic feast",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "1934b707fe888c7b51af158d43608f0019f98633fd81423d58e5efdb436cac01"
+    },
+    {
+      "id": "betrayal",
+      "path": "assets/events/betrayal.png",
+      "purpose": "betrayal",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "eac9bc8ffcfe415ee0dde76a0f9915519759cc4b3796e8e698821f7dd01771b9"
+    },
+    {
+      "id": "military_victory",
+      "path": "assets/events/military_victory.png",
+      "purpose": "military victory",
+      "size": [
+        320,
+        160
+      ],
+      "type": "events",
+      "before_sha256": "ea9f96203906deeec3ebc03b2aa87be5d24e64e3e22f5678b31c2e98842c819d"
+    }
+  ]
+}

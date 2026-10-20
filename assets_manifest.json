@@ -1,8 +1,1002 @@
 {
-  "version": 1,
-  "license": "Original project artwork; CC0-1.0",
-  "seed": 1183,
+  "version": 2,
+  "art_version": "0.2.0",
+  "license": "Original project artwork, CC0-1.0; fonts separately licensed",
+  "sources": [
+    "tools/art_sources/architecture.png",
+    "tools/art_sources/portraits.png",
+    "tools/art_sources/events.png",
+    "tools/art_sources/decorations.png"
+  ],
   "resources": [
+    {
+      "id": "wooden_fort",
+      "path": "assets/buildings/wooden_fort.png",
+      "purpose": "wooden fort",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "stone_keep",
+      "path": "assets/buildings/stone_keep.png",
+      "purpose": "stone keep",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "small_castle",
+      "path": "assets/buildings/small_castle.png",
+      "purpose": "small castle",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "grand_castle",
+      "path": "assets/buildings/grand_castle.png",
+      "purpose": "grand castle",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "citadel",
+      "path": "assets/buildings/citadel.png",
+      "purpose": "citadel",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "watchtower",
+      "path": "assets/buildings/watchtower.png",
+      "purpose": "watchtower",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "palisade",
+      "path": "assets/buildings/palisade.png",
+      "purpose": "palisade",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "peasant_hut",
+      "path": "assets/buildings/peasant_hut.png",
+      "purpose": "peasant hut",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "house",
+      "path": "assets/buildings/house.png",
+      "purpose": "house",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "townhouse",
+      "path": "assets/buildings/townhouse.png",
+      "purpose": "townhouse",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "manor",
+      "path": "assets/buildings/manor.png",
+      "purpose": "manor",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "royal_palace",
+      "path": "assets/buildings/royal_palace.png",
+      "purpose": "royal palace",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "farm",
+      "path": "assets/buildings/farm.png",
+      "purpose": "farm",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "windmill",
+      "path": "assets/buildings/windmill.png",
+      "purpose": "windmill",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "granary",
+      "path": "assets/buildings/granary.png",
+      "purpose": "granary",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "sawmill",
+      "path": "assets/buildings/sawmill.png",
+      "purpose": "sawmill",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "quarry",
+      "path": "assets/buildings/quarry.png",
+      "purpose": "quarry",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "iron_mine",
+      "path": "assets/buildings/iron_mine.png",
+      "purpose": "iron mine",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "smithy",
+      "path": "assets/buildings/smithy.png",
+      "purpose": "smithy",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "market",
+      "path": "assets/buildings/market.png",
+      "purpose": "market",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "tavern",
+      "path": "assets/buildings/tavern.png",
+      "purpose": "tavern",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "barracks",
+      "path": "assets/buildings/barracks.png",
+      "purpose": "barracks",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "temple",
+      "path": "assets/buildings/temple.png",
+      "purpose": "temple",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "port",
+      "path": "assets/buildings/port.png",
+      "purpose": "port",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "royal_citadel",
+      "path": "assets/buildings/royal_citadel.png",
+      "purpose": "royal citadel",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "grand_stone_castle",
+      "path": "assets/buildings/grand_stone_castle.png",
+      "purpose": "grand stone castle",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "fortified_manor",
+      "path": "assets/buildings/fortified_manor.png",
+      "purpose": "fortified manor",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "noble_estate",
+      "path": "assets/buildings/noble_estate.png",
+      "purpose": "noble estate",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "merchant_guildhall",
+      "path": "assets/buildings/merchant_guildhall.png",
+      "purpose": "merchant guildhall",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "medieval_town_hall",
+      "path": "assets/buildings/medieval_town_hall.png",
+      "purpose": "medieval town hall",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "great_cathedral",
+      "path": "assets/buildings/great_cathedral.png",
+      "purpose": "great cathedral",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "monastery",
+      "path": "assets/buildings/monastery.png",
+      "purpose": "monastery",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "stone_watchtower",
+      "path": "assets/buildings/stone_watchtower.png",
+      "purpose": "stone watchtower",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "wooden_watchtower",
+      "path": "assets/buildings/wooden_watchtower.png",
+      "purpose": "wooden watchtower",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "armory",
+      "path": "assets/buildings/armory.png",
+      "purpose": "armory",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "royal_barracks",
+      "path": "assets/buildings/royal_barracks.png",
+      "purpose": "royal barracks",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "siege_workshop",
+      "path": "assets/buildings/siege_workshop.png",
+      "purpose": "siege workshop",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "horse_stable",
+      "path": "assets/buildings/horse_stable.png",
+      "purpose": "horse stable",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "large_windmill",
+      "path": "assets/buildings/large_windmill.png",
+      "purpose": "large windmill",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "watermill",
+      "path": "assets/buildings/watermill.png",
+      "purpose": "watermill",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "fortified_harbor",
+      "path": "assets/buildings/fortified_harbor.png",
+      "purpose": "fortified harbor",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "medieval_university",
+      "path": "assets/buildings/medieval_university.png",
+      "purpose": "medieval university",
+      "size": [
+        144,
+        144
+      ],
+      "type": "buildings",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+    },
+    {
+      "id": "oak",
+      "path": "assets/decorations/oak.png",
+      "purpose": "oak",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "pine",
+      "path": "assets/decorations/pine.png",
+      "purpose": "pine",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "dead_tree",
+      "path": "assets/decorations/dead_tree.png",
+      "purpose": "dead tree",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "bush",
+      "path": "assets/decorations/bush.png",
+      "purpose": "bush",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "small_boulder",
+      "path": "assets/decorations/small_boulder.png",
+      "purpose": "small boulder",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "large_rock",
+      "path": "assets/decorations/large_rock.png",
+      "purpose": "large rock",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "wheat_field",
+      "path": "assets/decorations/wheat_field.png",
+      "purpose": "wheat field",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "haystack",
+      "path": "assets/decorations/haystack.png",
+      "purpose": "haystack",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "fence",
+      "path": "assets/decorations/fence.png",
+      "purpose": "fence",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "stone_wall",
+      "path": "assets/decorations/stone_wall.png",
+      "purpose": "stone wall",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "wood_bridge",
+      "path": "assets/decorations/wood_bridge.png",
+      "purpose": "wood bridge",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "stone_bridge",
+      "path": "assets/decorations/stone_bridge.png",
+      "purpose": "stone bridge",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "well",
+      "path": "assets/decorations/well.png",
+      "purpose": "well",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "cart",
+      "path": "assets/decorations/cart.png",
+      "purpose": "cart",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "campfire",
+      "path": "assets/decorations/campfire.png",
+      "purpose": "campfire",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "signpost",
+      "path": "assets/decorations/signpost.png",
+      "purpose": "signpost",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "ruins",
+      "path": "assets/decorations/ruins.png",
+      "purpose": "ruins",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "torch",
+      "path": "assets/decorations/torch.png",
+      "purpose": "torch",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "ancient_oak",
+      "path": "assets/decorations/ancient_oak.png",
+      "purpose": "ancient oak",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "dead_forest_tree",
+      "path": "assets/decorations/dead_forest_tree.png",
+      "purpose": "dead forest tree",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "fallen_tree",
+      "path": "assets/decorations/fallen_tree.png",
+      "purpose": "fallen tree",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "large_boulder_cluster",
+      "path": "assets/decorations/large_boulder_cluster.png",
+      "purpose": "large boulder cluster",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "wildflower_patch",
+      "path": "assets/decorations/wildflower_patch.png",
+      "purpose": "wildflower patch",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "apple_orchard",
+      "path": "assets/decorations/apple_orchard.png",
+      "purpose": "apple orchard",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "vineyard",
+      "path": "assets/decorations/vineyard.png",
+      "purpose": "vineyard",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "vegetable_garden",
+      "path": "assets/decorations/vegetable_garden.png",
+      "purpose": "vegetable garden",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "wheat_field_detail",
+      "path": "assets/decorations/wheat_field_detail.png",
+      "purpose": "wheat field detail",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "hay_wagon",
+      "path": "assets/decorations/hay_wagon.png",
+      "purpose": "hay wagon",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "merchant_cart",
+      "path": "assets/decorations/merchant_cart.png",
+      "purpose": "merchant cart",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "wooden_fence_corner",
+      "path": "assets/decorations/wooden_fence_corner.png",
+      "purpose": "wooden fence corner",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "stone_fence",
+      "path": "assets/decorations/stone_fence.png",
+      "purpose": "stone fence",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "abandoned_cottage",
+      "path": "assets/decorations/abandoned_cottage.png",
+      "purpose": "abandoned cottage",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "roadside_shrine",
+      "path": "assets/decorations/roadside_shrine.png",
+      "purpose": "roadside shrine",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
+    {
+      "id": "village_well",
+      "path": "assets/decorations/village_well.png",
+      "purpose": "village well",
+      "size": [
+        80,
+        96
+      ],
+      "type": "decorations",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "biome-constrained terrain cache and settlement surroundings"
+    },
     {
       "id": "grass_plain",
       "path": "assets/terrain/grass_plain.png",
@@ -11,7 +1005,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "grass_lush",
@@ -21,7 +1018,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "dry_grass",
@@ -31,7 +1031,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "soil",
@@ -41,7 +1044,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "farmland",
@@ -51,7 +1057,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "forest_floor",
@@ -61,7 +1070,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "pine_forest_floor",
@@ -71,7 +1083,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "deciduous_forest_floor",
@@ -81,7 +1096,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "grassy_hills",
@@ -91,7 +1109,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "rocky_hills",
@@ -101,7 +1122,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "mountain_base",
@@ -111,7 +1135,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "snow_mountains",
@@ -121,7 +1148,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "river_straight",
@@ -131,7 +1161,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "river_bend",
@@ -141,7 +1174,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "river_junction",
@@ -151,7 +1187,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "coastline_straight",
@@ -161,7 +1200,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "coastline_corner",
@@ -171,7 +1213,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "shallow_water",
@@ -181,7 +1226,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "deep_water",
@@ -191,7 +1239,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "marsh",
@@ -201,7 +1252,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "dirt_road",
@@ -211,7 +1265,10 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "stone_road",
@@ -221,621 +1278,599 @@
         64,
         64
       ],
-      "type": "terrain"
+      "type": "terrain",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "wooden_fort",
-      "path": "assets/buildings/wooden_fort.png",
-      "purpose": "wooden fort",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "stone_keep",
-      "path": "assets/buildings/stone_keep.png",
-      "purpose": "stone keep",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "small_castle",
-      "path": "assets/buildings/small_castle.png",
-      "purpose": "small castle",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "grand_castle",
-      "path": "assets/buildings/grand_castle.png",
-      "purpose": "grand castle",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "citadel",
-      "path": "assets/buildings/citadel.png",
-      "purpose": "citadel",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "watchtower",
-      "path": "assets/buildings/watchtower.png",
-      "purpose": "watchtower",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "palisade",
-      "path": "assets/buildings/palisade.png",
-      "purpose": "palisade",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "peasant_hut",
-      "path": "assets/buildings/peasant_hut.png",
-      "purpose": "peasant hut",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "house",
-      "path": "assets/buildings/house.png",
-      "purpose": "house",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "townhouse",
-      "path": "assets/buildings/townhouse.png",
-      "purpose": "townhouse",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "manor",
-      "path": "assets/buildings/manor.png",
-      "purpose": "manor",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "royal_palace",
-      "path": "assets/buildings/royal_palace.png",
-      "purpose": "royal palace",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "farm",
-      "path": "assets/buildings/farm.png",
-      "purpose": "farm",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "windmill",
-      "path": "assets/buildings/windmill.png",
-      "purpose": "windmill",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "granary",
-      "path": "assets/buildings/granary.png",
-      "purpose": "granary",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "sawmill",
-      "path": "assets/buildings/sawmill.png",
-      "purpose": "sawmill",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "quarry",
-      "path": "assets/buildings/quarry.png",
-      "purpose": "quarry",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "iron_mine",
-      "path": "assets/buildings/iron_mine.png",
-      "purpose": "iron mine",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "smithy",
-      "path": "assets/buildings/smithy.png",
-      "purpose": "smithy",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "market",
-      "path": "assets/buildings/market.png",
-      "purpose": "market",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "tavern",
-      "path": "assets/buildings/tavern.png",
-      "purpose": "tavern",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "barracks",
-      "path": "assets/buildings/barracks.png",
-      "purpose": "barracks",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "temple",
-      "path": "assets/buildings/temple.png",
-      "purpose": "temple",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "port",
-      "path": "assets/buildings/port.png",
-      "purpose": "port",
-      "size": [
-        96,
-        96
-      ],
-      "type": "buildings"
-    },
-    {
-      "id": "oak",
-      "path": "assets/decorations/oak.png",
-      "purpose": "oak",
+      "id": "dense_oak_forest",
+      "path": "assets/terrain/dense_oak_forest.png",
+      "purpose": "dense oak forest",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "pine",
-      "path": "assets/decorations/pine.png",
-      "purpose": "pine",
+      "id": "ancient_pine_forest",
+      "path": "assets/terrain/ancient_pine_forest.png",
+      "purpose": "ancient pine forest",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "dead_tree",
-      "path": "assets/decorations/dead_tree.png",
-      "purpose": "dead tree",
+      "id": "autumn_woodland",
+      "path": "assets/terrain/autumn_woodland.png",
+      "purpose": "autumn woodland",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "bush",
-      "path": "assets/decorations/bush.png",
-      "purpose": "bush",
+      "id": "rocky_cliffs",
+      "path": "assets/terrain/rocky_cliffs.png",
+      "purpose": "rocky cliffs",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "small_boulder",
-      "path": "assets/decorations/small_boulder.png",
-      "purpose": "small boulder",
+      "id": "snowy_mountain_ridge",
+      "path": "assets/terrain/snowy_mountain_ridge.png",
+      "purpose": "snowy mountain ridge",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "large_rock",
-      "path": "assets/decorations/large_rock.png",
-      "purpose": "large rock",
+      "id": "alpine_pass",
+      "path": "assets/terrain/alpine_pass.png",
+      "purpose": "alpine pass",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "wheat_field",
-      "path": "assets/decorations/wheat_field.png",
-      "purpose": "wheat field",
+      "id": "flowering_meadow",
+      "path": "assets/terrain/flowering_meadow.png",
+      "purpose": "flowering meadow",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "haystack",
-      "path": "assets/decorations/haystack.png",
-      "purpose": "haystack",
+      "id": "wild_grassland",
+      "path": "assets/terrain/wild_grassland.png",
+      "purpose": "wild grassland",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "fence",
-      "path": "assets/decorations/fence.png",
-      "purpose": "fence",
+      "id": "muddy_battlefield",
+      "path": "assets/terrain/muddy_battlefield.png",
+      "purpose": "muddy battlefield",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "stone_wall",
-      "path": "assets/decorations/stone_wall.png",
-      "purpose": "stone wall",
+      "id": "shallow_river_rapids",
+      "path": "assets/terrain/shallow_river_rapids.png",
+      "purpose": "shallow river rapids",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "wood_bridge",
-      "path": "assets/decorations/wood_bridge.png",
-      "purpose": "wood bridge",
+      "id": "rocky_coastline",
+      "path": "assets/terrain/rocky_coastline.png",
+      "purpose": "rocky coastline",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "stone_bridge",
-      "path": "assets/decorations/stone_bridge.png",
-      "purpose": "stone bridge",
+      "id": "sandy_coastline",
+      "path": "assets/terrain/sandy_coastline.png",
+      "purpose": "sandy coastline",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "well",
-      "path": "assets/decorations/well.png",
-      "purpose": "well",
+      "id": "forest_clearing",
+      "path": "assets/terrain/forest_clearing.png",
+      "purpose": "forest clearing",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
-      "id": "cart",
-      "path": "assets/decorations/cart.png",
-      "purpose": "cart",
+      "id": "marshland_vegetation",
+      "path": "assets/terrain/marshland_vegetation.png",
+      "purpose": "marshland vegetation",
       "size": [
         64,
-        80
+        64
       ],
-      "type": "decorations"
-    },
-    {
-      "id": "campfire",
-      "path": "assets/decorations/campfire.png",
-      "purpose": "campfire",
-      "size": [
-        64,
-        80
-      ],
-      "type": "decorations"
-    },
-    {
-      "id": "signpost",
-      "path": "assets/decorations/signpost.png",
-      "purpose": "signpost",
-      "size": [
-        64,
-        80
-      ],
-      "type": "decorations"
-    },
-    {
-      "id": "ruins",
-      "path": "assets/decorations/ruins.png",
-      "purpose": "ruins",
-      "size": [
-        64,
-        80
-      ],
-      "type": "decorations"
-    },
-    {
-      "id": "torch",
-      "path": "assets/decorations/torch.png",
-      "purpose": "torch",
-      "size": [
-        64,
-        80
-      ],
-      "type": "decorations"
+      "type": "terrain",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
       "id": "king_young",
       "path": "assets/portraits/king_young.png",
       "purpose": "king young",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "king_mature",
       "path": "assets/portraits/king_mature.png",
       "purpose": "king mature",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "king_old",
       "path": "assets/portraits/king_old.png",
       "purpose": "king old",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "queen_young",
       "path": "assets/portraits/queen_young.png",
       "purpose": "queen young",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "queen_mature",
       "path": "assets/portraits/queen_mature.png",
       "purpose": "queen mature",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "queen_old",
       "path": "assets/portraits/queen_old.png",
       "purpose": "queen old",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "noble_young",
       "path": "assets/portraits/noble_young.png",
       "purpose": "noble young",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "noble_mature",
       "path": "assets/portraits/noble_mature.png",
       "purpose": "noble mature",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "noble_old",
       "path": "assets/portraits/noble_old.png",
       "purpose": "noble old",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "noblewoman_young",
       "path": "assets/portraits/noblewoman_young.png",
       "purpose": "noblewoman young",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "noblewoman_mature",
       "path": "assets/portraits/noblewoman_mature.png",
       "purpose": "noblewoman mature",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "noblewoman_old",
       "path": "assets/portraits/noblewoman_old.png",
       "purpose": "noblewoman old",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "priest_male",
       "path": "assets/portraits/priest_male.png",
       "purpose": "priest male",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "priest_female",
       "path": "assets/portraits/priest_female.png",
       "purpose": "priest female",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "commander_young",
       "path": "assets/portraits/commander_young.png",
       "purpose": "commander young",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "commander_veteran",
       "path": "assets/portraits/commander_veteran.png",
       "purpose": "commander veteran",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "steward",
       "path": "assets/portraits/steward.png",
       "purpose": "steward",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "spymaster",
       "path": "assets/portraits/spymaster.png",
       "purpose": "spymaster",
       "size": [
-        96,
-        96
+        128,
+        128
       ],
-      "type": "portraits"
+      "type": "portraits",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_warrior_king",
+      "path": "assets/portraits/portrait_warrior_king.png",
+      "purpose": "portrait warrior king",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_wise_monarch",
+      "path": "assets/portraits/portrait_wise_monarch.png",
+      "purpose": "portrait wise monarch",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_ambitious_queen",
+      "path": "assets/portraits/portrait_ambitious_queen.png",
+      "purpose": "portrait ambitious queen",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_young_heiress",
+      "path": "assets/portraits/portrait_young_heiress.png",
+      "purpose": "portrait young heiress",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_arrogant_duke",
+      "path": "assets/portraits/portrait_arrogant_duke.png",
+      "purpose": "portrait arrogant duke",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_treacherous_noble",
+      "path": "assets/portraits/portrait_treacherous_noble.png",
+      "purpose": "portrait treacherous noble",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_famous_general",
+      "path": "assets/portraits/portrait_famous_general.png",
+      "purpose": "portrait famous general",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_old_marshal",
+      "path": "assets/portraits/portrait_old_marshal.png",
+      "purpose": "portrait old marshal",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_rich_merchant",
+      "path": "assets/portraits/portrait_rich_merchant.png",
+      "purpose": "portrait rich merchant",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_grim_inquisitor",
+      "path": "assets/portraits/portrait_grim_inquisitor.png",
+      "purpose": "portrait grim inquisitor",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_secret_councillor",
+      "path": "assets/portraits/portrait_secret_councillor.png",
+      "purpose": "portrait secret councillor",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
+    },
+    {
+      "id": "portrait_rebel_pretender",
+      "path": "assets/portraits/portrait_rebel_pretender.png",
+      "purpose": "portrait rebel pretender",
+      "size": [
+        128,
+        128
+      ],
+      "type": "portraits",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
       "id": "peasant_male",
       "path": "assets/characters/peasant_male.png",
       "purpose": "peasant male",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -854,9 +1889,12 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [],
+        "fps": 8,
+        "combat": false
       }
     },
     {
@@ -864,14 +1902,17 @@
       "path": "assets/characters/peasant_female.png",
       "purpose": "peasant female",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -890,9 +1931,12 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [],
+        "fps": 8,
+        "combat": false
       }
     },
     {
@@ -900,14 +1944,17 @@
       "path": "assets/characters/noble_male.png",
       "purpose": "noble male",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -926,9 +1973,12 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [],
+        "fps": 8,
+        "combat": false
       }
     },
     {
@@ -936,14 +1986,17 @@
       "path": "assets/characters/noble_female.png",
       "purpose": "noble female",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -962,9 +2015,12 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [],
+        "fps": 8,
+        "combat": false
       }
     },
     {
@@ -972,14 +2028,17 @@
       "path": "assets/characters/courier.png",
       "purpose": "courier",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -998,9 +2057,12 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [],
+        "fps": 8,
+        "combat": false
       }
     },
     {
@@ -1008,14 +2070,17 @@
       "path": "assets/characters/merchant.png",
       "purpose": "merchant",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1034,9 +2099,12 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [],
+        "fps": 8,
+        "combat": false
       }
     },
     {
@@ -1044,14 +2112,17 @@
       "path": "assets/characters/priest.png",
       "purpose": "priest",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1070,9 +2141,12 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [],
+        "fps": 8,
+        "combat": false
       }
     },
     {
@@ -1080,14 +2154,17 @@
       "path": "assets/characters/scout.png",
       "purpose": "scout",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1106,9 +2183,15 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
       }
     },
     {
@@ -1116,14 +2199,17 @@
       "path": "assets/characters/militia.png",
       "purpose": "militia",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1142,9 +2228,15 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
       }
     },
     {
@@ -1152,14 +2244,17 @@
       "path": "assets/characters/infantry.png",
       "purpose": "infantry",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1178,9 +2273,15 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
       }
     },
     {
@@ -1188,14 +2289,17 @@
       "path": "assets/characters/spearman.png",
       "purpose": "spearman",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1214,9 +2318,15 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
       }
     },
     {
@@ -1224,14 +2334,17 @@
       "path": "assets/characters/archer.png",
       "purpose": "archer",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1250,9 +2363,15 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
       }
     },
     {
@@ -1260,14 +2379,17 @@
       "path": "assets/characters/cavalry.png",
       "purpose": "cavalry",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1286,9 +2408,15 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
       }
     },
     {
@@ -1296,14 +2424,17 @@
       "path": "assets/characters/crossbowman.png",
       "purpose": "crossbowman",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1322,9 +2453,15 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
       }
     },
     {
@@ -1332,14 +2469,17 @@
       "path": "assets/characters/siege_engine.png",
       "purpose": "siege engine",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1358,9 +2498,15 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
       }
     },
     {
@@ -1368,14 +2514,17 @@
       "path": "assets/characters/bandit.png",
       "purpose": "bandit",
       "size": [
-        224,
-        160
+        400,
+        224
       ],
       "type": "characters",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
-        "frame_width": 32,
-        "frame_height": 40,
-        "columns": 7,
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
         "rows": 4,
         "directions": [
           "down",
@@ -1394,277 +2543,1228 @@
         ],
         "action": [
           5,
-          6
+          6,
+          7
         ],
-        "fps": 7
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "royal_guard",
+      "path": "assets/characters/royal_guard.png",
+      "purpose": "royal guard",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "heavy_infantry",
+      "path": "assets/characters/heavy_infantry.png",
+      "purpose": "heavy infantry",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "elite_spearman",
+      "path": "assets/characters/elite_spearman.png",
+      "purpose": "elite spearman",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "royal_archer",
+      "path": "assets/characters/royal_archer.png",
+      "purpose": "royal archer",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "mounted_knight",
+      "path": "assets/characters/mounted_knight.png",
+      "purpose": "mounted knight",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "light_cavalry",
+      "path": "assets/characters/light_cavalry.png",
+      "purpose": "light cavalry",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "royal_messenger",
+      "path": "assets/characters/royal_messenger.png",
+      "purpose": "royal messenger",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "village_farmer",
+      "path": "assets/characters/village_farmer.png",
+      "purpose": "village farmer",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lumberjack",
+      "path": "assets/characters/lumberjack.png",
+      "purpose": "lumberjack",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "blacksmith",
+      "path": "assets/characters/blacksmith.png",
+      "purpose": "blacksmith",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "miner",
+      "path": "assets/characters/miner.png",
+      "purpose": "miner",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "market_trader",
+      "path": "assets/characters/market_trader.png",
+      "purpose": "market trader",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "noble_lady",
+      "path": "assets/characters/noble_lady.png",
+      "purpose": "noble lady",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "noble_lord",
+      "path": "assets/characters/noble_lord.png",
+      "purpose": "noble lord",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "royal_advisor",
+      "path": "assets/characters/royal_advisor.png",
+      "purpose": "royal advisor",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "court_priest",
+      "path": "assets/characters/court_priest.png",
+      "purpose": "court priest",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "tax_collector",
+      "path": "assets/characters/tax_collector.png",
+      "purpose": "tax collector",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "village_guard",
+      "path": "assets/characters/village_guard.png",
+      "purpose": "village guard",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "rebel_fighter",
+      "path": "assets/characters/rebel_fighter.png",
+      "purpose": "rebel fighter",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "siege_engineer",
+      "path": "assets/characters/siege_engineer.png",
+      "purpose": "siege engineer",
+      "size": [
+        400,
+        224
+      ],
+      "type": "characters",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
+      "animation": {
+        "frame_width": 40,
+        "frame_height": 56,
+        "columns": 10,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0
+        ],
+        "walk": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "action": [
+          5,
+          6,
+          7
+        ],
+        "hurt": [
+          8,
+          9
+        ],
+        "fps": 8,
+        "combat": true
       }
     },
     {
       "id": "aurelian",
       "path": "assets/heraldry/aurelian.png",
-      "purpose": "Герб государства",
+      "purpose": "aurelian",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "veyrmark",
       "path": "assets/heraldry/veyrmark.png",
-      "purpose": "Герб государства",
+      "purpose": "veyrmark",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "thornsreach",
       "path": "assets/heraldry/thornsreach.png",
-      "purpose": "Герб государства",
+      "purpose": "thornsreach",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "greyshore",
       "path": "assets/heraldry/greyshore.png",
-      "purpose": "Герб государства",
+      "purpose": "greyshore",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "harrowfen",
       "path": "assets/heraldry/harrowfen.png",
-      "purpose": "Герб государства",
+      "purpose": "harrowfen",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "duncrest",
       "path": "assets/heraldry/duncrest.png",
-      "purpose": "Герб государства",
+      "purpose": "duncrest",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "ashlands",
       "path": "assets/heraldry/ashlands.png",
-      "purpose": "Герб государства",
+      "purpose": "ashlands",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "sunmarch",
       "path": "assets/heraldry/sunmarch.png",
-      "purpose": "Герб государства",
+      "purpose": "sunmarch",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "velden",
       "path": "assets/heraldry/velden.png",
-      "purpose": "Герб государства",
+      "purpose": "velden",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "blackridge",
       "path": "assets/heraldry/blackridge.png",
-      "purpose": "Герб государства",
+      "purpose": "blackridge",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "frostholm",
       "path": "assets/heraldry/frostholm.png",
-      "purpose": "Герб государства",
+      "purpose": "frostholm",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "marrow_coast",
       "path": "assets/heraldry/marrow_coast.png",
-      "purpose": "Герб государства",
+      "purpose": "marrow coast",
       "size": [
         96,
         112
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "ui_economy",
       "path": "assets/heraldry/ui_economy.png",
-      "purpose": "Навигация: economy",
+      "purpose": "ui economy",
       "size": [
-        64,
-        64
+        96,
+        96
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "ui_diplomacy",
       "path": "assets/heraldry/ui_diplomacy.png",
-      "purpose": "Навигация: diplomacy",
+      "purpose": "ui diplomacy",
       "size": [
-        64,
-        64
+        96,
+        96
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "ui_military",
       "path": "assets/heraldry/ui_military.png",
-      "purpose": "Навигация: military",
+      "purpose": "ui military",
       "size": [
-        64,
-        64
+        96,
+        96
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "ui_dynasty",
       "path": "assets/heraldry/ui_dynasty.png",
-      "purpose": "Навигация: dynasty",
+      "purpose": "ui dynasty",
       "size": [
-        64,
-        64
+        96,
+        96
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "ui_intrigue",
       "path": "assets/heraldry/ui_intrigue.png",
-      "purpose": "Навигация: intrigue",
+      "purpose": "ui intrigue",
       "size": [
-        64,
-        64
+        96,
+        96
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "ui_laws",
       "path": "assets/heraldry/ui_laws.png",
-      "purpose": "Навигация: laws",
+      "purpose": "ui laws",
       "size": [
-        64,
-        64
+        96,
+        96
       ],
-      "type": "heraldry"
+      "type": "heraldry",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
       "id": "trade_wagon",
       "path": "assets/effects/trade_wagon.png",
       "purpose": "trade wagon",
       "size": [
-        64,
-        64
+        80,
+        80
       ],
-      "type": "effects"
+      "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects"
     },
     {
       "id": "trade_ship",
       "path": "assets/effects/trade_ship.png",
       "purpose": "trade ship",
       "size": [
-        64,
-        64
+        80,
+        80
       ],
-      "type": "effects"
+      "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects"
     },
     {
       "id": "warship",
       "path": "assets/effects/warship.png",
       "purpose": "warship",
       "size": [
-        64,
-        64
+        80,
+        80
       ],
-      "type": "effects"
+      "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects"
     },
     {
       "id": "siege_tower",
       "path": "assets/effects/siege_tower.png",
       "purpose": "siege tower",
       "size": [
-        64,
-        64
+        80,
+        80
       ],
-      "type": "effects"
+      "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects"
     },
     {
       "id": "battering_ram",
       "path": "assets/effects/battering_ram.png",
       "purpose": "battering ram",
       "size": [
-        64,
-        64
+        80,
+        80
       ],
-      "type": "effects"
+      "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects"
     },
     {
       "id": "arrow",
       "path": "assets/effects/arrow.png",
       "purpose": "arrow",
       "size": [
-        64,
-        64
+        80,
+        80
       ],
-      "type": "effects"
+      "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects"
     },
     {
       "id": "stone_projectile",
       "path": "assets/effects/stone_projectile.png",
       "purpose": "stone projectile",
       "size": [
-        64,
-        64
+        80,
+        80
       ],
-      "type": "effects"
+      "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects"
     },
     {
       "id": "sword_impact",
       "path": "assets/effects/sword_impact.png",
       "purpose": "sword impact",
       "size": [
-        256,
-        64
+        640,
+        80
       ],
       "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects",
       "animation": {
-        "frame_width": 64,
-        "frame_height": 64,
-        "columns": 4,
+        "frame_width": 80,
+        "frame_height": 80,
+        "columns": 8,
         "rows": 1,
         "fps": 8,
-        "frames": 4
+        "frames": 8
       }
     },
     {
@@ -1672,17 +3772,20 @@
       "path": "assets/effects/fire.png",
       "purpose": "fire",
       "size": [
-        256,
-        64
+        640,
+        80
       ],
       "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects",
       "animation": {
-        "frame_width": 64,
-        "frame_height": 64,
-        "columns": 4,
+        "frame_width": 80,
+        "frame_height": 80,
+        "columns": 8,
         "rows": 1,
         "fps": 8,
-        "frames": 4
+        "frames": 8
       }
     },
     {
@@ -1690,118 +3793,541 @@
       "path": "assets/effects/dust_smoke.png",
       "purpose": "dust smoke",
       "size": [
-        256,
-        64
+        640,
+        80
       ],
       "type": "effects",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "trade routes, army march, siege and battle effects",
       "animation": {
-        "frame_width": 64,
-        "frame_height": 64,
-        "columns": 4,
+        "frame_width": 80,
+        "frame_height": 80,
+        "columns": 8,
         "rows": 1,
         "fps": 8,
-        "frames": 4
+        "frames": 8
       }
+    },
+    {
+      "id": "infantry_formation",
+      "path": "assets/military/infantry_formation.png",
+      "purpose": "infantry formation",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "pike_formation",
+      "path": "assets/military/pike_formation.png",
+      "purpose": "pike formation",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "archer_formation",
+      "path": "assets/military/archer_formation.png",
+      "purpose": "archer formation",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "cavalry_formation",
+      "path": "assets/military/cavalry_formation.png",
+      "purpose": "cavalry formation",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "royal_army_banner",
+      "path": "assets/military/royal_army_banner.png",
+      "purpose": "royal army banner",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "rebel_army_banner",
+      "path": "assets/military/rebel_army_banner.png",
+      "purpose": "rebel army banner",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "siege_camp",
+      "path": "assets/military/siege_camp.png",
+      "purpose": "siege camp",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "war_tent",
+      "path": "assets/military/war_tent.png",
+      "purpose": "war tent",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "trebuchet",
+      "path": "assets/military/trebuchet.png",
+      "purpose": "trebuchet",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "battlefield_ruins",
+      "path": "assets/military/battlefield_ruins.png",
+      "purpose": "battlefield ruins",
+      "size": [
+        128,
+        112
+      ],
+      "type": "military",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
+    },
+    {
+      "id": "ui_ornate_menu_frame",
+      "path": "assets/ui/ui_ornate_menu_frame.png",
+      "purpose": "ui ornate menu frame",
+      "size": [
+        256,
+        256
+      ],
+      "type": "ui",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
+    },
+    {
+      "id": "ui_royal_crown",
+      "path": "assets/ui/ui_royal_crown.png",
+      "purpose": "ui royal crown",
+      "size": [
+        192,
+        128
+      ],
+      "type": "ui",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
+    },
+    {
+      "id": "ui_province_frame",
+      "path": "assets/ui/ui_province_frame.png",
+      "purpose": "ui province frame",
+      "size": [
+        192,
+        256
+      ],
+      "type": "ui",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
+    },
+    {
+      "id": "ui_portrait_frame",
+      "path": "assets/ui/ui_portrait_frame.png",
+      "purpose": "ui portrait frame",
+      "size": [
+        144,
+        144
+      ],
+      "type": "ui",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
+    },
+    {
+      "id": "ui_resource_bar",
+      "path": "assets/ui/ui_resource_bar.png",
+      "purpose": "ui resource bar",
+      "size": [
+        256,
+        96
+      ],
+      "type": "ui",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
+    },
+    {
+      "id": "ui_medieval_buttons",
+      "path": "assets/ui/ui_medieval_buttons.png",
+      "purpose": "ui medieval buttons",
+      "size": [
+        192,
+        256
+      ],
+      "type": "ui",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
+    },
+    {
+      "id": "ui_dynasty_tree",
+      "path": "assets/ui/ui_dynasty_tree.png",
+      "purpose": "ui dynasty tree",
+      "size": [
+        256,
+        128
+      ],
+      "type": "ui",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
+    },
+    {
+      "id": "ui_victory_ornament",
+      "path": "assets/ui/ui_victory_ornament.png",
+      "purpose": "ui victory ornament",
+      "size": [
+        256,
+        128
+      ],
+      "type": "ui",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
+    },
+    {
+      "id": "event_royal_coronation",
+      "path": "assets/events/event_royal_coronation.png",
+      "purpose": "event royal coronation",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_capital_siege",
+      "path": "assets/events/event_capital_siege.png",
+      "purpose": "event capital siege",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_great_battle",
+      "path": "assets/events/event_great_battle.png",
+      "purpose": "event great battle",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_royal_marriage",
+      "path": "assets/events/event_royal_marriage.png",
+      "purpose": "event royal marriage",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_noble_betrayal",
+      "path": "assets/events/event_noble_betrayal.png",
+      "purpose": "event noble betrayal",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_peasant_rebellion",
+      "path": "assets/events/event_peasant_rebellion.png",
+      "purpose": "event peasant rebellion",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_medieval_plague",
+      "path": "assets/events/event_medieval_plague.png",
+      "purpose": "event medieval plague",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_royal_funeral",
+      "path": "assets/events/event_royal_funeral.png",
+      "purpose": "event royal funeral",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_harvest_festival",
+      "path": "assets/events/event_harvest_festival.png",
+      "purpose": "event harvest festival",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_diplomatic_summit",
+      "path": "assets/events/event_diplomatic_summit.png",
+      "purpose": "event diplomatic summit",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_city_fire",
+      "path": "assets/events/event_city_fire.png",
+      "purpose": "event city fire",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
+    },
+    {
+      "id": "event_empire_foundation",
+      "path": "assets/events/event_empire_foundation.png",
+      "purpose": "event empire foundation",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "introduced": "0.2.0",
+      "revision": "0.2.0",
+      "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
       "id": "coronation",
       "path": "assets/events/coronation.png",
       "purpose": "coronation",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
       "id": "royal_wedding",
       "path": "assets/events/royal_wedding.png",
       "purpose": "royal wedding",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
       "id": "ruler_death",
       "path": "assets/events/ruler_death.png",
       "purpose": "ruler death",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
       "id": "rich_harvest",
       "path": "assets/events/rich_harvest.png",
       "purpose": "rich harvest",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
       "id": "epidemic",
       "path": "assets/events/epidemic.png",
       "purpose": "epidemic",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
       "id": "peasant_revolt",
       "path": "assets/events/peasant_revolt.png",
       "purpose": "peasant revolt",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
       "id": "castle_siege",
       "path": "assets/events/castle_siege.png",
       "purpose": "castle siege",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
       "id": "diplomatic_feast",
       "path": "assets/events/diplomatic_feast.png",
       "purpose": "diplomatic feast",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
       "id": "betrayal",
       "path": "assets/events/betrayal.png",
       "purpose": "betrayal",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
       "id": "military_victory",
       "path": "assets/events/military_victory.png",
       "purpose": "military victory",
       "size": [
-        320,
-        160
+        384,
+        192
       ],
-      "type": "events"
+      "type": "events",
+      "introduced": "0.1.0",
+      "revision": "0.2.0",
+      "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     }
   ]
 }

@@ -99,3 +99,7 @@ for p in provs:
 world['rivers']=rivers;(ROOT/'data/world.json').write_text(json.dumps(world,ensure_ascii=False,separators=(',',':')))
 im=im.resize((W,H),Image.Resampling.NEAREST).convert('RGB');im.save(ROOT/'data/terrain_cache.png',optimize=True)
 print('Baked 60 non-overlapping provinces, 12 sovereign realms + Highmere fief,',len(edges),'real shared borders.')
+# Keep the established topology generator; the current art bake replaces only its picture.
+if (ROOT/'tools/art_sources/architecture.png').exists():
+ import subprocess,sys
+ subprocess.run([sys.executable,str(ROOT/'tools/bake_world.py')],check=True)

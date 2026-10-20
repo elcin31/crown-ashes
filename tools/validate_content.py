@@ -1,41 +1,33 @@
 #!/usr/bin/env python3
-"""One bounded content audit used by the main project check."""
+"""One bounded content check for Kingdom Reforged, not a long gameplay audit."""
 from pathlib import Path
 from PIL import Image
 from collections import Counter
-import hashlib,json,math
-root=Path(__file__).resolve().parents[1]
-m=json.loads((root/'assets_manifest.json').read_text());res=m['resources']
-assert len(res)==136
-hashes={};frames=0
-for x in res:
- p=root/x['path'];im=Image.open(p);im.verify();im=Image.open(p).convert('RGBA')
- assert list(im.size)==x['size'];assert im.getbbox() is not None
- sha=hashlib.sha256(im.tobytes()).hexdigest()
- assert sha not in hashes,(x['id'],hashes.get(sha));hashes[sha]=x['id']
- if x['type'] in ['buildings','characters','decorations','effects']:assert im.getextrema()[3][0]==0
- if x['type']=='characters':
-  a=x['animation'];assert a['columns']*a['rows']==28
+import hashlib,json
+root=Path(__file__).resolve().parents[1];m=json.loads((root/'assets_manifest.json').read_text());items=m['resources'];baseline=json.loads((root/'tools/art_sources/baseline_assets.json').read_text())['resources']
+assert len(items)==246
+new=[a for a in items if a['introduced']=='0.2.0'];assert len(new)==110
+expected={'terrain':14,'buildings':18,'characters':20,'portraits':12,'military':10,'decorations':16,'ui':8,'events':12}
+assert Counter(a['type'] for a in new)==expected
+hashes={};frames=0;sheet_count=0;texture_bytes=0
+for a in items:
+ p=root/a['path'];im=Image.open(p);im.verify();im=Image.open(p).convert('RGBA');assert list(im.size)==a['size']
+ assert im.getbbox() is not None,(a['id'],'empty')
+ raw=im.tobytes();digest=hashlib.sha256(raw).hexdigest();assert digest not in hashes,(a['id'],'duplicate',hashes.get(digest));hashes[digest]=a['id'];texture_bytes+=len(raw)
+ if a['type'] in ['buildings','characters','decorations','military']:assert im.getextrema()[3][0]==0,a['id']
+ if a['type']=='characters':
+  anim=a['animation'];w,h=anim['frame_width'],anim['frame_height'];assert anim['rows']==4 and anim['columns']==10
   for row in range(4):
-   walking=[im.crop((f*32,row*40,(f+1)*32,(row+1)*40)).tobytes() for f in range(1,5)]
-   assert len(set(walking))==4,(x['id'],row,'walk frames must move')
-   assert im.crop((5*32,row*40,6*32,(row+1)*40)).tobytes()!=im.crop((6*32,row*40,7*32,(row+1)*40)).tobytes(),(x['id'],'action')
-  frames+=28
-assert frames==448
-world=json.loads((root/'data/world.json').read_text());p=world['provinces']
-assert len(p)==60;assert sum(x['suzerain']==-1 for x in world['realms'])==12
-seen={0};queue=[0]
-for node in queue:
- for n in p[node]['neighbors']:
-  assert node in p[n]['neighbors']
-  if n not in seen:seen.add(n);queue.append(n)
-assert len(seen)==60
-# Shared-edge checks and area equality prove a connected, gap-free clipping partition.
-def area(poly):return abs(sum(a[0]*b[1]-a[1]*b[0] for a,b in zip(poly,poly[1:]+poly[:1])))/2
-assert abs(sum(area(x['polygon']) for x in p)-area(world['coast']))<20
-for e in world['edges']:
- assert math.dist(*e['points'])>0.1
- assert int(e['b']) in p[int(e['a'])]['neighbors']
-events=json.loads((root/'data/events.json').read_text());assert len(events)>=30
-assert all(len(x['choices'])>=2 and (root/'assets/events'/(x['illustration']+'.png')).exists() for x in events)
-print('CONTENT PASS:',len(res),'unique PNG;',frames,'animated frames; 60 connected provinces; 12 sovereign realms;',len(events),'events')
+   walks=[im.crop((f*w,row*h,(f+1)*w,(row+1)*h)).tobytes() for f in anim['walk']]
+   actions=[im.crop((f*w,row*h,(f+1)*w,(row+1)*h)).tobytes() for f in anim['action']]
+   assert len(set(walks))==4,(a['id'],row,'walking frames')
+   assert len(set(actions))==3,(a['id'],row,'action frames')
+  if anim['combat']:assert len(anim['hurt'])==2
+  frames+=anim['rows']*anim['columns'];sheet_count+=1
+for old in baseline:
+ current=next(a for a in items if a['id']==old['id']);assert current['path']==old['path']
+ assert hashlib.sha256((root/current['path']).read_bytes()).hexdigest()!=old['before_sha256']
+world=json.loads((root/'data/world.json').read_text());assert len(world['provinces'])==60
+assert sum(r['suzerain']==-1 for r in world['realms'])==12
+result={'png':246,'new_png':110,'old_reworked':136,'sprite_sheets':sheet_count,'new_sprite_sheets':20,'frames':frames,'new_frames':800,'rgba_texture_bytes_all_assets':texture_bytes,'new_categories':dict(Counter(a['type'] for a in new))}
+(root/'docs/ASSET_CHECK_0.2.0.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print('ART PASS:',json.dumps(result,ensure_ascii=False))

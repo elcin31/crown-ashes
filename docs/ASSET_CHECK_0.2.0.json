@@ -1,0 +1,20 @@
+{
+  "png": 246,
+  "new_png": 110,
+  "old_reworked": 136,
+  "sprite_sheets": 36,
+  "new_sprite_sheets": 20,
+  "frames": 1440,
+  "new_frames": 800,
+  "rgba_texture_bytes_all_assets": 32528384,
+  "new_categories": {
+    "buildings": 18,
+    "decorations": 16,
+    "terrain": 14,
+    "portraits": 12,
+    "characters": 20,
+    "military": 10,
+    "ui": 8,
+    "events": 12
+  }
+}

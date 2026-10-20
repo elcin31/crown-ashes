@@ -33,11 +33,18 @@ func _ready():
 	for kind in ["Button","OptionButton"]:
 		theme.set_stylebox("normal",kind,style("#263b3e","#82714e",1,5));theme.set_stylebox("hover",kind,style("#3a5050","#cab47a",1,5));theme.set_stylebox("pressed",kind,style("#4a5549","#e5ca88",2,5));theme.set_stylebox("disabled",kind,style("#1e2b30","#374746",1,5));theme.set_color("font_color",kind,Color("#eddfb9"));theme.set_color("font_disabled_color",kind,Color("#647775"));theme.set_font_size("font_size",kind,16)
 	theme.set_color("font_color","Label",Color("#d9dfcc"));theme.set_stylebox("panel","PanelContainer",style("#13242a","#8c7953",1,6));theme.set_constant("separation","VBoxContainer",9);theme.set_constant("separation","HBoxContainer",8)
+	for kind in ["Button","OptionButton"]:
+		for state in ["normal","pressed","hover","disabled"]:
+			var index={"normal":0,"pressed":1,"hover":2,"disabled":3}[state]
+			theme.set_stylebox(state,kind,button_surface(index))
+		theme.set_stylebox("focus",kind,style("#00000000","#ebd395",1,0))
+	theme.set_stylebox("panel","PanelContainer",frame_surface("ui_province_frame",10))
 	root.theme=theme
 func style(fill:String,border:String,width:int=1,padding:int=10)->StyleBoxFlat:
 	var s=StyleBoxFlat.new();s.bg_color=Color(fill);s.border_color=Color(border);s.set_border_width_all(width);s.set_content_margin_all(padding);s.set_corner_radius_all(3);return s
 func clear_root():
 	modal=null;hud=null
+	notice=null
 	for child in root.get_children():
 		if child is Control:child.hide()
 		child.queue_free()
@@ -51,11 +58,14 @@ func heading(parent,text:String,size:int=24):
 	var l=label(parent,text,size,GOLD);l.add_theme_font_override("font",load("res://assets/fonts/DejaVuSerif-Bold.ttf"));return l
 func button(parent,text:String,callback:Callable,icon:String="",disabled:bool=false)->Button:
 	var b=Button.new();b.text=text;b.custom_minimum_size.y=44;b.size_flags_horizontal=Control.SIZE_EXPAND_FILL;b.disabled=disabled
-	if icon!="":b.icon=app.map.textures.get(icon);b.expand_icon=true;b.add_theme_constant_override("icon_max_width",30)
+	if icon!="":b.icon=app.map.texture_for(icon);b.expand_icon=true;b.add_theme_constant_override("icon_max_width",30)
 	if text=="×":b.size_flags_horizontal=Control.SIZE_SHRINK_END
 	b.pressed.connect(callback);parent.add_child(b);return b
 func image_rect(parent,id:String,dimensions:Vector2)->TextureRect:
-	var t=TextureRect.new();t.texture=app.map.textures.get(id);t.custom_minimum_size=dimensions;t.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;t.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;t.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(t);return t
+	var t=TextureRect.new();t.texture=app.map.texture_for(id);t.custom_minimum_size=dimensions;t.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;t.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;t.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(t)
+	if app.map.texture_metadata.get(id,{}).get("type","")=="portraits":
+		var rim=NinePatchRect.new();rim.texture=app.map.texture_for("ui_portrait_frame");rim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);rim.set_patch_margin(SIDE_LEFT,17);rim.set_patch_margin(SIDE_RIGHT,17);rim.set_patch_margin(SIDE_TOP,17);rim.set_patch_margin(SIDE_BOTTOM,17);rim.mouse_filter=Control.MOUSE_FILTER_IGNORE;t.add_child(rim)
+	return t
 func separator(parent):parent.add_child(HSeparator.new())
 func kv(parent,key:String,value:String,color:Color=Color("#d9dfcc")):
 	var row=box(parent,false);var k=label(row,key,16,MUTED,false);k.size_flags_horizontal=Control.SIZE_EXPAND_FILL;label(row,value,17,color,false)
@@ -69,21 +79,26 @@ func centered_panel(width:float,height:float)->PanelContainer:
 func shade(parent,alpha:float=0.65):
 	var shade_node=ColorRect.new();shade_node.color=Color(0.025,0.055,0.07,alpha);shade_node.mouse_filter=Control.MOUSE_FILTER_IGNORE;shade_node.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);parent.add_child(shade_node);return shade_node
 func show_main_menu():
-	clear_root();shade(root,0.66)
-	var panel=centered_panel(880,570);var row=box(panel,false);var left=box(row);left.size_flags_horizontal=Control.SIZE_EXPAND_FILL;left.custom_minimum_size.x=465
-	heading(left,"CROWN & ASHES",40);label(left,"ПЕРВАЯ КОРОНА · 0.1.0",16,GOLD)
-	label(left,"1183 год. Короны тускнеют. Династии восходят.\nНачните с малого владения и создайте империю.",18)
+	clear_root();app.map.hide();app.map.input_controller.enabled=false
+	var backdrop=Control.new();backdrop.set_script(load("res://scripts/menu_backdrop.gd"));backdrop.map=app.map;root.add_child(backdrop)
+	var panel=PanelContainer.new();panel.anchor_top=.5;panel.anchor_bottom=.5;panel.offset_left=56;panel.offset_right=504;panel.offset_top=-322;panel.offset_bottom=322;panel.add_theme_stylebox_override("panel",frame_surface("ui_ornate_menu_frame",24));root.add_child(panel)
+	var left=box(panel);left.add_theme_constant_override("separation",8)
+	image_rect(left,"ui_royal_crown",Vector2(128,74))
+	heading(left,"CROWN & ASHES",31)
+	label(left,"KINGDOM REFORGED · 0.2.0",15,GOLD)
+	label(left,"Королевство перековано.
+Судьба династии начинается с вас.",17,Color("#c9c2a2"))
 	separator(left)
-	button(left,"Новая кампания",show_selection,"ui_dynasty")
+	button(left,"Новая кампания",show_selection,"ui_dynasty").custom_minimum_size.y=48
 	var latest=SaveSystem.latest_slot()
-	button(left,"Продолжить",func():app.load_campaign(latest),"ui_military",latest<0)
-	button(left,"Загрузить кампанию",func():open_saves(false),"ui_economy")
-	button(left,"Настройки",open_settings,"ui_laws")
-	button(left,"Выход",func():app.request_quit())
-	label(left,"Офлайн · без сетевых разрешений\nПеретаскивайте карту; масштабируйте двумя пальцами.",14,MUTED)
-	var right=box(row);right.custom_minimum_size.x=300;image_rect(right,"aurelian",Vector2(154,178));image_rect(right,"grand_castle",Vector2(270,220));heading(right,"FIRST CROWN",20);label(right,"Ваша история начинается\nв Хаймире.",16,GOLD)
+	button(left,"Продолжить",func():app.load_campaign(latest),"ui_military",latest<0).custom_minimum_size.y=48
+	button(left,"Загрузить кампанию",func():open_saves(false),"ui_economy").custom_minimum_size.y=48
+	button(left,"Настройки",open_settings,"ui_laws").custom_minimum_size.y=48
+	button(left,"Выход",func():app.request_quit()).custom_minimum_size.y=48
+	label(left,"1183 · ЭЛЬДРАТ · ОФЛАЙН",13,MUTED)
+	var caption=Label.new();caption.text="Одна корона. Тысячи судеб.";caption.add_theme_font_override("font",load("res://assets/fonts/DejaVuSerif-Bold.ttf"));caption.add_theme_font_size_override("font_size",24);caption.add_theme_color_override("font_color",GOLD);caption.anchor_left=1;caption.anchor_right=1;caption.anchor_top=1;caption.anchor_bottom=1;caption.offset_left=-525;caption.offset_right=-40;caption.offset_top=-66;caption.offset_bottom=-30;caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;caption.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(caption)
 func show_selection():
-	clear_root();shade(root,0.66)
+	clear_root();app.map.show();shade(root,0.44)
 	var panel=centered_panel(1060,620);var outer=box(panel);var header=box(outer,false);heading(header,"Выберите свою корону",28).size_flags_horizontal=Control.SIZE_EXPAND_FILL;button(header,"Назад",show_main_menu).size_flags_horizontal=Control.SIZE_SHRINK_END
 	var row=box(outer,false);row.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	var scroll=ScrollContainer.new();scroll.custom_minimum_size.x=390;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;row.add_child(scroll);var list=box(scroll);list.size_flags_horizontal=Control.SIZE_EXPAND_FILL
@@ -100,7 +115,7 @@ func refresh_selection():
 	for child in choice_details.get_children():child.queue_free()
 	var s=app.state;var r=s.data.realms[chosen_realm];var c=s.data.characters[int(r.ruler)]
 	var row=box(choice_details,false);image_rect(row,r.heraldry,Vector2(74,90));var col=box(row);heading(col,r.name,28);label(col,"Дом "+r.dynasty,19,GOLD)
-	var pr=box(choice_details,false);image_rect(pr,c.portrait,Vector2(92,92));var d=box(pr);label(d,"%s, %d лет"%[c.name,c.age],21);label(d,"Военное %d · управление %d · дипломатия %d"%[c.martial,c.administration,c.diplomacy],16,MUTED)
+	var pr=box(choice_details,false);image_rect(pr,VisualLibrary.portrait(c),Vector2(92,92));var d=box(pr);label(d,"%s, %d лет"%[c.name,c.age],21);label(d,"Военное %d · управление %d · дипломатия %d"%[c.martial,c.administration,c.diplomacy],16,MUTED)
 	kv(choice_details,"Личных провинций",str(s.provinces_of(chosen_realm).size()));kv(choice_details,"Казна","%d золота"%int(r.resources.gold));kv(choice_details,"Армия","%d воинов"%int(army_count(chosen_realm)))
 	label(choice_details,"Хаймир — графство под короной Аурелии. Развивайте земли, заключайте союзы, добейтесь герцогского титула и оспорьте власть старого короля." if chosen_realm==12 else "Характер правления: "+personality_name(r.personality)+". Укрепите границы, обеспечьте наследование и объедините Эльдрат под своей короной.",18)
 	label(choice_details,"Цель: 35 провинций, императорский титул и стабильность ≥50 в течение 180 дней. Первые 180 дней ИИ не начинает внешние войны.",15,MUTED)
@@ -112,18 +127,18 @@ func army_count(id:int)->int:
 	return n
 func personality_name(kind:String)->String:return {"defensive":"Оборона","expansionist":"Завоевания","economic":"Экономика","diplomat":"Дипломатия","opportunist":"Выгодный момент"}.get(kind,kind)
 func show_game():
-	clear_root();hud=Control.new();hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);hud.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(hud)
+	clear_root();app.map.show();hud=Control.new();hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);hud.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(hud)
 	resource_labels.clear()
-	var top=PanelContainer.new();top.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE);top.offset_left=10;top.offset_right=-10;top.offset_top=8;top.offset_bottom=79;hud.add_child(top);var top_row=box(top,false)
-	var identity=box(top_row);identity.custom_minimum_size.x=140;realm_label=label(identity,"",17,GOLD,false);button(identity,"Летопись",open_journal).custom_minimum_size.y=30
+	var top=PanelContainer.new();top.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE);top.offset_left=10;top.offset_right=-10;top.offset_top=8;top.offset_bottom=101;top.add_theme_stylebox_override("panel",frame_surface("ui_resource_bar",8));hud.add_child(top);var top_row=box(top,false)
+	var identity=box(top_row);identity.custom_minimum_size.x=140;realm_label=label(identity,"",17,GOLD,false);button(identity,"Летопись",open_journal).custom_minimum_size.y=44
 	for key in ["gold","food","wood","stone","iron","manpower"]:
 		var col=box(top_row);col.size_flags_horizontal=Control.SIZE_EXPAND_FILL;col.add_theme_constant_override("separation",0);label(col,RESOURCE_NAMES[key],13,MUTED,false);resource_labels[key]=label(col,"0",19,GOLD,false)
 	var stability_col=box(top_row);label(stability_col,"Стабильность",13,MUTED,false);resource_labels.stability=label(stability_col,"0",19,GREEN,false)
 	var time_col=box(top_row);date_label=label(time_col,"",16,GOLD,false);var speeds=box(time_col,false);speeds.add_theme_constant_override("separation",3)
 	for speed in [0,1,2,4]:
-		var b=button(speeds,"Ⅱ" if speed==0 else str(speed)+"×",func():app.set_speed(speed));b.custom_minimum_size=Vector2(42,32);b.add_theme_font_size_override("font_size",15)
+		var b=button(speeds,"Ⅱ" if speed==0 else str(speed)+"×",func():app.set_speed(speed));b.custom_minimum_size=Vector2(44,44);b.add_theme_font_size_override("font_size",15)
 	button(top_row,"☰",open_pause).custom_minimum_size=Vector2(46,44)
-	var toolbar=HBoxContainer.new();toolbar.position=Vector2(16,91);toolbar.add_theme_constant_override("separation",7);hud.add_child(toolbar)
+	var toolbar=HBoxContainer.new();toolbar.position=Vector2(16,111);toolbar.add_theme_constant_override("separation",7);hud.add_child(toolbar)
 	var modes=OptionButton.new();modes.custom_minimum_size=Vector2(206,44)
 	for name in ["Ландшафт","Политическая","Дипломатическая","Экономическая","Недовольство"]:modes.add_item(name)
 	modes.select(app.map.mode);modes.item_selected.connect(func(index):app.map.mode=index;app.map.queue_redraw());toolbar.add_child(modes)
@@ -136,7 +151,7 @@ func show_game():
 	var callbacks=[open_economy,open_diplomacy,open_military,open_dynasty,open_intrigue,open_laws]
 	var names=["Экономика","Дипломатия","Армия","Династия","Интриги","Законы"];var icons=["ui_economy","ui_diplomacy","ui_military","ui_dynasty","ui_intrigue","ui_laws"]
 	for i in range(6):button(nav,names[i],callbacks[i],icons[i])
-	side=PanelContainer.new();side.anchor_left=1;side.anchor_right=1;side.offset_left=-324;side.offset_right=-16;side.offset_top=91;side.anchor_bottom=1;side.offset_bottom=-84;hud.add_child(side)
+	side=PanelContainer.new();side.anchor_left=1;side.anchor_right=1;side.offset_left=-324;side.offset_right=-16;side.offset_top=111;side.anchor_bottom=1;side.offset_bottom=-84;hud.add_child(side)
 	var side_scroll=ScrollContainer.new();side_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;side.add_child(side_scroll);side_body=box(side_scroll);side_body.custom_minimum_size.x=272;side_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	var tip_panel=PanelContainer.new();tip_panel.anchor_left=0.5;tip_panel.anchor_right=0.5;tip_panel.anchor_top=1;tip_panel.anchor_bottom=1;tip_panel.offset_left=-325;tip_panel.offset_right=300;tip_panel.offset_top=-126;tip_panel.offset_bottom=-84;hud.add_child(tip_panel);notice=label(tip_panel,"",15,GOLD)
 	selected_province=int(r.capital);selected_army=-1;refresh_side();refresh_hud();toast("Начните с фермы, рынка или найма. Откройте летопись для подсказок.",9)
@@ -172,7 +187,7 @@ func refresh_side():
 	var s=app.state;var p=s.data.provinces[selected_province];var r=s.data.realms[int(p.owner)]
 	var row=box(side_body,false);image_rect(row,r.heraldry,Vector2(44,52));var col=box(row);heading(col,p.name,21);label(col,r.name,16,GOLD)
 	label(side_body,{"plains":"Равнины","forest":"Леса","hills":"Холмы","mountains":"Горы","marsh":"Болота"}[p.terrain]+(" · Побережье" if p.coastal else ""),15,MUTED)
-	image_rect(side_body,"grand_castle" if int(p.id)==int(r.capital) else "small_castle",Vector2(90,80))
+	image_rect(side_body,VisualLibrary.settlement(p,r),Vector2(128,102))
 	kv(side_body,"Население",format_number(p.population));kv(side_body,"Развитие","%d / 100"%p.development);kv(side_body,"Недовольство","%d%%"%p.unrest,RED if p.unrest>55 else GREEN);kv(side_body,"Гарнизон",str(int(p.garrison)))
 	var prod=EconomySystem.production(s,p);kv(side_body,"Производство еды","+%.0f / мес."%prod.food)
 	var tax=float(p.population)/340.0*(0.65+float(p.development)/100.0)*[0.65,1.0,1.4][int(r.tax)]*(1.0-float(p.unrest)/130.0)
@@ -230,7 +245,7 @@ func open_buildings(pid:int):
 	for key in s.buildings:
 		var b=s.buildings[key];var level=int(p.buildings.get(key,0));var cost={}
 		for k in b.cost:cost[k]=b.cost[k]*(level+1)
-		var row=box(modal_body,false);image_rect(row,b.asset,Vector2(58,58));var info=box(row);info.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		var row=box(modal_body,false);image_rect(row,VisualLibrary.building(key,mini(3,level+1),p),Vector2(72,72));var info=box(row);info.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		label(info,"%s · уровень %d → %d"%[b.name,level,mini(3,level+1)],19,GOLD);label(info,cost_text(cost)+" · %d дн."%(int(b.days)*(level+1)),15);label(info,building_effect(b),14,MUTED)
 		button(row,"Строить",func():act("build",{"province":pid,"kind":key},func():open_buildings(pid))).custom_minimum_size.x=110
 		separator(modal_body)
@@ -248,7 +263,7 @@ func open_recruit(pid:int):
 		if int(q.province)==pid:label(modal_body,"Обучается %s · %d дн."%[s.units[q.unit].name,q.days],17,GOLD)
 	for key in s.units:
 		var u=s.units[key];var row=box(modal_body,false)
-		var atlas=AtlasTexture.new();atlas.atlas=app.map.textures[u.asset];atlas.region=Rect2(0,0,32,40);var img=TextureRect.new();img.texture=atlas;img.custom_minimum_size=Vector2(48,60);img.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;img.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;row.add_child(img)
+		var atlas=AtlasTexture.new();atlas.atlas=app.map.texture_for(u.asset);atlas.region=Rect2(0,0,40,56);var img=TextureRect.new();img.texture=atlas;img.custom_minimum_size=Vector2(48,60);img.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;img.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;img.mouse_filter=Control.MOUSE_FILTER_IGNORE;row.add_child(img)
 		var info=box(row);info.size_flags_horizontal=Control.SIZE_EXPAND_FILL;label(info,u.name,19,GOLD);label(info,cost_text(u.cost),15);label(info,"Атака %.1f · защита %.1f · содержание %.1f / мес."%[u.attack,u.defense,u.upkeep],14,MUTED)
 		button(row,"Нанять",func():act("recruit",{"province":pid,"unit":key},func():open_recruit(pid))).custom_minimum_size.x=110;separator(modal_body)
 func open_economy():
@@ -326,7 +341,7 @@ func open_military():
 			button(modal_body,"%s · %s"%[s.data.provinces[int(report.province)].name,"Победа" if int(report.winner)==id else "Поражение"],func():open_battle_report(report))
 func open_battle_report(report:Dictionary):
 	open_window("Битва у "+app.state.data.provinces[int(report.province)].name,720,530)
-	image_rect(modal_body,"military_victory",Vector2(320,160));heading(modal_body,"Победа: "+app.state.realm_name(int(report.winner)),23)
+	image_rect(modal_body,"event_great_battle",Vector2(512,256));heading(modal_body,"Победа: "+app.state.realm_name(int(report.winner)),23)
 	kv(modal_body,"Силы наступающих",str(int(report.before_a)));kv(modal_body,"Силы защитников",str(int(report.before_d)));kv(modal_body,"Потери победителя",str(int(report.winner_loss)));kv(modal_body,"Потери проигравшего",str(int(report.loser_loss)))
 	label(modal_body,"Учтены состав, снабжение, мораль, командир и рельеф. Проигравшая армия отступила в безопасное владение либо уничтожена.",16,MUTED)
 func open_commander(army:int):
@@ -334,30 +349,30 @@ func open_commander(army:int):
 	var s=app.state;var id=int(s.data.player)
 	for c in s.data.characters:
 		if c.alive and int(c.realm)==id and c.age>=16:
-			button(modal_body,"%s · военное дело %d · верность %d"%[c.name,c.martial,c.loyalty],func():act("commander",{"army":army,"character":int(c.id)});close_window(),c.portrait)
+			button(modal_body,"%s · военное дело %d · верность %d"%[c.name,c.martial,c.loyalty],func():act("commander",{"army":army,"character":int(c.id)});close_window(),VisualLibrary.portrait(c))
 func open_dynasty():
 	open_window("Династия и королевский совет",1000,610)
 	var s=app.state;var r=s.data.realms[int(s.data.player)];var c=s.data.characters[int(r.ruler)]
-	var row=box(modal_body,false);image_rect(row,c.portrait,Vector2(120,120));var info=box(row);heading(info,"%s из дома %s"%[c.name,r.dynasty],25);label(info,"%s · %d лет · легитимность %d"%[["Граф","Герцог","Король","Император"][int(r.title)],c.age,r.legitimacy],18,GOLD);label(info,"Военное %d · управление %d · дипломатия %d · интрига %d"%[c.martial,c.administration,c.diplomacy,c.intrigue],16);label(info,", ".join(c.traits),16,MUTED)
+	var row=box(modal_body,false);image_rect(row,VisualLibrary.portrait(c),Vector2(120,120));var info=box(row);heading(info,"%s из дома %s"%[c.name,r.dynasty],25);label(info,"%s · %d лет · легитимность %d"%[["Граф","Герцог","Король","Император"][int(r.title)],c.age,r.legitimacy],18,GOLD);label(info,"Военное %d · управление %d · дипломатия %d · интрига %d"%[c.martial,c.administration,c.diplomacy,c.intrigue],16);label(info,", ".join(c.traits),16,MUTED)
 	if c.age<16:label(modal_body,"Регентство: совет управляет владением до 16-летия правителя.",17,RED)
-	separator(modal_body);heading(modal_body,"Семья",21)
+	separator(modal_body);heading(modal_body,"Семья",21);image_rect(modal_body,"ui_dynasty_tree",Vector2(256,68))
 	if int(c.spouse)>=0:
-		var spouse=s.data.characters[int(c.spouse)];button(modal_body,"Супруг(а): %s · %d лет"%[spouse.name,spouse.age],func():open_character(int(spouse.id)),spouse.portrait)
+		var spouse=s.data.characters[int(c.spouse)];button(modal_body,"Супруг(а): %s · %d лет"%[spouse.name,spouse.age],func():open_character(int(spouse.id)),VisualLibrary.portrait(spouse))
 	else:label(modal_body,"Правитель не состоит в браке.",16,MUTED)
 	if int(r.heir)>=0:
-		var heir=s.data.characters[int(r.heir)];button(modal_body,"Наследник: %s · %d лет"%[heir.name,heir.age],func():open_character(int(heir.id)),heir.portrait)
+		var heir=s.data.characters[int(r.heir)];button(modal_body,"Наследник: %s · %d лет"%[heir.name,heir.age],func():open_character(int(heir.id)),VisualLibrary.portrait(heir))
 	else:label(modal_body,"Нет законного наследника: династия под угрозой.",17,RED)
 	var alive_children=0
 	for cid in c.children:
 		var child=s.data.characters[int(cid)]
-		if child.alive:alive_children+=1;button(modal_body,"└ %s · %d лет"%[child.name,child.age],func():open_character(int(child.id)),child.portrait)
+		if child.alive:alive_children+=1;button(modal_body,"└ %s · %d лет"%[child.name,child.age],func():open_character(int(child.id)),VisualLibrary.portrait(child))
 	if alive_children==0:label(modal_body,"Детей пока нет. Допустимые родственники могут продолжить род.",16,MUTED)
 	button(modal_body,"Заключить династический брак",open_marriage,"ui_dynasty")
 	separator(modal_body);heading(modal_body,"Королевский совет",21)
 	for slot in OFFICE_NAMES:
 		var cid=int(r.council.get(slot,-1));var text=OFFICE_NAMES[slot]+": "+(s.data.characters[cid].name if cid>=0 else "вакансия")
 		if cid>=0:text+=" · бонус %.1f"%CharacterSystem.bonus(s,int(r.id),slot)
-		button(modal_body,text,func():open_appointment(slot),s.data.characters[cid].portrait if cid>=0 else "ui_dynasty")
+		button(modal_body,text,func():open_appointment(slot),VisualLibrary.portrait(s.data.characters[cid]) if cid>=0 else "ui_dynasty")
 	separator(modal_body);heading(modal_body,"Вассалы и землевладельцы",21)
 	for realm in s.data.realms:
 		if int(realm.suzerain)==int(r.id):button(modal_body,"Вассал: "+realm.name,func():open_diplomacy(int(realm.id)),realm.heraldry)
@@ -368,11 +383,11 @@ func open_dynasty():
 		listed.append(holder);var noble=s.data.characters[holder];var holdings=0
 		for pp in s.provinces_of(int(r.id)):
 			if int(pp.holder)==holder:holdings+=1
-		button(modal_body,"%s · %d провинц. · верность %d"%[noble.name,holdings,noble.loyalty],func():open_character(holder),noble.portrait)
+		button(modal_body,"%s · %d провинц. · верность %d"%[noble.name,holdings,noble.loyalty],func():open_character(holder),VisualLibrary.portrait(noble))
 	if listed.is_empty():label(modal_body,"Все земли пока принадлежат вам лично. При расширении появятся влиятельные землевладельцы.",16,MUTED)
 func open_character(cid:int):
 	open_window("Персонаж",760,560)
-	var s=app.state;var c=s.data.characters[cid];var row=box(modal_body,false);image_rect(row,c.portrait,Vector2(128,128));var info=box(row);heading(info,c.name+" · "+s.data.dynasties[int(c.dynasty)].name,25);label(info,"Возраст %d · %s"%[c.age,"жив(а)" if c.alive else "умер(ла)"],18);label(info,"Принадлежность: "+s.realm_name(int(c.realm)),17);label(info,", ".join(c.traits),16,MUTED)
+	var s=app.state;var c=s.data.characters[cid];var row=box(modal_body,false);image_rect(row,VisualLibrary.portrait(c),Vector2(128,128));var info=box(row);heading(info,c.name+" · "+s.data.dynasties[int(c.dynasty)].name,25);label(info,"Возраст %d · %s"%[c.age,"жив(а)" if c.alive else "умер(ла)"],18);label(info,"Принадлежность: "+s.realm_name(int(c.realm)),17);label(info,", ".join(c.traits),16,MUTED)
 	for key in ["martial","administration","diplomacy","intrigue","loyalty","ambition","health"]:kv(modal_body,{"martial":"Военное дело","administration":"Управление","diplomacy":"Дипломатия","intrigue":"Интрига","loyalty":"Верность","ambition":"Амбиции","health":"Здоровье"}[key],str(int(c[key])))
 	for secret in c.secrets:label(modal_body,"Сведения: "+secret,16,GOLD)
 	if c.alive:button(modal_body,"Тайные действия",func():open_intrigue(cid),"ui_intrigue")
@@ -383,7 +398,7 @@ func open_appointment(slot:String):
 	label(modal_body,"Советник занимает одну должность. Новый получает +10 верности, отстранённый теряет 8. Бонусы умеренны и зависят от компетенции.",16,MUTED)
 	for c in s.data.characters:
 		if not c.alive or int(c.realm)!=id or c.age<16 or int(c.id)==int(s.data.realms[id].ruler):continue
-		button(modal_body,"%s · упр. %d · дипл. %d · воен. %d · интр. %d"%[c.name,c.administration,c.diplomacy,c.martial,c.intrigue],func():act("appoint",{"slot":slot,"character":int(c.id)},open_dynasty),c.portrait)
+		button(modal_body,"%s · упр. %d · дипл. %d · воен. %d · интр. %d"%[c.name,c.administration,c.diplomacy,c.martial,c.intrigue],func():act("appoint",{"slot":slot,"character":int(c.id)},open_dynasty),VisualLibrary.portrait(c))
 func open_marriage():
 	open_window("Династический брак",900,560)
 	var s=app.state;var id=int(s.data.player)
@@ -435,7 +450,7 @@ func open_event():
 	var s=app.state
 	if s.data.events.is_empty():toast("Нет ожидающих событий.");return
 	var entry=s.data.events[0];var e=EventSystem.definition(s,entry)
-	open_window(e.title,820,590);image_rect(modal_body,e.get("illustration","coronation"),Vector2(320,160));label(modal_body,e.description,19)
+	open_window(e.title,820,590);image_rect(modal_body,VisualLibrary.event_picture(e.get("id",entry.get("event_id","")),e.get("illustration","coronation")),Vector2(512,256));label(modal_body,e.description,19)
 	if entry.has("special"):button(modal_body,"Продолжить",func():act("event",{"index":0,"choice":0});close_window())
 	else:
 		for index in range(e.choices.size()):
@@ -470,11 +485,12 @@ func open_settings():
 	button(modal_body,"Ограничение кадров: %d FPS"%Engine.max_fps,func():Engine.max_fps=30 if Engine.max_fps==60 else 60;app.save_settings();open_settings())
 	button(modal_body,"Жители и эффекты: "+("включены" if app.map.details_enabled else "выключены"),func():app.map.details_enabled=not app.map.details_enabled;app.save_settings();open_settings())
 	if OS.get_name()!="Android":button(modal_body,"Полноэкранный режим",func():DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if DisplayServer.window_get_mode()!=DisplayServer.WINDOW_MODE_FULLSCREEN else DisplayServer.WINDOW_MODE_WINDOWED))
-	separator(modal_body);label(modal_body,"Графика: оригинальный процедурный Pixel Art. В версии 0.1.0 — сухопутная стратегия; корабли показывают торговые маршруты. Звуковая дорожка пока отсутствует.",16,MUTED)
+	separator(modal_body);label(modal_body,"Графика: единый High-Detail Pixel Art, 246 ресурсов. В версии 0.2.0 — сухопутная стратегия; корабли показывают торговые маршруты. Звуковая дорожка пока отсутствует.",16,MUTED)
 func show_outcome():
 	var result=app.state.data.outcome
 	open_window("Империя основана" if result=="victory" else "Летопись завершена",800,560);modal_previous_speed=0
-	image_rect(modal_body,"coronation" if result=="victory" else "ruler_death",Vector2(320,160))
+	image_rect(modal_body,"event_empire_foundation" if result=="victory" else "event_royal_funeral",Vector2(512,256))
+	if result=="victory":image_rect(modal_body,"ui_victory_ornament",Vector2(256,128))
 	label(modal_body,"Ваша династия удержала 35 провинций под императорской короной. Эльдрат признаёт вашу власть." if result=="victory" else "Последнее владение потеряно." if result=="defeat_land" else "Династия пресеклась: допустимых наследников не осталось.",20,GOLD)
 	if result=="victory":button(modal_body,"Продолжить свободную игру",func():app.state.data.freeplay=true;app.state.data.outcome="";app.outcome_shown=false;close_window())
 	button(modal_body,"Главное меню",func():close_window();app.return_to_menu())
@@ -482,6 +498,7 @@ func handle_back():
 	if modal!=null and is_instance_valid(modal):close_window();return
 	if app.running:
 		if app.map.destination_mode:app.map.destination_mode=false;toast("Приказ перемещения отменён.");return
+		if selected_army>=0:selected_army=-1;app.map.selected_army=-1;app.map.queue_redraw();side.hide();return
 		open_pause()
 	else:show_main_menu()
 
@@ -490,7 +507,7 @@ func open_land_grant(pid:int):
 	label(modal_body,"Вассал получает землю и +16 верности. Лишение владения снижает лояльность прежнего владельца и легитимность. Провинции одного непокорного дворянина могут совместно поднять восстание.",17,MUTED)
 	for c in app.state.data.characters:
 		if c.alive and int(c.realm)==int(app.state.data.player) and c.age>=16:
-			button(modal_body,"%s · верность %d · управление %d"%[c.name,c.loyalty,c.administration],func():act("grant",{"province":pid,"character":int(c.id)});close_window(),c.portrait)
+			button(modal_body,"%s · верность %d · управление %d"%[c.name,c.loyalty,c.administration],func():act("grant",{"province":pid,"character":int(c.id)});close_window(),VisualLibrary.portrait(c))
 
 func blocks_world_at(point:Vector2)->bool:
 	if not app.running or (modal!=null and is_instance_valid(modal)):return true
@@ -498,3 +515,16 @@ func blocks_world_at(point:Vector2)->bool:
 	for child in hud.get_children():
 		if child is Control and child.is_visible_in_tree() and child.mouse_filter!=Control.MOUSE_FILTER_IGNORE and child.get_global_rect().has_point(point):return true
 	return false
+
+func frame_surface(id:String,padding:int=10)->StyleBoxTexture:
+	var surface=StyleBoxTexture.new();surface.texture=app.map.texture_for(id)
+	for side_index in [SIDE_LEFT,SIDE_TOP,SIDE_RIGHT,SIDE_BOTTOM]:
+		surface.set_texture_margin(side_index,28 if id in ["ui_ornate_menu_frame","ui_province_frame"] else 12)
+		surface.set_content_margin(side_index,padding)
+	return surface
+func button_surface(index:int)->StyleBoxTexture:
+	var source=AtlasTexture.new();source.atlas=app.map.texture_for("ui_medieval_buttons");source.region=Rect2(0,index*64,192,64)
+	var surface=StyleBoxTexture.new();surface.texture=source
+	for side_index in [SIDE_LEFT,SIDE_TOP,SIDE_RIGHT,SIDE_BOTTOM]:surface.set_texture_margin(side_index,12)
+	surface.set_content_margin(SIDE_LEFT,13);surface.set_content_margin(SIDE_RIGHT,13);surface.set_content_margin(SIDE_TOP,7);surface.set_content_margin(SIDE_BOTTOM,7)
+	return surface

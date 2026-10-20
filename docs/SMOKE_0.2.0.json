@@ -1,0 +1,8 @@
+{
+  "android_hardware_test": false,
+  "checks": 287,
+  "failures": 0,
+  "static_memory_desktop_bytes": 41755996,
+  "texture_memory_desktop_bytes": 74851697,
+  "textures_loaded": 246
+}

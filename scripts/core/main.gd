@@ -35,11 +35,14 @@ func set_speed(speed:int):
 	if ui.modal!=null and is_instance_valid(ui.modal):return
 	clock.speed=speed;ui.refresh_hud()
 func _process(delta):
+	map.simulation_running=running and clock.speed>0
+	map.movement_fraction=clock.accumulator
 	if not running:return
 	if state.data.outcome!="" and not outcome_shown:
 		clock.speed=0;outcome_shown=true;ui.show_outcome();return
 	if state.data.outcome!="" and state.data.outcome!="victory":return
 	var days=clock.advance(delta,state,commands)
+	map.movement_fraction=clock.accumulator
 	if days>0:
 		map.queue_redraw();ui.refresh_hud();ui.refresh_side()
 		if int(state.data.day)-int(state.data.last_autosave)>=int(state.balance.autosave_days):

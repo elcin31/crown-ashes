@@ -1,0 +1,37 @@
+name: Android downloadable package
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and extract the signed offline APK
+        shell: python
+        run: |
+          import os, zipfile
+          from pathlib import Path
+          name = 'CrownAndAshes-v0.2.0-android.apk'
+          source = Path('exports/CrownAndAshes-v0.2.0-android.zip')
+          destination = Path(os.environ['RUNNER_TEMP']) / 'crown-package'
+          destination.mkdir()
+          with zipfile.ZipFile(source) as archive:
+              assert archive.namelist() == [name]
+              assert archive.testzip() is None
+              archive.extract(name, destination)
+          apk = destination / name
+          assert apk.stat().st_size > 1_000_000
+          with zipfile.ZipFile(apk) as archive:
+              assert archive.testzip() is None
+              assert 'AndroidManifest.xml' in archive.namelist()
+              assert 'classes.dex' in archive.namelist()
+              assert 'lib/arm64-v8a/libgodot_android.so' in archive.namelist()
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CrownAndAshes-v0.2.0-android
+          path: ${{ runner.temp }}/crown-package/CrownAndAshes-v0.2.0-android.apk
+          compression-level: 0
+          retention-days: 30
+          if-no-files-found: error
