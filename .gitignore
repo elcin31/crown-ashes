@@ -6,3 +6,6 @@
 exports/*
 !exports/.gitkeep
 __pycache__/
+!exports/CrownAndAshes-v0.1.0-android.zip
+!exports/CrownAndAshes-v0.1.0-linux.zip
+!exports/SHA256SUMS.txt
