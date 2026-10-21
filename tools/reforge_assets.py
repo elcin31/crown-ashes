@@ -561,3 +561,5 @@ print('VIBRANT MATERIALS: 246 existing resources regenerated; Niyazov extension 
 
 import subprocess,sys
 if (SRC/"niyazov_story.png").exists() and (SRC/"niyazov_heraldry.png").exists():subprocess.run([sys.executable,str(ROOT/"tools/niyazov_art.py")],check=True)
+
+if (SRC/"settlements_v0_3_1.png").exists():subprocess.run([sys.executable,str(ROOT/"tools/settlement_art.py")],check=True)

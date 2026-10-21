@@ -1,0 +1,82 @@
+{
+  "version": "0.3.1",
+  "game_png": 263,
+  "repainted_buildings": 12,
+  "new_settlement_tiers": 3,
+  "sprite_sheets_unchanged": 36,
+  "stable_old_ids": true,
+  "revisions": [
+    {
+      "id": "peasant_hut",
+      "path": "assets/buildings/peasant_hut.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "house",
+      "path": "assets/buildings/house.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "townhouse",
+      "path": "assets/buildings/townhouse.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "farm",
+      "path": "assets/buildings/farm.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "granary",
+      "path": "assets/buildings/granary.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "market",
+      "path": "assets/buildings/market.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "small_castle",
+      "path": "assets/buildings/small_castle.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "wooden_fort",
+      "path": "assets/buildings/wooden_fort.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "fortified_manor",
+      "path": "assets/buildings/fortified_manor.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "stone_keep",
+      "path": "assets/buildings/stone_keep.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "noble_estate",
+      "path": "assets/buildings/noble_estate.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    },
+    {
+      "id": "windmill",
+      "path": "assets/buildings/windmill.png",
+      "decision": "Replace",
+      "reason": "clean silhouette, ordered roofing, distinct openings and larger readable material clusters"
+    }
+  ]
+}

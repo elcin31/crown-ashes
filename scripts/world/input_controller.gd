@@ -54,7 +54,9 @@ func _unhandled_input(event):
 	elif event is InputEventKey and event.pressed:
 		if event.keycode==KEY_HOME:map.focus_capital()
 func zoom_at(screen:Vector2,factor:float):
-	var old=map.target_zoom;var next=clampf(old*factor,0.45,1.8)
+	var extent=map.get_viewport_rect().size
+	var minimum=maxf(.45,maxf(extent.x/(map.world_size.x+200),extent.y/(map.world_size.y+160)))
+	var old=map.target_zoom;var next=clampf(old*factor,minimum,1.8)
 	var offset=screen-map.get_viewport_rect().size/2
 	map.target_position+=offset/old-offset/next;map.target_zoom=next
 func touch_distance()->float:

@@ -1,14 +1,32 @@
 # CROWN & ASHES
 
-**0.3.0 — The Legacy of Niyazov**. Русская офлайн-стратегия для Android landscape.
+**0.3.1 — Mobile Resolution & Building Art**. Русская офлайн-стратегия для Android landscape.
 Godot **4.6.3 stable**, GDScript, OpenGL Compatibility, ARM64, Android 7.0+.
 
-[Android ZIP с APK](https://raw.githubusercontent.com/elcin31/crown-ashes/main/exports/CrownAndAshes-v0.3.0-android.zip)
+[Android ZIP с APK](https://raw.githubusercontent.com/elcin31/crown-ashes/main/exports/CrownAndAshes-v0.3.1-android.zip)
 · [Релизы](https://github.com/elcin31/crown-ashes/releases)
 
 Подписанный **debug APK для личного тестирования**. Сохранены package ID и прежний
 ключ: обновление устанавливается поверх предыдущих APK из этой среды. Интернет и
 опасные разрешения не нужны. Формат сохранений — **1**, с резервной копией и SHA256.
+
+## Мобильное обновление 0.3.1
+
+`canvas_items` + `expand`: сохраняется эталонная высота 720, а широкий экран
+показывает больше карты. При 2400×1080 холст — 1600×720; при 2340×1080 — 1560×720.
+Пропорции объектов сохраняются. HUD учитывает Android safe area; окна ограничены
+доступной областью. Верхняя панель — 90, нижняя — 72 условных пикселя.
+
+Текст UI — от 20, ресурсы — 26, заголовки — от 26, названия провинций — 21/24.
+Правая панель открывается после выбора; миникарта компактнее и скрывается кнопкой
+«Обзор». Переключение масштаба использует центр текущего экрана. Функции прежних
+панелей и сенсорная обработка сохранены.
+
+12 основных зданий получили новые оригинальные изображения с чистыми силуэтами,
+упорядоченными крышами и различимыми окнами. Добавлены 3 составных облика поселений:
+деревня, торговый квартал и укреплённый город. Дома возле них разнесены, дороги
+тоньше, случайных травяных штрихов меньше. Топология и экономика не менялись.
+[Сравнение зданий](docs/building_comparison_0.3.1.png) · [Четыре экрана](docs/screenshots/0.3.1/).
 
 ## Наследие Ниязовых
 
@@ -46,8 +64,8 @@ Godot **4.6.3 stable**, GDScript, OpenGL Compatibility, ARM64, Android 7.0+.
 Исправлены исходные палитры и запекание мира; общего фильтра насыщенности нет.
 UI остаётся тёмным и читаемым. Несколько лёгких речных бликов работают без шейдеров.
 
-260 игровых PNG: **245 прежних перекрашены, один сохранён**, добавлены **12 сюжетных
-сцен, герб и штандарт**. 36 действующих анимационных листов, 1440 кадров.
+263 игровых PNG. Обновление 0.3 добавило 12 сюжетных сцен, герб и штандарт;
+0.3.1 перерисовало 12 зданий и добавило три композиции поселений. 36 действующих анимационных листов, 1440 кадров.
 Статический мир кэшируется, объекты отсекаются за камерой, вдали используется LOD.
 Портреты и сюжетные картины загружаются по требованию. Камера не пересоздаёт мир.
 
@@ -74,7 +92,7 @@ godot --headless --path . --editor --import --quit
 ./tools/build_android.sh
 ```
 
-Результат — `exports/CrownAndAshes-v0.3.0-android.apk`, ZIP только с этим APK и SHA256SUMS.
+Результат — `exports/CrownAndAshes-v0.3.1-android.apk`, ZIP только с этим APK и SHA256SUMS.
 Workflow `Android downloadable package` публикует проверенный готовый APK как artifact.
 
 - `scripts/core`, `economy`, `military`, `politics`, `ai` — общие игровые правила.
@@ -82,7 +100,7 @@ Workflow `Android downloadable package` публикует проверенны�
 - `scripts/events/narrative_system.gd`, `data/narrative.json` — сюжет поверх EventSystem.
 - `scripts/world`, `scripts/ui_controller.gd` — карта, жесты и интерфейс.
 - `assets/`, `assets_manifest.json` — текстуры, размеры, назначение, анимации.
-- `tools/art_sources/` — исходные авторские атласы; Python/Pillow: `generate_assets.py`,
+- `tools/art_sources/` — исходные авторские атласы; Python/Pillow: `generate_assets.py` (включает `settlement_art.py`),
   затем `bake_world.py`. `generate_story.py` воспроизводит сюжетные определения.
 
 ## Ограничения

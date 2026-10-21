@@ -2,7 +2,7 @@ extends Control
 signal navigated(position:Vector2)
 var map
 func _ready():
-	custom_minimum_size=Vector2(190,112);mouse_filter=Control.MOUSE_FILTER_STOP
+	custom_minimum_size=Vector2(168,92);mouse_filter=Control.MOUSE_FILTER_STOP
 func _draw():
 	if map==null or map.s==null:return
 	var factor=size/Vector2(3072,1792)

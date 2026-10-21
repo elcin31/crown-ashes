@@ -18,7 +18,9 @@ func _ready():
 	map.army_selected.connect(func(id):if running:ui.select_army(id))
 	map.input_controller.ui_blocks_world=ui.blocks_world_at
 	load_settings();ui.show_main_menu()
-	if "--legacy-smoke" in OS.get_cmdline_user_args():
+	if "--mobile-smoke" in OS.get_cmdline_user_args():
+		var runner=load("res://tests/mobile_smoke.gd").new();runner.app=self;add_child(runner)
+	elif "--legacy-smoke" in OS.get_cmdline_user_args():
 		var runner=load("res://tests/legacy_smoke.gd").new();runner.app=self;add_child(runner)
 	elif "--input-smoke" in OS.get_cmdline_user_args():
 		var runner=load("res://tests/input_smoke.gd").new();runner.app=self;add_child(runner)

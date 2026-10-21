@@ -29,6 +29,7 @@ var lod:int=0
 var visual_time:float=0.0
 var details_enabled:bool=true
 var static_sprite:Sprite2D
+var world_size=Vector2(3072,1792)
 func _ready():
 	rivers=GameState.read_json("res://data/world.json").rivers
 	texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
@@ -39,7 +40,7 @@ func _ready():
 		texture_metadata[resource.id]=resource
 		# Big event paintings and portraits are loaded when their panel is opened.
 		if resource.type in ["buildings","decorations","characters","heraldry","military","ui"]:texture_for(resource.id)
-	static_sprite=Sprite2D.new();static_sprite.texture=load("res://data/terrain_cache.png");static_sprite.centered=false;static_sprite.z_index=-1;add_child(static_sprite)
+	static_sprite=Sprite2D.new();static_sprite.texture=load("res://data/terrain_cache.png");world_size=static_sprite.texture.get_size();static_sprite.centered=false;static_sprite.z_index=-1;add_child(static_sprite)
 	camera=Camera2D.new();camera.position=target_position;camera.zoom=Vector2.ONE*target_zoom;camera.position_smoothing_enabled=false;add_child(camera)
 	actors=Node2D.new();actors.set_script(load("res://scripts/world/map_actors.gd"));actors.map=self;add_child(actors)
 	input_controller=Node.new();input_controller.set_script(load("res://scripts/world/input_controller.gd"));input_controller.map=self;add_child(input_controller)
@@ -65,8 +66,8 @@ func _process(delta):
 	var fraction=1.0-exp(-delta*14)
 	camera.position=camera.position.lerp(target_position,fraction);camera.zoom=camera.zoom.lerp(Vector2.ONE*target_zoom,fraction)
 	var margin=get_viewport_rect().size/(target_zoom*2)
-	target_position.x=clampf(target_position.x,margin.x-180,3072-margin.x+180)
-	target_position.y=clampf(target_position.y,margin.y-120,1792-margin.y+120)
+	target_position.x=world_size.x/2 if margin.x*2>=world_size.x+200 else clampf(target_position.x,margin.x-100,world_size.x-margin.x+100)
+	target_position.y=world_size.y/2 if margin.y*2>=world_size.y+160 else clampf(target_position.y,margin.y-80,world_size.y-margin.y+80)
 	var next_lod=1 if target_zoom<0.65 else 0
 	if lod!=next_lod:lod=next_lod;queue_redraw()
 	if camera.position.distance_to(last_cull_center)>80 or absf(camera.zoom.x-last_cull_zoom)>.07:
@@ -132,8 +133,8 @@ func _draw():
 		if not view.has_point(c):continue
 		var realm=s.data.realms[int(p.owner)]
 		var capital=int(p.id)==int(realm.capital);var key=VisualLibrary.settlement(p,realm)
-		var extent=136.0 if capital and int(realm.title)>=2 else 112.0 if capital else 90.0 if int(p.population)>=7600 else 76.0
-		var dimensions=Vector2.ONE*extent
+		var extent=136.0 if capital and int(realm.title)>=2 else 112.0 if capital else 122.0 if int(p.population)>=7600 else 110.0 if key=="town_quarter" else 104.0
+		var settlement_texture=texture_for(key);var dimensions=Vector2(extent,extent*settlement_texture.get_height()/settlement_texture.get_width())
 		draw_texture_rect(texture_for(key),Rect2(c-dimensions*Vector2(0.5,0.88),dimensions),false)
 		if realm.heraldry=="niyazov" and capital:
 			draw_texture_rect(texture_for("niyazov_standard"),Rect2(c+Vector2(-extent*.47,-extent*.69),Vector2(28,55)),false)
@@ -150,9 +151,9 @@ func _draw():
 		if capital or lod==0:
 			draw_texture_rect(texture_for(realm.heraldry),Rect2(c+Vector2(-12,-extent-12),Vector2(26,31)),false)
 		if lod==0 or capital:
-			var text=p.name;var fs=18 if capital else 15;var width=font.get_string_size(text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs).x
-			var at=c+Vector2(-width/2,43)
-			draw_string_outline(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs,3,Color("#15272b"));draw_string(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs,Color("#efdfb3") if capital else Color("#d1cfb0"))
+			var text=p.name;var fs=24 if capital else 21;var width=font.get_string_size(text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs).x
+			var at=c+Vector2(-width/2,47)
+			draw_string_outline(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs,2,Color("#14232b"));draw_string(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,fs,Color("#efdfb3") if capital else Color("#f1e7ca"))
 		if not p.construction.is_empty():
 			draw_rect(Rect2(c+Vector2(-23,48),Vector2(46,4)),Color("#17252c"));draw_rect(Rect2(c+Vector2(-23,48),Vector2(46*(1.0-float(p.construction.remaining)/float(p.construction.total)),4)),Color("#c5a363"))
 		if not p.siege.is_empty():draw_arc(c,54,0,TAU*float(p.siege.progress)/100,32,Color("#c58b78"),2.5,false)

@@ -24,10 +24,10 @@ static func settlement(p:Dictionary,realm:Dictionary)->String:
 		if int(realm.title)>=2:return ["royal_citadel","grand_stone_castle","royal_palace"][int(realm.id)%3]
 		return "fortified_manor" if int(realm.title)==0 else "grand_castle"
 	if int(p.buildings.get("fort",1))>=2:return building("fort",int(p.buildings.fort),p)
-	if int(p.population)>=7600:return "medieval_town_hall"
+	if int(p.population)>=7600:return "walled_town"
 	if float(p.development)>=42:return "noble_estate"
-	if float(p.development)>=34:return "townhouse"
-	return "wooden_fort" if p.terrain=="forest" else "small_castle"
+	if float(p.development)>=34 or int(p.population)>=6000:return "town_quarter"
+	return "wooden_fort" if p.terrain=="forest" and int(p.buildings.get("fort",0))>0 else "village_cluster"
 static func portrait(c:Dictionary)->String:
 	var old=str(c.get("portrait","noble_mature"));var role=str(c.get("role",""));var traits=c.get("traits",[]);var age=int(c.get("age",30));var female=c.get("gender","m")=="f"
 	if role=="rebel":return "portrait_rebel_pretender"

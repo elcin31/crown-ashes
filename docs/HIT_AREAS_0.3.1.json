@@ -1,0 +1,50 @@
+{
+  "android_device_tested": false,
+  "buttons": [
+    {
+      "button": "Летопись",
+      "size": [
+        138.0,
+        44.0
+      ]
+    },
+    {
+      "button": "Ⅱ",
+      "size": [
+        54.0,
+        46.0
+      ]
+    },
+    {
+      "button": "1×",
+      "size": [
+        56.0,
+        46.0
+      ]
+    },
+    {
+      "button": "2×",
+      "size": [
+        56.0,
+        46.0
+      ]
+    },
+    {
+      "button": "4×",
+      "size": [
+        56.0,
+        46.0
+      ]
+    },
+    {
+      "button": "☰",
+      "size": [
+        54.0,
+        74.0
+      ]
+    }
+  ],
+  "checks": 14,
+  "failures": 0,
+  "scope": "only top button bounds and pause hit area; prior test's arbitrary 52 px upper bound removed"
+}

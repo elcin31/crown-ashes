@@ -12,3 +12,7 @@ stone and wheat. `../niyazov_art.py` prepares story scenes, crest and standard.
 Reproduce with Python/Pillow: `python3 tools/generate_assets.py`, followed by
 `python3 tools/bake_world.py`. The current output is 260 game PNG plus service catalogues.
 `baseline_assets.json` and `legacy_generator_v0_1.py` retain the historical 0.1 workshop.
+
+0.3.1 adds `settlements_v0_3_1.png`: 12 clean original architecture paintings.
+`../settlement_art.py` normalizes their materials/grid and composes three live
+settlement tiers. The full regeneration chain now produces 263 game PNGs.

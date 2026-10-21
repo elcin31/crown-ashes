@@ -31,7 +31,7 @@ d=ImageDraw.Draw(im)
 # Small tuft groups follow terrain patches. Never cover the reserve around town centres.
 centres=[(p['center'][0]/2,p['center'][1]/2) for p in world['provinces']]
 def reserved(x,y,radius=42):return any(abs(x-cx)<radius and abs(y-cy)<radius*.7 for cx,cy in centres)
-for _ in range(7500):
+for _ in range(4200):
  x,y=r.randrange(W),r.randrange(H)
  if land.getpixel((x,y))<128 or reserved(x,y,33):continue
  if _%7==0:d.line([(x-2,y+1),(x,y-2),(x,y),(x+3,y-1)],fill='#a9cf67')
@@ -55,7 +55,7 @@ def bezier(a,b,offset=0):
 roads=[]
 for e in selected:
  a,b=centres[int(e['a'])],centres[int(e['b'])];pts=bezier(a,b,r.uniform(-.18,.18));roads.append(pts)
- d.line(pts,fill='#624426',width=5,joint='curve');d.line(pts,fill='#b08045',width=3,joint='curve');d.line([(x,y-1) for x,y in pts],fill='#d6ab65',width=1,joint='curve')
+ d.line(pts,fill='#6d4d2d',width=4,joint='curve');d.line(pts,fill='#b28a51',width=2,joint='curve');d.line([(x,y-1) for x,y in pts],fill='#cbaa71',width=1,joint='curve')
 # Catmull-Rom watercourses follow the saved rivers; only the drawing is refined.
 def smooth(points):
  p=[points[0]]+points+[points[-1]];out=[]
@@ -125,11 +125,12 @@ for p in world['provinces']:
    if not reserved(x,y,42):place('oak' if k%3==0 else 'bush',x,y,20)
  # The large landmark remains dynamic; bake only streets, yards and satellite buildings.
  tier=3 if pid in [int(k['capital']) for k in world['realms']] else 2 if p['population']>7300 else 1 if p['development']>34 else 0
- offsets=[(-24,14,'house'),(25,19,'peasant_hut'),(-10,35,'granary')]
- if tier>=1:offsets.extend([(-33,-8,'townhouse'),(33,-5,'market'),(39,35,'well')])
- if tier>=2:offsets.extend([(-38,28,'merchant_guildhall'),(4,43,'medieval_town_hall')])
- if tier>=3:offsets.extend([(-41,-27,'temple'),(45,-20,'noble_estate')])
- for dx,dy,name in offsets:place(name,cx+dx,cy+dy,29 if name not in ['temple','merchant_guildhall'] else 35)
+ # Satellite buildings sit outside the main silhouette and label corridor.
+ offsets=[(-48,9,'house'),(48,13,'peasant_hut')]
+ if tier>=1:offsets.extend([(-48,38,'granary'),(46,42,'market')])
+ if tier>=2:offsets.append((-43,-30,'townhouse'))
+ if tier>=3:offsets.extend([(48,-32,'temple'),(60,5,'noble_estate')])
+ for dx,dy,name in offsets:place(name,cx+dx,cy+dy,34 if name not in ['temple','market','noble_estate'] else 39)
  if p['coastal']:place('fortified_harbor' if tier>=2 else 'port',cx+74,cy+36,44)
  if pid%5==0:place('roadside_shrine',cx+55,cy+30,21)
  if pid%7==0:place('abandoned_cottage',cx-78,cy+35,27)
@@ -168,5 +169,5 @@ for x,y in crossings:
 for name,pos in [('shallow_river_rapids',rivers[0][35]),('rocky_coastline',coast[2]),('sandy_coastline',coast[8])]:
  x,y=map(int,pos);tile=a(name).resize((28,28),Image.Resampling.NEAREST);mask=Image.new('L',(28,28));ImageDraw.Draw(mask).ellipse((2,3,25,24),fill=120);im.paste(tile,(x-14,y-14),mask)
 im=im.resize((world['width'],world['height']),Image.Resampling.NEAREST).convert('RGB');im.save(ROOT/'data/terrain_cache.png',optimize=True)
-(ROOT/'data/visual_world.json').write_text(json.dumps({'version':'0.3.0','roads':len(roads),'bridges':len(crossings),'scenery_count':len(placements),'cache_size':list(im.size),'topology_changed':False},indent=2))
+(ROOT/'data/visual_world.json').write_text(json.dumps({'version':'0.3.1','roads':len(roads),'bridges':len(crossings),'scenery_count':len(placements),'cache_size':list(im.size),'topology_changed':False},indent=2))
 print('Reforged geography:',len(placements),'prebaked scenery placements,',len(roads),'curving roads,',len(crossings),'bridges; topology unchanged.')

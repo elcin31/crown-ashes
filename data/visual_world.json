@@ -1,8 +1,8 @@
 {
-  "version": "0.3.0",
-  "roads": 73,
-  "bridges": 11,
-  "scenery_count": 2266,
+  "version": "0.3.1",
+  "roads": 72,
+  "bridges": 13,
+  "scenery_count": 2024,
   "cache_size": [
     3072,
     1792

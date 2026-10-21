@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "art_version": "0.3.0",
+  "art_version": "0.3.1",
   "license": "Original project artwork, CC0-1.0; fonts separately licensed",
   "sources": [
     "tools/art_sources/architecture.png",
@@ -8,7 +8,8 @@
     "tools/art_sources/events.png",
     "tools/art_sources/decorations.png",
     "tools/art_sources/niyazov_story.png",
-    "tools/art_sources/niyazov_heraldry.png"
+    "tools/art_sources/niyazov_heraldry.png",
+    "tools/art_sources/settlements_v0_3_1.png"
   ],
   "resources": [
     {
@@ -21,8 +22,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "stone_keep",
@@ -34,8 +35,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "small_castle",
@@ -47,8 +48,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "grand_castle",
@@ -112,8 +113,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "house",
@@ -125,8 +126,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "townhouse",
@@ -138,8 +139,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "manor",
@@ -177,8 +178,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "windmill",
@@ -190,8 +191,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "granary",
@@ -203,8 +204,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "sawmill",
@@ -268,8 +269,8 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "tavern",
@@ -359,8 +360,8 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "noble_estate",
@@ -372,8 +373,8 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.3.0",
-      "used_by": "settlement tiers, construction previews, court/main-menu architecture"
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary settlements, construction panels and static settlement satellites"
     },
     {
       "id": "merchant_guildhall",
@@ -4512,6 +4513,45 @@
       "introduced": "0.3.0",
       "revision": "0.3.0",
       "used_by": "NarrativeSystem, main menu, genealogy, royal capital and armies"
+    },
+    {
+      "id": "village_cluster",
+      "path": "assets/buildings/village_cluster.png",
+      "size": [
+        192,
+        160
+      ],
+      "type": "buildings",
+      "purpose": "Читаемая деревня: три различных двора",
+      "introduced": "0.3.1",
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary.settlement; population/development/fortification tiers on live map"
+    },
+    {
+      "id": "town_quarter",
+      "path": "assets/buildings/town_quarter.png",
+      "size": [
+        192,
+        160
+      ],
+      "type": "buildings",
+      "purpose": "Торговый город: квартал и рыночная площадь",
+      "introduced": "0.3.1",
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary.settlement; population/development/fortification tiers on live map"
+    },
+    {
+      "id": "walled_town",
+      "path": "assets/buildings/walled_town.png",
+      "size": [
+        192,
+        160
+      ],
+      "type": "buildings",
+      "purpose": "Укреплённый город: стены, донжон и дома",
+      "introduced": "0.3.1",
+      "revision": "0.3.1",
+      "used_by": "VisualLibrary.settlement; population/development/fortification tiers on live map"
     }
   ]
 }

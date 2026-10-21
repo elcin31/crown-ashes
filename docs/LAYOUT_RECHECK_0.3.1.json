@@ -1,0 +1,72 @@
+{
+  "android_device_tested": false,
+  "checks": 72,
+  "failures": 4,
+  "resolutions": [
+    {
+      "content_scale_aspect": 4,
+      "logical": [
+        1280.0,
+        720.0
+      ],
+      "navigation_font": 20,
+      "physical": [
+        1920,
+        1080
+      ],
+      "resource_font": 26,
+      "sidebar_width": 346.0,
+      "toolbar_height": 48.0,
+      "top_height": 90.0
+    },
+    {
+      "content_scale_aspect": 4,
+      "logical": [
+        1560.0,
+        720.0
+      ],
+      "navigation_font": 20,
+      "physical": [
+        2340,
+        1080
+      ],
+      "resource_font": 26,
+      "sidebar_width": 366.599975585938,
+      "toolbar_height": 48.0,
+      "top_height": 90.0
+    },
+    {
+      "content_scale_aspect": 4,
+      "logical": [
+        1600.0,
+        720.0
+      ],
+      "navigation_font": 20,
+      "physical": [
+        2400,
+        1080
+      ],
+      "resource_font": 26,
+      "sidebar_width": 374.0,
+      "toolbar_height": 48.0,
+      "top_height": 90.0
+    },
+    {
+      "content_scale_aspect": 4,
+      "logical": [
+        1639.0,
+        720.0
+      ],
+      "navigation_font": 20,
+      "physical": [
+        2460,
+        1080
+      ],
+      "resource_font": 26,
+      "sidebar_width": 374.0,
+      "toolbar_height": 48.0,
+      "top_height": 90.0
+    }
+  ],
+  "scope": "only resized layout, touch coordinates and safe area"
+}
