@@ -1,0 +1,1245 @@
+{
+  "version": 1,
+  "main_count": 24,
+  "side_count": 36,
+  "dynamic_templates": 12,
+  "quests": [
+    {
+      "id": "main_01",
+      "title": "Новая корона",
+      "description": "Получите поддержку двора: легитимность 68 или поддержка знати 55. Коронационная хартия и политика имеют разные последствия.",
+      "objective": {
+        "kind": "support",
+        "target": 68
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 0,
+      "act": 1
+    },
+    {
+      "id": "main_02",
+      "title": "Слабая казна",
+      "description": "Добейтесь положительного месячного бюджета и запаса 120 золота. Торговля, налоги и расходы остаются вашим выбором.",
+      "objective": {
+        "kind": "solvency",
+        "target": 120
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 1,
+      "act": 1
+    },
+    {
+      "id": "main_03",
+      "title": "Хлеб для столицы",
+      "description": "Поднимите ферму до второго уровня в своей земле. Работы должны закончиться; приказ строителям ещё не считается результатом.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "farm"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 2,
+      "act": 1
+    },
+    {
+      "id": "main_04",
+      "title": "Письмо из Вейрмарка",
+      "description": "Курьер везёт подлинное письмо из Вейрмарка в столицу. Защищайте дороги и дождитесь доставки. При закрытых границах сведения можно добыть расследованием.",
+      "objective": {
+        "kind": "delivery",
+        "target": 1
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 3,
+      "act": 1
+    },
+    {
+      "id": "main_05",
+      "title": "Дороги присяги",
+      "description": "Завершите улучшение мощёной дороги до второго уровня, чтобы связать дворы и рынки.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "road"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 4,
+      "act": 1
+    },
+    {
+      "id": "main_06",
+      "title": "Северный мятеж",
+      "description": "Виктор требует гарантий. Укрепите его верность до 65 или добейтесь стабильности 65 при силе армии 350. При его смерти нужна легитимность 70.",
+      "objective": {
+        "kind": "northern",
+        "target": 65,
+        "character": "victor"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 5,
+      "act": 1
+    },
+    {
+      "id": "main_07",
+      "title": "Кровь Ниязовых",
+      "description": "Сохраните законного наследника при легитимности не ниже 65. Смерть Александра не отменяет прав живых потомков.",
+      "objective": {
+        "kind": "heir",
+        "target": 65
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 6,
+      "act": 2
+    },
+    {
+      "id": "main_08",
+      "title": "Печать соседа",
+      "description": "Достигните отношений 35 с Блэкриджем или обеспечьте пограничную безопасность, если соседнее государство пало.",
+      "objective": {
+        "kind": "relation",
+        "target": 35,
+        "realm_target": 9
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 7,
+      "act": 2
+    },
+    {
+      "id": "main_09",
+      "title": "Брак по расчёту",
+      "description": "София может создать союз через настоящий династический брак. Альтернатива — заключить союз с любым соседним домом.",
+      "objective": {
+        "kind": "marriage_alliance",
+        "target": 1,
+        "character": "sofia"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 8,
+      "act": 2
+    },
+    {
+      "id": "main_10",
+      "title": "Верность брата",
+      "description": "Михаил должен иметь верность 65 и должность или владение. Если его больше нет при дворе, утвердите законное наследование при легитимности 70.",
+      "objective": {
+        "kind": "brother",
+        "target": 65,
+        "character": "mikhail"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 9,
+      "act": 2
+    },
+    {
+      "id": "main_11",
+      "title": "Последняя присяга",
+      "description": "Убедите хотя бы троих взрослых дворян поддержать корону с верностью 65. Состав сторонников зависит от назначений и пожалований.",
+      "objective": {
+        "kind": "loyalists",
+        "target": 3
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 10,
+      "act": 2
+    },
+    {
+      "id": "main_12",
+      "title": "Знамёна на стенах",
+      "description": "Закончите второй уровень укреплений в королевской земле. На карте появится реконструированный замок с именем нового покровителя.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "fort"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 11,
+      "act": 2
+    },
+    {
+      "id": "main_13",
+      "title": "Снабжение похода",
+      "description": "Передайте 80 продовольствия гарнизону через журнал. Запасы действительно списываются, снабжение армии улучшается.",
+      "objective": {
+        "kind": "action",
+        "target": 1,
+        "action": "supply_army"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 12,
+      "act": 3
+    },
+    {
+      "id": "main_14",
+      "title": "Академия полководцев",
+      "description": "Завершите Академию полководцев. Её содержание входит в бюджет; обучение командиров даёт умеренный эффект.",
+      "objective": {
+        "kind": "building",
+        "target": 1,
+        "building": "command_academy"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 13,
+      "act": 3
+    },
+    {
+      "id": "main_15",
+      "title": "Цена мира",
+      "description": "Добейтесь отсутствия войн и стабильности 60. Мир заключается через действующую дипломатию; при необходимости уступите требования.",
+      "objective": {
+        "kind": "peace",
+        "target": 60
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 14,
+      "act": 3
+    },
+    {
+      "id": "main_16",
+      "title": "Воспитание наследника",
+      "description": "У живого наследника должны быть управление 8 или дипломатия 8. Сюжетное обучение меняет настоящие навыки персонажа.",
+      "objective": {
+        "kind": "heir_skill",
+        "target": 8
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 15,
+      "act": 3
+    },
+    {
+      "id": "main_17",
+      "title": "Тени при дворе",
+      "description": "Завершите сбор сведений об одном живом сопернике. Если претендентов не осталось — укрепите поддержку двора до 70.",
+      "objective": {
+        "kind": "intelligence",
+        "target": 1
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 16,
+      "act": 3
+    },
+    {
+      "id": "main_18",
+      "title": "Рынки после войны",
+      "description": "Постройте Великий рынок и восстановите положительный бюджет. Военные расходы и оккупации по-прежнему влияют на доход.",
+      "objective": {
+        "kind": "market_recovery",
+        "target": 1,
+        "building": "great_market"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 17,
+      "act": 3
+    },
+    {
+      "id": "main_19",
+      "title": "Закон единой короны",
+      "description": "Сохраните легитимность 70 при действующем законе наследования. Выборное право и первородство ведут к разным политическим исходам.",
+      "objective": {
+        "kind": "legitimacy",
+        "target": 70
+      },
+      "reward": {
+        "gold": 40,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 18,
+      "act": 4
+    },
+    {
+      "id": "main_20",
+      "title": "Северная ветвь",
+      "description": "Сохраните Виктору верность 70 либо заключите мир с его отколовшейся ветвью. Умерших родственников поминает династическая усыпальница.",
+      "objective": {
+        "kind": "cadet",
+        "target": 70,
+        "character": "victor"
+      },
+      "reward": {
+        "gold": 40,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 19,
+      "act": 4
+    },
+    {
+      "id": "main_21",
+      "title": "Камень памяти",
+      "description": "Завершите Королевский архив или династическую усыпальницу. Летопись сохранит настоящие правления, войны и постройки.",
+      "objective": {
+        "kind": "memorial",
+        "target": 1
+      },
+      "reward": {
+        "gold": 40,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 20,
+      "act": 4
+    },
+    {
+      "id": "main_22",
+      "title": "Признание домов",
+      "description": "Постройте Посольский двор и добейтесь отношений 30 хотя бы с двумя сохранившимися державами.",
+      "objective": {
+        "kind": "recognition",
+        "target": 2,
+        "building": "embassy_court"
+      },
+      "reward": {
+        "gold": 40,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 21,
+      "act": 4
+    },
+    {
+      "id": "main_23",
+      "title": "Дворец и королевство",
+      "description": "Завершите Дворец Ниязовых или Великую библиотеку при развитии столицы 45. Дворец строится только в столице дома.",
+      "objective": {
+        "kind": "legacy_project",
+        "target": 45
+      },
+      "reward": {
+        "gold": 40,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 22,
+      "act": 4
+    },
+    {
+      "id": "main_24",
+      "title": "Наследие короны",
+      "description": "При стабильности 60 и законном наследнике соберите поддержку 65 или королевскую власть 70. Итог определяют реальные земли, законы, войны и семейная история.",
+      "objective": {
+        "kind": "legacy",
+        "target": 60
+      },
+      "reward": {
+        "gold": 40,
+        "prestige": 2
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "main",
+      "chapter": 23,
+      "act": 4
+    },
+    {
+      "id": "side_01",
+      "title": "Пропавший караван",
+      "description": "Гильдия отправит настоящий караван из столицы в соседний город. Дождитесь его прибытия; война или разбой могут задержать путь.",
+      "objective": {
+        "kind": "caravan",
+        "target": 1
+      },
+      "reward": {
+        "gold": 20,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_02",
+      "title": "Разбойники на дороге",
+      "description": "В земле с высоким недовольством восстановите спокойствие до 35 и разместите свой отряд численностью 80.",
+      "objective": {
+        "kind": "secure",
+        "target": 35
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "military"
+    },
+    {
+      "id": "side_03",
+      "title": "Разрушенная мельница",
+      "description": "Повысьте ферму до второго уровня и восстановите состояние провинции до 80.",
+      "objective": {
+        "kind": "restore_farm",
+        "target": 2
+      },
+      "reward": {
+        "gold": 30,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_04",
+      "title": "Спор о наследстве",
+      "description": "Уладьте права двора: примите действующий закон при легитимности 70 и наличии наследника.",
+      "objective": {
+        "kind": "heir",
+        "target": 70
+      },
+      "reward": {
+        "gold": 35,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "dynastic"
+    },
+    {
+      "id": "side_05",
+      "title": "Венчальные печати",
+      "description": "Заключите новый настоящий брак через меню династии после принятия поручения.",
+      "objective": {
+        "kind": "command",
+        "target": 1,
+        "action": "marry"
+      },
+      "reward": {
+        "gold": 20,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "dynastic"
+    },
+    {
+      "id": "side_06",
+      "title": "Голод в провинции",
+      "description": "Передайте 60 единиц продовольствия местным жителям. Это снижает недовольство; склад короны уменьшится на ту же величину.",
+      "objective": {
+        "kind": "action",
+        "target": 1,
+        "action": "relief"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_07",
+      "title": "Тайное общество",
+      "description": "Завершите сбор сведений; подозрение само по себе не считается доказательством.",
+      "objective": {
+        "kind": "intelligence",
+        "target": 1
+      },
+      "reward": {
+        "gold": 30,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "side_08",
+      "title": "Письма из столицы",
+      "description": "Сопроводите курьера из столицы в соседнее поселение. Письмо появится в карточке доставившего его NPC.",
+      "objective": {
+        "kind": "delivery",
+        "target": 1
+      },
+      "reward": {
+        "gold": 35,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "npc"
+    },
+    {
+      "id": "side_09",
+      "title": "Возвращение изгнанника",
+      "description": "Предоставьте землю живому дворянину настоящей командой пожалования. Столица не подлежит передаче.",
+      "objective": {
+        "kind": "command",
+        "target": 1,
+        "action": "grant"
+      },
+      "reward": {
+        "gold": 20,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "side_10",
+      "title": "Крепость на границе",
+      "description": "Поднимите укрепления до второго уровня. Замок сохранит имя династии, оплатившей реконструкцию.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "fort"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "military"
+    },
+    {
+      "id": "side_11",
+      "title": "Зимний запас",
+      "description": "Накопите 400 продовольствия и постройте амбар. Запасы расходуются населением и армией.",
+      "objective": {
+        "kind": "food_store",
+        "target": 400
+      },
+      "reward": {
+        "gold": 30,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_12",
+      "title": "Лесные мастера",
+      "description": "Завершите лесопилку второго уровня. Реальное производство дерева должно вырасти.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "sawmill"
+      },
+      "reward": {
+        "gold": 35,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_13",
+      "title": "Железная жила",
+      "description": "Разработайте железную шахту первого уровня в горах или холмах. Равнинная шахта недопустима.",
+      "objective": {
+        "kind": "building",
+        "target": 1,
+        "building": "mine"
+      },
+      "reward": {
+        "gold": 20,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_14",
+      "title": "Камень для города",
+      "description": "Завершите каменоломню и накопите 100 камня.",
+      "objective": {
+        "kind": "stone_store",
+        "target": 100
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_15",
+      "title": "Право торговли",
+      "description": "Завершите рынок второго уровня и добейтесь положительного месячного бюджета.",
+      "objective": {
+        "kind": "trade_market",
+        "target": 2
+      },
+      "reward": {
+        "gold": 30,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_16",
+      "title": "Школа стражи",
+      "description": "Поднимите казармы до второго уровня. Новые корпуса появятся в поселении после завершения работ.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "barracks"
+      },
+      "reward": {
+        "gold": 35,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "military"
+    },
+    {
+      "id": "side_17",
+      "title": "Колокол на площади",
+      "description": "Постройте храм. Его влияние на недовольство использует существующую систему населения.",
+      "objective": {
+        "kind": "building",
+        "target": 1,
+        "building": "temple"
+      },
+      "reward": {
+        "gold": 20,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "npc"
+    },
+    {
+      "id": "side_18",
+      "title": "Морские ворота",
+      "description": "Постройте порт в любой собственной прибрежной провинции. Без берега поручение недоступно.",
+      "objective": {
+        "kind": "building",
+        "target": 1,
+        "building": "port"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_19",
+      "title": "Курьерский тракт",
+      "description": "Повысьте дорогу до второго уровня, связав местные дворы.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "road"
+      },
+      "reward": {
+        "gold": 30,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "npc"
+    },
+    {
+      "id": "side_20",
+      "title": "Слово посла",
+      "description": "Достигните отношений 40 с Вейрмарком. При его падении — с любой живой соседней державой.",
+      "objective": {
+        "kind": "relation",
+        "target": 40,
+        "realm_target": 1
+      },
+      "reward": {
+        "gold": 35,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "side_21",
+      "title": "Союз надёжнее золота",
+      "description": "Заключите хотя бы один настоящий действующий союз. Отклонённое предложение не выполняет цель.",
+      "objective": {
+        "kind": "alliance",
+        "target": 1
+      },
+      "reward": {
+        "gold": 20,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "side_22",
+      "title": "Перепись дворов",
+      "description": "Повысьте развитие одной из своих провинций на 5 относительно дня принятия поручения.",
+      "objective": {
+        "kind": "development_gain",
+        "target": 5
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "side_23",
+      "title": "Честная подать",
+      "description": "Сохраняйте низкие налоги и положительный бюджет 15 игровых дней подряд.",
+      "objective": {
+        "kind": "low_tax_days",
+        "target": 15
+      },
+      "reward": {
+        "gold": 30,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "side_24",
+      "title": "Десятина хлебом",
+      "description": "Купите 100 продовольствия после принятия задания. Рынок реально получает золото и меняет цену.",
+      "objective": {
+        "kind": "purchase",
+        "target": 100,
+        "resource": "food"
+      },
+      "reward": {
+        "gold": 35,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_25",
+      "title": "Каменные контракты",
+      "description": "Продайте 100 камня после принятия поручения. Поступление денег учитывает настоящий рыночный курс.",
+      "objective": {
+        "kind": "sale",
+        "target": 100,
+        "resource": "stone"
+      },
+      "reward": {
+        "gold": 20,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_26",
+      "title": "Имя полководца",
+      "description": "Назначьте живого командующего с военным навыком 12 в собственную армию.",
+      "objective": {
+        "kind": "commander",
+        "target": 12
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "military"
+    },
+    {
+      "id": "side_27",
+      "title": "Снабжение дозора",
+      "description": "Отправьте 80 продовольствия собственному гарнизону через журнал.",
+      "objective": {
+        "kind": "action",
+        "target": 1,
+        "action": "supply_army"
+      },
+      "reward": {
+        "gold": 30,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "military"
+    },
+    {
+      "id": "side_28",
+      "title": "Память дома",
+      "description": "Постройте династическую усыпальницу для умерших членов дома.",
+      "objective": {
+        "kind": "building",
+        "target": 1,
+        "building": "dynastic_tomb"
+      },
+      "reward": {
+        "gold": 35,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "dynastic"
+    },
+    {
+      "id": "side_29",
+      "title": "Свитки короны",
+      "description": "Завершите Королевский архив. Его история опирается на существующих правителей.",
+      "objective": {
+        "kind": "building",
+        "target": 1,
+        "building": "royal_archive"
+      },
+      "reward": {
+        "gold": 20,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "side_30",
+      "title": "Двор для посланников",
+      "description": "Завершите Посольский двор. Бонус ограничен дипломатическими переговорами.",
+      "objective": {
+        "kind": "building",
+        "target": 1,
+        "building": "embassy_court"
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "side_31",
+      "title": "Гильдия дальних дорог",
+      "description": "Дождитесь двух реальных прибытий собственных торговых караванов после принятия задания.",
+      "objective": {
+        "kind": "arrivals",
+        "target": 2
+      },
+      "reward": {
+        "gold": 30,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "npc"
+    },
+    {
+      "id": "side_32",
+      "title": "Королевская верфь",
+      "description": "Завершите верфь в прибрежной провинции. Она улучшает торговое производство, не создавая отдельной морской войны.",
+      "objective": {
+        "kind": "building",
+        "target": 1,
+        "building": "royal_shipyard"
+      },
+      "reward": {
+        "gold": 35,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "economic"
+    },
+    {
+      "id": "side_33",
+      "title": "Книги вместо пепла",
+      "description": "Завершите Великую библиотеку. Поддержание знания требует содержания.",
+      "objective": {
+        "kind": "building",
+        "target": 1,
+        "building": "great_library"
+      },
+      "reward": {
+        "gold": 20,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "side_34",
+      "title": "Сады примирения",
+      "description": "Завершите Королевские сады и снизьте недовольство связанной земли до 25.",
+      "objective": {
+        "kind": "gardens",
+        "target": 25
+      },
+      "reward": {
+        "gold": 25,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "dynastic"
+    },
+    {
+      "id": "side_35",
+      "title": "Клятва северянина",
+      "description": "Добейтесь верности Виктора 70. Если он умер, законно сохраните род и постройте усыпальницу.",
+      "objective": {
+        "kind": "cadet",
+        "target": 70,
+        "character": "victor"
+      },
+      "reward": {
+        "gold": 30,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "dynastic"
+    },
+    {
+      "id": "side_36",
+      "title": "Дни мирного труда",
+      "description": "Сохраняйте мир и стабильность 60 в течение 30 игровых дней подряд.",
+      "objective": {
+        "kind": "peace_days",
+        "target": 30
+      },
+      "reward": {
+        "gold": 35,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "side",
+      "subtype": "political"
+    },
+    {
+      "id": "dynamic_01",
+      "title": "Голодный обоз",
+      "description": "Из-за нехватки еды жители просят 60 продовольствия.",
+      "objective": {
+        "kind": "action",
+        "target": 1,
+        "action": "relief"
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "famine",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_02",
+      "title": "Мятежные сходки",
+      "description": "Снизьте недовольство неспокойной провинции до 35 и обеспечьте охрану.",
+      "objective": {
+        "kind": "secure",
+        "target": 35
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "unrest",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_03",
+      "title": "Закрытый тракт",
+      "description": "Откройте путь застрявшему каравану: добейтесь его реального прибытия.",
+      "objective": {
+        "kind": "arrivals",
+        "target": 1
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "blocked",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_04",
+      "title": "Без наследника",
+      "description": "Обеспечьте живого законного наследника при легитимности 60.",
+      "objective": {
+        "kind": "heir",
+        "target": 60
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "no_heir",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_05",
+      "title": "Укрепить границу",
+      "description": "Во время войны доведите укрепления до второго уровня.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "fort"
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "war",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_06",
+      "title": "Провиант для армии",
+      "description": "Передайте 80 продовольствия собственной армии.",
+      "objective": {
+        "kind": "action",
+        "target": 1,
+        "action": "supply_army"
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "war",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_07",
+      "title": "Вернуть согласие",
+      "description": "Убедите троих дворян хранить верность 65.",
+      "objective": {
+        "kind": "loyalists",
+        "target": 3
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "low_stability",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_08",
+      "title": "После осады",
+      "description": "Восстановите состояние связанной провинции до 85 мирным трудом или оплаченной реконструкцией.",
+      "objective": {
+        "kind": "condition",
+        "target": 85
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "damage",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_09",
+      "title": "Торговый подъём",
+      "description": "Расширьте рынок до второго уровня.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "market"
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "prosperity",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_10",
+      "title": "Голос новой короны",
+      "description": "После наследования укрепите легитимность до 65.",
+      "objective": {
+        "kind": "legitimacy",
+        "target": 65
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "succession",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_11",
+      "title": "Береговые мастера",
+      "description": "Развивайте порт до второго уровня на собственном берегу.",
+      "objective": {
+        "kind": "building",
+        "target": 2,
+        "building": "port"
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "coastal",
+      "cooldown": 150,
+      "deadline": 180
+    },
+    {
+      "id": "dynamic_12",
+      "title": "Дворянский сговор",
+      "description": "Завершите расследование, если при дворе появился нелояльный претендент.",
+      "objective": {
+        "kind": "intelligence",
+        "target": 1
+      },
+      "reward": {
+        "gold": 15,
+        "prestige": 1
+      },
+      "consequence": "Успех укрепит доверие к короне; награда выдаётся только за выполненную цель.",
+      "category": "dynamic",
+      "trigger": "claimant",
+      "cooldown": 150,
+      "deadline": 180
+    }
+  ]
+}

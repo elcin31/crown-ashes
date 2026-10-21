@@ -3,7 +3,7 @@ The generation grid assigns identity; complete silhouettes may extend into paddi
 """
 from PIL import Image
 
-def slice_objects(path,cols,rows):
+def slice_objects(path,cols,rows,fallbacks=None):
  im=Image.open(path).convert('RGBA');w,h=im.size;alpha=im.getchannel('A').tobytes();seen=bytearray(w*h);components=[]
  for start,v in enumerate(alpha):
   if v<120 or seen[start]:continue
@@ -20,6 +20,8 @@ def slice_objects(path,cols,rows):
   l,t,rr,b=c['box'];col=min(cols-1,int((l+rr)*.5/w*cols));row=min(rows-1,int((t+b)*.5/h*rows));groups[row*cols+col].append(c)
  out=[]
  for idx,group in enumerate(groups):
+  if not group and fallbacks and idx in fallbacks:
+   out.append(fallbacks[idx].copy());continue
   assert group,('No sprite in source cell',path,idx)
   primary=max(group,key=lambda c:c['size']);l,t,rr,b=primary['box'];selected=[primary]
   for c in components:

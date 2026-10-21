@@ -1,0 +1,36 @@
+{
+  "version": "0.4.0",
+  "engine": "Godot 4.6.3 stable",
+  "build": "signed debug, side-by-side install",
+  "package": "org.crownandashes.livingkingdoms",
+  "original_release_package": "org.crownandashes.firstcrown",
+  "original_signing_key_available": false,
+  "version_code": 5,
+  "architectures": [
+    "arm64-v8a"
+  ],
+  "bytes": 33344113,
+  "zip_bytes": 33344275,
+  "sha256": "97373af707b857e214bc65cd0709ec47cfea315fb2d1e581694c1f5fe656e1de",
+  "signature_v2": true,
+  "signature_v3": true,
+  "certificate_sha256": "3709e886852d4e773cd4a20dbf28c44001752b2ded3eca07846f32f6e2a20500",
+  "zip_content": [
+    "CrownAndAshes-v0.4.0-android.apk"
+  ],
+  "android_device_tested": false,
+  "export_success": true,
+  "display": "canvas_items/expand, 1280x720 reference, landscape",
+  "checked_desktop_viewport": [
+    2340,
+    1080
+  ],
+  "permission_dump": [
+    "package: org.crownandashes.livingkingdoms"
+  ],
+  "original_save_format_compatible": true,
+  "automatic_cross_package_save_transfer": false,
+  "game_png": 435,
+  "new_architecture": 140,
+  "new_actor_sheets": 32
+}

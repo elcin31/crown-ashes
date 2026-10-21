@@ -2,6 +2,8 @@ class_name MapRenderer
 extends Node2D
 signal province_selected(id:int)
 signal army_selected(id:int)
+signal npc_selected(id:int)
+var settlement_layers=[]
 var s
 var camera:Camera2D
 var target_position=Vector2(1100,850)
@@ -44,8 +46,13 @@ func _ready():
 	camera=Camera2D.new();camera.position=target_position;camera.zoom=Vector2.ONE*target_zoom;camera.position_smoothing_enabled=false;add_child(camera)
 	actors=Node2D.new();actors.set_script(load("res://scripts/world/map_actors.gd"));actors.map=self;add_child(actors)
 	input_controller=Node.new();input_controller.set_script(load("res://scripts/world/input_controller.gd"));input_controller.map=self;add_child(input_controller)
+	for id in range(60):
+		var layer=Node2D.new();layer.set_script(load("res://scripts/world/settlement_layer.gd"));layer.map=self;layer.province=id;add_child(layer);settlement_layers.append(layer)
 func set_state(state):
-	s=state;polygons.clear();bounds.clear()
+	s=state;LivingWorld.reset_navigation(s);polygons.clear();bounds.clear()
+	for layer in settlement_layers:layer.stamp="";layer.queue_redraw()
+	for a in actors.pool:a.active=false
+	actors.selected_route=-1
 	for p in s.data.provinces:
 		var points=PackedVector2Array()
 		for a in p.polygon:points.append(Vector2(a[0],a[1]))
@@ -79,6 +86,8 @@ func pick(screen:Vector2):
 	if s==null:return
 	var world=screen_to_world(screen)
 	if not destination_mode:
+		var npc=actors.pick_agent(world)
+		if npc>=0:npc_selected.emit(npc);return
 		var nearest=-1;var distance=28.0/target_zoom
 		for a in s.data.armies:
 			var d=army_position(a).distance_to(world)
@@ -132,22 +141,7 @@ func _draw():
 		var c=Vector2(p.center[0],p.center[1])
 		if not view.has_point(c):continue
 		var realm=s.data.realms[int(p.owner)]
-		var capital=int(p.id)==int(realm.capital);var key=VisualLibrary.settlement(p,realm)
-		var extent=136.0 if capital and int(realm.title)>=2 else 112.0 if capital else 122.0 if int(p.population)>=7600 else 110.0 if key=="town_quarter" else 104.0
-		var settlement_texture=texture_for(key);var dimensions=Vector2(extent,extent*settlement_texture.get_height()/settlement_texture.get_width())
-		draw_texture_rect(texture_for(key),Rect2(c-dimensions*Vector2(0.5,0.88),dimensions),false)
-		if realm.heraldry=="niyazov" and capital:
-			draw_texture_rect(texture_for("niyazov_standard"),Rect2(c+Vector2(-extent*.47,-extent*.69),Vector2(28,55)),false)
-		# Existing economic upgrades get richer visual variants without new rules.
-		if lod==0:
-			var shown=0
-			for kind in ["barracks","market","temple","port","farm"]:
-				var level=int(p.buildings.get(kind,0))
-				if level<2:continue
-				var visual=VisualLibrary.building(kind,level,p)
-				draw_texture_rect(texture_for(visual),Rect2(c+Vector2(-65+shown*48,8),Vector2(52,52)),false)
-				shown+=1
-				if shown>=2:break
+		var capital=int(p.id)==int(realm.capital);var extent=136.0 if capital else 110.0
 		if capital or lod==0:
 			draw_texture_rect(texture_for(realm.heraldry),Rect2(c+Vector2(-12,-extent-12),Vector2(26,31)),false)
 		if lod==0 or capital:

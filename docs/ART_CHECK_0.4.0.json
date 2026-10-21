@@ -1,0 +1,22 @@
+{
+  "version": "0.4.0",
+  "new_architecture": 140,
+  "styles": 12,
+  "residences": 12,
+  "new_actor_sheets": 32,
+  "directions": 4,
+  "walk_frames": 8,
+  "quest_counts": {
+    "main": 24,
+    "side": 36,
+    "dynamic": 12
+  },
+  "unique_building_hashes": 140,
+  "decoded": true,
+  "resource_errors": [],
+  "total_game_png": 435,
+  "generated_sources": [
+    "residences_v0_4.png",
+    "towns_v0_4.png"
+  ]
+}

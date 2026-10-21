@@ -4,6 +4,9 @@ extends RefCounted
 const NEW_ACTORS=["royal_guard","heavy_infantry","elite_spearman","royal_archer","mounted_knight","light_cavalry","royal_messenger","village_farmer","lumberjack","blacksmith","miner","market_trader","noble_lady","noble_lord","royal_advisor","court_priest","tax_collector","village_guard","rebel_fighter","siege_engineer"]
 const OLD_ACTORS=["peasant_male","peasant_female","noble_male","noble_female","courier","merchant","priest","scout","militia","infantry","spearman","archer","cavalry","crossbowman","siege_engine","bandit"]
 static func building(kind:String,level:int,province:Dictionary={})->String:
+	if province.has("heritage"):
+		var owner_style=province.get("preview_style","")
+		return SettlementSystem.asset(province,kind,owner_style)
 	var id=int(province.get("id",0))
 	match kind:
 		"farm":return "large_windmill" if level>=3 else "watermill" if level>=2 and id%2==0 else "windmill" if level>=2 else "farm"
@@ -19,6 +22,7 @@ static func building(kind:String,level:int,province:Dictionary={})->String:
 		"road":return "stone_road"
 	return "house"
 static func settlement(p:Dictionary,realm:Dictionary)->String:
+	if p.has("heritage"):return SettlementSystem.asset(p,"residence") if not SettlementSystem.latest(p,"residence").is_empty() else "lk_"+str(p.heritage.historic_style)+"_townhouse"
 	if int(p.id)==int(realm.capital):
 		if int(realm.title)>=3:return "royal_citadel"
 		if int(realm.title)>=2:return ["royal_citadel","grand_stone_castle","royal_palace"][int(realm.id)%3]

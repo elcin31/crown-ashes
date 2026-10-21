@@ -44,6 +44,7 @@ static func succeed(s,realm:int):
 	r.heir=next_heir(s,realm)
 	if realm==int(s.data.player):s.data.events.push_front({"special":"succession","title":"Да здравствует новый правитель!","description":"Престол наследует %s (%d лет). %s"%[c.name,c.age,"До совершеннолетия совет исполняет обязанности регента." if c.age<16 else "Дворяне вновь приносят присягу."],"illustration":"coronation"})
 	s.log_message("%s: новый правитель — %s из дома %s."%[r.name,c.name,r.dynasty])
+	if s.data.has("living"):DynastyHistory.succession(s,realm,previous)
 static func marry(s,realm:int,a:int,b:int)->Dictionary:
 	if a<0 or b<0 or a>=s.data.characters.size() or b>=s.data.characters.size() or a==b:return s.result(false,"Некорректная пара.")
 	var x=s.data.characters[a];var y=s.data.characters[b]
@@ -59,6 +60,7 @@ static func marry(s,realm:int,a:int,b:int)->Dictionary:
 		var rel=s.relation(realm,int(y.realm));rel.value=mini(100,int(rel.value)+22)
 		s.data.dynasties[int(x.dynasty)].links.append(int(y.dynasty));s.data.dynasties[int(y.dynasty)].links.append(int(x.dynasty))
 	s.data.realms[realm].legitimacy=minf(100,s.data.realms[realm].legitimacy+4)
+	if s.data.has("living"):DynastyHistory.entry(s,realm,"Брак: %s и %s"%[x.name,y.name],2)
 	return s.result(true,"Династический брак заключён: %s и %s."%[x.name,y.name])
 static func child(s,mother:Dictionary,father:Dictionary):
 	if not mother.alive or not father.alive or mother.age<18 or mother.age>44 or father.age<18:return

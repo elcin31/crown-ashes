@@ -1,0 +1,119 @@
+{
+  "android_device_tested": false,
+  "checks": [
+    {
+      "check": "native touch enters existing story campaign",
+      "ok": true
+    },
+    {
+      "check": "existing coronation decision retained",
+      "ok": true
+    },
+    {
+      "check": "quest journal accepts touch",
+      "ok": true
+    },
+    {
+      "check": "Android Back closes journal and restores map input",
+      "ok": true
+    },
+    {
+      "check": "widescreen HUD stays inside viewport without smaller fonts",
+      "ok": true
+    },
+    {
+      "check": "twelve actual realms have assigned architectural sets",
+      "ok": true
+    },
+    {
+      "check": "conquest preserves historic buildings and changes new patron style",
+      "ok": true
+    },
+    {
+      "check": "ambient population uses bounded viewport pool",
+      "ok": true
+    },
+    {
+      "check": "residents actually move between destinations",
+      "ok": true
+    },
+    {
+      "check": "courier dispatch finds connected road route",
+      "ok": true
+    },
+    {
+      "check": "courier road path avoids water, impassable scenery and building footprints",
+      "ok": true
+    },
+    {
+      "check": "persistent courier position advances with game day",
+      "ok": true
+    },
+    {
+      "check": "actual arrival delivers exactly one message",
+      "ok": true
+    },
+    {
+      "check": "side quest activation",
+      "ok": true
+    },
+    {
+      "check": "unfinished construction earns no reward",
+      "ok": true
+    },
+    {
+      "check": "quest uses existing ConstructionSystem",
+      "ok": true
+    },
+    {
+      "check": "completed building produces real quest reward",
+      "ok": true
+    },
+    {
+      "check": "quest reward cannot be repeated",
+      "ok": true
+    },
+    {
+      "check": "completed construction has visible historical record",
+      "ok": true
+    },
+    {
+      "check": "new quest and world state saves",
+      "ok": true
+    },
+    {
+      "check": "quest progress and persistent routes survive save/load",
+      "note": "Verified by targeted semantic comparison and actual post-load caravan arrival.",
+      "ok": true
+    },
+    {
+      "check": "legacy save migrates additively without rewriting dynasty or forcing campaign",
+      "ok": true
+    }
+  ],
+  "failures": [],
+  "persistent_cap": 24.0,
+  "scope": "one launch, one architecture inspection, one NPC inspection, one quest/save inspection",
+  "targeted_failures": [],
+  "targeted_recheck": [
+    {
+      "check": "completed quest restored from existing save",
+      "ok": true
+    },
+    {
+      "check": "persistent IDs, positions, segments and paths restored without numeric type ambiguity",
+      "ok": true
+    },
+    {
+      "check": "loaded caravan arrival credits the original realm counter",
+      "ok": true
+    },
+    {
+      "check": "loading does not permit duplicate rewards",
+      "ok": true
+    }
+  ],
+  "version": "0.4.0",
+  "viewport": "(1560.0, 720.0)",
+  "visible_ambient": 5.0
+}

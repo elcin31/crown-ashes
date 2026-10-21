@@ -7,7 +7,7 @@ static func save_game(s,slot:int)->Dictionary:
 	DirAccess.make_dir_recursive_absolute(DIRECTORY)
 	s.data.rng_state=str(s.rng.state)
 	var payload=JSON.stringify(s.data)
-	var envelope={"format":FORMAT,"version":"0.3.1","saved_at":Time.get_datetime_string_from_system(),"date":s.date_text(),"realm":s.realm_name(int(s.data.player)),"sha256":payload.sha256_text(),"payload":payload}
+	var envelope={"format":FORMAT,"version":"0.4.0","saved_at":Time.get_datetime_string_from_system(),"date":s.date_text(),"realm":s.realm_name(int(s.data.player)),"sha256":payload.sha256_text(),"payload":payload}
 	var target=path(slot);var tmp=target+".tmp";var f=FileAccess.open(tmp,FileAccess.WRITE)
 	if f==null:return {"ok":false,"message":"Не удалось открыть сохранение: "+error_string(FileAccess.get_open_error())}
 	f.store_string(JSON.stringify(envelope));f.flush();f.close()
@@ -34,6 +34,7 @@ static func load_game(s,slot:int)->Dictionary:
 	if not loaded.ok:loaded=read_file(path(slot)+".bak")
 	if loaded.ok:
 		s.data=loaded.data;restore_id_arrays(s.data);s.rng.state=int(s.data.get("rng_state","1183"))
+		LivingWorld.ensure(s);QuestSystem.ensure(s)
 	return loaded
 static func slots()->Array:
 	var items=[]
@@ -60,3 +61,6 @@ static func restore_id_arrays(data:Dictionary):
 				if object.get(key,null) is Array:object[key]=object[key].map(func(value):return int(value))
 	for relation in data.get("relations",{}).values():
 		if relation.get("access",null) is Array:relation.access=relation.access.map(func(value):return int(value))
+	for agent in data.get("living",{}).get("agents",[]):
+		for key in ["id","realm","province","origin","target","segment","character","created","arrived","wait"]:
+			if agent.has(key):agent[key]=int(agent[key])

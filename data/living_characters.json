@@ -1,0 +1,162 @@
+[
+  {
+    "id": "lk_actor_peasant",
+    "role": "peasant",
+    "name": "Крестьянин"
+  },
+  {
+    "id": "lk_actor_peasant_woman",
+    "role": "peasant_woman",
+    "name": "Крестьянка"
+  },
+  {
+    "id": "lk_actor_farmer",
+    "role": "farmer",
+    "name": "Фермер"
+  },
+  {
+    "id": "lk_actor_lumberjack",
+    "role": "lumberjack",
+    "name": "Лесоруб"
+  },
+  {
+    "id": "lk_actor_miner",
+    "role": "miner",
+    "name": "Шахтёр"
+  },
+  {
+    "id": "lk_actor_blacksmith",
+    "role": "blacksmith",
+    "name": "Кузнец"
+  },
+  {
+    "id": "lk_actor_merchant",
+    "role": "merchant",
+    "name": "Торговец"
+  },
+  {
+    "id": "lk_actor_traveller",
+    "role": "traveller",
+    "name": "Путешественник"
+  },
+  {
+    "id": "lk_actor_courier",
+    "role": "courier",
+    "name": "Курьер"
+  },
+  {
+    "id": "lk_actor_tax_collector",
+    "role": "tax_collector",
+    "name": "Сборщик налогов"
+  },
+  {
+    "id": "lk_actor_priest",
+    "role": "priest",
+    "name": "Священник"
+  },
+  {
+    "id": "lk_actor_monk",
+    "role": "monk",
+    "name": "Монах"
+  },
+  {
+    "id": "lk_actor_guard",
+    "role": "guard",
+    "name": "Стражник"
+  },
+  {
+    "id": "lk_actor_patrol",
+    "role": "patrol",
+    "name": "Патрульный"
+  },
+  {
+    "id": "lk_actor_bandit",
+    "role": "bandit",
+    "name": "Разбойник"
+  },
+  {
+    "id": "lk_actor_infantry",
+    "role": "infantry",
+    "name": "Пехотинец"
+  },
+  {
+    "id": "lk_actor_spearman",
+    "role": "spearman",
+    "name": "Копейщик"
+  },
+  {
+    "id": "lk_actor_archer",
+    "role": "archer",
+    "name": "Лучник"
+  },
+  {
+    "id": "lk_actor_crossbowman",
+    "role": "crossbowman",
+    "name": "Арбалетчик"
+  },
+  {
+    "id": "lk_actor_knight",
+    "role": "knight",
+    "name": "Рыцарь"
+  },
+  {
+    "id": "lk_actor_cavalry",
+    "role": "cavalry",
+    "name": "Кавалерист"
+  },
+  {
+    "id": "lk_actor_officer",
+    "role": "officer",
+    "name": "Офицер"
+  },
+  {
+    "id": "lk_actor_general",
+    "role": "general",
+    "name": "Полководец"
+  },
+  {
+    "id": "lk_actor_noble",
+    "role": "noble",
+    "name": "Дворянин"
+  },
+  {
+    "id": "lk_actor_noblewoman",
+    "role": "noblewoman",
+    "name": "Дворянка"
+  },
+  {
+    "id": "lk_actor_king",
+    "role": "king",
+    "name": "Король"
+  },
+  {
+    "id": "lk_actor_queen",
+    "role": "queen",
+    "name": "Королева"
+  },
+  {
+    "id": "lk_actor_prince",
+    "role": "prince",
+    "name": "Принц"
+  },
+  {
+    "id": "lk_actor_princess",
+    "role": "princess",
+    "name": "Принцесса"
+  },
+  {
+    "id": "lk_actor_agent",
+    "role": "agent",
+    "name": "Тайный агент"
+  },
+  {
+    "id": "lk_actor_engineer",
+    "role": "engineer",
+    "name": "Военный инженер"
+  },
+  {
+    "id": "lk_actor_diplomat",
+    "role": "diplomat",
+    "name": "Дипломат"
+  }
+]

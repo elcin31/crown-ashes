@@ -23,6 +23,7 @@ static func daily(s):
 			match op.kind:
 				"gather":
 					var key=str(actor);c.secrets.append("Амбиции: %d, верность: %d"%[c.ambition,c.loyalty]);c.relationships[key]=int(c.relationships.get(key,0))-2
+					if actor==int(s.data.player):QuestSystem.bump(s,"intelligence",1)
 				"bribe":c.loyalty=minf(100,c.loyalty+22);c.relationships[str(actor)]=int(c.relationships.get(str(actor),0))+20
 				"rumor":s.data.realms[int(c.realm)].legitimacy=maxf(0,s.data.realms[int(c.realm)].legitimacy-10);c.loyalty=maxf(0,c.loyalty-12)
 				"plot":c.loyalty=maxf(0,c.loyalty-35);s.data.realms[int(c.realm)].stability=maxf(0,s.data.realms[int(c.realm)].stability-12)

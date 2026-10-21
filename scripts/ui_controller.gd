@@ -29,6 +29,7 @@ var map_toolbar:HBoxContainer
 var minimap_panel:PanelContainer
 var notice_panel:PanelContainer
 var navigation:HBoxContainer
+var quest_filter:int=0
 const GOLD=Color("#ddc28a")
 const MUTED=Color("#91a7a5")
 const GREEN=Color("#a4c4a0")
@@ -96,7 +97,7 @@ func show_main_menu():
 	var left=box(panel);left.add_theme_constant_override("separation",6)
 	image_rect(left,"niyazov",Vector2(100,68))
 	heading(left,"CROWN & ASHES",31)
-	label(left,"THE LEGACY OF NIYAZOV · 0.3.1",15,GOLD)
+	label(left,"LIVING KINGDOMS · 0.4.0",15,GOLD)
 	label(left,"Корона Александра. Судьба дома.
 Наследие, которое создадите вы.",17,Color("#c9c2a2"))
 	separator(left)
@@ -144,7 +145,7 @@ func show_game():
 	resource_labels.clear()
 	top_bar=PanelContainer.new();top_bar.add_theme_stylebox_override("panel",frame_surface("ui_resource_bar",8));hud.add_child(top_bar);var top_row=box(top_bar,false);top_row.add_theme_constant_override("separation",10)
 	var identity=box(top_row);identity.size_flags_horizontal=Control.SIZE_FILL;identity.custom_minimum_size.x=138;identity.add_theme_constant_override("separation",0);realm_label=label(identity,"",20,GOLD,false);realm_label.clip_text=true;realm_label.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
-	button(identity,"История" if NarrativeSystem.active(app.state) else "Летопись",open_journal).custom_minimum_size.y=44
+	button(identity,"Задания",open_quests).custom_minimum_size.y=44
 	var resources=GridContainer.new();resources.columns=7;resources.size_flags_horizontal=Control.SIZE_EXPAND_FILL;resources.add_theme_constant_override("h_separation",8);top_row.add_child(resources)
 	for key in ["gold","food","wood","stone","iron","manpower","stability"]:
 		var col=box(resources);col.custom_minimum_size.x=90;col.size_flags_vertical=Control.SIZE_SHRINK_CENTER;col.add_theme_constant_override("separation",0)
@@ -176,7 +177,7 @@ func show_game():
 	var side_scroll=ScrollContainer.new();side_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;side_scroll.size_flags_horizontal=Control.SIZE_EXPAND_FILL;side.add_child(side_scroll);side_body=box(side_scroll);side_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	notice_panel=PanelContainer.new();notice_panel.add_theme_stylebox_override("panel",frame_surface("ui_resource_bar",6));hud.add_child(notice_panel);notice=label(notice_panel,"",20,GOLD);notice.max_lines_visible=2;notice.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 	selected_province=int(r.capital);selected_army=-1;refresh_side();side.hide();refresh_hud();_fit_layout();call_deferred("_fit_layout")
-	toast("Откройте «Историю»: корона ожидает первого решения." if NarrativeSystem.active(app.state) else "Выберите провинцию: строительство и найм находятся в панели владения.",9)
+	toast("Журнал «Задания» хранит дела короны. Запустите время, чтобы жители и курьеры отправились в путь.",9)
 
 func refresh_hud():
 	if hud==null or not is_instance_valid(hud):return
@@ -217,9 +218,11 @@ func refresh_side():
 	if not p.siege.is_empty():label(side_body,"Осада: %d%% · прочность %d%%"%[p.siege.progress,p.siege.fort_health],16,RED)
 	if int(p.occupation)>=0:label(side_body,"Оккупация: "+s.realm_name(int(p.occupation)),16,RED)
 	separator(side_body);label(side_body,"Постройки",17,GOLD)
+	button(side_body,"Архитектура и история",func():open_architecture(selected_province))
 	for key in p.buildings:label(side_body,"• %s · ур. %d"%[s.buildings[key].name,p.buildings[key]],15)
 	if not p.construction.is_empty():label(side_body,"Строится %s: %d дн."%[s.buildings[p.construction.type].name,p.construction.remaining],15,GOLD)
 	if int(p.owner)==int(s.data.player):
+		if float(p.heritage.damage)>0:button(side_body,"Восстановить · 45 зол.",func():act("restore",{"province":selected_province}))
 		button(side_body,"Строительство",func():open_buildings(selected_province),"ui_economy")
 		button(side_body,"Нанять войска",func():open_recruit(selected_province),"ui_military")
 		button(side_body,"Развитие +5 · 65 зол.",func():act("develop",{"province":selected_province}))
@@ -267,14 +270,14 @@ func open_buildings(pid:int):
 	for key in s.buildings:
 		var b=s.buildings[key];var level=int(p.buildings.get(key,0));var cost={}
 		for k in b.cost:cost[k]=b.cost[k]*(level+1)
-		var row=box(modal_body,false);image_rect(row,VisualLibrary.building(key,mini(3,level+1),p),Vector2(72,72));var info=box(row);info.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		var row=box(modal_body,false);image_rect(row,SettlementSystem.asset(p,key,SettlementSystem.style_for(s,int(p.owner))),Vector2(72,72));var info=box(row);info.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		label(info,"%s · уровень %d → %d"%[b.name,level,mini(3,level+1)],19,GOLD);label(info,cost_text(cost)+" · %d дн."%(int(b.days)*(level+1)),15);label(info,building_effect(b),14,MUTED)
 		button(row,"Строить",func():act("build",{"province":pid,"kind":key},func():open_buildings(pid))).custom_minimum_size.x=110
 		separator(modal_body)
 func building_effect(b:Dictionary)->String:
 	var effects=[]
 	for key in b.effect:
-		var names={"fort":"укрепления","unrest":"недовольство","legitimacy":"легитимность","speed":"скорость пути","storage":"вместимость"}
+		var names={"fort":"укрепления","unrest":"недовольство","legitimacy":"легитимность","speed":"скорость пути","storage":"вместимость","development":"развитие","training":"обучение (в год)","diplomacy":"дипломатия","prestige":"престиж"}
 		effects.append("%s %s"%[("+" if float(b.effect[key])>0 else "")+str(b.effect[key]),RESOURCE_NAMES.get(key,names.get(key,key)).to_lower()])
 	return "; ".join(effects)+" · содержание %.1f зол./мес."%b.upkeep
 func open_recruit(pid:int):
@@ -394,6 +397,7 @@ func open_dynasty():
 	for relative in s.data.characters:
 		if not relative.alive or int(relative.id)==int(c.id) or int(relative.id) in c.children or int(relative.dynasty)!=int(c.dynasty):continue
 		if not c.parents.filter(func(pid):return pid in relative.parents).is_empty() or relative.get("branch","")=="Северная ветвь":button(modal_body,relative.name+" · "+relative.get("branch","родня"),func():open_character(int(relative.id)),VisualLibrary.portrait(relative))
+	button(modal_body,"Хроника и престиж дома",open_dynasty_chronicle,"niyazov")
 	button(modal_body,"Заключить династический брак",open_marriage,"ui_dynasty")
 	separator(modal_body);heading(modal_body,"Королевский совет",21)
 	for slot in OFFICE_NAMES:
@@ -414,7 +418,10 @@ func open_dynasty():
 	if listed.is_empty():label(modal_body,"Все земли пока принадлежат вам лично. При расширении появятся влиятельные землевладельцы.",16,MUTED)
 func open_character(cid:int):
 	open_window("Персонаж",760,560)
-	var s=app.state;var c=s.data.characters[cid];var row=box(modal_body,false);image_rect(row,VisualLibrary.portrait(c),Vector2(128,128));var info=box(row);heading(info,c.name+" · "+s.data.dynasties[int(c.dynasty)].name,25);label(info,"Возраст %d · %s"%[c.age,"жив(а)" if c.alive else "умер(ла)"],18);label(info,"Принадлежность: "+s.realm_name(int(c.realm)),17);label(info,", ".join(c.traits),16,MUTED)
+	var s=app.state;var c=s.data.characters[cid]
+	var role="queen" if c.role=="ruler" and c.gender=="f" else "king" if c.role=="ruler" else "princess" if c.role=="daughter" else "prince" if c.role in ["heir","prince"] else "general" if c.role=="marshal" else "noblewoman" if c.gender=="f" else "noble"
+	character_preview(modal_body,"lk_actor_"+role)
+	var row=box(modal_body,false);image_rect(row,VisualLibrary.portrait(c),Vector2(128,128));var info=box(row);heading(info,c.name+" · "+s.data.dynasties[int(c.dynasty)].name,25);label(info,"Возраст %d · %s"%[c.age,"жив(а)" if c.alive else "умер(ла)"],18);label(info,"Принадлежность: "+s.realm_name(int(c.realm)),17);label(info,", ".join(c.traits),16,MUTED)
 	for key in ["martial","administration","diplomacy","intrigue","loyalty","ambition","health"]:kv(modal_body,{"martial":"Военное дело","administration":"Управление","diplomacy":"Дипломатия","intrigue":"Интрига","loyalty":"Верность","ambition":"Амбиции","health":"Здоровье"}[key],str(int(c[key])))
 	if c.get("branch","")!="":label(modal_body,"Ветвь: "+c.branch,17,GOLD)
 	for pid in c.parents:
@@ -507,6 +514,7 @@ func open_pause():
 	button(modal_body,"Сохранить",func():open_saves(true))
 	button(modal_body,"Загрузить",func():open_saves(false))
 	button(modal_body,"События и летопись",open_journal)
+	button(modal_body,"Задания",open_quests)
 	button(modal_body,"Настройки",open_settings)
 	button(modal_body,"Главное меню (автосохранение)",func():SaveSystem.save_game(app.state,0);close_window();app.return_to_menu())
 func open_saves(saving:bool):
@@ -525,7 +533,7 @@ func open_settings():
 	button(modal_body,"Ограничение кадров: %d FPS"%Engine.max_fps,func():Engine.max_fps=30 if Engine.max_fps==60 else 60;app.save_settings();open_settings())
 	button(modal_body,"Жители и эффекты: "+("включены" if app.map.details_enabled else "выключены"),func():app.map.details_enabled=not app.map.details_enabled;app.save_settings();open_settings())
 	if OS.get_name()!="Android":button(modal_body,"Полноэкранный режим",func():DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if DisplayServer.window_get_mode()!=DisplayServer.WINDOW_MODE_FULLSCREEN else DisplayServer.WINDOW_MODE_WINDOWED))
-	separator(modal_body);label(modal_body,"Графика: Vibrant Medieval Pixel Art. Кампания «Наследие Ниязовых», 0.3.0. Сухопутная стратегия; корабли показывают торговые маршруты. Звуковая дорожка пока отсутствует.",16,MUTED)
+	separator(modal_body);label(modal_body,"Графика: Vibrant Medieval Pixel Art. Кампания «Наследие Ниязовых», Living Kingdoms 0.4.0. Сухопутная стратегия; корабли показывают торговые маршруты. Звуковая дорожка пока отсутствует.",16,MUTED)
 func show_outcome():
 	var result=app.state.data.outcome
 	open_window("Империя основана" if result=="victory" else "Летопись завершена",800,560);modal_previous_speed=0
@@ -635,3 +643,143 @@ func _layout_hud():
 	notice_panel.position=Vector2(left,height-MobileLayout.BOTTOM_HEIGHT-82);notice_panel.size=Vector2(maxf(240,right-left),64)
 func toggle_minimap():
 	minimap_panel.visible=not minimap_panel.visible;_layout_hud()
+
+func open_quests():
+	var s=app.state;QuestSystem.ensure(s)
+	open_window("Задания · Living Kingdoms",1000,620)
+	var top=box(modal_body,false)
+	button(top,"История Ниязовых" if NarrativeSystem.active(s) else "Летопись мира",open_journal,"niyazov")
+	button(top,"Мир и персонажи",open_travellers)
+	var filter=OptionButton.new();filter.custom_minimum_size=Vector2(300,48)
+	for text in ["Текущие","Доступные поручения","Основные","Побочные","Динамические","Завершённые и отменённые"]:filter.add_item(text)
+	filter.select(quest_filter);filter.item_selected.connect(func(index):quest_filter=index;open_quests());modal_body.add_child(filter)
+	var shown=0
+	if quest_filter==1:
+		for d in QuestSystem.book().quests:
+			if d.category!="side" or s.data.quests.entries.has(d.id):continue
+			button(modal_body,d.title+" · "+quest_type(d),func():open_quest(d.id),"ui_economy",not QuestSystem.available(s,d));shown+=1
+	else:
+		for q in s.data.quests.entries.values():
+			var d=QuestSystem.definition(q.id);var current=q.status in ["active","ready"]
+			if quest_filter==0 and not current:continue
+			if quest_filter in [2,3,4] and (d.category!=["main","side","dynamic"][quest_filter-2] or not current):continue
+			if quest_filter==5 and current:continue
+			if current:q.progress=QuestSystem.value(s,q);q.status="ready" if q.progress>=float(q.objective.target) else "active"
+			var status={"active":"В работе","ready":"Готово к завершению","completed":"Выполнено","cancelled":"Отменено"}.get(q.status,q.status)
+			button(modal_body,("★ " if s.data.quests.tracked==q.id else "")+d.title+" · "+status+"\n"+quest_type(d)+" · %d / %d"%[mini(q.progress,q.objective.target),q.objective.target],func():open_quest(q.id),"ui_dynasty" if d.category=="main" else "ui_economy").custom_minimum_size.y=72
+			shown+=1
+	if shown==0:label(modal_body,"Здесь пока нет заданий. Поручения жителей находятся в списке «Доступные». Сюжетные дела появляются по мере истории.",20,MUTED)
+	label(modal_body,"Пауза действует, пока журнал открыт. Крестик или Android Back возвращает к карте.",20,MUTED)
+func quest_type(d)->String:return {"main":"Основное · акт %d"%int(d.get("act",1)),"side":"Побочное · "+{"economic":"экономика","military":"войско","dynastic":"династия","political":"политика","npc":"жители"}.get(d.get("subtype","npc"),"мир"),"dynamic":"Поручение мира"}.get(d.category,"Задание")
+func open_quest(id:String):
+	var s=app.state;var d=QuestSystem.definition(id);var q=QuestSystem.find(s,id)
+	if d.is_empty():return
+	open_window(d.title,960,620)
+	label(modal_body,quest_type(d),20,GOLD);label(modal_body,d.description,20)
+	separator(modal_body)
+	if q.is_empty():
+		button(modal_body,"Принять поручение",func():act("quest_accept",{"id":id},func():open_quest(id)))
+	else:
+		if q.status in ["active","ready"]:
+			q.progress=QuestSystem.value(s,q);q.status="ready" if q.progress>=float(q.objective.target) else "active"
+		kv(modal_body,"Прогресс","%d / %d"%[mini(q.progress,q.objective.target),q.objective.target],GREEN if q.status in ["ready","completed"] else GOLD)
+		var bar=ProgressBar.new();bar.custom_minimum_size.y=22;bar.max_value=maxf(1,q.objective.target);bar.value=q.progress;bar.show_percentage=false;modal_body.add_child(bar)
+		label(modal_body,"Связанная провинция: "+s.data.provinces[int(q.province)].name,20)
+		if d.objective.has("character"):
+			var c=NarrativeSystem.actor(s,d.objective.character)
+			if not c.is_empty():button(modal_body,c.name+(" †" if not c.alive else ""),func():open_character(int(c.id)),VisualLibrary.portrait(c))
+		if int(q.deadline)>=0:label(modal_body,"До конца срока: %d дн."%maxi(0,int(q.deadline)-int(s.data.day)),20,GOLD)
+		if q.reason!="":label(modal_body,q.reason,20,MUTED)
+		if q.status in ["active","ready"]:
+			button(modal_body,"К провинции на карте",func():focus_province(int(q.province)))
+			button(modal_body,"Отслеживать",func():s.data.quests.tracked=id;toast("Отслеживается: "+d.title);close_window())
+			if int(q.agent)>=0 and not LivingWorld.agent(s,int(q.agent)).is_empty():button(modal_body,"Посланник на карте",func():open_npc(int(q.agent)))
+			if q.objective.kind in ["delivery","caravan"] and int(q.agent)<0:button(modal_body,"Отправить заново по открытым дорогам",func():var result=QuestSystem.retry_delivery(s,id);toast(result.message);open_quest(id))
+			if q.objective.kind=="action":
+				button(modal_body,"Передать 60 продовольствия" if q.objective.action=="relief" else "Снабдить армию · 80 продовольствия",func():act("quest_action",{"id":id,"action":q.objective.action},func():open_quest(id)))
+			if q.objective.kind in ["building","market_recovery","memorial","recognition","legacy_project","gardens","restore_farm","food_store","trade_market","stone_store"]:button(modal_body,"Открыть строительство",func():open_buildings(int(q.province)))
+			if q.objective.kind in ["intelligence","brother","northern","cadet"] or (q.objective.kind=="delivery" and int(q.agent)<0):button(modal_body,"Тайный совет",open_intrigue)
+			if NarrativeSystem.active(s) and d.category=="main" and not s.data.events.is_empty():button(modal_body,"Событие при дворе",open_event)
+			if q.status=="ready":button(modal_body,"Завершить и получить награду",func():act("quest_claim",{"id":id},func():open_quest(id)))
+		else:label(modal_body,"Выполнено" if q.status=="completed" else "Отменено · "+q.reason,20,GREEN if q.status=="completed" else RED)
+	kv(modal_body,"Награда","%d золота · %d престижа"%[d.reward.gold,d.reward.prestige])
+	label(modal_body,"Последствия: "+d.consequence,20,MUTED)
+	button(modal_body,"К списку заданий",open_quests)
+func focus_province(pid:int):
+	close_window();app.map.target_position=RouteNetwork.point(app.state.data.provinces[pid].center);app.map.selected_province=pid;app.map.target_zoom=maxf(1,app.map.target_zoom);select_province(pid);app.map.queue_redraw()
+func open_npc(id:int):
+	if id>=1000000:
+		var index=id-1000000
+		if index>=app.map.actors.pool.size():return
+		var local=app.map.actors.pool[index]
+		if not local.active:toast("Житель уже покинул эту часть карты.");return
+		var p=app.state.data.provinces[int(local.province)]
+		open_window("Местный житель · "+p.name,840,560);character_preview(modal_body,"lk_actor_"+local.role)
+		var occupation={"guard":"Городской стражник","patrol":"Начальник дозора","tax_collector":"Сборщик податей","priest":"Приходской священник","noblewoman":"Дворянка местного двора"}.get(local.role,local.role)
+		label(modal_body,occupation,20,GOLD);label(modal_body,"Принадлежность: "+app.state.realm_name(int(p.owner)),20)
+		label(modal_body,"Провинция: "+p.name,20)
+		label(modal_body,"Назначение: охрана дворов и площади. Численность патруля зависит от беспорядков и войны." if local.role in ["guard","patrol"] else "Назначение: местное поручение между двором, работой и площадью.",20)
+		button(modal_body,"К владению",func():focus_province(int(p.id)));return
+	var s=app.state;var a=LivingWorld.agent(s,id)
+	if a.is_empty():toast("Путешественник уже покинул карту.");return
+	open_window(a.name,860,580)
+	character_preview(modal_body,"lk_actor_"+a.kind)
+	kv(modal_body,"Занятие",{"merchant":"Торговец","courier":"Курьер","diplomat":"Дипломат","noble":"Дворянин","priest":"Священник"}.get(a.kind,a.kind))
+	label(modal_body,"Принадлежность: "+s.realm_name(int(a.realm)),20,GOLD)
+	label(modal_body,"Провинция: "+s.data.provinces[int(a.province)].name,20)
+	label(modal_body,"Маршрут: %s → %s"%[s.data.provinces[int(a.origin)].name,s.data.provinces[int(a.target)].name],20)
+	label(modal_body,{"travel":"В пути","arrived":"Поручение доставлено","blocked":"Дорога закрыта: война, оккупация или беспорядки","cancelled":"Поручение отменено"}.get(a.status,a.status)+(" · возвращается" if a.returning else ""),20,GOLD)
+	button(modal_body,"Показать маршрут",func():app.map.actors.selected_route=id;close_window();app.map.target_position=RouteNetwork.point(a.position);app.map.actors.queue_redraw())
+	if a.kind=="merchant":
+		if a.get("robbed",false):label(modal_body,a.message,20,RED)
+		label(modal_body,"Товары: местное зерно, дерево и ремесленные изделия. Прибытие приносит гильдии 3 золота; доступные сделки проходят через общий рынок.",20)
+		if int(a.realm)==int(s.data.player):button(modal_body,"Открыть торговлю",open_economy)
+	if a.kind=="courier" and (int(a.arrived)>=0 or a.returning):label(modal_body,a.message,20,GOLD)
+	if a.kind=="diplomat":button(modal_body,"Дипломатические отношения",func():open_diplomacy(int(s.data.provinces[int(a.target)].owner)))
+	if int(a.character)>=0:button(modal_body,"Карточка персонажа",func():open_character(int(a.character)))
+	if a.quest!="":button(modal_body,"Связанное задание",func():open_quest(a.quest))
+func open_travellers():
+	open_window("Жители и путешественники",960,610)
+	label(modal_body,"Курьеры, послы и караваны сохраняют поручения и положение. Жители ходят между дворами, работой и площадью; охрана патрулирует улицы.",20)
+	for a in app.state.data.living.agents:button(modal_body,a.name+" · "+app.state.data.provinces[int(a.province)].name,func():open_npc(int(a.id)))
+	button(modal_body,"Каталог персонажей и анимаций",open_character_catalogue)
+	button(modal_body,"Каталог архитектуры",open_art_catalogue)
+func open_architecture(pid:int):
+	var s=app.state;var p=s.data.provinces[pid];var r=s.data.realms[int(p.owner)]
+	open_window("Архитектурное наследие · "+p.name,980,620)
+	label(modal_body,["Посёлок","Деревня","Городок","Город","Столица"][SettlementSystem.tier(p,r)]+" · "+["Вдоль дороги","У реки","Вокруг замка","Торговая площадь","Горные террасы","Прибрежные улицы"][int(p.heritage.layout)],20,GOLD)
+	label(modal_body,"Региональная культура: "+p.heritage.culture+". Исторический стиль: "+p.heritage.historic_style+". Новые постройки: "+SettlementSystem.style_for(s,int(p.owner))+".",20)
+	label(modal_body,"Состояние поселения: %d%%. Старые здания сохраняются при смене династии; новые дворы и реконструкции получают стиль нового покровителя."%int(100-float(p.heritage.damage)),20,MUTED)
+	for record in p.heritage.records:
+		var row=box(modal_body,false);image_rect(row,SettlementSystem.asset(p,record.kind,record.style),Vector2(88,88));var col=box(row)
+		heading(col,record.name+" · ур. "+str(int(record.level)),22)
+		var date="До начала летописи" if int(record.built)<0 else "День %d от 1 января 1183"%(int(record.built)+1)
+		label(col,"%s · Дом %s\nВладелец: %s · состояние %d%%"%[date,s.data.dynasties[int(record.dynasty)].name,r.name,100-float(p.heritage.damage)],20)
+		separator(modal_body)
+	button(modal_body,"Все династические стили",open_art_catalogue)
+func open_art_catalogue(index:int=0):
+	open_window("Архитектурный каталог",1000,620)
+	var styles=SettlementSystem.book().styles;var select=OptionButton.new();select.custom_minimum_size.y=48
+	for style_data in styles:select.add_item("Дом "+style_data.dynasty+" · "+style_data.culture)
+	select.select(index);select.item_selected.connect(open_art_catalogue);modal_body.add_child(select)
+	var selected=styles[index];image_rect(modal_body,selected.residence,Vector2(192,192))
+	label(modal_body,"Силуэты и строительные традиции: "+selected.construction+". Резиденция — исторический объект, здания ниже используются поселениями и строительством.",20,MUTED)
+	var grid=GridContainer.new();grid.columns=3;modal_body.add_child(grid)
+	for kind in selected.types:
+		var col=box(grid);var id=selected.types[kind];image_rect(col,id,Vector2(160,150));label(col,app.map.texture_metadata[id].purpose,20,GOLD)
+func character_preview(parent,id:String):
+	var preview=Control.new();preview.set_script(load("res://scripts/ui/character_preview.gd"));preview.map=app.map;preview.sprite=id;preview.custom_minimum_size=Vector2(120,110);parent.add_child(preview)
+func open_character_catalogue():
+	open_window("Персонажи · четыре направления",1000,620)
+	label(modal_body,"32 набора. Idle: 2 кадра; Walk: 8; Interact / Work: по 4. У боевых ролей Attack: 4 и Hurt: 2. Показ поворачивается без деформации спрайтов.",20,MUTED)
+	var grid=GridContainer.new();grid.columns=4;modal_body.add_child(grid)
+	for entry in GameState.read_json("res://data/living_characters.json"):
+		var col=box(grid);character_preview(col,entry.id);label(col,entry.name,20,GOLD)
+func open_dynasty_chronicle():
+	var s=app.state;var r=s.data.realms[int(s.data.player)];var d=s.data.dynasties[int(r.dynasty_id)]
+	open_window("Хроника дома "+d.name,1000,620);kv(modal_body,"Престиж","%d / 100"%d.prestige)
+	label(modal_body,"Высокий престиж даёт не более +4 к дипломатическим шансам. Законные наследования, браки, стабильность, войны и завершённые проекты оставляют записи.",20,MUTED)
+	for reign in d.reigns:
+		var c=s.data.characters[int(reign.ruler)];var days=(int(s.data.day) if int(reign.end)<0 else int(reign.end))-int(reign.start)
+		button(modal_body,c.name+" · %d дней · "%days+reign.reason,func():open_character(int(c.id)),VisualLibrary.portrait(c))
+	for item in d.chronicle:label(modal_body,"День %d · %s"%[int(item.day)+1,item.text],20,GOLD)

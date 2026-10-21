@@ -178,5 +178,164 @@
       "speed": 0.15
     },
     "max_level": 3
+  },
+  "niyazov_palace": {
+    "name": "Дворец Ниязовых",
+    "asset": "lk_niyazov_residence",
+    "cost": {
+      "gold": 320,
+      "wood": 100,
+      "stone": 140,
+      "iron": 10
+    },
+    "days": 100,
+    "upkeep": 2.5,
+    "effect": {
+      "legitimacy": 0.35,
+      "development": 0.2
+    },
+    "max_level": 1,
+    "unique": true
+  },
+  "command_academy": {
+    "name": "Академия полководцев",
+    "asset": "lk_command_academy",
+    "cost": {
+      "gold": 190,
+      "wood": 65,
+      "stone": 80,
+      "iron": 10
+    },
+    "days": 70,
+    "upkeep": 1.5,
+    "effect": {
+      "manpower": 18,
+      "training": 1
+    },
+    "max_level": 1,
+    "unique": true
+  },
+  "royal_archive": {
+    "name": "Королевский архив",
+    "asset": "lk_royal_archive",
+    "cost": {
+      "gold": 140,
+      "wood": 40,
+      "stone": 65,
+      "iron": 10
+    },
+    "days": 55,
+    "upkeep": 0.8,
+    "effect": {
+      "gold": 3,
+      "development": 0.08
+    },
+    "max_level": 1,
+    "unique": true
+  },
+  "great_market": {
+    "name": "Великий рынок",
+    "asset": "lk_great_market",
+    "cost": {
+      "gold": 180,
+      "wood": 70,
+      "stone": 70,
+      "iron": 10
+    },
+    "days": 60,
+    "upkeep": 1.1,
+    "effect": {
+      "gold": 20
+    },
+    "max_level": 1,
+    "unique": true
+  },
+  "dynastic_tomb": {
+    "name": "Династическая усыпальница",
+    "asset": "lk_dynastic_tomb",
+    "cost": {
+      "gold": 150,
+      "wood": 35,
+      "stone": 90,
+      "iron": 10
+    },
+    "days": 65,
+    "upkeep": 0.7,
+    "effect": {
+      "prestige": 0.15
+    },
+    "max_level": 1,
+    "unique": true
+  },
+  "embassy_court": {
+    "name": "Посольский двор",
+    "asset": "lk_embassy_court",
+    "cost": {
+      "gold": 160,
+      "wood": 50,
+      "stone": 70,
+      "iron": 10
+    },
+    "days": 60,
+    "upkeep": 1,
+    "effect": {
+      "diplomacy": 3
+    },
+    "max_level": 1,
+    "unique": true
+  },
+  "royal_shipyard": {
+    "name": "Королевская верфь",
+    "asset": "lk_royal_shipyard",
+    "cost": {
+      "gold": 180,
+      "wood": 100,
+      "stone": 50,
+      "iron": 10
+    },
+    "days": 65,
+    "upkeep": 1.2,
+    "effect": {
+      "gold": 17,
+      "wood": 4
+    },
+    "max_level": 1,
+    "unique": true
+  },
+  "great_library": {
+    "name": "Великая библиотека",
+    "asset": "lk_great_library",
+    "cost": {
+      "gold": 210,
+      "wood": 60,
+      "stone": 110,
+      "iron": 10
+    },
+    "days": 80,
+    "upkeep": 1.2,
+    "effect": {
+      "gold": 4,
+      "development": 0.12
+    },
+    "max_level": 1,
+    "unique": true
+  },
+  "royal_gardens": {
+    "name": "Королевские сады",
+    "asset": "lk_royal_gardens",
+    "cost": {
+      "gold": 110,
+      "wood": 35,
+      "stone": 35,
+      "iron": 10
+    },
+    "days": 45,
+    "upkeep": 0.6,
+    "effect": {
+      "food": 6,
+      "unrest": -1
+    },
+    "max_level": 1,
+    "unique": true
   }
 }

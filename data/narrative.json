@@ -302,6 +302,26 @@
           },
           "operation": "",
           "condition": "always"
+        },
+        {
+          "cost": {},
+          "effects": {},
+          "condition": "always",
+          "loyalty": {
+            "victor": 8,
+            "mikhail": -3
+          },
+          "politics": {
+            "noble_support": 5,
+            "royal_authority": -3
+          },
+          "flags": {
+            "northern_council": true
+          },
+          "label": "Дать северной ветви место в совете",
+          "hint": "Виктор станет маршалом; прежний маршал потеряет должность. Верность Виктора растёт, власть двора делится.",
+          "operation": "victor_marshal",
+          "living_choice_id": "living_n_family"
         }
       ],
       "once": true
@@ -1041,6 +1061,26 @@
           "flags": {},
           "operation": "",
           "condition": "always"
+        },
+        {
+          "cost": {},
+          "effects": {},
+          "condition": "always",
+          "loyalty": {
+            "victor": 10,
+            "mikhail": -6
+          },
+          "politics": {
+            "royal_authority": 2,
+            "noble_support": 3
+          },
+          "flags": {
+            "victor_banners": true
+          },
+          "label": "Доверить знамя Виктору",
+          "hint": "Реальное назначение маршала северной ветви. Лояльность Виктора укрепится, Михаил увидит конкурента.",
+          "operation": "victor_marshal",
+          "living_choice_id": "living_n_banners"
         }
       ],
       "once": true
@@ -1274,6 +1314,23 @@
           "flags": {},
           "operation": "",
           "condition": "always"
+        },
+        {
+          "cost": {},
+          "effects": {},
+          "condition": "always",
+          "loyalty": {},
+          "politics": {
+            "royal_authority": 4,
+            "noble_support": -2
+          },
+          "flags": {
+            "academy_charter": true
+          },
+          "label": "Учредить Академию полководцев",
+          "hint": "Начнётся оплаченная стройка: 190 золота, 65 дерева, 80 камня, 10 железа. Военные обучение и содержание вступят в силу после завершения.",
+          "operation": "build_academy",
+          "living_choice_id": "living_n_council"
         }
       ],
       "once": true
@@ -1815,6 +1872,23 @@
           "flags": {},
           "operation": "",
           "condition": "always"
+        },
+        {
+          "cost": {},
+          "effects": {},
+          "condition": "always",
+          "loyalty": {},
+          "politics": {
+            "dynasty_prestige": 4,
+            "noble_support": 2
+          },
+          "flags": {
+            "archive_charter": true
+          },
+          "label": "Сохранить свидетельства в Королевском архиве",
+          "hint": "Начнётся настоящая стройка: 140 золота, 40 дерева, 65 камня, 10 железа. История дома сохранит решения и смену правителей.",
+          "operation": "build_archive",
+          "living_choice_id": "living_n_memorial"
         }
       ],
       "once": true

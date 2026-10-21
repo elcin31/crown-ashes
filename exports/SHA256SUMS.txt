@@ -2,3 +2,4 @@ b6d8b238a01c2251848665063be3b40be23610c1568f1e78d47d694413b13732  CrownAndAshes-
 b466cad3fe2e7aa60d1a86c59dc1e6953925530eda0f1cbd9cd7f8484e30d3a1  CrownAndAshes-v0.2.0-android.apk
 88a4fec49dc7abe1c150436dd1ca4cc8dd4628400330e32b12e2319796ce523b  CrownAndAshes-v0.3.0-android.apk
 dbdabef0eb4b879eb5ebfc654a091bbe515eb94661edd09d2b81ed0ede456fd8  CrownAndAshes-v0.3.1-android.apk
+97373af707b857e214bc65cd0709ec47cfea315fb2d1e581694c1f5fe656e1de  CrownAndAshes-v0.4.0-android.apk

@@ -123,18 +123,16 @@ for p in world['provinces']:
   for k in range(8):
    x=cx+r.randrange(-90,90);y=cy+r.randrange(-65,65)
    if not reserved(x,y,42):place('oak' if k%3==0 else 'bush',x,y,20)
- # The large landmark remains dynamic; bake only streets, yards and satellite buildings.
+ # 0.4: all inhabited buildings are live heritage slots, never anonymous baked houses.
  tier=3 if pid in [int(k['capital']) for k in world['realms']] else 2 if p['population']>7300 else 1 if p['development']>34 else 0
  # Satellite buildings sit outside the main silhouette and label corridor.
  offsets=[(-48,9,'house'),(48,13,'peasant_hut')]
  if tier>=1:offsets.extend([(-48,38,'granary'),(46,42,'market')])
  if tier>=2:offsets.append((-43,-30,'townhouse'))
  if tier>=3:offsets.extend([(48,-32,'temple'),(60,5,'noble_estate')])
- for dx,dy,name in offsets:place(name,cx+dx,cy+dy,34 if name not in ['temple','market','noble_estate'] else 39)
- if p['coastal']:place('fortified_harbor' if tier>=2 else 'port',cx+74,cy+36,44)
+ # Keep the prepared offsets as historical reference; SettlementLayer owns them now.
  if pid%5==0:place('roadside_shrine',cx+55,cy+30,21)
  if pid%7==0:place('abandoned_cottage',cx-78,cy+35,27)
- if pid%4==0:place('merchant_cart',cx-39,cy+19,21)
  if pid%6==0:place('wooden_fence_corner',cx-40,cy+27,24)
  if pid%8==0:place('stone_fence',cx+33,cy+30,27)
  if pid%3==0:place('village_well',cx+10,cy+36,23)
@@ -169,5 +167,46 @@ for x,y in crossings:
 for name,pos in [('shallow_river_rapids',rivers[0][35]),('rocky_coastline',coast[2]),('sandy_coastline',coast[8])]:
  x,y=map(int,pos);tile=a(name).resize((28,28),Image.Resampling.NEAREST);mask=Image.new('L',(28,28));ImageDraw.Draw(mask).ellipse((2,3,25,24),fill=120);im.paste(tile,(x-14,y-14),mask)
 im=im.resize((world['width'],world['height']),Image.Resampling.NEAREST).convert('RGB');im.save(ROOT/'data/terrain_cache.png',optimize=True)
-(ROOT/'data/visual_world.json').write_text(json.dumps({'version':'0.3.1','roads':len(roads),'bridges':len(crossings),'scenery_count':len(placements),'cache_size':list(im.size),'topology_changed':False},indent=2))
+(ROOT/'data/visual_world.json').write_text(json.dumps({'version':'0.4.0','roads':len(roads),'bridges':len(crossings),'scenery_count':len(placements),'cache_size':list(im.size),'topology_changed':False},indent=2))
+# Shared physical navigation mask: land, water, bridges and scenery footprints.
+# Built once, not inferred from noisy image colours or recalculated during zoom.
+nav=land.copy();nd=ImageDraw.Draw(nav)
+for river in rivers:nd.line(river,fill=0,width=13)
+for ground,name,x,top,w,h,layer in placements:
+ if name in ('_ridge','_cliff','large_boulder_cluster','large_rock'):
+  nd.rectangle((x+3,ground-h*.35,x+w-3,ground+2),fill=0)
+# Road corridors are mountain passes; only explicit bridge crossings open water.
+water=Image.new('L',(W,H));wd=ImageDraw.Draw(water)
+for river in rivers:wd.line(river,fill=255,width=13)
+for road in roads:
+ corridor=Image.new('L',(W,H));ImageDraw.Draw(corridor).line(road,fill=255,width=11)
+ for yy in range(max(0,int(min(y for x,y in road))-6),min(H,int(max(y for x,y in road))+7)):
+  for xx in range(max(0,int(min(x for x,y in road))-6),min(W,int(max(x for x,y in road))+7)):
+   if corridor.getpixel((xx,yy)) and not water.getpixel((xx,yy)) and land.getpixel((xx,yy)):nav.putpixel((xx,yy),255)
+for x,y in crossings:nd.ellipse((x-13,y-13,x+13,y+13),fill=255)
+rows=[]
+for gy in range(world['height']//8):
+ rows.append(''.join('1' if nav.getpixel((gx*4+2,gy*4+2))>=128 else '0' for gx in range(world['width']//8)))
+# Each composition is fitted into the same terrain mask. Buildings keep a narrow
+# ground footprint, leaving streets between roofs for local A* routes.
+layouts=[(-64,-44),(-23,-45),(23,-44),(65,-44),(-64,-3),(-23,-3),(23,-3),(65,-3),(-64,36),(-23,36),(23,36),(65,36),(-85,-23),(85,-23),(-85,20),(85,20),(-43,-68),(0,-70),(44,-69),(-43,66),(0,66),(44,66)]
+slots=[]
+for p in world['provinces']:
+ cx,cy=p['center'];placed=[]
+ # Different prepared layouts: road ribbon, riverbank, castle ring, square, terrace, quay.
+ mode=5 if p['coastal'] else 4 if p['terrain']=='mountains' else p['id']%4
+ for i,(dx,dy) in enumerate(layouts):
+  if mode==0:dy=dy*.75
+  elif mode==1:dx+=dy*.23
+  elif mode==2:dx,dy=dy*1.2,dx*.7
+  elif mode==4:dy+=int(dx/42)*7
+  elif mode==5:dy*=.85
+  candidate=None
+  for shift in [(0,0),(0,12),(0,-12),(12,0),(-12,0),(0,24),(24,0),(-24,0),(0,-24)]:
+   x,y=round(cx+dx+shift[0]),round(cy+dy+shift[1])
+   if not 36<x<world['width']-36 or not 36<y<world['height']-36:continue
+   if all(nav.getpixel((int((x+ox)/2),int((y+oy)/2)))>=128 for ox,oy in [(-16,-7),(16,-7),(-16,7),(16,7),(0,0)]) and all(abs(x-a)>31 or abs(y-b)>21 for a,b in placed):candidate=(x,y);break
+  if candidate:placed.append(candidate)
+ slots.append([list(q) for q in placed])
+(ROOT/'data/navigation.json').write_text(json.dumps({'cell':8,'width':world['width']//8,'height':world['height']//8,'mask':rows,'roads':[{'a':int(e['a']),'b':int(e['b']),'points':[[round(x*2,2),round(y*2,2)] for x,y in pts]} for e,pts in zip(selected,roads)],'bridges':[[x*2,y*2] for x,y in crossings],'slots':slots},separators=(',',':')))
 print('Reforged geography:',len(placements),'prebaked scenery placements,',len(roads),'curving roads,',len(crossings),'bridges; topology unchanged.')

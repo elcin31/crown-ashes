@@ -20,6 +20,7 @@ static func declare(s,actor:int,target:int,reason:String="claim")->Dictionary:
 	for other in ProvinceSystem.neighbors(s,actor):
 		if other!=target:s.relation(actor,other).value=maxi(-100,int(s.relation(actor,other).value)-4)
 	s.log_message("Война: %s против %s."%[s.realm_name(actor),s.realm_name(target)])
+	if s.data.has("living"):DynastyHistory.entry(s,actor,"Начало войны против "+s.realm_name(target))
 	return s.result(true,"Война объявлена. Переместите войска на вражескую территорию.")
 static func peace(s,actor:int,target:int,terms:String="white")->Dictionary:
 	var w=s.war_between(actor,target)
@@ -59,4 +60,5 @@ static func peace(s,actor:int,target:int,terms:String="white")->Dictionary:
 			if not ProvinceSystem.can_enter(s,int(a.realm),int(s.data.provinces[int(a.province)].owner)):a.province=s.data.realms[int(a.realm)].capital
 	s.data.wars.erase(w);s.relation(actor,target).truce_until=int(s.data.day)+360
 	s.log_message("Мир: %s и %s. Передано провинций: %d. Перемирие — 360 дней."%[s.realm_name(actor),s.realm_name(target),taken.size()])
+	if s.data.has("living"):DynastyHistory.entry(s,actor,"Мир с "+s.realm_name(target)+": "+terms,2 if score>=20 else 0)
 	return s.result(true,"Мирный договор заключён.")

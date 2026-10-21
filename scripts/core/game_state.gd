@@ -55,6 +55,8 @@ func new_campaign(player: int = 12, difficulty: int = 1, story: bool = false):
 		EconomySystem.forecast(self,int(realm.id))
 	log_message("1183 год. Александр I Ниязов принял корону Аурелиана. Великие дома ещё не принесли единой присяги.")
 	if story:NarrativeSystem.start(self)
+	LivingWorld.ensure(self)
+	QuestSystem.ensure(self)
 
 func pair(a:int,b:int)->String:
 	return "%d:%d"%[mini(a,b),maxi(a,b)]

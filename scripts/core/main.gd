@@ -16,9 +16,12 @@ func _ready():
 	ui=UIController.new();ui.app=self;add_child(ui)
 	map.province_selected.connect(func(id):if running:ui.select_province(id))
 	map.army_selected.connect(func(id):if running:ui.select_army(id))
+	map.npc_selected.connect(func(id):if running:ui.open_npc(id))
 	map.input_controller.ui_blocks_world=ui.blocks_world_at
 	load_settings();ui.show_main_menu()
-	if "--mobile-smoke" in OS.get_cmdline_user_args():
+	if "--living-check" in OS.get_cmdline_user_args():
+		var runner=load("res://tests/living_check.gd").new();runner.app=self;add_child(runner)
+	elif "--mobile-smoke" in OS.get_cmdline_user_args():
 		var runner=load("res://tests/mobile_smoke.gd").new();runner.app=self;add_child(runner)
 	elif "--legacy-smoke" in OS.get_cmdline_user_args():
 		var runner=load("res://tests/legacy_smoke.gd").new();runner.app=self;add_child(runner)
@@ -29,6 +32,7 @@ func _ready():
 func start_campaign(realm:int,difficulty:int,story:bool=false):
 	state.new_campaign(realm,difficulty,story);commands=GameCommands.new(state);clock=GameClock.new();clock.speed=0;running=true;outcome_shown=false
 	map.set_state(state);map.input_controller.reset_gestures();map.input_controller.enabled=true;ui.show_game()
+	QuestSystem.daily(state)
 	if story:ui.call_deferred("open_event")
 func preview_world(story:bool):
 	state=GameState.new();state.new_campaign(0 if story else 12,1);commands=GameCommands.new(state);map.set_state(state)
@@ -43,6 +47,7 @@ func set_speed(speed:int):
 	clock.speed=speed;ui.refresh_hud()
 func _process(delta):
 	map.simulation_running=running and clock.speed>0
+	map.set_meta("time_speed",clock.speed)
 	map.movement_fraction=clock.accumulator
 	if not running:return
 	if NarrativeSystem.active(state) and state.data.narrative.ending!="" and not state.data.narrative.ending_seen and ui.modal==null:

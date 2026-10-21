@@ -4,6 +4,9 @@ static func acceptance(s,actor:int,target:int,action:String)->int:
 	var rel=s.relation(actor,target);var ratio=ArmySystem.strength(s,actor)/maxf(60,ArmySystem.strength(s,target));var diplomacy=CharacterSystem.bonus(s,actor,"chancellor")
 	var base=25+int(rel.value)*0.65+diplomacy*1.5+(ratio-1)*13
 	if action=="nap":base+=20
+	if s.data.has("living"):
+		base+=minf(4,float(s.data.dynasties[int(s.data.realms[actor].dynasty_id)].prestige)/25)
+		if s.provinces_of(actor).any(func(p):return int(p.buildings.get("embassy_court",0))>0):base+=3
 	if action=="tribute":base=5+maxf(0,ratio-1)*33-int(rel.value)*0.15
 	if s.data.realms[target].personality=="diplomat":base+=12
 	return clampi(int(base),5,95)
@@ -20,6 +23,7 @@ static func act(s,actor:int,target:int,action:String)->Dictionary:
 	if action=="nap" and int(rel.nap_until)>now:return s.result(false,"Пакт уже действует.")
 	if not s.can_pay(actor,cost):return s.result(false,"Недостаточно золота для посольства.")
 	s.pay(actor,cost);rel.cooldowns[key]=now+30
+	if s.data.has("living") and actor==int(s.data.player):LivingWorld.dispatch(s,"diplomat",int(s.data.realms[actor].capital),int(s.data.realms[target].capital),actor)
 	match action:
 		"improve":rel.value=mini(100,int(rel.value)+12)
 		"worsen":rel.value=maxi(-100,int(rel.value)-15)

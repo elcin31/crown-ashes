@@ -3,8 +3,21 @@ extends RefCounted
 var s
 func _init(state):s=state
 func execute(actor:int,command:String,args:Dictionary={})->Dictionary:
+	var result=_execute(actor,command,args)
+	if result.ok:QuestSystem.on_command(s,actor,command,args)
+	if result.ok and actor==int(s.data.player) and s.data.has("living"):
+		if command=="grant":LivingWorld.dispatch(s,"noble",int(s.data.realms[actor].capital),int(args.province),actor,"",int(args.character))
+		elif command=="marry":
+			var spouse=s.data.characters[int(args.b)];var destination=int(s.data.realms[int(spouse.realm)].capital)
+			LivingWorld.dispatch(s,"noble",int(s.data.realms[actor].capital),destination,actor,"",int(args.a))
+	return result
+func _execute(actor:int,command:String,args:Dictionary={})->Dictionary:
 	if actor<0 or actor>=s.data.realms.size():return s.result(false,"Неизвестное владение.")
 	match command:
+		"quest_accept":return QuestSystem.accept(s,str(args.get("id","")))
+		"quest_claim":return QuestSystem.claim(s,str(args.get("id","")))
+		"quest_action":return QuestSystem.action(s,str(args.get("id","")),str(args.get("action","")))
+		"restore":return ConstructionSystem.restore(s,actor,int(args.get("province",-1)))
 		"build":return ConstructionSystem.build(s,actor,int(args.get("province",-1)),args.get("kind",""))
 		"recruit":return ArmySystem.recruit(s,actor,int(args.get("province",-1)),args.get("unit",""))
 		"move":return ArmySystem.move(s,actor,int(args.get("army",-1)),int(args.get("province",-1)))

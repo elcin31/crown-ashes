@@ -1,0 +1,267 @@
+{
+  "styles": [
+    {
+      "id": "niyazov",
+      "realm": 0,
+      "dynasty": "Ниязовы",
+      "culture": "Аурелианская",
+      "construction": "royal",
+      "residence": "lk_niyazov_residence",
+      "types": {
+        "peasant": "lk_niyazov_peasant",
+        "large_house": "lk_niyazov_large_house",
+        "townhouse": "lk_niyazov_townhouse",
+        "manor": "lk_niyazov_manor",
+        "market": "lk_niyazov_market",
+        "outbuilding": "lk_niyazov_outbuilding",
+        "barracks": "lk_niyazov_barracks",
+        "temple": "lk_niyazov_temple",
+        "castle": "lk_niyazov_castle",
+        "administration": "lk_niyazov_administration"
+      }
+    },
+    {
+      "id": "veyrmark",
+      "realm": 1,
+      "dynasty": "Вейр",
+      "culture": "Вейрская",
+      "construction": "brick",
+      "residence": "lk_veyrmark_residence",
+      "types": {
+        "peasant": "lk_veyrmark_peasant",
+        "large_house": "lk_veyrmark_large_house",
+        "townhouse": "lk_veyrmark_townhouse",
+        "manor": "lk_veyrmark_manor",
+        "market": "lk_veyrmark_market",
+        "outbuilding": "lk_veyrmark_outbuilding",
+        "barracks": "lk_veyrmark_barracks",
+        "temple": "lk_veyrmark_temple",
+        "castle": "lk_veyrmark_castle",
+        "administration": "lk_veyrmark_administration"
+      }
+    },
+    {
+      "id": "thornsreach",
+      "realm": 2,
+      "dynasty": "Терн",
+      "culture": "Терновая лесная",
+      "construction": "timber",
+      "residence": "lk_thornsreach_residence",
+      "types": {
+        "peasant": "lk_thornsreach_peasant",
+        "large_house": "lk_thornsreach_large_house",
+        "townhouse": "lk_thornsreach_townhouse",
+        "manor": "lk_thornsreach_manor",
+        "market": "lk_thornsreach_market",
+        "outbuilding": "lk_thornsreach_outbuilding",
+        "barracks": "lk_thornsreach_barracks",
+        "temple": "lk_thornsreach_temple",
+        "castle": "lk_thornsreach_castle",
+        "administration": "lk_thornsreach_administration"
+      }
+    },
+    {
+      "id": "greyshore",
+      "realm": 3,
+      "dynasty": "Грейв",
+      "culture": "Грейвская прибрежная",
+      "construction": "coastal",
+      "residence": "lk_greyshore_residence",
+      "types": {
+        "peasant": "lk_greyshore_peasant",
+        "large_house": "lk_greyshore_large_house",
+        "townhouse": "lk_greyshore_townhouse",
+        "manor": "lk_greyshore_manor",
+        "market": "lk_greyshore_market",
+        "outbuilding": "lk_greyshore_outbuilding",
+        "barracks": "lk_greyshore_barracks",
+        "temple": "lk_greyshore_temple",
+        "castle": "lk_greyshore_castle",
+        "administration": "lk_greyshore_administration"
+      }
+    },
+    {
+      "id": "harrowfen",
+      "realm": 4,
+      "dynasty": "Харроу",
+      "culture": "Харроуская болотная",
+      "construction": "stilt",
+      "residence": "lk_harrowfen_residence",
+      "types": {
+        "peasant": "lk_harrowfen_peasant",
+        "large_house": "lk_harrowfen_large_house",
+        "townhouse": "lk_harrowfen_townhouse",
+        "manor": "lk_harrowfen_manor",
+        "market": "lk_harrowfen_market",
+        "outbuilding": "lk_harrowfen_outbuilding",
+        "barracks": "lk_harrowfen_barracks",
+        "temple": "lk_harrowfen_temple",
+        "castle": "lk_harrowfen_castle",
+        "administration": "lk_harrowfen_administration"
+      }
+    },
+    {
+      "id": "duncrest",
+      "realm": 5,
+      "dynasty": "Данвик",
+      "culture": "Данвикская горная",
+      "construction": "terrace",
+      "residence": "lk_duncrest_residence",
+      "types": {
+        "peasant": "lk_duncrest_peasant",
+        "large_house": "lk_duncrest_large_house",
+        "townhouse": "lk_duncrest_townhouse",
+        "manor": "lk_duncrest_manor",
+        "market": "lk_duncrest_market",
+        "outbuilding": "lk_duncrest_outbuilding",
+        "barracks": "lk_duncrest_barracks",
+        "temple": "lk_duncrest_temple",
+        "castle": "lk_duncrest_castle",
+        "administration": "lk_duncrest_administration"
+      }
+    },
+    {
+      "id": "ashlands",
+      "realm": 6,
+      "dynasty": "Эшборн",
+      "culture": "Эшборнская военная",
+      "construction": "bastion",
+      "residence": "lk_ashlands_residence",
+      "types": {
+        "peasant": "lk_ashlands_peasant",
+        "large_house": "lk_ashlands_large_house",
+        "townhouse": "lk_ashlands_townhouse",
+        "manor": "lk_ashlands_manor",
+        "market": "lk_ashlands_market",
+        "outbuilding": "lk_ashlands_outbuilding",
+        "barracks": "lk_ashlands_barracks",
+        "temple": "lk_ashlands_temple",
+        "castle": "lk_ashlands_castle",
+        "administration": "lk_ashlands_administration"
+      }
+    },
+    {
+      "id": "sunmarch",
+      "realm": 7,
+      "dynasty": "Солари",
+      "culture": "Соларийская южная",
+      "construction": "arcade",
+      "residence": "lk_sunmarch_residence",
+      "types": {
+        "peasant": "lk_sunmarch_peasant",
+        "large_house": "lk_sunmarch_large_house",
+        "townhouse": "lk_sunmarch_townhouse",
+        "manor": "lk_sunmarch_manor",
+        "market": "lk_sunmarch_market",
+        "outbuilding": "lk_sunmarch_outbuilding",
+        "barracks": "lk_sunmarch_barracks",
+        "temple": "lk_sunmarch_temple",
+        "castle": "lk_sunmarch_castle",
+        "administration": "lk_sunmarch_administration"
+      }
+    },
+    {
+      "id": "velden",
+      "realm": 8,
+      "dynasty": "Вельд",
+      "culture": "Вельдская торговая",
+      "construction": "stepped",
+      "residence": "lk_velden_residence",
+      "types": {
+        "peasant": "lk_velden_peasant",
+        "large_house": "lk_velden_large_house",
+        "townhouse": "lk_velden_townhouse",
+        "manor": "lk_velden_manor",
+        "market": "lk_velden_market",
+        "outbuilding": "lk_velden_outbuilding",
+        "barracks": "lk_velden_barracks",
+        "temple": "lk_velden_temple",
+        "castle": "lk_velden_castle",
+        "administration": "lk_velden_administration"
+      }
+    },
+    {
+      "id": "blackridge",
+      "realm": 9,
+      "dynasty": "Блэквуд",
+      "culture": "Блэквудская горная",
+      "construction": "gothic",
+      "residence": "lk_blackridge_residence",
+      "types": {
+        "peasant": "lk_blackridge_peasant",
+        "large_house": "lk_blackridge_large_house",
+        "townhouse": "lk_blackridge_townhouse",
+        "manor": "lk_blackridge_manor",
+        "market": "lk_blackridge_market",
+        "outbuilding": "lk_blackridge_outbuilding",
+        "barracks": "lk_blackridge_barracks",
+        "temple": "lk_blackridge_temple",
+        "castle": "lk_blackridge_castle",
+        "administration": "lk_blackridge_administration"
+      }
+    },
+    {
+      "id": "frostholm",
+      "realm": 10,
+      "dynasty": "Фрост",
+      "culture": "Фростская северная",
+      "construction": "longhall",
+      "residence": "lk_frostholm_residence",
+      "types": {
+        "peasant": "lk_frostholm_peasant",
+        "large_house": "lk_frostholm_large_house",
+        "townhouse": "lk_frostholm_townhouse",
+        "manor": "lk_frostholm_manor",
+        "market": "lk_frostholm_market",
+        "outbuilding": "lk_frostholm_outbuilding",
+        "barracks": "lk_frostholm_barracks",
+        "temple": "lk_frostholm_temple",
+        "castle": "lk_frostholm_castle",
+        "administration": "lk_frostholm_administration"
+      }
+    },
+    {
+      "id": "marrow_coast",
+      "realm": 11,
+      "dynasty": "Мэрроу",
+      "culture": "Мэрроуская морская",
+      "construction": "loggia",
+      "residence": "lk_marrow_coast_residence",
+      "types": {
+        "peasant": "lk_marrow_coast_peasant",
+        "large_house": "lk_marrow_coast_large_house",
+        "townhouse": "lk_marrow_coast_townhouse",
+        "manor": "lk_marrow_coast_manor",
+        "market": "lk_marrow_coast_market",
+        "outbuilding": "lk_marrow_coast_outbuilding",
+        "barracks": "lk_marrow_coast_barracks",
+        "temple": "lk_marrow_coast_temple",
+        "castle": "lk_marrow_coast_castle",
+        "administration": "lk_marrow_coast_administration"
+      }
+    }
+  ],
+  "types": [
+    "peasant",
+    "large_house",
+    "townhouse",
+    "manor",
+    "market",
+    "outbuilding",
+    "barracks",
+    "temple",
+    "castle",
+    "administration"
+  ],
+  "projects": [
+    "command_academy",
+    "royal_archive",
+    "great_market",
+    "dynastic_tomb",
+    "embassy_court",
+    "royal_shipyard",
+    "great_library",
+    "royal_gardens"
+  ],
+  "rosehill_inherits": "niyazov"
+}

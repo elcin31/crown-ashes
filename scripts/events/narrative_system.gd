@@ -59,6 +59,7 @@ static func render(s,e:Dictionary)->Dictionary:
 static func schedule(s):
 	if not active(s) or s.data.narrative.ending!="":return
 	var n=s.data.narrative
+	if n.get("chapter_waiting",false):return
 	for entry in s.data.events:
 		if entry.has("narrative_id"):return
 	for e in book().events:
@@ -72,12 +73,21 @@ static func schedule(s):
 	if due:
 		n.skipped.append("act_%d_slot_%d"%[n.act,n.slot]);record(s,"Глава изменена: участники больше не могут исполнить прежние роли.");advance(s)
 static func advance(s):
+	if s.data.has("quests") and not QuestSystem.chapter_ready(s):s.data.narrative.chapter_waiting=true;return
 	var n=s.data.narrative;n.slot+=1
 	if int(n.slot)>=6 and int(n.act)<4:n.act+=1;n.slot=0;record(s,"Акт %d. %s"%[n.act,book().acts[int(n.act)-1].name])
 static func choice_status(s,c:Dictionary)->Dictionary:
 	if not condition(s,c.get("condition","always")):return s.result(false,"Обстоятельства изменились.")
 	var cost=c.get("cost",{}).duplicate();var op=c.get("operation","")
 	var extra={}
+	if op=="ending" and s.data.has("quests") and not QuestSystem.chapter_ready(s):return s.result(false,"Завершите дело «Наследие короны» в журнале заданий.")
+	if op in ["build_academy","build_archive"]:
+		var kind="command_academy" if op=="build_academy" else "royal_archive"
+		if project_province(s,kind)<0:return s.result(false,"Нужна свободная стройплощадка; проект не должен уже существовать.")
+		extra=s.buildings[kind].cost.duplicate()
+	if op=="victor_marshal":
+		var person=actor(s,"victor")
+		if person.is_empty() or not person.alive or int(person.realm)!=0 or int(person.id)==int(s.data.realms[0].ruler) or int(s.data.realms[0].council.get("marshal",-1))==int(person.id):return s.result(false,"Виктор сейчас не может принять должность маршала.")
 	match op:
 		"develop":
 			extra={"gold":65,"wood":15,"stone":15};var p=s.data.provinces[int(s.data.realms[0].capital)]
@@ -120,9 +130,19 @@ static func royal_army(s)->int:
 	for a in s.data.armies:
 		if int(a.realm)==0:return int(a.id)
 	return -1
+static func project_province(s,kind:String)->int:
+	for p in s.provinces_of(0):
+		if int(p.buildings.get(kind,0))>0 or p.construction.get("type","")==kind:return -1
+	for p in s.provinces_of(0):
+		if int(p.occupation)<0 and p.construction.is_empty() and p.buildings.size()<4+int(float(p.development)/20):return int(p.id)
+	return -1
 static func operation(s,kind:String)->Dictionary:
 	var cmd=GameCommands.new(s);var r=s.data.realms[0]
 	match kind:
+		"build_academy","build_archive":
+			var project="command_academy" if kind=="build_academy" else "royal_archive"
+			return cmd.execute(0,"build",{"province":project_province(s,project),"kind":project})
+		"victor_marshal":return cmd.execute(0,"appoint",{"slot":"marshal","character":int(actor(s,"victor").id)})
 		"tax_low":return cmd.execute(0,"tax",{"level":0})
 		"confirm_heir":
 			if r.law!="primogeniture":return cmd.execute(0,"law",{"law":"primogeniture"})
@@ -169,6 +189,7 @@ static func choose(s,index:int,choice:int)->Dictionary:
 	s.pay(0,c.get("cost",{}));EventSystem.apply(s,0,c.get("effects",{}))
 	var n=s.data.narrative
 	for key in c.get("politics",{}):n.variables[key]=clampf(float(n.variables.get(key,50))+float(c.politics[key]),0,100)
+	if s.data.has("living"):s.data.dynasties[int(n.dynasty)].prestige=n.variables.dynasty_prestige
 	for key in c.get("loyalty",{}):
 		var person=actor(s,key)
 		if not person.is_empty() and person.alive:
@@ -229,6 +250,7 @@ static func daily(s):
 static func ending(s)->String:
 	var n=s.data.narrative;var r=s.data.realms[0]
 	if int(r.dynasty_id)!=int(n.dynasty) or s.provinces_of(0).is_empty():return "dynasty_lost"
+	if float(r.legitimacy)<25 and float(r.stability)<30:return "monarchy_fallen"
 	for w in s.data.wars:
 		var other=int(w.b) if int(w.a)==0 else int(w.a) if int(w.b)==0 else -1
 		if other>=0 and s.data.realms[other].get("is_rebel",false):return "dynastic_war"
@@ -239,7 +261,7 @@ static func ending(s)->String:
 	if float(n.threats.get("civil_war_risk",0))>=65 or float(r.legitimacy)<45:return "contested_crown"
 	return "surviving_crown"
 static func ending_text(id:String)->Dictionary:
-	return {"dynasty_lost":{"title":"Лев без трона","text":"Дом Ниязовых лишился власти в Аурелиане. Его история не переписана победителями: родство и принятые решения остались в летописи."},"dynastic_war":{"title":"Разделённое знамя","text":"Соперники подняли настоящие армии. Королевство вступило в династическую войну; её исход ещё предстоит решить на карте."},"empire":{"title":"Империя золотого льва","text":"Ниязовы объединили не менее 35 земель под императорской короной. Масштаб власти стал новым испытанием для дома."},"peaceful_succession":{"title":"Корона пережила короля","text":"Законный преемник Ниязовых принял власть, и королевство выдержало смену правления. Прочность дома оказалась сильнее одной жизни."},"federation":{"title":"Союз великих домов","text":"Король сохранил корону, разделив власть с вассалами. Аурелиан стал союзом владений, связанных законом и взаимными обязательствами."},"central_monarchy":{"title":"Единая королевская печать","text":"Сильная канцелярия и достаточное согласие знати сделали Аурелиан устойчивой централизованной монархией."},"contested_crown":{"title":"Незавершённая присяга","text":"Дом удержал трон, но не убедил всех в праве повелевать. Будущее остаётся открытым: кризис ещё можно разрешить без войны."},"surviving_crown":{"title":"Корона, которую сохранили","text":"Ниязовы сохранили государство, хотя ни король, ни вассалы не получили всего желаемого. История продолжится за пределами первых лет царствования."}}.get(id,{"title":"Наследие","text":"История продолжается."})
+	return {"monarchy_fallen":{"title":"Корона стала реликвией","text":"Легитимность и доверие рухнули. Дома сохранились, но монархия больше не объединяет королевство."},"dynasty_lost":{"title":"Лев без трона","text":"Дом Ниязовых лишился власти в Аурелиане. Его история не переписана победителями: родство и принятые решения остались в летописи."},"dynastic_war":{"title":"Разделённое знамя","text":"Соперники подняли настоящие армии. Королевство вступило в династическую войну; её исход ещё предстоит решить на карте."},"empire":{"title":"Империя золотого льва","text":"Ниязовы объединили не менее 35 земель под императорской короной. Масштаб власти стал новым испытанием для дома."},"peaceful_succession":{"title":"Корона пережила короля","text":"Законный преемник Ниязовых принял власть, и королевство выдержало смену правления. Прочность дома оказалась сильнее одной жизни."},"federation":{"title":"Союз великих домов","text":"Король сохранил корону, разделив власть с вассалами. Аурелиан стал союзом владений, связанных законом и взаимными обязательствами."},"central_monarchy":{"title":"Единая королевская печать","text":"Сильная канцелярия и достаточное согласие знати сделали Аурелиан устойчивой централизованной монархией."},"contested_crown":{"title":"Незавершённая присяга","text":"Дом удержал трон, но не убедил всех в праве повелевать. Будущее остаётся открытым: кризис ещё можно разрешить без войны."},"surviving_crown":{"title":"Корона, которую сохранили","text":"Ниязовы сохранили государство, хотя ни король, ни вассалы не получили всего желаемого. История продолжится за пределами первых лет царствования."}}.get(id,{"title":"Наследие","text":"История продолжается."})
 static func finish(s,id:String):
 	var n=s.data.narrative
 	if n.ending!="":return

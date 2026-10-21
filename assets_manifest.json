@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "art_version": "0.3.1",
+  "art_version": "0.4.0",
   "license": "Original project artwork, CC0-1.0; fonts separately licensed",
   "sources": [
     "tools/art_sources/architecture.png",
@@ -9,7 +9,9 @@
     "tools/art_sources/decorations.png",
     "tools/art_sources/niyazov_story.png",
     "tools/art_sources/niyazov_heraldry.png",
-    "tools/art_sources/settlements_v0_3_1.png"
+    "tools/art_sources/settlements_v0_3_1.png",
+    "tools/art_sources/residences_v0_4.png",
+    "tools/art_sources/towns_v0_4.png"
   ],
   "resources": [
     {
@@ -4552,6 +4554,4034 @@
       "introduced": "0.3.1",
       "revision": "0.3.1",
       "used_by": "VisualLibrary.settlement; population/development/fortification tiers on live map"
+    },
+    {
+      "id": "lk_niyazov_peasant",
+      "path": "assets/living/lk_niyazov_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_large_house",
+      "path": "assets/living/lk_niyazov_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_townhouse",
+      "path": "assets/living/lk_niyazov_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_manor",
+      "path": "assets/living/lk_niyazov_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_market",
+      "path": "assets/living/lk_niyazov_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_outbuilding",
+      "path": "assets/living/lk_niyazov_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_barracks",
+      "path": "assets/living/lk_niyazov_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_temple",
+      "path": "assets/living/lk_niyazov_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_castle",
+      "path": "assets/living/lk_niyazov_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_administration",
+      "path": "assets/living/lk_niyazov_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_peasant",
+      "path": "assets/living/lk_veyrmark_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_large_house",
+      "path": "assets/living/lk_veyrmark_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_townhouse",
+      "path": "assets/living/lk_veyrmark_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_manor",
+      "path": "assets/living/lk_veyrmark_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_market",
+      "path": "assets/living/lk_veyrmark_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_outbuilding",
+      "path": "assets/living/lk_veyrmark_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_barracks",
+      "path": "assets/living/lk_veyrmark_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_temple",
+      "path": "assets/living/lk_veyrmark_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_castle",
+      "path": "assets/living/lk_veyrmark_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_administration",
+      "path": "assets/living/lk_veyrmark_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_peasant",
+      "path": "assets/living/lk_thornsreach_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_large_house",
+      "path": "assets/living/lk_thornsreach_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_townhouse",
+      "path": "assets/living/lk_thornsreach_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_manor",
+      "path": "assets/living/lk_thornsreach_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_market",
+      "path": "assets/living/lk_thornsreach_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_outbuilding",
+      "path": "assets/living/lk_thornsreach_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_barracks",
+      "path": "assets/living/lk_thornsreach_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_temple",
+      "path": "assets/living/lk_thornsreach_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_castle",
+      "path": "assets/living/lk_thornsreach_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_administration",
+      "path": "assets/living/lk_thornsreach_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_peasant",
+      "path": "assets/living/lk_greyshore_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_large_house",
+      "path": "assets/living/lk_greyshore_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_townhouse",
+      "path": "assets/living/lk_greyshore_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_manor",
+      "path": "assets/living/lk_greyshore_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_market",
+      "path": "assets/living/lk_greyshore_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_outbuilding",
+      "path": "assets/living/lk_greyshore_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_barracks",
+      "path": "assets/living/lk_greyshore_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_temple",
+      "path": "assets/living/lk_greyshore_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_castle",
+      "path": "assets/living/lk_greyshore_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_administration",
+      "path": "assets/living/lk_greyshore_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_peasant",
+      "path": "assets/living/lk_harrowfen_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_large_house",
+      "path": "assets/living/lk_harrowfen_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_townhouse",
+      "path": "assets/living/lk_harrowfen_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_manor",
+      "path": "assets/living/lk_harrowfen_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_market",
+      "path": "assets/living/lk_harrowfen_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_outbuilding",
+      "path": "assets/living/lk_harrowfen_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_barracks",
+      "path": "assets/living/lk_harrowfen_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_temple",
+      "path": "assets/living/lk_harrowfen_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_castle",
+      "path": "assets/living/lk_harrowfen_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_administration",
+      "path": "assets/living/lk_harrowfen_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_peasant",
+      "path": "assets/living/lk_duncrest_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_large_house",
+      "path": "assets/living/lk_duncrest_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_townhouse",
+      "path": "assets/living/lk_duncrest_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_manor",
+      "path": "assets/living/lk_duncrest_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_market",
+      "path": "assets/living/lk_duncrest_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_outbuilding",
+      "path": "assets/living/lk_duncrest_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_barracks",
+      "path": "assets/living/lk_duncrest_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_temple",
+      "path": "assets/living/lk_duncrest_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_castle",
+      "path": "assets/living/lk_duncrest_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_administration",
+      "path": "assets/living/lk_duncrest_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_peasant",
+      "path": "assets/living/lk_ashlands_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_large_house",
+      "path": "assets/living/lk_ashlands_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_townhouse",
+      "path": "assets/living/lk_ashlands_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_manor",
+      "path": "assets/living/lk_ashlands_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_market",
+      "path": "assets/living/lk_ashlands_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_outbuilding",
+      "path": "assets/living/lk_ashlands_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_barracks",
+      "path": "assets/living/lk_ashlands_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_temple",
+      "path": "assets/living/lk_ashlands_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_castle",
+      "path": "assets/living/lk_ashlands_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_administration",
+      "path": "assets/living/lk_ashlands_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_peasant",
+      "path": "assets/living/lk_sunmarch_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_large_house",
+      "path": "assets/living/lk_sunmarch_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_townhouse",
+      "path": "assets/living/lk_sunmarch_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_manor",
+      "path": "assets/living/lk_sunmarch_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_market",
+      "path": "assets/living/lk_sunmarch_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_outbuilding",
+      "path": "assets/living/lk_sunmarch_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_barracks",
+      "path": "assets/living/lk_sunmarch_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_temple",
+      "path": "assets/living/lk_sunmarch_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_castle",
+      "path": "assets/living/lk_sunmarch_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_administration",
+      "path": "assets/living/lk_sunmarch_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_peasant",
+      "path": "assets/living/lk_velden_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_large_house",
+      "path": "assets/living/lk_velden_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_townhouse",
+      "path": "assets/living/lk_velden_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_manor",
+      "path": "assets/living/lk_velden_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_market",
+      "path": "assets/living/lk_velden_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_outbuilding",
+      "path": "assets/living/lk_velden_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_barracks",
+      "path": "assets/living/lk_velden_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_temple",
+      "path": "assets/living/lk_velden_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_castle",
+      "path": "assets/living/lk_velden_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_administration",
+      "path": "assets/living/lk_velden_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_peasant",
+      "path": "assets/living/lk_blackridge_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_large_house",
+      "path": "assets/living/lk_blackridge_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_townhouse",
+      "path": "assets/living/lk_blackridge_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_manor",
+      "path": "assets/living/lk_blackridge_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_market",
+      "path": "assets/living/lk_blackridge_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_outbuilding",
+      "path": "assets/living/lk_blackridge_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_barracks",
+      "path": "assets/living/lk_blackridge_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_temple",
+      "path": "assets/living/lk_blackridge_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_castle",
+      "path": "assets/living/lk_blackridge_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_administration",
+      "path": "assets/living/lk_blackridge_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_peasant",
+      "path": "assets/living/lk_frostholm_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_large_house",
+      "path": "assets/living/lk_frostholm_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_townhouse",
+      "path": "assets/living/lk_frostholm_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_manor",
+      "path": "assets/living/lk_frostholm_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_market",
+      "path": "assets/living/lk_frostholm_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_outbuilding",
+      "path": "assets/living/lk_frostholm_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_barracks",
+      "path": "assets/living/lk_frostholm_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_temple",
+      "path": "assets/living/lk_frostholm_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_castle",
+      "path": "assets/living/lk_frostholm_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_administration",
+      "path": "assets/living/lk_frostholm_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_peasant",
+      "path": "assets/living/lk_marrow_coast_peasant.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Крестьянский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_large_house",
+      "path": "assets/living/lk_marrow_coast_large_house.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Большой жилой дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_townhouse",
+      "path": "assets/living/lk_marrow_coast_townhouse.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Городской дом",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_manor",
+      "path": "assets/living/lk_marrow_coast_manor.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Поместье дворянина",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_market",
+      "path": "assets/living/lk_marrow_coast_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_outbuilding",
+      "path": "assets/living/lk_marrow_coast_outbuilding.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Хозяйственный двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_barracks",
+      "path": "assets/living/lk_marrow_coast_barracks.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Казармы",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_temple",
+      "path": "assets/living/lk_marrow_coast_temple.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Храм",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_castle",
+      "path": "assets/living/lk_marrow_coast_castle.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Замок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_administration",
+      "path": "assets/living/lk_marrow_coast_administration.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Канцелярия",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_niyazov_residence",
+      "path": "assets/living/lk_niyazov_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Дворец Ниязовых — Niyazov Royal Palace",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_veyrmark_residence",
+      "path": "assets/living/lk_veyrmark_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Вейр",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "veyrmark",
+      "regional_culture": "Вейрская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_thornsreach_residence",
+      "path": "assets/living/lk_thornsreach_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Терн",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_greyshore_residence",
+      "path": "assets/living/lk_greyshore_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Грейв",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_harrowfen_residence",
+      "path": "assets/living/lk_harrowfen_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Харроу",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "harrowfen",
+      "regional_culture": "Харроуская болотная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_duncrest_residence",
+      "path": "assets/living/lk_duncrest_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Данвик",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "duncrest",
+      "regional_culture": "Данвикская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_ashlands_residence",
+      "path": "assets/living/lk_ashlands_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Эшборн",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_sunmarch_residence",
+      "path": "assets/living/lk_sunmarch_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Солари",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_velden_residence",
+      "path": "assets/living/lk_velden_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Вельд",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_blackridge_residence",
+      "path": "assets/living/lk_blackridge_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Блэквуд",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_frostholm_residence",
+      "path": "assets/living/lk_frostholm_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Фрост",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "frostholm",
+      "regional_culture": "Фростская северная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_marrow_coast_residence",
+      "path": "assets/living/lk_marrow_coast_residence.png",
+      "size": [
+        192,
+        192
+      ],
+      "type": "buildings",
+      "purpose": "Резиденция дома Мэрроу",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_command_academy",
+      "path": "assets/living/lk_command_academy.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Академия полководцев",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "ashlands",
+      "regional_culture": "Эшборнская военная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_royal_archive",
+      "path": "assets/living/lk_royal_archive.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Королевский архив",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "niyazov",
+      "regional_culture": "Аурелианская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_great_market",
+      "path": "assets/living/lk_great_market.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Великий рынок",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "velden",
+      "regional_culture": "Вельдская торговая",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_dynastic_tomb",
+      "path": "assets/living/lk_dynastic_tomb.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Династическая усыпальница",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "blackridge",
+      "regional_culture": "Блэквудская горная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_embassy_court",
+      "path": "assets/living/lk_embassy_court.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Посольский двор",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "greyshore",
+      "regional_culture": "Грейвская прибрежная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_royal_shipyard",
+      "path": "assets/living/lk_royal_shipyard.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Королевская верфь",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "marrow_coast",
+      "regional_culture": "Мэрроуская морская",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_great_library",
+      "path": "assets/living/lk_great_library.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Великая библиотека",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "sunmarch",
+      "regional_culture": "Соларийская южная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_royal_gardens",
+      "path": "assets/living/lk_royal_gardens.png",
+      "size": [
+        160,
+        176
+      ],
+      "type": "buildings",
+      "purpose": "Королевские сады",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "thornsreach",
+      "regional_culture": "Терновая лесная",
+      "used_by": "SettlementSystem slots / construction / architecture catalogue"
+    },
+    {
+      "id": "lk_actor_peasant",
+      "path": "assets/living/lk_actor_peasant.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Крестьянин",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_peasant_woman",
+      "path": "assets/living/lk_actor_peasant_woman.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Крестьянка",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_farmer",
+      "path": "assets/living/lk_actor_farmer.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Фермер",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_lumberjack",
+      "path": "assets/living/lk_actor_lumberjack.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Лесоруб",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_miner",
+      "path": "assets/living/lk_actor_miner.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Шахтёр",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_blacksmith",
+      "path": "assets/living/lk_actor_blacksmith.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Кузнец",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_merchant",
+      "path": "assets/living/lk_actor_merchant.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Торговец",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_traveller",
+      "path": "assets/living/lk_actor_traveller.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Путешественник",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_courier",
+      "path": "assets/living/lk_actor_courier.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Курьер",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_tax_collector",
+      "path": "assets/living/lk_actor_tax_collector.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Сборщик налогов",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_priest",
+      "path": "assets/living/lk_actor_priest.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Священник",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_monk",
+      "path": "assets/living/lk_actor_monk.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Монах",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_guard",
+      "path": "assets/living/lk_actor_guard.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Стражник",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_patrol",
+      "path": "assets/living/lk_actor_patrol.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Патрульный",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_bandit",
+      "path": "assets/living/lk_actor_bandit.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Разбойник",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_infantry",
+      "path": "assets/living/lk_actor_infantry.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Пехотинец",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_spearman",
+      "path": "assets/living/lk_actor_spearman.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Копейщик",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_archer",
+      "path": "assets/living/lk_actor_archer.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Лучник",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_crossbowman",
+      "path": "assets/living/lk_actor_crossbowman.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Арбалетчик",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_knight",
+      "path": "assets/living/lk_actor_knight.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Рыцарь",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_cavalry",
+      "path": "assets/living/lk_actor_cavalry.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Кавалерист",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_officer",
+      "path": "assets/living/lk_actor_officer.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Офицер",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_general",
+      "path": "assets/living/lk_actor_general.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Полководец",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_noble",
+      "path": "assets/living/lk_actor_noble.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Дворянин",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_noblewoman",
+      "path": "assets/living/lk_actor_noblewoman.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Дворянка",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_king",
+      "path": "assets/living/lk_actor_king.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Король",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_queen",
+      "path": "assets/living/lk_actor_queen.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Королева",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_prince",
+      "path": "assets/living/lk_actor_prince.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Принц",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_princess",
+      "path": "assets/living/lk_actor_princess.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Принцесса",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
+    },
+    {
+      "id": "lk_actor_agent",
+      "path": "assets/living/lk_actor_agent.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Тайный агент",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_engineer",
+      "path": "assets/living/lk_actor_engineer.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Военный инженер",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [
+          18,
+          19,
+          20,
+          21
+        ],
+        "hurt": [
+          22,
+          23
+        ],
+        "fps": 8,
+        "combat": true
+      }
+    },
+    {
+      "id": "lk_actor_diplomat",
+      "path": "assets/living/lk_actor_diplomat.png",
+      "size": [
+        1152,
+        256
+      ],
+      "type": "characters",
+      "purpose": "Дипломат",
+      "introduced": "0.4.0",
+      "revision": "0.4.0",
+      "dynastic_style": "",
+      "regional_culture": "",
+      "used_by": "LivingWorld agents / army roles / character catalogue",
+      "animation": {
+        "frame_width": 48,
+        "frame_height": 64,
+        "columns": 24,
+        "rows": 4,
+        "directions": [
+          "down",
+          "left",
+          "right",
+          "up"
+        ],
+        "idle": [
+          0,
+          1
+        ],
+        "walk": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "interact": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "work": [
+          14,
+          15,
+          16,
+          17
+        ],
+        "attack": [],
+        "hurt": [],
+        "fps": 8,
+        "combat": false
+      }
     }
   ]
 }
