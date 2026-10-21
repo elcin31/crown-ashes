@@ -28,3 +28,4 @@ func step(s,commands):
 		AIController.economic(s,commands)
 	if s.calendar().d==1 and s.calendar().m==0:CharacterSystem.yearly(s)
 	if int(s.data.day)%int(s.balance.event_interval_days)==0:EventSystem.schedule(s)
+	NarrativeSystem.daily(s)

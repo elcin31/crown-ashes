@@ -11,3 +11,5 @@ __pycache__/
 !exports/SHA256SUMS.txt
 !exports/CrownAndAshes-v0.2.0-android.zip
 tools/art_sources/*.import
+
+!exports/CrownAndAshes-v0.3.0-android.zip

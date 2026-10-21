@@ -1,0 +1,6 @@
+{
+  "android_device_tested": false,
+  "checks": 124,
+  "failures": 0,
+  "scope": "only save ID arrays and legacy identity"
+}

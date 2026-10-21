@@ -8,6 +8,8 @@ static func make(s,realm:int,gender:String,age:int,role:String,dynasty:int=-1)->
 	if dynasty<0:dynasty=int(r.dynasty_id)
 	var list=MALE if gender=="m" else FEMALE
 	var name=list[(id+realm*3)%list.size()]
+	var family=s.data.dynasties[dynasty]
+	if family.has("surname_m"):name+=" "+str(family.surname_m if gender=="m" else family.surname_f)
 	var portraits={"ruler":"king_old" if age>55 else "king_mature" if age>35 else "king_young","spouse":"queen_mature" if age>35 else "queen_young","heir":"noble_young","daughter":"noblewoman_young","chancellor":"noble_mature","treasurer":"steward","marshal":"commander_veteran","spymaster":"spymaster","steward":"steward","child":"noble_young" if gender=="m" else "noblewoman_young"}
 	var char={"id":id,"name":name,"realm":realm,"age":age,"gender":gender,"dynasty":dynasty,"portrait":portraits.get(role,"noble_mature"),"traits":[TRAITS[s.rng.randi_range(0,9)],TRAITS[s.rng.randi_range(0,9)]],"martial":s.rng.randi_range(3,15),"administration":s.rng.randi_range(3,15),"diplomacy":s.rng.randi_range(3,15),"intrigue":s.rng.randi_range(3,15),"loyalty":s.rng.randi_range(58,85),"ambition":s.rng.randi_range(20,80),"health":90,"alive":true,"spouse":-1,"parents":[],"children":[],"role":role,"relationships":{},"title":0,"claims":[],"born_day":-age*365,"death_day":-1,"secrets":[]}
 	if "Амбициозный" in char.traits:char.ambition=90

@@ -17,7 +17,7 @@ func _init():
 static func read_json(path: String):
 	return JSON.parse_string(FileAccess.get_file_as_string(path))
 
-func new_campaign(player: int = 12, difficulty: int = 1):
+func new_campaign(player: int = 12, difficulty: int = 1, story: bool = false):
 	rng.seed = 1183
 	var world = read_json("res://data/world.json")
 	data = {"version":1,"seed":1183,"day":0,"player":player,"difficulty":difficulty,"provinces":world.provinces,"realms":world.realms,"characters":[],"dynasties":[],"armies":[],"wars":[],"reports":[],"relations":{},"events":[],"log":[],"recruitments":[],"intrigues":[],"market":{"food":1.1,"wood":1.8,"stone":2.1,"iron":3.0},"next_army":0,"next_war":0,"victory_days":0,"outcome":"","freeplay":false,"last_victory":-999,"event_history":{},"tutorial_step":0,"last_autosave":0}
@@ -35,6 +35,7 @@ func new_campaign(player: int = 12, difficulty: int = 1):
 		CharacterSystem.create_court(self,id)
 		var army = ArmySystem.create(self,id,int(realm.capital),{"militia":90 if id==12 else 150,"spearman":30 if id==12 else 70})
 		army.commander = realm.council.get("marshal",realm.ruler)
+	HouseNiyazov.install(self)
 	for p in data.provinces:
 		var realm=data.realms[int(p.owner)]
 		p.holder = realm.council.get("steward",realm.ruler) if int(p.id)!=int(realm.capital) else realm.ruler
@@ -45,10 +46,15 @@ func new_campaign(player: int = 12, difficulty: int = 1):
 	for a in range(data.realms.size()):
 		for b in range(a+1,data.realms.size()):
 			data.relations[pair(a,b)]={"value":int(rng.randi_range(-18,25)),"alliance":false,"nap_until":0,"truce_until":0,"access":[],"cooldowns":{}}
+	data.provinces[24].holder=data.canon.victor
+	data.provinces[34].holder=data.canon.duke
+	data.characters[int(data.canon.duke)].loyalty=44
+	data.characters[int(data.canon.duke)].title=1
 	data.relations[pair(0,12)].value = 15
 	for realm in data.realms:
 		EconomySystem.forecast(self,int(realm.id))
-	log_message("1183 год. Старый король Аурелии слабеет. Судьба вашей династии — в ваших руках.")
+	log_message("1183 год. Александр I Ниязов принял корону Аурелиана. Великие дома ещё не принесли единой присяги.")
+	if story:NarrativeSystem.start(self)
 
 func pair(a:int,b:int)->String:
 	return "%d:%d"%[mini(a,b),maxi(a,b)]

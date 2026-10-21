@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "art_version": "0.2.0",
+  "art_version": "0.3.0",
   "license": "Original project artwork, CC0-1.0; fonts separately licensed",
   "sources": [
     "tools/art_sources/architecture.png",
     "tools/art_sources/portraits.png",
     "tools/art_sources/events.png",
-    "tools/art_sources/decorations.png"
+    "tools/art_sources/decorations.png",
+    "tools/art_sources/niyazov_story.png",
+    "tools/art_sources/niyazov_heraldry.png"
   ],
   "resources": [
     {
@@ -19,7 +21,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -32,7 +34,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -45,7 +47,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -58,7 +60,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -71,7 +73,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -84,7 +86,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -97,7 +99,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -110,7 +112,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -123,7 +125,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -136,7 +138,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -149,7 +151,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -162,7 +164,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -175,7 +177,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -188,7 +190,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -201,7 +203,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -214,7 +216,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -227,7 +229,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -240,7 +242,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -253,7 +255,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -266,7 +268,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -279,7 +281,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -292,7 +294,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -305,7 +307,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -318,7 +320,7 @@
       ],
       "type": "buildings",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -331,7 +333,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -344,7 +346,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -357,7 +359,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -370,7 +372,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -383,7 +385,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -396,7 +398,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -409,7 +411,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -422,7 +424,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -435,7 +437,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -448,7 +450,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -461,7 +463,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -474,7 +476,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -487,7 +489,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -500,7 +502,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -513,7 +515,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -526,7 +528,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -539,7 +541,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -552,7 +554,7 @@
       ],
       "type": "buildings",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "settlement tiers, construction previews, court/main-menu architecture"
     },
     {
@@ -565,7 +567,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -578,7 +580,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -591,7 +593,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -604,7 +606,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -617,7 +619,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -630,7 +632,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -643,7 +645,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -656,7 +658,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -669,7 +671,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -682,7 +684,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -695,7 +697,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -708,7 +710,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -721,7 +723,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -734,7 +736,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -747,7 +749,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -760,7 +762,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -773,7 +775,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -786,7 +788,7 @@
       ],
       "type": "decorations",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -799,7 +801,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -812,7 +814,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -825,7 +827,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -838,7 +840,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -851,7 +853,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -864,7 +866,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -877,7 +879,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -890,7 +892,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -903,7 +905,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -916,7 +918,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -929,7 +931,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -942,7 +944,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -955,7 +957,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -968,7 +970,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -981,7 +983,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -994,7 +996,7 @@
       ],
       "type": "decorations",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "biome-constrained terrain cache and settlement surroundings"
     },
     {
@@ -1007,7 +1009,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1020,7 +1022,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1033,7 +1035,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1046,7 +1048,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1059,7 +1061,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1072,7 +1074,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1085,7 +1087,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1098,7 +1100,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1111,7 +1113,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1124,7 +1126,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1137,7 +1139,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1150,7 +1152,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1163,7 +1165,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1176,7 +1178,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1189,7 +1191,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1202,7 +1204,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1215,7 +1217,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1228,7 +1230,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1241,7 +1243,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1254,7 +1256,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1267,7 +1269,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1280,7 +1282,7 @@
       ],
       "type": "terrain",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1293,7 +1295,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1306,7 +1308,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1319,7 +1321,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1332,7 +1334,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1345,7 +1347,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1358,7 +1360,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1371,7 +1373,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1384,7 +1386,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1397,7 +1399,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1410,7 +1412,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1423,7 +1425,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1436,7 +1438,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1449,7 +1451,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1462,7 +1464,7 @@
       ],
       "type": "terrain",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "continuous biome texture blending and constrained terrain brush patches"
     },
     {
@@ -1475,7 +1477,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1488,7 +1490,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1501,7 +1503,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1514,7 +1516,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1527,7 +1529,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1540,7 +1542,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1553,7 +1555,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1566,7 +1568,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1579,7 +1581,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1592,7 +1594,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1605,7 +1607,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1618,7 +1620,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1631,7 +1633,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1644,7 +1646,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1657,7 +1659,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1670,7 +1672,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1683,7 +1685,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1696,7 +1698,7 @@
       ],
       "type": "portraits",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1709,7 +1711,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1722,7 +1724,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1735,7 +1737,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1748,7 +1750,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1761,7 +1763,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1774,7 +1776,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1787,7 +1789,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1800,7 +1802,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1813,7 +1815,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1826,7 +1828,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1839,7 +1841,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1852,7 +1854,7 @@
       ],
       "type": "portraits",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "VisualLibrary.portrait: role, age, traits and character identity; compatible with old IDs"
     },
     {
@@ -1865,7 +1867,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -1907,7 +1909,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -1949,7 +1951,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -1991,7 +1993,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2033,7 +2035,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2075,7 +2077,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2117,7 +2119,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2159,7 +2161,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2204,7 +2206,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2249,7 +2251,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2294,7 +2296,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2339,7 +2341,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2384,7 +2386,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2429,7 +2431,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2474,7 +2476,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2519,7 +2521,7 @@
       ],
       "type": "characters",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2564,7 +2566,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2609,7 +2611,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2654,7 +2656,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2699,7 +2701,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2744,7 +2746,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2789,7 +2791,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2834,7 +2836,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2876,7 +2878,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2918,7 +2920,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -2960,7 +2962,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3002,7 +3004,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3044,7 +3046,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3086,7 +3088,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3128,7 +3130,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3170,7 +3172,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3212,7 +3214,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3254,7 +3256,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3296,7 +3298,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3341,7 +3343,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3386,7 +3388,7 @@
       ],
       "type": "characters",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "MapActors ambient cast and army roles; recruit previews; battle hurt state",
       "animation": {
         "frame_width": 40,
@@ -3431,7 +3433,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3444,7 +3446,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3457,7 +3459,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3470,7 +3472,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3483,7 +3485,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3496,7 +3498,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3509,7 +3511,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3522,7 +3524,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3535,7 +3537,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3548,7 +3550,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3561,7 +3563,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3574,7 +3576,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3587,7 +3589,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3600,7 +3602,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3613,7 +3615,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3626,7 +3628,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3639,7 +3641,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3652,7 +3654,7 @@
       ],
       "type": "heraldry",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "realm borders, banners, portrait cards, country selection and navigation"
     },
     {
@@ -3665,7 +3667,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects"
     },
     {
@@ -3678,7 +3680,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects"
     },
     {
@@ -3691,7 +3693,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects"
     },
     {
@@ -3704,7 +3706,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects"
     },
     {
@@ -3717,7 +3719,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects"
     },
     {
@@ -3730,7 +3732,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects"
     },
     {
@@ -3743,7 +3745,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects"
     },
     {
@@ -3756,7 +3758,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects",
       "animation": {
         "frame_width": 80,
@@ -3777,7 +3779,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects",
       "animation": {
         "frame_width": 80,
@@ -3798,7 +3800,7 @@
       ],
       "type": "effects",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "trade routes, army march, siege and battle effects",
       "animation": {
         "frame_width": 80,
@@ -3819,7 +3821,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3832,7 +3834,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3845,7 +3847,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3858,7 +3860,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3871,7 +3873,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3884,7 +3886,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3897,7 +3899,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3910,7 +3912,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3923,7 +3925,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3936,7 +3938,7 @@
       ],
       "type": "military",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "army LOD formations, campaign banners, active sieges and recent battle sites"
     },
     {
@@ -3949,7 +3951,7 @@
       ],
       "type": "ui",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
     },
     {
@@ -3962,7 +3964,7 @@
       ],
       "type": "ui",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
     },
     {
@@ -3975,7 +3977,7 @@
       ],
       "type": "ui",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
     },
     {
@@ -3988,7 +3990,7 @@
       ],
       "type": "ui",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
     },
     {
@@ -4001,7 +4003,7 @@
       ],
       "type": "ui",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
     },
     {
@@ -4014,7 +4016,7 @@
       ],
       "type": "ui",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
     },
     {
@@ -4027,7 +4029,7 @@
       ],
       "type": "ui",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
     },
     {
@@ -4040,7 +4042,7 @@
       ],
       "type": "ui",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "9-slice menu/province/resource/portrait surfaces, button states, genealogy and victory decoration"
     },
     {
@@ -4053,7 +4055,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4066,7 +4068,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4079,7 +4081,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4092,7 +4094,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4105,7 +4107,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4118,7 +4120,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4131,7 +4133,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4144,7 +4146,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4157,7 +4159,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4170,7 +4172,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4183,7 +4185,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4196,7 +4198,7 @@
       ],
       "type": "events",
       "introduced": "0.2.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "EventSystem windows and main-menu panorama (empire foundation)"
     },
     {
@@ -4209,7 +4211,7 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
@@ -4222,7 +4224,7 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
@@ -4235,7 +4237,7 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
@@ -4248,7 +4250,7 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
@@ -4261,7 +4263,7 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
@@ -4274,7 +4276,7 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
@@ -4287,7 +4289,7 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
@@ -4300,7 +4302,7 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
@@ -4313,7 +4315,7 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
     },
     {
@@ -4326,8 +4328,190 @@
       ],
       "type": "events",
       "introduced": "0.1.0",
-      "revision": "0.2.0",
+      "revision": "0.3.0",
       "used_by": "legacy saved event illustration IDs; alternate foreground composition"
+    },
+    {
+      "id": "story_coronation",
+      "path": "assets/events/story_coronation.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: coronation",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_council",
+      "path": "assets/events/story_council.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: council",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_palace",
+      "path": "assets/events/story_palace.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: palace",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_family",
+      "path": "assets/events/story_family.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: family",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_conspiracy",
+      "path": "assets/events/story_conspiracy.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: conspiracy",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_rebellion",
+      "path": "assets/events/story_rebellion.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: rebellion",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_battlefield",
+      "path": "assets/events/story_battlefield.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: battlefield",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_wedding",
+      "path": "assets/events/story_wedding.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: wedding",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_feast",
+      "path": "assets/events/story_feast.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: feast",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_funeral",
+      "path": "assets/events/story_funeral.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: funeral",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_throne",
+      "path": "assets/events/story_throne.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: throne",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "story_empire",
+      "path": "assets/events/story_empire.png",
+      "size": [
+        512,
+        256
+      ],
+      "type": "events",
+      "purpose": "Наследие Ниязовых: empire",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem chapters and endings; main menu/campaign palace panorama"
+    },
+    {
+      "id": "niyazov",
+      "path": "assets/heraldry/niyazov.png",
+      "size": [
+        128,
+        144
+      ],
+      "type": "heraldry",
+      "purpose": "Дом Ниязовых: синий щит с золотым коронованным львом",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem, main menu, genealogy, royal capital and armies"
+    },
+    {
+      "id": "niyazov_standard",
+      "path": "assets/heraldry/niyazov_standard.png",
+      "size": [
+        80,
+        144
+      ],
+      "type": "heraldry",
+      "purpose": "Королевский штандарт Ниязовых: войска и королевская столица",
+      "introduced": "0.3.0",
+      "revision": "0.3.0",
+      "used_by": "NarrativeSystem, main menu, genealogy, royal capital and armies"
     }
   ]
 }

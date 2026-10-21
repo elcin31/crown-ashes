@@ -60,13 +60,16 @@ static func schedule(s):
 	var e=possible[s.rng.randi_range(0,possible.size()-1)]
 	s.data.events.append({"event_id":e.id,"day":s.data.day,"realm":realm});s.data.event_history[e.id]=s.data.day
 static func definition(s,entry:Dictionary)->Dictionary:
+	if entry.has("narrative_id"):return NarrativeSystem.render(s,NarrativeSystem.event_by_id(str(entry.narrative_id)))
 	if entry.has("special"):return entry
 	for e in s.events:
 		if e.id==entry.event_id:return e
 	return {}
 static func choose(s,index:int,choice:int)->Dictionary:
 	if index<0 or index>=s.data.events.size():return s.result(false,"Событие больше недоступно.")
-	var entry=s.data.events[index];var e=definition(s,entry)
+	var entry=s.data.events[index]
+	if entry.has("narrative_id"):return NarrativeSystem.choose(s,index,choice)
+	var e=definition(s,entry)
 	if entry.has("special"):s.data.events.remove_at(index);return s.result(true,"Присяга принята.")
 	if choice<0 or choice>=e.choices.size():return s.result(false,"Неизвестное решение.")
 	apply(s,int(s.data.player),e.choices[choice].effects);s.data.events.remove_at(index)

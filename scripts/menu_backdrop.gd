@@ -8,9 +8,9 @@ func _process(delta):
 	if accumulator>=1.0/12:accumulator=0;queue_redraw()
 func _draw():
 	if map==null:return
-	var picture=map.texture_for("event_empire_foundation");var scale_value=maxf(size.x/picture.get_width(),size.y/picture.get_height());var extent=picture.get_size()*scale_value
+	var picture=map.texture_for("story_palace");var scale_value=maxf(size.x/picture.get_width(),size.y/picture.get_height());var extent=picture.get_size()*scale_value
 	draw_texture_rect(picture,Rect2((size-extent)/2,extent),false)
-	draw_rect(Rect2(Vector2.ZERO,size),Color(.035,.065,.08,.12))
+	draw_rect(Rect2(Vector2.ZERO,size),Color(.02,.045,.09,.035))
 	# Small embers and torch sprites animate without another input surface or shader.
 	if map.details_enabled:
 		var anim=map.texture_metadata.fire.animation;var frame=int(time*8)%int(anim.columns)

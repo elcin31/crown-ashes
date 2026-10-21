@@ -1,0 +1,15 @@
+{
+  "png": 260,
+  "new_png": 14,
+  "story_illustrations": 12,
+  "new_heraldic_assets": 2,
+  "old_png_recolored": 245,
+  "sprite_sheets": 36,
+  "frames": 1440,
+  "rgba_texture_bytes_all_assets": 38939648,
+  "story_event_definitions": 33,
+  "core_chapters": 24,
+  "acts": 4,
+  "map_saturation_before": 0.4171,
+  "map_saturation_after": 0.5563
+}

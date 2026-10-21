@@ -1,0 +1,1977 @@
+{
+  "version": 1,
+  "title": "Наследие Ниязовых",
+  "acts": [
+    {
+      "id": 1,
+      "name": "Расколотая корона",
+      "objective": "Укрепите легитимность, казну и верность великих домов."
+    },
+    {
+      "id": 2,
+      "name": "Кровь и знамёна",
+      "objective": "Разрешите спор претендентов и подготовьте союзников. Война не обязательна."
+    },
+    {
+      "id": 3,
+      "name": "Цена власти",
+      "objective": "Защитите преемственность и выберите меру королевской власти."
+    },
+    {
+      "id": 4,
+      "name": "Наследие",
+      "objective": "Создайте устойчивое устройство государства и сохраните дом."
+    }
+  ],
+  "events": [
+    {
+      "id": "n_coronation",
+      "act": 1,
+      "slot": 0,
+      "min_day": 0,
+      "title": "Корона, ещё холодная",
+      "description": "В Хаймире звонят колокола. Восемнадцать дней назад похоронили Константина III; сегодня его сын Александр принимает корону. Золото на щите льва сияет ярче, чем лица вассалов. Королевству нужен первый ответ: чего ждать от нового Ниязова?",
+      "illustration": "story_coronation",
+      "condition": "always",
+      "actors": [
+        "alexander"
+      ],
+      "choices": [
+        {
+          "label": "Подтвердить вольности великих домов",
+          "hint": "Легитимность +6, поддержка знати +12; королевская власть −8.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 6,
+            "loyalty": 5
+          },
+          "politics": {
+            "noble_support": 12,
+            "royal_authority": -8
+          },
+          "loyalty": {},
+          "flags": {
+            "charter": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Поклясться единому королевскому закону",
+          "hint": "Легитимность +8, власть +12; влиятельные родичи насторожатся.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 8
+          },
+          "politics": {
+            "royal_authority": 12,
+            "noble_support": -8
+          },
+          "loyalty": {
+            "mikhail": -6,
+            "victor": -5
+          },
+          "flags": {
+            "centralisation": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Открыть королевские амбары",
+          "hint": "60 продовольствия и 35 золота: стабильность +9, уважение к династии +8.",
+          "cost": {
+            "food": 60,
+            "gold": 35
+          },
+          "effects": {
+            "stability": 9,
+            "unrest": -5
+          },
+          "politics": {
+            "dynasty_prestige": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_oaths",
+      "act": 1,
+      "slot": 1,
+      "min_day": 12,
+      "title": "Присяга с оговорками",
+      "description": "{duke} прислал грамоту с печатью, но без слов верности. Его дружина стоит в Ауреле. Совет предлагает купить присягу, пригрозить судом или дать дворянину место рядом с троном.",
+      "illustration": "story_council",
+      "condition": "always",
+      "actors": [
+        "duke"
+      ],
+      "choices": [
+        {
+          "label": "Выслушать герцога на открытом совете",
+          "hint": "35 золота; верность герцога +20, поддержка знати +8, власть −5.",
+          "cost": {
+            "gold": 35
+          },
+          "effects": {},
+          "politics": {
+            "noble_support": 8,
+            "royal_authority": -5
+          },
+          "loyalty": {
+            "duke": 20
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Потребовать личной присяги",
+          "hint": "Власть +10 и легитимность +3; верность герцога −15.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 3
+          },
+          "politics": {
+            "royal_authority": 10
+          },
+          "loyalty": {
+            "duke": -15
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Подкрепить требование королевской стражей",
+          "hint": "40 золота и 30 продовольствия; власть +8, стабильность −3, герцог теряет 10 верности.",
+          "cost": {
+            "gold": 40,
+            "food": 30
+          },
+          "effects": {
+            "stability": -3,
+            "morale": 6
+          },
+          "politics": {
+            "royal_authority": 8
+          },
+          "loyalty": {
+            "duke": -10
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_treasury",
+      "act": 1,
+      "slot": 2,
+      "min_day": 28,
+      "title": "Цена нового царствования",
+      "description": "Казначей разложил счета на синем сукне. Похороны, коронация и пограничные гарнизоны опустошили часть запасов. Речь не о разорении, а о том, кто заплатит за восстановление власти.",
+      "illustration": "story_palace",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Сократить расходы двора",
+          "hint": "Казна +55, престиж −6. Деньги поступят один раз от продажи придворной роскоши.",
+          "cost": {},
+          "effects": {
+            "gold": 55
+          },
+          "politics": {
+            "dynasty_prestige": -6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Установить низкие налоги",
+          "hint": "Реальная ставка налогов станет низкой; стабильность +5, власть −4.",
+          "cost": {},
+          "effects": {
+            "stability": 5
+          },
+          "politics": {
+            "royal_authority": -4
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "tax_low",
+          "condition": "always"
+        },
+        {
+          "label": "Собрать чрезвычайный сбор",
+          "hint": "Казна +90; недовольство +10, поддержка знати −12.",
+          "cost": {},
+          "effects": {
+            "gold": 90,
+            "unrest": 10
+          },
+          "politics": {
+            "noble_support": -12
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_family",
+      "act": 1,
+      "slot": 3,
+      "min_day": 42,
+      "title": "За семейным столом",
+      "description": "Елизавета просит Александра прежде всего назвать наследника перед всем двором. Даниил ещё ребёнок. Михаил напоминает, что в час опасности королевству понадобится взрослый воин, а не регентский совет.",
+      "illustration": "story_family",
+      "condition": "always",
+      "actors": [
+        "elizabeth",
+        "mikhail",
+        "daniil"
+      ],
+      "choices": [
+        {
+          "label": "Подтвердить права старшего ребёнка",
+          "hint": "Вернуть первородство по обычной цене закона, если оно менялось; легитимность +5, Михаил −8 верности.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 5
+          },
+          "politics": {},
+          "loyalty": {
+            "mikhail": -8
+          },
+          "flags": {
+            "heir_confirmed": true
+          },
+          "operation": "confirm_heir",
+          "condition": "always"
+        },
+        {
+          "label": "Попросить Михаила стать опорой наследника",
+          "hint": "30 золота на содержание двора принца; Михаил +18 верности, знать +5 поддержки.",
+          "cost": {
+            "gold": 30
+          },
+          "effects": {},
+          "politics": {
+            "noble_support": 5
+          },
+          "loyalty": {
+            "mikhail": 18
+          },
+          "flags": {
+            "brother_compromise": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Не связывать руки будущему",
+          "hint": "Власть +4, легитимность −5; Михаил получает признанную претензию.",
+          "cost": {},
+          "effects": {
+            "legitimacy": -5
+          },
+          "politics": {
+            "royal_authority": 4
+          },
+          "loyalty": {
+            "mikhail": -4
+          },
+          "flags": {
+            "open_succession": true
+          },
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_family_absent",
+      "act": 1,
+      "slot": 3,
+      "min_day": 42,
+      "title": "Пустые места за столом",
+      "description": "Семья уже понесла потери. Перед троном лежит новая родословная: {heir}. Теперь права живых важнее обещаний, данных умершим.",
+      "illustration": "story_funeral",
+      "condition": "family_changed",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Подтвердить действующее наследование",
+          "hint": "Легитимность +6; власть +3.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 6
+          },
+          "politics": {
+            "royal_authority": 3
+          },
+          "loyalty": {},
+          "flags": {
+            "heir_confirmed": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Поручить совету оберегать преемственность",
+          "hint": "35 золота; верность двора +8, поддержка знати +8.",
+          "cost": {
+            "gold": 35
+          },
+          "effects": {
+            "loyalty": 8
+          },
+          "politics": {
+            "noble_support": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_letter",
+      "act": 1,
+      "slot": 4,
+      "min_day": 56,
+      "title": "Письмо без подписи",
+      "description": "Слуга нашёл обрывок письма под лестницей западной башни. В нём названа цена молчания, но не имя покупателя. Тайный советник предупреждает: громкое обвинение даст заговору больше сторонников, чем тайное расследование.",
+      "illustration": "story_conspiracy",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Проверить печати и переписку",
+          "hint": "20 золота; начнётся обычный сбор сведений на 18 дней. Результат неизвестен.",
+          "cost": {},
+          "effects": {},
+          "politics": {},
+          "loyalty": {},
+          "flags": {
+            "investigated": true
+          },
+          "operation": "investigate",
+          "condition": "always"
+        },
+        {
+          "label": "Объявить амнистию за признание",
+          "hint": "Верность двора +7, поддержка знати +8; власть −7.",
+          "cost": {},
+          "effects": {
+            "loyalty": 7
+          },
+          "politics": {
+            "noble_support": 8,
+            "royal_authority": -7
+          },
+          "loyalty": {},
+          "flags": {
+            "amnesty": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Закрыть двор и усилить стражу",
+          "hint": "30 золота; власть +8, стабильность +3; знать −7 поддержки.",
+          "cost": {
+            "gold": 30
+          },
+          "effects": {
+            "stability": 3
+          },
+          "politics": {
+            "royal_authority": 8,
+            "noble_support": -7
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_roads",
+      "act": 1,
+      "slot": 5,
+      "min_day": 70,
+      "title": "Королевская дорога",
+      "description": "Крестьяне просят мост, купцы — безопасную дорогу к рынку. Корона может заплатить за развитие Хаймира или оставить деньги армии. Первые камни нового правления останутся, когда забудутся первые речи.",
+      "illustration": "story_palace",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Вложить средства в столицу",
+          "hint": "Обычная команда развития: 65 золота, 15 дерева и 15 камня; развитие столицы +5.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "dynasty_prestige": 5
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "develop",
+          "condition": "always"
+        },
+        {
+          "label": "Поручить работы великим домам",
+          "hint": "Казна +20; поддержка знати +6, власть −6.",
+          "cost": {},
+          "effects": {
+            "gold": 20
+          },
+          "politics": {
+            "noble_support": 6,
+            "royal_authority": -6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Сберечь запасы",
+          "hint": "Ресурсы сохраняются; престиж −3.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "dynasty_prestige": -3
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_claimants",
+      "act": 2,
+      "slot": 0,
+      "min_day": 100,
+      "title": "Кровь и знамёна",
+      "description": "На северных пирах всё чаще повторяют имя {mikhail}. Принц ещё не поднял знамени, но уже перестал опровергать чужие тосты. Его притязания питаются не только кровью, но и недовольством короной.",
+      "illustration": "story_throne",
+      "condition": "mikhail_disloyal",
+      "actors": [
+        "mikhail"
+      ],
+      "choices": [
+        {
+          "label": "Предложить семейное соглашение",
+          "hint": "45 золота; Михаил +22 верности, поддержка знати +7; власть −5.",
+          "cost": {
+            "gold": 45
+          },
+          "effects": {},
+          "politics": {
+            "noble_support": 7,
+            "royal_authority": -5
+          },
+          "loyalty": {
+            "mikhail": 22
+          },
+          "flags": {
+            "brother_compromise": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Отказать в особых правах",
+          "hint": "Власть +12; Михаил −18 верности, знать −6 поддержки.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "royal_authority": 12,
+            "noble_support": -6
+          },
+          "loyalty": {
+            "mikhail": -18
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Выяснить имена сторонников",
+          "hint": "20 золота; начнётся обычный сбор сведений на 18 дней. Результат неизвестен.",
+          "cost": {},
+          "effects": {},
+          "politics": {},
+          "loyalty": {},
+          "flags": {
+            "investigated": true
+          },
+          "operation": "investigate",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_brothers_oath",
+      "act": 2,
+      "slot": 0,
+      "min_day": 100,
+      "title": "Брат под королевским знаменем",
+      "description": "{mikhail} публично отверг предложение недовольных дворян. Это не стирает его прав на кровь Ниязовых, но делает мир возможным. Совет советует закрепить верность делом.",
+      "illustration": "story_family",
+      "condition": "mikhail_loyal",
+      "actors": [
+        "mikhail"
+      ],
+      "choices": [
+        {
+          "label": "Поручить принцу защиту короны",
+          "hint": "Михаил станет командующим первой королевской армией; его верность +8.",
+          "cost": {},
+          "effects": {},
+          "politics": {},
+          "loyalty": {
+            "mikhail": 8
+          },
+          "flags": {},
+          "operation": "brother_command",
+          "condition": "always"
+        },
+        {
+          "label": "Поблагодарить без новых полномочий",
+          "hint": "Поддержка знати +6, престиж +5.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "noble_support": 6,
+            "dynasty_prestige": 5
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_absent_prince",
+      "act": 2,
+      "slot": 0,
+      "min_day": 100,
+      "title": "Тень ушедшего принца",
+      "description": "Михаил мёртв. Недовольные больше не могут говорить от его имени, но ищут нового покровителя. Виктору и совету придётся определить, чем для них является верность дому.",
+      "illustration": "story_funeral",
+      "condition": "mikhail_dead",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Примирить оставшиеся ветви",
+          "hint": "30 золота; верность Виктора +15 и двора +4.",
+          "cost": {
+            "gold": 30
+          },
+          "effects": {
+            "loyalty": 4
+          },
+          "politics": {},
+          "loyalty": {
+            "victor": 15
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Подчеркнуть непрерывность власти",
+          "hint": "Легитимность +6, власть +6; поддержка знати −4.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 6
+          },
+          "politics": {
+            "royal_authority": 6,
+            "noble_support": -4
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_border",
+      "act": 2,
+      "slot": 1,
+      "min_day": 118,
+      "title": "Восточная застава",
+      "description": "На границе с Блэкриджем задержан обоз. Чужой воевода называет это ошибкой писца; ваши купцы — проверкой силы нового короля. Торговый путь важен и без войны.",
+      "illustration": "story_battlefield",
+      "condition": "east_exists",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Вернуть обоз через посольство",
+          "hint": "25 золота; отношения с Блэкриджем +18, давление извне снизится.",
+          "cost": {
+            "gold": 25
+          },
+          "effects": {},
+          "politics": {
+            "dynasty_prestige": 3
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "border_envoy",
+          "condition": "always"
+        },
+        {
+          "label": "Записать пограничную претензию",
+          "hint": "Отношения с Блэкриджем −18; возникнет реальное основание борьбы за престол при достаточной легитимности.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "royal_authority": 6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "border_claim",
+          "condition": "always"
+        },
+        {
+          "label": "Компенсировать убытки торговцам",
+          "hint": "40 золота; стабильность +5, престиж +5.",
+          "cost": {
+            "gold": 40
+          },
+          "effects": {
+            "stability": 5
+          },
+          "politics": {
+            "dynasty_prestige": 5
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_border_gone",
+      "act": 2,
+      "slot": 1,
+      "min_day": 118,
+      "title": "Граница без прежнего врага",
+      "description": "Восточное государство уже потеряло владения. Теперь важнее удержать дороги открытыми, чем требовать ответа у пустого трона.",
+      "illustration": "story_palace",
+      "condition": "east_gone",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Восстановить торговый путь",
+          "hint": "35 золота; развитие собственных провинций +2.",
+          "cost": {
+            "gold": 35
+          },
+          "effects": {
+            "development": 2
+          },
+          "politics": {},
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Укрепить авторитет короны",
+          "hint": "Легитимность +4 и власть +5.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 4
+          },
+          "politics": {
+            "royal_authority": 5
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_wedding",
+      "act": 2,
+      "slot": 2,
+      "min_day": 136,
+      "title": "Рука Софии",
+      "description": "{sofia} получила предложение от дома Вейр. Брак укрепит связь двух корон, но сестра просит помнить: её имя — больше, чем ещё одна печать на договоре.",
+      "illustration": "story_wedding",
+      "condition": "sofia_available",
+      "actors": [
+        "sofia"
+      ],
+      "choices": [
+        {
+          "label": "Предложить брак наследнику Вейрмарка",
+          "hint": "Обычная династическая свадьба: 45 золота, если оба свободны и страны не воюют.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "dynasty_prestige": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "sofia_marriage",
+          "condition": "always"
+        },
+        {
+          "label": "Оставить выбор Софии",
+          "hint": "София +15 верности; поддержка знати +4.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "noble_support": 4
+          },
+          "loyalty": {
+            "sofia": 15
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Отложить союз",
+          "hint": "Власть +3; София −6 верности.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "royal_authority": 3
+          },
+          "loyalty": {
+            "sofia": -6
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_existing_union",
+      "act": 2,
+      "slot": 2,
+      "min_day": 136,
+      "title": "Союзы, уже заключённые",
+      "description": "Новые обстоятельства сделали прежние брачные планы невозможными. Совет изучает действующие семейные связи: союз нельзя заключить второй раз, а волю умерших нельзя спрашивать письмом.",
+      "illustration": "story_feast",
+      "condition": "sofia_unavailable",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Поддержать существующие договоры",
+          "hint": "30 золота; легитимность +4, поддержка знати +6.",
+          "cost": {
+            "gold": 30
+          },
+          "effects": {
+            "legitimacy": 4
+          },
+          "politics": {
+            "noble_support": 6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Положиться на собственный двор",
+          "hint": "Верность двора +4, власть +4.",
+          "cost": {},
+          "effects": {
+            "loyalty": 4
+          },
+          "politics": {
+            "royal_authority": 4
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_duke",
+      "act": 2,
+      "slot": 3,
+      "min_day": 154,
+      "title": "Цена герцогского мира",
+      "description": "В королевский совет поступила новая ведомость верности. Одни дома хотят гарантий, другие — видят в уступках слабость. Риск мятежа определяется их настоящей верностью и владениями; приказ летописца не начнёт войну сам по себе.",
+      "illustration": "story_rebellion",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Подтвердить права землевладельцев",
+          "hint": "40 золота; верность двора +12, знать +10; власть −8.",
+          "cost": {
+            "gold": 40
+          },
+          "effects": {
+            "loyalty": 12,
+            "unrest": -5
+          },
+          "politics": {
+            "noble_support": 10,
+            "royal_authority": -8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Собрать заложенные долги",
+          "hint": "Казна +60; верность двора −12, знать −8; власть +8.",
+          "cost": {},
+          "effects": {
+            "gold": 60,
+            "loyalty": -12
+          },
+          "politics": {
+            "noble_support": -8,
+            "royal_authority": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Снизить налоги и ждать",
+          "hint": "Низкие налоги, недовольство −7; власть −4.",
+          "cost": {},
+          "effects": {
+            "unrest": -7
+          },
+          "politics": {
+            "royal_authority": -4
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "tax_low",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_coalition",
+      "act": 2,
+      "slot": 4,
+      "min_day": 172,
+      "title": "Пир без обнажённых клинков",
+      "description": "За одним столом сидят люди, ещё недавно не желавшие делить даже дорогу. Послы советуют говорить о хлебе и наследниках прежде, чем о границах. Для короны полезно, чтобы соседи боялись войны больше, чем мира.",
+      "illustration": "story_feast",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Оплатить посольства ко всем соседям",
+          "hint": "55 золота; отношения с живыми соседями +10, престиж +6.",
+          "cost": {
+            "gold": 55
+          },
+          "effects": {},
+          "politics": {
+            "dynasty_prestige": 6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "neighbors",
+          "condition": "always"
+        },
+        {
+          "label": "Потребовать признания королевского первенства",
+          "hint": "Власть +8; отношения с соседями −6.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "royal_authority": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "neighbors_pressure",
+          "condition": "always"
+        },
+        {
+          "label": "Устроить скромный совет дома",
+          "hint": "20 продовольствия; верность родни +8.",
+          "cost": {
+            "food": 20
+          },
+          "effects": {},
+          "politics": {},
+          "loyalty": {
+            "mikhail": 8,
+            "victor": 8,
+            "sofia": 8
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_banners",
+      "act": 2,
+      "slot": 5,
+      "min_day": 190,
+      "title": "О чём говорят знамёна",
+      "description": "Теперь корона знает цену своим приказам. На площадях считают гарнизоны; в замках — обещания. Не все разногласия стали войной, и это тоже результат правления.",
+      "illustration": "story_council",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Обнародовать условия примирения",
+          "hint": "Легитимность +5, знать +8; власть −5.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 5
+          },
+          "politics": {
+            "noble_support": 8,
+            "royal_authority": -5
+          },
+          "loyalty": {},
+          "flags": {
+            "peace_charter": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Провести смотр королевских войск",
+          "hint": "35 золота и 30 продовольствия; мораль +10, власть +8.",
+          "cost": {
+            "gold": 35,
+            "food": 30
+          },
+          "effects": {
+            "morale": 10
+          },
+          "politics": {
+            "royal_authority": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Ничего не обещать сверх исполненного",
+          "hint": "Стабильность +3, престиж +3.",
+          "cost": {},
+          "effects": {
+            "stability": 3
+          },
+          "politics": {
+            "dynasty_prestige": 3
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_brother",
+      "act": 3,
+      "slot": 0,
+      "min_day": 230,
+      "title": "Цена братского молчания",
+      "description": "{mikhail} встретился с людьми, которые спорят с правом короля повелевать. В письмах нет приказа о мятеже, но есть обещание «вернуть дому достоинство». Ваше решение определит, останется ли спор семейным.",
+      "illustration": "story_conspiracy",
+      "condition": "mikhail_disloyal",
+      "actors": [
+        "mikhail"
+      ],
+      "choices": [
+        {
+          "label": "Простить и заключить соглашение",
+          "hint": "40 золота; Михаил +25 верности, знать +8; власть −7.",
+          "cost": {
+            "gold": 40
+          },
+          "effects": {},
+          "politics": {
+            "noble_support": 8,
+            "royal_authority": -7
+          },
+          "loyalty": {
+            "mikhail": 25
+          },
+          "flags": {
+            "brother_compromise": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Отозвать политические полномочия",
+          "hint": "Власть +12; Михаил теряет 20 верности и титул, если не правит отдельным государством.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "royal_authority": 12
+          },
+          "loyalty": {
+            "mikhail": -20
+          },
+          "flags": {},
+          "operation": "strip_brother",
+          "condition": "always"
+        },
+        {
+          "label": "Дать принцу дальнее владение",
+          "hint": "Обычная передача одной своей провинции, кроме столицы; принц получит землю и ответственность.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "noble_support": 6,
+            "royal_authority": -4
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "grant_brother",
+          "condition": "always"
+        },
+        {
+          "label": "Поручить дело тайному советнику",
+          "hint": "20 золота; начнётся обычный сбор сведений на 18 дней. Результат неизвестен.",
+          "cost": {},
+          "effects": {},
+          "politics": {},
+          "loyalty": {},
+          "flags": {
+            "investigated": true
+          },
+          "operation": "investigate",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_brother_faithful",
+      "act": 3,
+      "slot": 0,
+      "min_day": 230,
+      "title": "Слово, которое удержали",
+      "description": "Михаил сохранил верность. Письма недовольных он сам передал короне. Совет не требует арестов: иногда лучшая победа — та, после которой родичи ещё могут сидеть рядом.",
+      "illustration": "story_council",
+      "condition": "mikhail_loyal",
+      "actors": [
+        "mikhail"
+      ],
+      "choices": [
+        {
+          "label": "Разделить с братом ответственность",
+          "hint": "Назначить Михаила маршалом через обычное правило совета; знать +6.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "noble_support": 6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "brother_marshal",
+          "condition": "always"
+        },
+        {
+          "label": "Отметить его верность перед двором",
+          "hint": "25 золота; Михаил +12 верности, престиж +7.",
+          "cost": {
+            "gold": 25
+          },
+          "effects": {},
+          "politics": {
+            "dynasty_prestige": 7
+          },
+          "loyalty": {
+            "mikhail": 12
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_brother_memory",
+      "act": 3,
+      "slot": 0,
+      "min_day": 230,
+      "title": "После брата",
+      "description": "Михаил уже не может ни предать корону, ни защитить её. Спор о его намерениях раскалывает живых. Король велит судить поступки, а не тени.",
+      "illustration": "story_funeral",
+      "condition": "mikhail_dead",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Прекратить посмертные обвинения",
+          "hint": "Стабильность +6, поддержка знати +6.",
+          "cost": {},
+          "effects": {
+            "stability": 6
+          },
+          "politics": {
+            "noble_support": 6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Открыть архив переписки",
+          "hint": "25 золота; легитимность +5, власть +5.",
+          "cost": {
+            "gold": 25
+          },
+          "effects": {
+            "legitimacy": 5
+          },
+          "politics": {
+            "royal_authority": 5
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_council",
+      "act": 3,
+      "slot": 1,
+      "min_day": 250,
+      "title": "Пять кресел у трона",
+      "description": "Казначей просит считать расходы, маршал — угрозы, канцлер — старые обещания. Каждое кресло даёт реальные полномочия. Монарх может изменить состав совета обычным назначением или договориться с нынешними советниками.",
+      "illustration": "story_council",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Увеличить содержание совета",
+          "hint": "45 золота; верность двора +10, знать +6.",
+          "cost": {
+            "gold": 45
+          },
+          "effects": {
+            "loyalty": 10
+          },
+          "politics": {
+            "noble_support": 6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Установить личную ответственность",
+          "hint": "Власть +10, верность двора −7.",
+          "cost": {},
+          "effects": {
+            "loyalty": -7
+          },
+          "politics": {
+            "royal_authority": 10
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Сохранить совет без новых расходов",
+          "hint": "Стабильность +2.",
+          "cost": {},
+          "effects": {
+            "stability": 2
+          },
+          "politics": {},
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_cost_war",
+      "act": 3,
+      "slot": 2,
+      "min_day": 270,
+      "title": "Долгая ведомость войны",
+      "description": "Вдовы ждут жалованья, амбары — новых обозов. Королевство ещё воюет: торжественные речи не отменят содержание армии и расход продовольствия.",
+      "illustration": "story_battlefield",
+      "condition": "war",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Оплатить военные нужды",
+          "hint": "60 золота; продовольствие +90, мораль +8, стабильность +4.",
+          "cost": {
+            "gold": 60
+          },
+          "effects": {
+            "food": 90,
+            "morale": 8,
+            "stability": 4
+          },
+          "politics": {},
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Переложить расходы на владения",
+          "hint": "Продовольствие +80; население −60 в каждой своей провинции, недовольство +8.",
+          "cost": {},
+          "effects": {
+            "food": 80,
+            "population": -60,
+            "unrest": 8
+          },
+          "politics": {
+            "noble_support": -7
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Начать разговор о мире",
+          "hint": "Отношения с воюющими соседями +8; условия договора по-прежнему зависят от военного счёта.",
+          "cost": {},
+          "effects": {},
+          "politics": {},
+          "loyalty": {},
+          "flags": {},
+          "operation": "peace_envoy",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_cost_peace",
+      "act": 3,
+      "slot": 2,
+      "min_day": 270,
+      "title": "Плоды непролитой крови",
+      "description": "Счета переписаны без новой строки потерь. Мир не означает отсутствия забот: освобождённые средства просят направить на дороги и посевы, прежде чем знать найдёт им другое применение.",
+      "illustration": "story_palace",
+      "condition": "peace",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Развить столицу",
+          "hint": "Обычная команда развития, 65 золота, 15 дерева и 15 камня.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "dynasty_prestige": 6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "develop",
+          "condition": "always"
+        },
+        {
+          "label": "Укрепить запасы на чёрный день",
+          "hint": "35 золота за 70 продовольствия.",
+          "cost": {
+            "gold": 35
+          },
+          "effects": {
+            "food": 70
+          },
+          "politics": {},
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Разделить успех с великими домами",
+          "hint": "Знать +8, власть −5.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "noble_support": 8,
+            "royal_authority": -5
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_heir",
+      "act": 3,
+      "slot": 3,
+      "min_day": 290,
+      "title": "Имя завтрашнего дня",
+      "description": "{heir}. Наставники спорят о том, чему учить будущего правителя: слышать людей, управлять счётом или вести войско. Ни один урок не отменяет действующего закона наследования.",
+      "illustration": "story_family",
+      "condition": "heir",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Оплатить обучение управлению",
+          "hint": "40 золота; законный наследник получит +2 управления.",
+          "cost": {
+            "gold": 40
+          },
+          "effects": {},
+          "politics": {
+            "dynasty_prestige": 4
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "teach_admin",
+          "condition": "always"
+        },
+        {
+          "label": "Поручить дипломатам",
+          "hint": "40 золота; наследник получит +2 дипломатии, знать +4.",
+          "cost": {
+            "gold": 40
+          },
+          "effects": {},
+          "politics": {
+            "noble_support": 4
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "teach_diplomacy",
+          "condition": "always"
+        },
+        {
+          "label": "Оставить воспитание семье",
+          "hint": "Верность наследника +8.",
+          "cost": {},
+          "effects": {},
+          "politics": {},
+          "loyalty": {},
+          "flags": {},
+          "operation": "heir_loyalty",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_no_heir",
+      "act": 3,
+      "slot": 3,
+      "min_day": 290,
+      "title": "Без следующего имени",
+      "description": "В родословной нет живого допустимого преемника. Совет не может выдумать наследника. Династический брак и новый ребёнок могут спасти дом; если этого не случится, пресечение рода останется настоящей угрозой.",
+      "illustration": "story_throne",
+      "condition": "no_heir",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Открыть двор для брачных переговоров",
+          "hint": "25 золота; верность двора +5, престиж +4. Брак нужно заключить через меню династии.",
+          "cost": {
+            "gold": 25
+          },
+          "effects": {
+            "loyalty": 5
+          },
+          "politics": {
+            "dynasty_prestige": 4
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Укрепить доверие к действующему правителю",
+          "hint": "Легитимность +6, власть +5.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 6
+          },
+          "politics": {
+            "royal_authority": 5
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_coup",
+      "act": 3,
+      "slot": 4,
+      "min_day": 310,
+      "title": "Печати королевской канцелярии",
+      "description": "В канцелярии проверяют, чьи приказы исполняются без подписи короля. Если лояльность претендентов рухнула, их сторонники могут поднять настоящие владения. Если компромисс удержал дом, чистка лишь создаст новых врагов.",
+      "illustration": "story_conspiracy",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Провести открытое разбирательство",
+          "hint": "35 золота; легитимность +5, верность двора +5; власть +4.",
+          "cost": {
+            "gold": 35
+          },
+          "effects": {
+            "legitimacy": 5,
+            "loyalty": 5
+          },
+          "politics": {
+            "royal_authority": 4
+          },
+          "loyalty": {},
+          "flags": {
+            "coup_checked": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Примирить недовольных",
+          "hint": "45 золота; Михаил и Виктор +15 верности, знать +8; власть −7.",
+          "cost": {
+            "gold": 45
+          },
+          "effects": {},
+          "politics": {
+            "noble_support": 8,
+            "royal_authority": -7
+          },
+          "loyalty": {
+            "mikhail": 15,
+            "victor": 15
+          },
+          "flags": {
+            "coup_checked": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Ответить угрозой конфискации",
+          "hint": "Власть +12; верность двора −15 и знать −10. При низкой легитимности риск вооружённого конфликта вырастет.",
+          "cost": {},
+          "effects": {
+            "loyalty": -15
+          },
+          "politics": {
+            "royal_authority": 12,
+            "noble_support": -10
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_horizon",
+      "act": 3,
+      "slot": 5,
+      "min_day": 330,
+      "title": "За стенами Хаймира",
+      "description": "Корона пережила первые испытания. Теперь совет обсуждает, что делать с обретённой силой: стать центром объединения земель или гарантом мира между ними. Ни один советник не завоюет провинции вместо вас.",
+      "illustration": "story_palace",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Объявить курс на объединение",
+          "hint": "Легитимность +4, власть +8; восточная претензия, если там ещё существует государство.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 4
+          },
+          "politics": {
+            "royal_authority": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "expansion",
+          "condition": "always"
+        },
+        {
+          "label": "Провозгласить мир королевских дорог",
+          "hint": "50 золота; отношения с соседями +10, поддержка знати +8.",
+          "cost": {
+            "gold": 50
+          },
+          "effects": {},
+          "politics": {
+            "noble_support": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "neighbors",
+          "condition": "always"
+        },
+        {
+          "label": "Укрепить дом прежде границ",
+          "hint": "Стабильность +5 и верность родни +8.",
+          "cost": {},
+          "effects": {
+            "stability": 5
+          },
+          "politics": {},
+          "loyalty": {
+            "mikhail": 8,
+            "victor": 8
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_law",
+      "act": 4,
+      "slot": 0,
+      "min_day": 380,
+      "title": "Закон для тех, кто придёт после",
+      "description": "Хартии собраны в одну книгу. Король ещё может изменить устройство власти, но цена перемены будет записана не только чернилами. Великие дома запомнят, какие обещания вошли в закон.",
+      "illustration": "story_council",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Утвердить королевскую канцелярию",
+          "hint": "70 золота; власть +15, легитимность +6; знать −8.",
+          "cost": {
+            "gold": 70
+          },
+          "effects": {
+            "legitimacy": 6
+          },
+          "politics": {
+            "royal_authority": 15,
+            "noble_support": -8
+          },
+          "loyalty": {},
+          "flags": {
+            "royal_code": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Утвердить союз короны и вассалов",
+          "hint": "45 золота; знать +16, верность двора +7; власть −12.",
+          "cost": {
+            "gold": 45
+          },
+          "effects": {
+            "loyalty": 7
+          },
+          "politics": {
+            "noble_support": 16,
+            "royal_authority": -12
+          },
+          "loyalty": {},
+          "flags": {
+            "federal_charter": true
+          },
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Оставить действующие порядки",
+          "hint": "Стабильность +3.",
+          "cost": {},
+          "effects": {
+            "stability": 3
+          },
+          "politics": {},
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_cadet",
+      "act": 4,
+      "slot": 1,
+      "min_day": 410,
+      "title": "Дальняя ветвь льва",
+      "description": "Северная ветвь дома требует места в будущей истории. Виктор не единственный, кто следит за тем, как король обращается с родичами. Династия сильна связями, но слишком щедрая корона может остаться без земли.",
+      "illustration": "story_family",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Подтвердить уважение к боковой ветви",
+          "hint": "35 золота; Виктор +20 верности, знать +7; власть −4.",
+          "cost": {
+            "gold": 35
+          },
+          "effects": {},
+          "politics": {
+            "noble_support": 7,
+            "royal_authority": -4
+          },
+          "loyalty": {
+            "victor": 20
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Не признавать особых прав",
+          "hint": "Власть +10; Виктор −15 верности.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "royal_authority": 10
+          },
+          "loyalty": {
+            "victor": -15
+          },
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Обсудить права всего дома",
+          "hint": "Поддержка знати +5, престиж +4; власть −3.",
+          "cost": {},
+          "effects": {},
+          "politics": {
+            "noble_support": 5,
+            "dynasty_prestige": 4,
+            "royal_authority": -3
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_memorial",
+      "act": 4,
+      "slot": 2,
+      "min_day": 440,
+      "title": "Имена на камне",
+      "description": "В новой галерее Хаймира появились имена умерших и живых. Правление меняется: {ruler} должен отвечать за сегодняшний день. Если Александр уже ушёл, история продолжается вместе с его законным преемником.",
+      "illustration": "story_funeral",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Почтить павших и помочь их семьям",
+          "hint": "40 золота и 35 продовольствия; стабильность +7, престиж +8.",
+          "cost": {
+            "gold": 40,
+            "food": 35
+          },
+          "effects": {
+            "stability": 7
+          },
+          "politics": {
+            "dynasty_prestige": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Сосредоточиться на живых",
+          "hint": "Развитие своих земель +1, знать +4.",
+          "cost": {},
+          "effects": {
+            "development": 1
+          },
+          "politics": {
+            "noble_support": 4
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_recognition",
+      "act": 4,
+      "slot": 3,
+      "min_day": 470,
+      "title": "Признание соседей",
+      "description": "Послы больше не спрашивают, удержится ли корона до весны. Они спрашивают, чего она потребует. Признание не дарует империю: для этого по-прежнему нужны земли, титул и устойчивое государство.",
+      "illustration": "story_feast",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Искать признания через договоры",
+          "hint": "50 золота; отношения с соседями +10, престиж +10.",
+          "cost": {
+            "gold": 50
+          },
+          "effects": {},
+          "politics": {
+            "dynasty_prestige": 10
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "neighbors",
+          "condition": "always"
+        },
+        {
+          "label": "Говорить с позиции власти",
+          "hint": "Легитимность +5, власть +8; отношения с соседями −6.",
+          "cost": {},
+          "effects": {
+            "legitimacy": 5
+          },
+          "politics": {
+            "royal_authority": 8
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "neighbors_pressure",
+          "condition": "always"
+        },
+        {
+          "label": "Попросить признать мир в Аурелиане",
+          "hint": "Знать +6, стабильность +4.",
+          "cost": {},
+          "effects": {
+            "stability": 4
+          },
+          "politics": {
+            "noble_support": 6
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_balance",
+      "act": 4,
+      "slot": 4,
+      "min_day": 500,
+      "title": "Корона и весы",
+      "description": "Последний большой совет первых лет правления собран. Перед монархом лежат ведомости земли, верности и наследования. Финал этой истории будет определён устройством государства, а не торжественным названием решения.",
+      "illustration": "story_council",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Закрепить личную власть короны",
+          "hint": "Власть +10, знать −5; стабильность +2.",
+          "cost": {},
+          "effects": {
+            "stability": 2
+          },
+          "politics": {
+            "royal_authority": 10,
+            "noble_support": -5
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Закрепить согласие великих домов",
+          "hint": "Знать +12, власть −10; стабильность +3.",
+          "cost": {},
+          "effects": {
+            "stability": 3
+          },
+          "politics": {
+            "noble_support": 12,
+            "royal_authority": -10
+          },
+          "loyalty": {},
+          "flags": {},
+          "operation": "",
+          "condition": "always"
+        },
+        {
+          "label": "Подготовить передачу власти без потрясений",
+          "hint": "45 золота; легитимность +8, верность двора +8.",
+          "cost": {
+            "gold": 45
+          },
+          "effects": {
+            "legitimacy": 8,
+            "loyalty": 8
+          },
+          "politics": {},
+          "loyalty": {},
+          "flags": {
+            "succession_pact": true
+          },
+          "operation": "",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    },
+    {
+      "id": "n_legacy",
+      "act": 4,
+      "slot": 5,
+      "min_day": 540,
+      "title": "Наследие Ниязовых",
+      "description": "Летописец оставил место для последней строки. Она будет говорить о королевстве, которое вы создали: о сильном троне, союзе вассалов, новой империи или доме, не сумевшем удержать власть. После записи история мира продолжится.",
+      "illustration": "story_empire",
+      "condition": "always",
+      "actors": [
+        "ruler"
+      ],
+      "choices": [
+        {
+          "label": "Открыть книгу нового царствования",
+          "hint": "Итог определяется реальными владениями, властью, поддержкой, войнами и правителем. Свободное продолжение доступно.",
+          "cost": {},
+          "effects": {},
+          "politics": {},
+          "loyalty": {},
+          "flags": {},
+          "operation": "ending",
+          "condition": "always"
+        }
+      ],
+      "once": true
+    }
+  ]
+}

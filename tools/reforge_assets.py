@@ -1,37 +1,21 @@
 #!/usr/bin/env python3
-"""0.2 art workshop. Deterministic extraction + material-aware pixel composition.
+"""Vibrant 0.3 art workshop. Deterministic extraction + material-aware pixel composition.
 Sources: three original image-generation atlases (retained alongside this script).
 Never changes world topology, gameplay data or save schemas.
 """
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 from pathlib import Path
-import json, random, math, hashlib, csv
+import json, random, math, hashlib, csv, colorsys
 from atlas_extract import slice_objects
 ROOT=Path(__file__).resolve().parents[1];AS=ROOT/'assets';SRC=ROOT/'tools/art_sources'
 R=random.Random(20201183);OUT=[]
 BASE=json.loads((SRC/'baseline_assets.json').read_text())['resources']
 OLD={x['id']:x for x in BASE}
-P={
-'ink':['#101c24','#17252c','#243943','#344b52'],
-'stone':['#283d49','#354955','#516773','#74888c','#9ba9a3','#c9c2a2','#e1d5ae'],
-'wood':['#2b2625','#332c28','#49382e','#684a38','#846147','#b48f60','#d0ad79'],
-'roof':['#302a32','#3e2d33','#613c3c','#7b4942','#96584a','#b47656'],
-'slate':['#233442','#293d50','#3e566b','#667e8a','#93a2a1'],
-'gold':['#4d402d','#6e5838','#997c49','#c5a363','#ebd395','#f1e2b0'],
-'leaf':['#122827','#182f2e','#203a35','#304b3c','#496448','#637d4f','#82905b','#a5a66b'],
-'grass':['#3c5139','#4c5d3f','#5b6945','#6b754c','#7b8153','#8e905d','#a3a06d'],
-'water':['#102d43','#173f56','#1d4b62','#265c70','#327081','#43858f','#619da1','#85b5af'],
-'skin':['#533b35','#805342','#aa7358','#cb9874','#e0b18b','#ebc9a0'],
-'red':['#402f35','#623941','#87494b','#ac6660','#c58b78'],
-'blue':['#253c50','#335b77','#477798','#6c9aaf','#9abbc2'],
-'cloth':['#383b35','#535645','#7d7b60','#aaa283','#d4c6a1','#ede0b8'],
-'fire':['#6e3937','#ac4c3d','#d47c41','#ebb755','#f2d88b'],
-'autumn':['#4b4132','#6c5637','#936d3e','#b28a4b','#ceab61'],
-}
+P={'ink': ['#111e2c', '#182b3b', '#253c4d', '#37566a'], 'stone': ['#403c37', '#59564a', '#7c7a65', '#a2a28a', '#c1bfa0', '#ddd0a9', '#f5e5bf'], 'wood': ['#30231e', '#41291f', '#623c24', '#89502b', '#aa6c38', '#cd9651', '#e8b96d'], 'roof': ['#392335', '#622b32', '#92372f', '#b64a32', '#d26238', '#e88b51'], 'slate': ['#172e49', '#234364', '#365f8a', '#5b8faf', '#9dc2d1'], 'gold': ['#4c3719', '#7d551e', '#b28227', '#d9a837', '#f6d361', '#ffe7a0'], 'leaf': ['#102f2b', '#154832', '#216b47', '#298344', '#3e9e4b', '#65ad4e', '#91c65a', '#c1df7b'], 'grass': ['#32683b', '#44863f', '#559b45', '#65ad4e', '#7dbf55', '#9bcc62', '#b4d377'], 'water': ['#123f69', '#185883', '#216c9e', '#287fb1', '#308cc4', '#40a8ce', '#73cedc', '#b4e6e1'], 'skin': ['#57332a', '#8a4c32', '#bb7850', '#dca16e', '#efbf8b', '#f8d6a7'], 'red': ['#481c2c', '#822b3a', '#b53c40', '#d55b4d', '#ed9270'], 'blue': ['#142e58', '#204a85', '#286eb3', '#549fd0', '#9dd1e2'], 'cloth': ['#303929', '#526743', '#889254', '#bab576', '#dfce9c', '#f5e6c0'], 'fire': ['#7f252a', '#c44129', '#ed7d2c', '#ffc04a', '#ffe993'], 'autumn': ['#574120', '#8d6526', '#bd8b32', '#e4ac44', '#f6d46a']}
 RGB=lambda h:tuple(int(h.lstrip('#')[i:i+2],16) for i in (0,2,4))
 COLS=[v for colors in P.values() for v in colors]
 PAL=Image.new('P',(1,1));pals=[n for c in COLS for n in RGB(c)];PAL.putpalette((pals+[0]*(768-len(pals)))[:768])
-REALM=['#477798','#87494b','#496448','#74888c','#7d7b60','#b48f60','#623941','#c5a363','#637d4f','#354955','#6c9aaf','#327081']
+REALM=['#285fa9','#b9434b','#29865b','#617fac','#94813b','#b4783f','#843b70','#d6a93d','#4d9a63','#594877','#65aabb','#258e9f']
 def blank(w,h):return Image.new('RGBA',(w,h),(0,0,0,0))
 def q(im,base=None):
  alpha=im.getchannel('A') if im.mode=='RGBA' else None
@@ -42,7 +26,7 @@ def q(im,base=None):
  return rgb
 def save(im,cat,id,purpose='',anim=None,new=False,usage=''):
  im=im.convert('RGBA');path=AS/cat/(id+'.png');path.parent.mkdir(parents=True,exist_ok=True);im.save(path,optimize=True)
- item={'id':id,'path':str(path.relative_to(ROOT)),'purpose':purpose or id.replace('_',' '),'size':list(im.size),'type':cat,'introduced':'0.2.0' if new else '0.1.0','revision':'0.2.0','used_by':usage}
+ item={'id':id,'path':str(path.relative_to(ROOT)),'purpose':purpose or id.replace('_',' '),'size':list(im.size),'type':cat,'introduced':'0.2.0' if new else '0.1.0','revision':'0.3.0','used_by':usage}
  if anim:item['animation']=anim
  OUT.append(item);return im
 def asset(id):return Image.open(ROOT/next(x['path'] for x in OUT if x['id']==id)).convert('RGBA')
@@ -191,8 +175,19 @@ def decor(name,seed=0):
 old_decor=[x['id'] for x in BASE if x['type']=='decorations']
 new_decor=['ancient_oak','dead_forest_tree','fallen_tree','large_boulder_cluster','wildflower_patch','apple_orchard','vineyard','vegetable_garden','wheat_field_detail','hay_wagon','merchant_cart','wooden_fence_corner','stone_fence','abandoned_cottage','roadside_shrine','village_well']
 decor_tiles=slice_objects(SRC/'decorations.png',6,6)
+def living_foliage(tile,name):
+ # Leaf pigments are handled separately from stone, skin, wheat and UI gold.
+ if name not in ['oak','ancient_oak','pine','bush','apple_orchard']:return tile
+ out=tile.copy();pixels=[]
+ for rr,gg,bb,aa in out.getdata():
+  h,sat,val=colorsys.rgb_to_hsv(rr/255,gg/255,bb/255)
+  if aa>110 and .11<h<.46 and sat>.12:
+   h=(.37 if name=='pine' else .30)+(h-.23)*.24;sat=max(.48,min(.86,sat*1.15));val=min(1,val*1.06)
+   rr,gg,bb=[round(c*255) for c in colorsys.hsv_to_rgb(h,sat,val)]
+  pixels.append((rr,gg,bb,aa))
+ out.putdata(pixels);return out
 for i,(name,tile) in enumerate(zip(old_decor+new_decor,decor_tiles)):
- tile=q(tile);tile.thumbnail((76,91),Image.Resampling.NEAREST);im=blank(80,96);im.alpha_composite(tile,((80-tile.width)//2,94-tile.height))
+ tile=q(living_foliage(tile,name));tile.thumbnail((76,91),Image.Resampling.NEAREST);im=blank(80,96);im.alpha_composite(tile,((80-tile.width)//2,94-tile.height))
  save(im,'decorations',name,new=i>=18,usage='biome-constrained terrain cache and settlement surroundings')
 (ROOT/'data/art_palette.json').write_text(json.dumps(COLS))
 # TERRAIN tiles use low-frequency material patches, tufts, cracks and flow lines.
@@ -546,7 +541,7 @@ for i,(name,source) in enumerate(zip(old_events,source_idx)):
 assert len(OUT)==246,len(OUT)
 assert sum(x['introduced']=='0.2.0' for x in OUT)==110
 assert set(OLD).issubset({x['id'] for x in OUT})
-(ROOT/'assets_manifest.json').write_text(json.dumps({'version':2,'art_version':'0.2.0','license':'Original project artwork, CC0-1.0; fonts separately licensed','sources':['tools/art_sources/architecture.png','tools/art_sources/portraits.png','tools/art_sources/events.png','tools/art_sources/decorations.png'],'resources':OUT},ensure_ascii=False,indent=2))
+(ROOT/'assets_manifest.json').write_text(json.dumps({'version':2,'art_version':'0.3.0','license':'Original project artwork, CC0-1.0; fonts separately licensed','sources':['tools/art_sources/architecture.png','tools/art_sources/portraits.png','tools/art_sources/events.png','tools/art_sources/decorations.png'],'resources':OUT},ensure_ascii=False,indent=2))
 with (ROOT/'docs/asset_revision.csv').open('w',newline='') as f:
  writer=csv.writer(f,lineterminator="\n");writer.writerow(['ID','category','decision','old_size','new_size','old_sha256','new_sha256','runtime_use'])
  for a in OUT:
@@ -562,4 +557,7 @@ for i,a in enumerate(OUT):
  elif a['id']=='ui_medieval_buttons':im=im.crop((0,0,192,64))
  im.thumbnail((144,106),Image.Resampling.NEAREST);catalog.paste(im,(x+(cellw-im.width)//2,y+3+(106-im.height)//2),im);d.text((x+4,y+112),a['id'][:24],font=font,fill='#ebd395' if a['introduced']=='0.2.0' else '#9ba9a3');d.line((x,y+134,x+158,y+134),fill='#344b52')
 catalog.save(ROOT/'docs/asset_catalog_after.png',optimize=True);catalog.save(ROOT/'docs/asset_catalog.png',optimize=True)
-print('KINGDOM REFORGED: 136 old images repainted/improved + 110 new = 246 assets; 36 articulated sheets, 1440 frames.')
+print('VIBRANT MATERIALS: 246 existing resources regenerated; Niyazov extension listed above. 36 articulated sheets, 1440 frames.')
+
+import subprocess,sys
+if (SRC/"niyazov_story.png").exists() and (SRC/"niyazov_heraldry.png").exists():subprocess.run([sys.executable,str(ROOT/"tools/niyazov_art.py")],check=True)

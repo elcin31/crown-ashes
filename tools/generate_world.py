@@ -96,6 +96,10 @@ for p in provs:
   a=Image.open(ROOT/'assets/terrain/farmland.png').resize((40,40),Image.Resampling.NEAREST);im.alpha_composite(a,(int(cx)-52,int(cy)+14))
  for dx,dy,n in [(-33,5,'house'),(28,15,'peasant_hut'),(-23,32,'farm')]:
   art=Image.open(ROOT/'assets/buildings'/(n+'.png')).resize((32,32),Image.Resampling.NEAREST);im.alpha_composite(art,(int(cx)+dx-16,int(cy)+dy-25))
+world['realms'][0].update(name='Аурелиан',dynasty='Ниязовы',capital=23,heraldry='niyazov',color='245aa5')
+world['realms'][12].update(name='Розовый холм',capital=33,english_name='Rosehill',color='639ac5')
+world['provinces'][23]['owner']=0;world['provinces'][33]['owner']=12
+for realm,color in zip(world['realms'],['245aa5','b9434b','29865b','617fac','94813b','b4783f','843b70','d6a93d','4d9a63','594877','65aabb','258e9f','639ac5']):realm['color']=color
 world['rivers']=rivers;(ROOT/'data/world.json').write_text(json.dumps(world,ensure_ascii=False,separators=(',',':')))
 im=im.resize((W,H),Image.Resampling.NEAREST).convert('RGB');im.save(ROOT/'data/terrain_cache.png',optimize=True)
 print('Baked 60 non-overlapping provinces, 12 sovereign realms + Highmere fief,',len(edges),'real shared borders.')

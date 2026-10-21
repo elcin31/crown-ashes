@@ -16,6 +16,7 @@ var minimap:Control
 var selected_province:int=-1
 var selected_army:int=-1
 var toast_time:float=0
+var chosen_story:bool=false
 var chosen_realm:int=12
 var chosen_difficulty:int=1
 var difficulty_option:OptionButton
@@ -83,13 +84,13 @@ func show_main_menu():
 	var backdrop=Control.new();backdrop.set_script(load("res://scripts/menu_backdrop.gd"));backdrop.map=app.map;root.add_child(backdrop)
 	var panel=PanelContainer.new();panel.anchor_top=.5;panel.anchor_bottom=.5;panel.offset_left=56;panel.offset_right=504;panel.offset_top=-322;panel.offset_bottom=322;panel.add_theme_stylebox_override("panel",frame_surface("ui_ornate_menu_frame",24));root.add_child(panel)
 	var left=box(panel);left.add_theme_constant_override("separation",8)
-	image_rect(left,"ui_royal_crown",Vector2(128,74))
+	image_rect(left,"niyazov",Vector2(100,90))
 	heading(left,"CROWN & ASHES",31)
-	label(left,"KINGDOM REFORGED · 0.2.0",15,GOLD)
-	label(left,"Королевство перековано.
-Судьба династии начинается с вас.",17,Color("#c9c2a2"))
+	label(left,"THE LEGACY OF NIYAZOV · 0.3.0",15,GOLD)
+	label(left,"Корона Александра. Судьба дома.
+Наследие, которое создадите вы.",17,Color("#c9c2a2"))
 	separator(left)
-	button(left,"Новая кампания",show_selection,"ui_dynasty").custom_minimum_size.y=48
+	button(left,"Новая игра",show_campaign_choice,"ui_dynasty").custom_minimum_size.y=48
 	var latest=SaveSystem.latest_slot()
 	button(left,"Продолжить",func():app.load_campaign(latest),"ui_military",latest<0).custom_minimum_size.y=48
 	button(left,"Загрузить кампанию",func():open_saves(false),"ui_economy").custom_minimum_size.y=48
@@ -97,28 +98,29 @@ func show_main_menu():
 	button(left,"Выход",func():app.request_quit()).custom_minimum_size.y=48
 	label(left,"1183 · ЭЛЬДРАТ · ОФЛАЙН",13,MUTED)
 	var caption=Label.new();caption.text="Одна корона. Тысячи судеб.";caption.add_theme_font_override("font",load("res://assets/fonts/DejaVuSerif-Bold.ttf"));caption.add_theme_font_size_override("font_size",24);caption.add_theme_color_override("font_color",GOLD);caption.anchor_left=1;caption.anchor_right=1;caption.anchor_top=1;caption.anchor_bottom=1;caption.offset_left=-525;caption.offset_right=-40;caption.offset_top=-66;caption.offset_bottom=-30;caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;caption.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(caption)
-func show_selection():
-	clear_root();app.map.show();shade(root,0.44)
-	var panel=centered_panel(1060,620);var outer=box(panel);var header=box(outer,false);heading(header,"Выберите свою корону",28).size_flags_horizontal=Control.SIZE_EXPAND_FILL;button(header,"Назад",show_main_menu).size_flags_horizontal=Control.SIZE_SHRINK_END
+func show_selection(story:bool=false):
+	chosen_story=story;chosen_realm=0 if story else 12;app.preview_world(story)
+	clear_root();app.map.show();shade(root,0.24)
+	var panel=centered_panel(1060,620);var outer=box(panel);var header=box(outer,false);heading(header,"Наследие Ниязовых" if chosen_story else "Свободная игра",28).size_flags_horizontal=Control.SIZE_EXPAND_FILL;button(header,"Назад",show_campaign_choice).size_flags_horizontal=Control.SIZE_SHRINK_END
 	var row=box(outer,false);row.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	var scroll=ScrollContainer.new();scroll.custom_minimum_size.x=390;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;row.add_child(scroll);var list=box(scroll);list.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	for id in [12,0,1,2,3,4,5,6,7,8,9,10,11]:
+	for id in ([0] if chosen_story else [0,12,1,2,3,4,5,6,7,8,9,10,11]):
 		var r=app.state.data.realms[id]
-		button(list,r.name+(" · рекомендуется" if id==12 else ""),func():chosen_realm=id;refresh_selection(),r.heraldry)
+		button(list,r.name+(" · Александр I" if id==0 else ""),func():chosen_realm=id;refresh_selection(),r.heraldry)
 	var right=box(row);right.size_flags_horizontal=Control.SIZE_EXPAND_FILL;choice_details=box(right);choice_details.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	var difficulty_row=box(right,false);label(difficulty_row,"Сложность",18,GOLD,false);difficulty_option=OptionButton.new();difficulty_option.custom_minimum_size=Vector2(220,44)
 	for text in ["Лёгкая","Обычная","Сложная"]:difficulty_option.add_item(text)
 	difficulty_option.select(chosen_difficulty);difficulty_option.item_selected.connect(func(index):chosen_difficulty=index);difficulty_row.add_child(difficulty_option)
-	button(right,"Начать летопись · 1 января 1183",func():app.start_campaign(chosen_realm,chosen_difficulty),"ui_dynasty")
+	button(right,"Начать кампанию · 1 января 1183",func():app.start_campaign(chosen_realm,chosen_difficulty,chosen_story),"ui_dynasty")
 	refresh_selection()
 func refresh_selection():
 	for child in choice_details.get_children():child.queue_free()
 	var s=app.state;var r=s.data.realms[chosen_realm];var c=s.data.characters[int(r.ruler)]
-	var row=box(choice_details,false);image_rect(row,r.heraldry,Vector2(74,90));var col=box(row);heading(col,r.name,28);label(col,"Дом "+r.dynasty,19,GOLD)
+	var row=box(choice_details,false);image_rect(row,r.heraldry,Vector2(74,90));var col=box(row);heading(col,r.name,28);label(col,"Дом Ниязовых" if r.dynasty=="Ниязовы" else "Дом "+r.dynasty,19,GOLD)
 	var pr=box(choice_details,false);image_rect(pr,VisualLibrary.portrait(c),Vector2(92,92));var d=box(pr);label(d,"%s, %d лет"%[c.name,c.age],21);label(d,"Военное %d · управление %d · дипломатия %d"%[c.martial,c.administration,c.diplomacy],16,MUTED)
 	kv(choice_details,"Личных провинций",str(s.provinces_of(chosen_realm).size()));kv(choice_details,"Казна","%d золота"%int(r.resources.gold));kv(choice_details,"Армия","%d воинов"%int(army_count(chosen_realm)))
-	label(choice_details,"Хаймир — графство под короной Аурелии. Развивайте земли, заключайте союзы, добейтесь герцогского титула и оспорьте власть старого короля." if chosen_realm==12 else "Характер правления: "+personality_name(r.personality)+". Укрепите границы, обеспечьте наследование и объедините Эльдрат под своей короной.",18)
-	label(choice_details,"Цель: 35 провинций, императорский титул и стабильность ≥50 в течение 180 дней. Первые 180 дней ИИ не начинает внешние войны.",15,MUTED)
+	label(choice_details,"1183. Александр I Ниязов унаследовал Аурелиан после смерти отца. Присяга великих домов ещё не принесена, брат Михаил не отказался от притязаний. Четыре акта, семейная политика и несколько исходов. Войну можно предотвратить." if chosen_story else "Розовый холм — малое вассальное владение Аурелиана. Экономика, союзы и войны помогут подняться от графа до императора." if chosen_realm==12 else "Характер правления: "+personality_name(r.personality)+". Открытая стратегия без сценарных глав.",18)
+	label(choice_details,"Сюжетная цель: сохранить преемственность и определить устройство королевства. Песочница остаётся доступной после финала." if chosen_story else "Свободная цель: 35 провинций, императорский титул и стабильность ≥50 в течение 180 дней.",15,MUTED)
 	var p=s.data.provinces[int(r.capital)];app.map.target_position=Vector2(p.center[0],p.center[1]);app.map.selected_province=int(p.id);app.map.queue_redraw()
 func army_count(id:int)->int:
 	var n=0
@@ -130,7 +132,7 @@ func show_game():
 	clear_root();app.map.show();hud=Control.new();hud.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);hud.mouse_filter=Control.MOUSE_FILTER_IGNORE;root.add_child(hud)
 	resource_labels.clear()
 	var top=PanelContainer.new();top.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE);top.offset_left=10;top.offset_right=-10;top.offset_top=8;top.offset_bottom=101;top.add_theme_stylebox_override("panel",frame_surface("ui_resource_bar",8));hud.add_child(top);var top_row=box(top,false)
-	var identity=box(top_row);identity.custom_minimum_size.x=140;realm_label=label(identity,"",17,GOLD,false);button(identity,"Летопись",open_journal).custom_minimum_size.y=44
+	var identity=box(top_row);identity.custom_minimum_size.x=140;realm_label=label(identity,"",17,GOLD,false);button(identity,"История" if NarrativeSystem.active(app.state) else "Летопись",open_journal).custom_minimum_size.y=44
 	for key in ["gold","food","wood","stone","iron","manpower"]:
 		var col=box(top_row);col.size_flags_horizontal=Control.SIZE_EXPAND_FILL;col.add_theme_constant_override("separation",0);label(col,RESOURCE_NAMES[key],13,MUTED,false);resource_labels[key]=label(col,"0",19,GOLD,false)
 	var stability_col=box(top_row);label(stability_col,"Стабильность",13,MUTED,false);resource_labels.stability=label(stability_col,"0",19,GREEN,false)
@@ -154,7 +156,7 @@ func show_game():
 	side=PanelContainer.new();side.anchor_left=1;side.anchor_right=1;side.offset_left=-324;side.offset_right=-16;side.offset_top=111;side.anchor_bottom=1;side.offset_bottom=-84;hud.add_child(side)
 	var side_scroll=ScrollContainer.new();side_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;side.add_child(side_scroll);side_body=box(side_scroll);side_body.custom_minimum_size.x=272;side_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	var tip_panel=PanelContainer.new();tip_panel.anchor_left=0.5;tip_panel.anchor_right=0.5;tip_panel.anchor_top=1;tip_panel.anchor_bottom=1;tip_panel.offset_left=-325;tip_panel.offset_right=300;tip_panel.offset_top=-126;tip_panel.offset_bottom=-84;hud.add_child(tip_panel);notice=label(tip_panel,"",15,GOLD)
-	selected_province=int(r.capital);selected_army=-1;refresh_side();refresh_hud();toast("Начните с фермы, рынка или найма. Откройте летопись для подсказок.",9)
+	selected_province=int(r.capital);selected_army=-1;refresh_side();refresh_hud();toast("Откройте «Историю»: корона ожидает первого решения." if NarrativeSystem.active(app.state) else "Начните с фермы, рынка или найма. Откройте летопись для подсказок.",9)
 func refresh_hud():
 	if hud==null or not is_instance_valid(hud):return
 	var s=app.state;var r=s.data.realms[int(s.data.player)]
@@ -353,7 +355,7 @@ func open_commander(army:int):
 func open_dynasty():
 	open_window("Династия и королевский совет",1000,610)
 	var s=app.state;var r=s.data.realms[int(s.data.player)];var c=s.data.characters[int(r.ruler)]
-	var row=box(modal_body,false);image_rect(row,VisualLibrary.portrait(c),Vector2(120,120));var info=box(row);heading(info,"%s из дома %s"%[c.name,r.dynasty],25);label(info,"%s · %d лет · легитимность %d"%[["Граф","Герцог","Король","Император"][int(r.title)],c.age,r.legitimacy],18,GOLD);label(info,"Военное %d · управление %d · дипломатия %d · интрига %d"%[c.martial,c.administration,c.diplomacy,c.intrigue],16);label(info,", ".join(c.traits),16,MUTED)
+	var row=box(modal_body,false);image_rect(row,VisualLibrary.portrait(c),Vector2(120,120));image_rect(row,s.data.dynasties[int(c.dynasty)].heraldry,Vector2(70,94));var info=box(row);heading(info,c.name,25);label(info,"Дом Ниязовых" if r.dynasty=="Ниязовы" else "Дом "+r.dynasty,18,GOLD);label(info,"%s · %d лет · легитимность %d"%[["Граф","Герцог","Король","Император"][int(r.title)],c.age,r.legitimacy],18,GOLD);label(info,"Военное %d · управление %d · дипломатия %d · интрига %d"%[c.martial,c.administration,c.diplomacy,c.intrigue],16);label(info,", ".join(c.traits),16,MUTED)
 	if c.age<16:label(modal_body,"Регентство: совет управляет владением до 16-летия правителя.",17,RED)
 	separator(modal_body);heading(modal_body,"Семья",21);image_rect(modal_body,"ui_dynasty_tree",Vector2(256,68))
 	if int(c.spouse)>=0:
@@ -367,6 +369,11 @@ func open_dynasty():
 		var child=s.data.characters[int(cid)]
 		if child.alive:alive_children+=1;button(modal_body,"└ %s · %d лет"%[child.name,child.age],func():open_character(int(child.id)),VisualLibrary.portrait(child))
 	if alive_children==0:label(modal_body,"Детей пока нет. Допустимые родственники могут продолжить род.",16,MUTED)
+	for cid in c.parents:
+		var parent=s.data.characters[int(cid)];button(modal_body,"Родитель: "+parent.name+(" †" if not parent.alive else ""),func():open_character(int(parent.id)),VisualLibrary.portrait(parent))
+	for relative in s.data.characters:
+		if not relative.alive or int(relative.id)==int(c.id) or int(relative.id) in c.children or int(relative.dynasty)!=int(c.dynasty):continue
+		if not c.parents.filter(func(pid):return pid in relative.parents).is_empty() or relative.get("branch","")=="Северная ветвь":button(modal_body,relative.name+" · "+relative.get("branch","родня"),func():open_character(int(relative.id)),VisualLibrary.portrait(relative))
 	button(modal_body,"Заключить династический брак",open_marriage,"ui_dynasty")
 	separator(modal_body);heading(modal_body,"Королевский совет",21)
 	for slot in OFFICE_NAMES:
@@ -389,6 +396,11 @@ func open_character(cid:int):
 	open_window("Персонаж",760,560)
 	var s=app.state;var c=s.data.characters[cid];var row=box(modal_body,false);image_rect(row,VisualLibrary.portrait(c),Vector2(128,128));var info=box(row);heading(info,c.name+" · "+s.data.dynasties[int(c.dynasty)].name,25);label(info,"Возраст %d · %s"%[c.age,"жив(а)" if c.alive else "умер(ла)"],18);label(info,"Принадлежность: "+s.realm_name(int(c.realm)),17);label(info,", ".join(c.traits),16,MUTED)
 	for key in ["martial","administration","diplomacy","intrigue","loyalty","ambition","health"]:kv(modal_body,{"martial":"Военное дело","administration":"Управление","diplomacy":"Дипломатия","intrigue":"Интрига","loyalty":"Верность","ambition":"Амбиции","health":"Здоровье"}[key],str(int(c[key])))
+	if c.get("branch","")!="":label(modal_body,"Ветвь: "+c.branch,17,GOLD)
+	for pid in c.parents:
+		var parent=s.data.characters[int(pid)];button(modal_body,"Родитель: "+parent.name+(" †" if not parent.alive else ""),func():open_character(int(parent.id)))
+	for child_id in c.children:
+		var child=s.data.characters[int(child_id)];button(modal_body,"Ребёнок: "+child.name,func():open_character(int(child.id)))
 	for secret in c.secrets:label(modal_body,"Сведения: "+secret,16,GOLD)
 	if c.alive:button(modal_body,"Тайные действия",func():open_intrigue(cid),"ui_intrigue")
 	if int(c.realm)==int(s.data.player) and c.alive:button(modal_body,"Поддержать наследником (выборы)",func():act("heir",{"character":cid}))
@@ -439,6 +451,7 @@ func open_laws():
 	separator(modal_body);heading(modal_body,"Путь к империи",21)
 	kv(modal_body,"Провинции","%d / 35"%s.provinces_of(int(s.data.player)).size());kv(modal_body,"Удержание условий","%d / 180 дней"%int(s.data.victory_days));label(modal_body,"После победы можно продолжить свободную игру. Смерть правителя сама по себе не завершает кампанию при наличии наследника.",16,MUTED)
 func open_journal():
+	if NarrativeSystem.active(app.state):open_history();return
 	open_window("Летопись и поручения",950,610)
 	var s=app.state;var id=int(s.data.player);var r=s.data.realms[id]
 	heading(modal_body,"Первые шаги",21)
@@ -450,12 +463,19 @@ func open_event():
 	var s=app.state
 	if s.data.events.is_empty():toast("Нет ожидающих событий.");return
 	var entry=s.data.events[0];var e=EventSystem.definition(s,entry)
-	open_window(e.title,820,590);image_rect(modal_body,VisualLibrary.event_picture(e.get("id",entry.get("event_id","")),e.get("illustration","coronation")),Vector2(512,256));label(modal_body,e.description,19)
+	open_window(e.title,920 if entry.has("narrative_id") else 820,620 if entry.has("narrative_id") else 590)
+	if entry.has("narrative_id"):
+		var ribbon=box(modal_body,false);image_rect(ribbon,"niyazov",Vector2(42,54));label(ribbon,"Наследие Ниязовых · Акт %d"%s.data.narrative.act,17,GOLD).size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	image_rect(modal_body,VisualLibrary.event_picture(e.get("id",entry.get("event_id","")),e.get("illustration","coronation")),Vector2(512,190) if entry.has("narrative_id") else Vector2(512,256));label(modal_body,e.description,18 if entry.has("narrative_id") else 19)
 	if entry.has("special"):button(modal_body,"Продолжить",func():act("event",{"index":0,"choice":0});close_window())
 	else:
 		for index in range(e.choices.size()):
-			var choice=e.choices[index];var text=choice.label+"\n"+effect_text(choice.effects)
-			var b=button(modal_body,text,func():act("event",{"index":0,"choice":index});close_window());b.custom_minimum_size.y=62
+			var choice=e.choices[index];var text=choice.label+"\n"+(choice.hint if entry.has("narrative_id") else effect_text(choice.effects))
+			var eligible=NarrativeSystem.choice_status(s,choice) if entry.has("narrative_id") else s.result(true,"")
+			var b=button(modal_body,text,func():
+				var result=app.commands.execute(int(s.data.player),"event",{"index":0,"choice":index});toast(result.message);refresh_hud();refresh_side();app.map.queue_redraw()
+				if result.ok:close_window()
+			);b.custom_minimum_size.y=68;b.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;b.disabled=not eligible.ok;b.tooltip_text=eligible.message if not eligible.ok else choice.get("hint","")
 func effect_text(effects:Dictionary)->String:
 	var parts=[]
 	var names={"unrest":"недовольство","development":"развитие","stability":"стабильность","legitimacy":"легитимность","population":"население","loyalty":"верность","morale":"мораль","health":"здоровье","relation":"отношения","epidemic":"эпидемия (дни)","army_losses":"потери армии","claim":"претензия","birth":"новый ребёнок","marriage":"брак","advisor_death":"смерть советника","commander":"новый командир"}
@@ -485,11 +505,12 @@ func open_settings():
 	button(modal_body,"Ограничение кадров: %d FPS"%Engine.max_fps,func():Engine.max_fps=30 if Engine.max_fps==60 else 60;app.save_settings();open_settings())
 	button(modal_body,"Жители и эффекты: "+("включены" if app.map.details_enabled else "выключены"),func():app.map.details_enabled=not app.map.details_enabled;app.save_settings();open_settings())
 	if OS.get_name()!="Android":button(modal_body,"Полноэкранный режим",func():DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if DisplayServer.window_get_mode()!=DisplayServer.WINDOW_MODE_FULLSCREEN else DisplayServer.WINDOW_MODE_WINDOWED))
-	separator(modal_body);label(modal_body,"Графика: единый High-Detail Pixel Art, 246 ресурсов. В версии 0.2.0 — сухопутная стратегия; корабли показывают торговые маршруты. Звуковая дорожка пока отсутствует.",16,MUTED)
+	separator(modal_body);label(modal_body,"Графика: Vibrant Medieval Pixel Art. Кампания «Наследие Ниязовых», 0.3.0. Сухопутная стратегия; корабли показывают торговые маршруты. Звуковая дорожка пока отсутствует.",16,MUTED)
 func show_outcome():
 	var result=app.state.data.outcome
 	open_window("Империя основана" if result=="victory" else "Летопись завершена",800,560);modal_previous_speed=0
 	image_rect(modal_body,"event_empire_foundation" if result=="victory" else "event_royal_funeral",Vector2(512,256))
+	if app.state.data.realms[int(app.state.data.player)].heraldry=="niyazov":image_rect(modal_body,"niyazov",Vector2(70,88))
 	if result=="victory":image_rect(modal_body,"ui_victory_ornament",Vector2(256,128))
 	label(modal_body,"Ваша династия удержала 35 провинций под императорской короной. Эльдрат признаёт вашу власть." if result=="victory" else "Последнее владение потеряно." if result=="defeat_land" else "Династия пресеклась: допустимых наследников не осталось.",20,GOLD)
 	if result=="victory":button(modal_body,"Продолжить свободную игру",func():app.state.data.freeplay=true;app.state.data.outcome="";app.outcome_shown=false;close_window())
@@ -528,3 +549,38 @@ func button_surface(index:int)->StyleBoxTexture:
 	for side_index in [SIDE_LEFT,SIDE_TOP,SIDE_RIGHT,SIDE_BOTTOM]:surface.set_texture_margin(side_index,12)
 	surface.set_content_margin(SIDE_LEFT,13);surface.set_content_margin(SIDE_RIGHT,13);surface.set_content_margin(SIDE_TOP,7);surface.set_content_margin(SIDE_BOTTOM,7)
 	return surface
+
+func show_campaign_choice():
+	clear_root();app.map.hide()
+	var backdrop=Control.new();backdrop.set_script(load("res://scripts/menu_backdrop.gd"));backdrop.map=app.map;root.add_child(backdrop)
+	var panel=centered_panel(1000,610);var col=box(panel);var top=box(col,false);heading(top,"Выберите историю",28).size_flags_horizontal=Control.SIZE_EXPAND_FILL;button(top,"Назад",show_main_menu)
+	var row=box(col,false);image_rect(row,"niyazov",Vector2(122,156));var text=box(row);heading(text,"Наследие Ниязовых",26);label(text,"Александр I, Хаймир, 1183 год. Сохраните дом, разрешите спор о короне и определите судьбу Аурелиана.",19)
+	image_rect(col,"story_palace",Vector2(660,220))
+	button(col,"Сюжетная кампания · Наследие Ниязовых",func():show_selection(true),"niyazov").custom_minimum_size.y=56
+	button(col,"Свободная игра · Выбрать государство",func():show_selection(false),"ui_diplomacy").custom_minimum_size.y=56
+func open_history():
+	var s=app.state;var n=s.data.narrative;NarrativeSystem.update_threats(s);var r=s.data.realms[0];var act= NarrativeSystem.book().acts[int(n.act)-1]
+	open_window("История · Наследие Ниязовых",1000,620)
+	var row=box(modal_body,false);image_rect(row,"niyazov",Vector2(68,90));var text=box(row);heading(text,"Акт %d · %s"%[n.act,act.name],24);label(text,act.objective,18)
+	label(modal_body,"Правит: "+s.data.characters[int(r.ruler)].name+" · "+("Дом Ниязовых" if int(r.dynasty_id)==int(n.dynasty) else "Дом "+r.dynasty),18,GOLD)
+	if n.ending!="":
+		var result=NarrativeSystem.ending_text(n.ending);heading(modal_body,result.title,22);label(modal_body,result.text,18)
+	kv(modal_body,"Легитимность династии",str(int(r.legitimacy)))
+	for key in ["royal_authority","noble_support","dynasty_prestige"]:kv(modal_body,{"royal_authority":"Королевская власть","noble_support":"Поддержка знати","dynasty_prestige":"Престиж Ниязовых"}[key],str(int(n.variables[key])))
+	for key in ["succession_tension","civil_war_risk","foreign_pressure"]:kv(modal_body,{"succession_tension":"Напряжение наследования","civil_war_risk":"Угроза мятежа","foreign_pressure":"Давление соседей"}[key],str(int(n.threats.get(key,0))))
+	label(modal_body,"Сильная власть (≥70) укрепляет стабильность за 8 золота в месяц. Поддержка знати (≥65) снижает недовольство; высокий престиж облегчает отношения. Риск выводится из верности и легитимности.",16,MUTED)
+	if not s.data.events.is_empty():button(modal_body,"Решить событие (%d)"%s.data.events.size(),open_event,"niyazov")
+	heading(modal_body,"Претенденты и сторонники",21)
+	for claim in n.claimants:
+		var c=s.data.characters[int(claim.character)];button(modal_body,"%s · %s · верность %d · шансы %s"%[c.name,claim.basis,c.loyalty,claim.chance],func():open_character(int(c.id)),VisualLibrary.portrait(c));label(modal_body,"Влиятельных недовольных сторонников: %d. %s"%[claim.supporters,"Поддерживает монарха." if claim.loyal else "Не отказался от притязаний."],16,MUTED)
+	heading(modal_body,"Хронология решений",21)
+	for item in n.timeline:label(modal_body,"День %d · %s"%[int(item.day)+1,item.text],17,GOLD)
+	button(modal_body,"Общая летопись мира",open_world_log)
+func open_world_log():
+	open_window("Летопись мира",950,610)
+	for item in app.state.data.log:label(modal_body,"День %d · %s"%[int(item.day)+1,item.text],17)
+func show_story_ending():
+	var n=app.state.data.narrative;var ending=NarrativeSystem.ending_text(n.ending)
+	open_window(ending.title,900,600);image_rect(modal_body,"niyazov",Vector2(70,88));image_rect(modal_body,"story_empire" if n.ending in ["empire","central_monarchy"] else "story_family" if n.ending in ["federation","peaceful_succession","surviving_crown"] else "story_throne",Vector2(600,270));label(modal_body,ending.text,20,GOLD)
+	button(modal_body,"Продолжить историю мира",close_window)
+	button(modal_body,"Книга правления",open_history)

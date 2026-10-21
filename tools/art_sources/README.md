@@ -1,17 +1,14 @@
 # Retained original art sources
 
-Four original image-generation atlases: architecture (7×6), portraits (6×5),
-events (3×4) and decorations/landforms (6×6). They share the palette, lighting,
-material detail and perspective recorded in ART_DIRECTION.md. No downloaded
-third-party game artwork is used.
+Six original image-generation sources: architecture 7×6, portraits 6×5, events 3×4,
+decorations/landforms 6×6 (0.2), niyazov_story 3×4 and niyazov_heraldry (0.3).
+All are original project paintings, CC0. No third-party game artwork is used.
 
-`../atlas_extract.py` separates complete alpha-connected silhouettes, including
-padding beyond nominal cells, so neighbouring fragments do not become part of
-another sprite. `../reforge_assets.py` normalizes the pixel grid/palette, writes
-all 246 game PNGs and builds the manifest/catalog/revision registry. The last two
-landforms are source brushes for the baked world, not extra counted game assets.
+`../atlas_extract.py` extracts alpha-connected silhouettes; `../reforge_assets.py`
+normalizes material colours and pixel grids. Its leaf-pigment pass preserves timber,
+stone and wheat. `../niyazov_art.py` prepares story scenes, crest and standard.
+`palette_v0_2.json` retains the previous material ramps for comparison.
 
-`baseline_assets.json` records IDs, sizes and SHA-256 of the 136 original assets.
-`legacy_generator_v0_1.py` retains the previous workshop for reference; current
-reproduction starts with `python3 tools/generate_assets.py`, followed by
-`python3 tools/bake_world.py`. The original atlas files are required and included.
+Reproduce with Python/Pillow: `python3 tools/generate_assets.py`, followed by
+`python3 tools/bake_world.py`. The current output is 260 game PNG plus service catalogues.
+`baseline_assets.json` and `legacy_generator_v0_1.py` retain the historical 0.1 workshop.

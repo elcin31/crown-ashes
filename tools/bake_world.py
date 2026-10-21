@@ -6,15 +6,15 @@ import json,random,math
 from atlas_extract import slice_objects
 ROOT=Path(__file__).resolve().parents[1];world=json.loads((ROOT/'data/world.json').read_text());r=random.Random(20201183)
 W,H=world['width']//2,world['height']//2
-im=Image.new('RGBA',(W,H),'#102d43');d=ImageDraw.Draw(im)
+im=Image.new('RGBA',(W,H),'#123f69');d=ImageDraw.Draw(im)
 # Long ocean swells instead of scattered single-pixel noise.
 for y in range(2,H,9):
  for x in range(-20,W,43):
-  xx=x+int(7*math.sin(y*.08));d.line([(xx,y),(xx+11,y-1),(xx+24,y)],fill='#173f56',width=1)
-  if (x//43+y//9)%7==0:d.line([(xx+2,y-2),(xx+9,y-2)],fill='#265c70')
+  xx=x+int(7*math.sin(y*.08));d.line([(xx,y),(xx+11,y-1),(xx+24,y)],fill='#185883',width=1)
+  if (x//43+y//9)%7==0:d.line([(xx+2,y-2),(xx+9,y-2)],fill='#287fb1')
 coast=[(x/2,y/2) for x,y in world['coast']];land=Image.new('L',(W,H));ImageDraw.Draw(land).polygon(coast,fill=255)
 # Palette-quantized low-frequency value field controls material patches, not display blur.
-ramp=['#4c5d3f','#536341','#5b6945','#637047','#6b754c','#747b50','#7b8153','#858958']
+ramp=['#44863f','#4c9143','#559b45','#60a54a','#65ad4e','#70b650','#7dbf55','#91c65a']
 coarse=Image.new('L',(34,22));coarse.putdata([r.randrange(52,195) for _ in range(34*22)]);field=coarse.resize((W,H),Image.Resampling.BILINEAR)
 lookup=[]
 for value in range(256):
@@ -22,7 +22,7 @@ for value in range(256):
 # L.point cannot map to RGB with 3-entry LUT, use palette conversion for bounded work.
 palette=Image.new('P',(1,1));palette.putpalette(lookup);landscape=field.convert('P');landscape.putpalette(lookup);landscape=landscape.convert('RGBA');im.paste(landscape,(0,0),land)
 # Blend biome transition masks well inside the same native pixel grid.
-for terrain,color in [('forest','#304b3c'),('mountains','#667773'),('hills','#74815b'),('marsh','#496459')]:
+for terrain,color in [('forest','#216b47'),('mountains','#81918b'),('hills','#7dae66'),('marsh','#39875f')]:
  mask=Image.new('L',(W,H));md=ImageDraw.Draw(mask)
  for p in world['provinces']:
   if p['terrain']==terrain:md.polygon([(x/2,y/2) for x,y in p['polygon']],fill=100 if terrain=='hills' else 155)
@@ -34,10 +34,10 @@ def reserved(x,y,radius=42):return any(abs(x-cx)<radius and abs(y-cy)<radius*.7 
 for _ in range(7500):
  x,y=r.randrange(W),r.randrange(H)
  if land.getpixel((x,y))<128 or reserved(x,y,33):continue
- if _%7==0:d.line([(x-2,y+1),(x,y-2),(x,y),(x+3,y-1)],fill='#8e905d')
- else:d.line([(x,y),(x+4,y-1)],fill='#6b754c')
+ if _%7==0:d.line([(x-2,y+1),(x,y-2),(x,y),(x+3,y-1)],fill='#a9cf67')
+ else:d.line([(x,y),(x+4,y-1)],fill='#65ad4e')
 # Coastline ledges and surf retain the exact existing land polygon.
-for width,color in [(13,'#173f56'),(9,'#265c70'),(5,'#619da1'),(2,'#c9c2a2')]:d.line(coast+[coast[0]],fill=color,width=width,joint='curve')
+for width,color in [(13,'#185883'),(9,'#287fb1'),(5,'#73cedc'),(2,'#e7d39d')]:d.line(coast+[coast[0]],fill=color,width=width,joint='curve')
 # Smooth roads: sparse minimum spanning network with selected capital connections.
 edges=world['edges'];parents=list(range(60))
 def root(x):
@@ -55,7 +55,7 @@ def bezier(a,b,offset=0):
 roads=[]
 for e in selected:
  a,b=centres[int(e['a'])],centres[int(e['b'])];pts=bezier(a,b,r.uniform(-.18,.18));roads.append(pts)
- d.line(pts,fill='#493f30',width=5,joint='curve');d.line(pts,fill='#997f56',width=3,joint='curve');d.line([(x,y-1) for x,y in pts],fill='#b49b6b',width=1,joint='curve')
+ d.line(pts,fill='#624426',width=5,joint='curve');d.line(pts,fill='#b08045',width=3,joint='curve');d.line([(x,y-1) for x,y in pts],fill='#d6ab65',width=1,joint='curve')
 # Catmull-Rom watercourses follow the saved rivers; only the drawing is refined.
 def smooth(points):
  p=[points[0]]+points+[points[-1]];out=[]
@@ -68,10 +68,10 @@ def smooth(points):
 rivers=[]
 for idx,river in enumerate(world['rivers']):
  pts=smooth([(x/2,y/2) for x,y in river]);rivers.append(pts)
- for width,color in [(16,'#516773'),(12,'#a3a06d'),(10,'#265c70'),(6,'#327081')]:d.line(pts,fill=color,width=width,joint='curve')
- d.line([(x-2,y) for x,y in pts],fill='#619da1',width=1)
+ for width,color in [(16,'#607f81'),(12,'#a5ba70'),(10,'#287fb1'),(6,'#308cc4')]:d.line(pts,fill=color,width=width,joint='curve')
+ d.line([(x-2,y) for x,y in pts],fill='#73cedc',width=1)
  for j in range(2,len(pts)-3,6):
-  x,y=pts[j];d.line([(x-2,y),(x+2,y+1),(x+4,y)],fill='#85b5af')
+  x,y=pts[j];d.line([(x-2,y),(x+2,y+1),(x+4,y)],fill='#b4e6e1')
 # Curved fields / orchards belong to settlement economies, not province borders.
 asset_cache={}
 def a(name):
@@ -168,5 +168,5 @@ for x,y in crossings:
 for name,pos in [('shallow_river_rapids',rivers[0][35]),('rocky_coastline',coast[2]),('sandy_coastline',coast[8])]:
  x,y=map(int,pos);tile=a(name).resize((28,28),Image.Resampling.NEAREST);mask=Image.new('L',(28,28));ImageDraw.Draw(mask).ellipse((2,3,25,24),fill=120);im.paste(tile,(x-14,y-14),mask)
 im=im.resize((world['width'],world['height']),Image.Resampling.NEAREST).convert('RGB');im.save(ROOT/'data/terrain_cache.png',optimize=True)
-(ROOT/'data/visual_world.json').write_text(json.dumps({'version':'0.2.0','roads':len(roads),'bridges':len(crossings),'scenery_count':len(placements),'cache_size':list(im.size),'topology_changed':False},indent=2))
+(ROOT/'data/visual_world.json').write_text(json.dumps({'version':'0.3.0','roads':len(roads),'bridges':len(crossings),'scenery_count':len(placements),'cache_size':list(im.size),'topology_changed':False},indent=2))
 print('Reforged geography:',len(placements),'prebaked scenery placements,',len(roads),'curving roads,',len(crossings),'bridges; topology unchanged.')

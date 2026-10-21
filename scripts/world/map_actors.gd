@@ -3,6 +3,12 @@ var map
 func _draw():
 	if map.s==null:return
 	var s=map.s;var time=map.visual_time;var view=map.visible_world_rect().grow(120)
+	if map.details_enabled and map.lod==0:
+		# A few drifting highlights on saved rivers, no shader or world rebuild.
+		for river in map.rivers:
+			for step in range(1,river.size()):
+				var a=Vector2(river[step-1][0],river[step-1][1]);var b=Vector2(river[step][0],river[step][1]);var t=fmod(time*.10+step*.23,1.0);var pos=a.lerp(b,t)
+				if view.has_point(pos):draw_line(pos-Vector2(3,0),pos+Vector2(5,0),Color(.65,.9,.95,.30+.20*sin(t*PI)),1,false)
 	var cast=VisualLibrary.OLD_ACTORS+VisualLibrary.NEW_ACTORS
 	if map.details_enabled and map.lod==0:
 		for i in range(cast.size()):
@@ -36,7 +42,7 @@ func _draw():
 			var sprite=VisualLibrary.army_sprite(s,a,dominant);var count=mini(3,maxi(1,int(ArmySystem.size(a)/110)))
 			draw_circle(pos+Vector2(0,7),23,Color(0.04,.09,.1,.28))
 			for i in range(count):draw_unit(sprite,pos+Vector2((i%2)*15-7,int(i/2)*10),frame,direction,1.0)
-			var banner="rebel_army_banner" if realm.get("is_rebel",false) else "royal_army_banner"
+			var banner="rebel_army_banner" if realm.get("is_rebel",false) else "niyazov_standard" if realm.heraldry=="niyazov" else "royal_army_banner"
 			draw_texture_rect(map.texture_for(banner),Rect2(pos+Vector2(-31,-56),Vector2(37,42)),false)
 			draw_texture_rect(map.texture_for(realm.heraldry),Rect2(pos+Vector2(-18,-51),Vector2(17,20)),false)
 			if a.order=="siege":

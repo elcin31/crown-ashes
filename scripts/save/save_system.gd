@@ -7,7 +7,7 @@ static func save_game(s,slot:int)->Dictionary:
 	DirAccess.make_dir_recursive_absolute(DIRECTORY)
 	s.data.rng_state=str(s.rng.state)
 	var payload=JSON.stringify(s.data)
-	var envelope={"format":FORMAT,"version":"0.2.0","saved_at":Time.get_datetime_string_from_system(),"date":s.date_text(),"realm":s.realm_name(int(s.data.player)),"sha256":payload.sha256_text(),"payload":payload}
+	var envelope={"format":FORMAT,"version":"0.3.0","saved_at":Time.get_datetime_string_from_system(),"date":s.date_text(),"realm":s.realm_name(int(s.data.player)),"sha256":payload.sha256_text(),"payload":payload}
 	var target=path(slot);var tmp=target+".tmp";var f=FileAccess.open(tmp,FileAccess.WRITE)
 	if f==null:return {"ok":false,"message":"Не удалось открыть сохранение: "+error_string(FileAccess.get_open_error())}
 	f.store_string(JSON.stringify(envelope));f.flush();f.close()
@@ -32,7 +32,8 @@ static func read_file(filename:String)->Dictionary:
 static func load_game(s,slot:int)->Dictionary:
 	var loaded=read_file(path(slot))
 	if not loaded.ok:loaded=read_file(path(slot)+".bak")
-	if loaded.ok:s.data=loaded.data;s.rng.state=int(s.data.get("rng_state","1183"))
+	if loaded.ok:
+		s.data=loaded.data;restore_id_arrays(s.data);s.rng.state=int(s.data.get("rng_state","1183"))
 	return loaded
 static func slots()->Array:
 	var items=[]
@@ -48,3 +49,14 @@ static func latest_slot()->int:
 		if not loaded.ok:loaded=read_file(path(slot)+".bak")
 		if loaded.ok and str(loaded.metadata.saved_at)>latest:latest=str(loaded.metadata.saved_at);result=slot
 	return result
+
+static func restore_id_arrays(data:Dictionary):
+	# Godot JSON decodes numbers as floats. Array.has uses strict numeric types;
+	# restore ID collections, retaining all identities and every unknown save field.
+	var groups={"characters":["parents","children","claims"],"dynasties":["members","links"],"realms":["claims"],"armies":["route"],"provinces":["neighbors"]}
+	for group in groups:
+		for object in data.get(group,[]):
+			for key in groups[group]:
+				if object.get(key,null) is Array:object[key]=object[key].map(func(value):return int(value))
+	for relation in data.get("relations",{}).values():
+		if relation.get("access",null) is Array:relation.access=relation.access.map(func(value):return int(value))

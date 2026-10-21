@@ -1,27 +1,23 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "engine": "Godot 4.6.3 stable",
-  "build_type": "signed debug",
-  "architecture": "arm64-v8a",
-  "bytes": 30869988,
-  "sha256": "b466cad3fe2e7aa60d1a86c59dc1e6953925530eda0f1cbd9cd7f8484e30d3a1",
-  "zip_bytes": 30870150,
   "package": "org.crownandashes.firstcrown",
-  "version_code": 2,
-  "min_sdk": 24,
-  "target_sdk": 36,
-  "same_signing_certificate_as_0_1": true,
+  "version_code": 3,
+  "build": "debug",
+  "architectures": [
+    "arm64-v8a"
+  ],
+  "bytes": 31405924,
+  "zip_bytes": 31406086,
+  "sha256": "88a4fec49dc7abe1c150436dd1ca4cc8dd4628400330e32b12e2319796ce523b",
+  "certificate_sha256": "4a6c1d5a8e07ec549b31b26472e0c61f041a2aecb2ca96b5a59ea2b369d37ea9",
+  "same_certificate_as_0_2": true,
+  "signature_v2": true,
+  "signature_v3": true,
   "permissions": [],
-  "save_format": 1,
-  "legacy_save_read": true,
-  "p0_touch_checks": 37,
-  "final_smoke_checks": 287,
-  "failures": 0,
-  "new_png": 110,
-  "reworked_old_png": 136,
-  "total_game_png": 246,
-  "new_sprite_sheets": 20,
-  "total_sprite_sheets": 36,
-  "total_animation_frames": 1440,
-  "android_hardware_test": false
+  "zip_content": [
+    "CrownAndAshes-v0.3.0-android.apk"
+  ],
+  "android_device_tested": false,
+  "export_success": true
 }

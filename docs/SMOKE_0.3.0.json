@@ -1,0 +1,18 @@
+{
+  "android_device_tested": false,
+  "checks": 351,
+  "failures": 1,
+  "input": "native InputEventScreenTouch through Godot GUI, desktop Xvfb",
+  "legacy_save_compatible": true,
+  "screenshots": [
+    "01_menu",
+    "02_campaign_choice",
+    "03_selection",
+    "04_coronation",
+    "05_map",
+    "06_dynasty",
+    "07_history"
+  ],
+  "story_events": 33,
+  "texture_memory_bytes": 83531109
+}

@@ -10,6 +10,7 @@ var mode:int=0
 var selected_province:int=-1
 var selected_army:int=-1
 var destination_mode:bool=false
+var rivers:Array=[]
 var textures={}
 var texture_paths={}
 var texture_metadata={}
@@ -29,6 +30,7 @@ var visual_time:float=0.0
 var details_enabled:bool=true
 var static_sprite:Sprite2D
 func _ready():
+	rivers=GameState.read_json("res://data/world.json").rivers
 	texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	font=load("res://assets/fonts/DejaVuSans.ttf")
 	var manifest=GameState.read_json("res://assets_manifest.json")
@@ -96,7 +98,7 @@ func realm_color(id:int,alpha:float=1.0)->Color:
 func overlay_color(p:Dictionary)->Color:
 	var id=int(p.owner)
 	match mode:
-		1:return realm_color(id,0.34)
+		1:return realm_color(id,0.25)
 		2:
 			if id==int(s.data.player):return Color(0.85,0.7,0.32,0.5)
 			if s.at_war(int(s.data.player),id):return Color(0.72,0.15,0.15,0.55)
@@ -133,6 +135,8 @@ func _draw():
 		var extent=136.0 if capital and int(realm.title)>=2 else 112.0 if capital else 90.0 if int(p.population)>=7600 else 76.0
 		var dimensions=Vector2.ONE*extent
 		draw_texture_rect(texture_for(key),Rect2(c-dimensions*Vector2(0.5,0.88),dimensions),false)
+		if realm.heraldry=="niyazov" and capital:
+			draw_texture_rect(texture_for("niyazov_standard"),Rect2(c+Vector2(-extent*.47,-extent*.69),Vector2(28,55)),false)
 		# Existing economic upgrades get richer visual variants without new rules.
 		if lod==0:
 			var shown=0

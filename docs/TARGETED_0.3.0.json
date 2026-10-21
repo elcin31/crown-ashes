@@ -1,0 +1,6 @@
+{
+  "android_device_tested": false,
+  "checks": 65,
+  "failures": 1,
+  "scope": "story ribbon layout, touch choice, numeric IDs after save, connected cadet genealogy"
+}

@@ -22,12 +22,16 @@ static func monthly(s):
 			if id==int(s.data.player):s.log_message("Предупреждение: дворяне или крестьяне готовят мятеж. Снизьте налоги и недовольство.")
 		else:r.rebel_warning=maxi(0,int(r.rebel_warning)-30)
 		if int(r.rebel_warning)>=90 and int(s.data.day)>180:revolt(s,id)
-static func revolt(s,realm:int):
+static func revolt(s,realm:int,leader:int=-1):
 	var owned=s.provinces_of(realm)
 	if owned.is_empty():return
 	var source=s.data.realms[realm];var chosen=owned[0]
 	for p in owned:
 		if float(p.unrest)>float(chosen.unrest):chosen=p
+	if leader>=0:
+		var held=owned.filter(func(p):return int(p.holder)==leader and int(p.id)!=int(source.capital))
+		if held.is_empty():return
+		chosen=held[0]
 	var holder=int(chosen.holder)
 	if holder==int(source.ruler):
 		var noble=CharacterSystem.make(s,realm,"m",31,"rebel");holder=int(noble.id)

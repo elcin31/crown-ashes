@@ -9,6 +9,9 @@ static func candidates(s,realm:int)->Array:
 		for cid in s.data.dynasties[int(r.dynasty_id)].members:
 			var c=s.data.characters[int(cid)]
 			if c.alive and int(cid)!=int(r.ruler):result.append(int(cid))
+	if r.law=="elective":
+		for c in s.data.characters:
+			if c.alive and int(c.realm)==realm and int(c.id)!=int(r.ruler) and realm in c.claims and int(c.title)>=1 and not int(c.id) in result:result.append(int(c.id))
 	result.sort_custom(func(a,b):return float(s.data.characters[a].age)>float(s.data.characters[b].age))
 	return result
 static func next_heir(s,realm:int)->int:
@@ -33,6 +36,7 @@ static func succeed(s,realm:int):
 			var new=CharacterSystem.make(s,realm,"m",28,"ruler");r.ruler=new.id;r.heir=-1
 		return
 	var previous=int(r.ruler);r.ruler=heir;var c=s.data.characters[heir];c.role="ruler";c.title=r.title;c.portrait="king_young" if c.gender=="m" else "queen_young"
+	r.dynasty_id=int(c.dynasty);r.dynasty=s.data.dynasties[int(c.dynasty)].name;r.heraldry=s.data.dynasties[int(c.dynasty)].heraldry
 	s.data.dynasties[int(r.dynasty_id)].head=heir
 	r.legitimacy=clampf(float(r.legitimacy)-12+(float(c.diplomacy)-8),10,100);r.stability=maxf(0,r.stability-(16 if c.age<16 else 8))
 	for p in s.provinces_of(realm):
@@ -58,6 +62,7 @@ static func marry(s,realm:int,a:int,b:int)->Dictionary:
 	return s.result(true,"Династический брак заключён: %s и %s."%[x.name,y.name])
 static func child(s,mother:Dictionary,father:Dictionary):
 	if not mother.alive or not father.alive or mother.age<18 or mother.age>44 or father.age<18:return
+	if int(mother.spouse)!=int(father.id) or int(father.spouse)!=int(mother.id):return
 	var realm=int(father.realm);var gender="m" if s.rng.randf()<0.5 else "f"
 	var c=CharacterSystem.make(s,realm,gender,0,"child",int(father.dynasty));c.parents=[father.id,mother.id];c.born_day=s.data.day
 	mother.children.append(c.id);father.children.append(c.id)
